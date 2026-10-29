@@ -15,6 +15,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size
 .wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 header.band{background:var(--band);color:var(--band-fg)}
 header.band .wrap{padding-block:40px 36px}
+.logo{display:block;height:52px;width:auto;margin:0 0 22px}
 .eyebrow{font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--band-muted);margin:0 0 12px}
 h1{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,6vw,40px);line-height:1.15;margin:0 0 14px;text-wrap:balance}
 h1 span{color:var(--aqua)}
@@ -55,6 +56,7 @@ section.result{background:var(--surface);border-radius:var(--radius);padding:24p
 .row .t{min-width:0}
 .row .th{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;justify-content:space-between;margin-bottom:2px}
 .row .t>span{display:block;color:var(--fg-muted);font-size:14px}
+.row .t>span.ans{font-size:13px;color:var(--fg);margin-bottom:4px}
 .pill{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap}
 .s0{color:var(--st-0);background:var(--st-0-bg)}.s1{color:var(--st-1);background:var(--st-1-bg)}.s2{color:var(--st-2);background:var(--st-2-bg)}.s3{color:var(--st-3);background:var(--st-3-bg)}.sx{color:var(--fg-muted);background:var(--surface-2)}
 .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -62,7 +64,7 @@ button{font:inherit;font-weight:700;border-radius:10px;padding:11px 18px;cursor:
 button.primary{background:var(--accent);color:var(--accent-fg)}
 button.ghost{background:transparent;color:var(--accent)}
 button:disabled{opacity:.45;cursor:not-allowed}
-.status{font-size:14px;color:var(--fg-muted)}
+.status{font-size:14px;color:var(--fg-muted);flex-basis:100%}
 #copyFallback{width:100%;min-height:160px;font-size:13px}
 .contact{border-top:1px solid var(--line);padding-top:18px;display:grid;gap:8px}
 .contact h3{font-family:var(--font-display);font-size:16px;margin:0}
@@ -71,10 +73,12 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .mail code{font-family:var(--font-body);font-weight:700;color:var(--fg);background:var(--bg);padding:6px 10px;border-radius:8px;user-select:all}
 footer .wrap{padding-block:0 40px;font-size:13px;color:var(--fg-muted)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{form,.actions,.privacy,#copyFallback,.mail button,footer{display:none!important}body{background:#fff;color:#1D3B5C}header.band,.firststep,.row,.pill{-webkit-print-color-adjust:exact;print-color-adjust:exact}section.result{background:#fff;padding:0}.row{background:#F1F7F8;break-inside:avoid}main .wrap{padding-block:16px}}
 </style>
 </head>
 <body>
 <header class="band"><div class="wrap">
+<img class="logo" src="logo-white.svg" alt="Black Elephant">
 <p class="eyebrow">Q-Logic &middot; Black Elephant</p>
 <h1>AI-jaarplancheck <span>voor HR</span></h1>
 <p class="lede">Vijf vragen om te toetsen hoe AI in jullie plan voor 2027 staat. Je krijgt per vraag een stand van zaken en een concrete eerste stap voor het eerste kwartaal.</p>
@@ -88,7 +92,13 @@ footer .wrap{padding-block:0 40px;font-size:13px;color:var(--fg-muted)}
 <div class="bar" aria-hidden="true"><i id="barFill"></i></div>
 <div class="firststep" id="firstStep" hidden><span class="lbl">Jouw eerste stap in Q1 2027</span><span class="ttl" id="fsTitle"></span><p id="fsText"></p></div>
 <div class="rows" id="rows"></div>
-<div class="actions"><button type="button" class="primary" id="copyBtn" disabled>Kopieer mijn uitkomst</button><button type="button" class="ghost" id="resetBtn">Opnieuw beginnen</button><span class="status" id="copyStatus" role="status"></span></div>
+<div class="actions">
+<button type="button" class="primary" id="mailBtn" disabled>Mail mijn uitkomst</button>
+<button type="button" class="ghost" id="pdfBtn" disabled>Bewaar als PDF</button>
+<button type="button" class="ghost" id="copyBtn" disabled>Kopieer</button>
+<button type="button" class="ghost" id="resetBtn">Opnieuw beginnen</button>
+<span class="status" id="copyStatus" role="status"></span>
+</div>
 <textarea id="copyFallback" hidden readonly aria-label="Je uitkomst als tekst"></textarea>
 <div class="contact"><h3>Verder met deze vragen in je eigen organisatie?</h3><p>Neem contact op met Michael Salmagne, Black Elephant. Of praat erover met je contactpersoon bij Q-Logic.</p>
 <div class="mail"><code id="mailAddr">info@blackelephant.nl</code><button type="button" class="ghost" id="mailCopy">Kopieer adres</button></div></div>
@@ -109,28 +119,31 @@ var h='<legend><span class="q-head"><span class="q-nr" aria-hidden="true">'+(i+1
 q.opts.forEach(function(o,v){var id="q"+(i+1)+"o"+v;h+='<label class="opt" for="'+id+'"><input type="radio" id="'+id+'" name="'+q.key+'" value="'+v+'"><span class="dot" aria-hidden="true"></span><span>'+o+'</span></label>';});
 h+='</div>';if(i===Q.length-1)h+='<div class="free"><label for="eigenStap">Wat is jouw eerste stap? Schrijf hem op in je eigen woorden (optioneel).</label><textarea id="eigenStap" placeholder="Bijvoorbeeld: in januari vijf teamleiders spreken over hun AI-gebruik"></textarea></div>';
 fs.innerHTML=h;form.appendChild(fs);});
-var rows=document.getElementById("rows"),progress=document.getElementById("progress"),barFill=document.getElementById("barFill"),firstStep=document.getElementById("firstStep"),copyBtn=document.getElementById("copyBtn"),copyStatus=document.getElementById("copyStatus"),fallback=document.getElementById("copyFallback");
+var rows=document.getElementById("rows"),progress=document.getElementById("progress"),barFill=document.getElementById("barFill"),firstStep=document.getElementById("firstStep"),copyBtn=document.getElementById("copyBtn"),mailBtn=document.getElementById("mailBtn"),pdfBtn=document.getElementById("pdfBtn"),copyStatus=document.getElementById("copyStatus"),fallback=document.getElementById("copyFallback");
 function answers(){return Q.map(function(q){var el=form.querySelector('input[name="'+q.key+'"]:checked');return el?Number(el.value):null;});}
+function setBtns(on){copyBtn.disabled=!on;mailBtn.disabled=!on;pdfBtn.disabled=!on;}
 function render(){var a=answers(),done=a.filter(function(v){return v!==null;}).length;barFill.style.width=(done/Q.length*100)+"%";rows.innerHTML="";
 Q.forEach(function(q,i){var v=a[i],row=document.createElement("div");row.className="row";
 var pill=v===null?'<span class="pill sx">Nog open</span>':'<span class="pill s'+v+'">'+ST[v]+'</span>';
 var sub=v===null?"":(v<3?q.step:"Hier staan jullie goed. Houd het vast en deel wat werkt.");
-row.innerHTML='<span class="n">'+(i+1)+'</span><div class="t"><div class="th"><b>'+q.title+'</b>'+pill+'</div>'+(sub?'<span>'+sub+'</span>':'')+'</div>';rows.appendChild(row);});
-if(done<Q.length){progress.textContent=done===0?"Beantwoord de vijf vragen hierboven. Je uitkomst verschijnt hier.":done+" van de 5 vragen beantwoord.";firstStep.hidden=true;copyBtn.disabled=true;return;}
+row.innerHTML='<span class="n">'+(i+1)+'</span><div class="t"><div class="th"><b>'+q.title+'</b>'+pill+'</div>'+(v===null?'':'<span class="ans">Jouw antwoord: '+q.opts[v]+'</span>')+(sub?'<span>'+sub+'</span>':'')+'</div>';rows.appendChild(row);});
+if(done<Q.length){progress.textContent=done===0?"Beantwoord de vijf vragen hierboven. Je uitkomst verschijnt hier.":done+" van de 5 vragen beantwoord.";firstStep.hidden=true;setBtns(false);return;}
 var t=a.reduce(function(s,v){return s+v;},0);
 progress.textContent=(t<=5?"Startfase: AI is in jullie organisatie nog geen HR-onderwerp.":t<=10?"Op weg: de basis is er deels, nu scherp maken.":"Voorloper: HR heeft de regie, nu doorpakken.")+" ("+t+" van 15 punten)";
 var min=Math.min.apply(null,a),idx=a.indexOf(min);
 if(min===3){document.getElementById("fsTitle").textContent="Deel wat werkt";document.getElementById("fsText").textContent="Op alle vijf vragen staan jullie er goed voor. Maak je aanpak zichtbaar voor andere organisaties en blijf toetsen of de afspraken in de praktijk leven.";}
 else{document.getElementById("fsTitle").textContent=(idx+1)+". "+Q[idx].title;document.getElementById("fsText").textContent=Q[idx].step;}
-firstStep.hidden=false;copyBtn.disabled=false;}
-function summary(){var a=answers(),l=["AI-jaarplancheck voor HR","Ontbijtsessie Q-Logic, 12 november 2026",""];
+firstStep.hidden=false;setBtns(true);}
+function summary(){var a=answers(),l=["AI-jaarplancheck voor HR","Ontbijtsessie Q-Logic, 12 november 2026","",progress.textContent,""];
 Q.forEach(function(q,i){l.push((i+1)+". "+q.title+" "+(a[i]===null?"nog open":ST[a[i]]+" ("+q.opts[a[i]]+")"));if(a[i]!==null&&a[i]<3)l.push("   Stap: "+q.step);});
 var own=document.getElementById("eigenStap").value.trim();l.push("");l.push("Eerste stap: "+document.getElementById("fsTitle").textContent+". "+document.getElementById("fsText").textContent);
-if(own)l.push("Mijn eigen stap: "+own);l.push("","Contact: Michael Salmagne, Black Elephant, info@blackelephant.nl");return l.join("\n");}
+if(own)l.push("Mijn eigen stap: "+own);l.push("","Contact: Michael Salmagne, Black Elephant, info@blackelephant.nl","Opnieuw invullen: https://blackelephant.nl/aicheck");return l.join("\n");}
 function copyText(text){var ok=function(){copyStatus.textContent="Gekopieerd. Plak het in een mail of in je jaarplan.";fallback.hidden=true;};
 var fail=function(){fallback.value=text;fallback.hidden=false;fallback.focus();fallback.select();copyStatus.textContent="Kopiëren lukte niet automatisch. Selecteer de tekst en kopieer hem zelf.";};
 try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(ok,fail);else fail();}catch(e){fail();}}
 form.addEventListener("change",render);form.addEventListener("submit",function(e){e.preventDefault();});
+mailBtn.addEventListener("click",function(){window.location.href="mailto:?subject="+encodeURIComponent("Mijn AI-jaarplancheck")+"&body="+encodeURIComponent(summary());copyStatus.textContent="Je mailprogramma opent met je uitkomst. Vul je eigen adres in en verstuur.";});
+pdfBtn.addEventListener("click",function(){window.print();});
 copyBtn.addEventListener("click",function(){copyText(summary());});
 document.getElementById("resetBtn").addEventListener("click",function(){form.reset();copyStatus.textContent="";fallback.hidden=true;render();window.scrollTo({top:0,behavior:"smooth"});});
 document.getElementById("mailCopy").addEventListener("click",function(){try{navigator.clipboard.writeText("info@blackelephant.nl").then(function(){copyStatus.textContent="Adres gekopieerd.";},sel);}catch(e){sel();}});
