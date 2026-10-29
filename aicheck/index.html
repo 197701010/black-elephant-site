@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Vijf vragen om te toetsen hoe AI in jullie HR-plan voor 2027 staat, met per vraag een concrete eerste stap.">
+<title>AI-jaarplancheck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Mulish:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#FFFFFF;--surface:#F1F7F8;--surface-2:#E3F0F1;--fg:#1D3B5C;--fg-muted:#4F6A80;--line:#CFE1E6;--accent:#3A7CA0;--accent-fg:#FFFFFF;--aqua:#9ED3D3;--band:#1D3B5C;--band-fg:#FFFFFF;--band-muted:#B9D4E2;--st-0:#B5473A;--st-1:#B7791F;--st-2:#3A7CA0;--st-3:#2E8466;--st-0-bg:#F8E7E4;--st-1-bg:#FAF0DD;--st-2-bg:#E2EEF5;--st-3-bg:#E0F1EA;--font-display:"Montserrat","Segoe UI",Arial,sans-serif;--font-body:"Mulish","Segoe UI",Arial,sans-serif;--radius:14px}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1A24;--surface:#16273A;--surface-2:#1C3249;--fg:#E4EDF3;--fg-muted:#A3B8C8;--line:#2A4560;--accent:#6FAED0;--accent-fg:#0F1A24;--aqua:#5FAFAF;--band:#0B1520;--band-fg:#FFFFFF;--band-muted:#9FBCD0;--st-0:#E58B7E;--st-1:#E2B35E;--st-2:#7DB7D8;--st-3:#6CC3A0;--st-0-bg:#3A2220;--st-1-bg:#3A2F1A;--st-2-bg:#1B3347;--st-3-bg:#173A2F;color-scheme:dark}}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.band{background:var(--band);color:var(--band-fg)}
+header.band .wrap{padding-block:40px 36px}
+.eyebrow{font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--band-muted);margin:0 0 12px}
+h1{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,6vw,40px);line-height:1.15;margin:0 0 14px;text-wrap:balance}
+h1 span{color:var(--aqua)}
+.lede{color:var(--band-muted);max-width:60ch;margin:0;font-size:17px}
+.meta{margin:20px 0 0;font-size:14px;color:var(--band-muted)}
+main .wrap{padding-block:32px 48px;display:grid;gap:20px}
+.privacy{font-size:14px;color:var(--fg-muted);background:var(--surface);border-radius:var(--radius);padding:12px 16px;margin:0}
+fieldset.q{border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin:0;min-width:0}
+.q legend{display:contents}
+.q-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.q-nr{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:15px}
+.q-title{display:block;font-family:var(--font-display);font-weight:700;font-size:18px;margin:3px 0 2px}
+.q-text{display:block;margin:0;color:var(--fg-muted)}
+.opts{display:grid;gap:8px}
+.opt{position:relative;display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:10px;background:var(--surface);cursor:pointer;border:2px solid transparent;transition:border-color .15s,background .15s}
+.opt:hover{background:var(--surface-2)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.dot{flex:0 0 auto;width:18px;height:18px;border-radius:50%;border:2px solid var(--fg-muted);display:grid;place-items:center}
+.opt input:checked+.dot{border-color:var(--accent)}
+.opt input:checked+.dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.opt:has(input:checked){border-color:var(--accent);background:var(--surface-2)}
+.opt:has(input:focus-visible){outline:3px solid var(--aqua);outline-offset:2px}
+.free{display:grid;gap:6px;margin-top:4px}
+.free label{font-weight:600;font-size:15px}
+textarea{width:100%;min-height:84px;resize:vertical;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+section.result{background:var(--surface);border-radius:var(--radius);padding:24px 20px;display:grid;gap:18px}
+.result h2{font-family:var(--font-display);font-size:22px;margin:0}
+.progress{font-size:14px;color:var(--fg-muted);margin:0}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
+.firststep{background:var(--band);color:var(--band-fg);border-radius:12px;padding:18px 20px;display:grid;gap:6px}
+.firststep .lbl{font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--aqua)}
+.firststep .ttl{font-family:var(--font-display);font-weight:700;font-size:19px}
+.firststep p{margin:0;color:var(--band-muted)}
+.rows{display:grid;gap:8px}
+.row{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;background:var(--bg);border-radius:10px;padding:12px 14px}
+.row .n{font-family:var(--font-display);font-weight:700;color:var(--accent)}
+.row .t{min-width:0}
+.row .th{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;justify-content:space-between;margin-bottom:2px}
+.row .t>span{display:block;color:var(--fg-muted);font-size:14px}
+.pill{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.s0{color:var(--st-0);background:var(--st-0-bg)}.s1{color:var(--st-1);background:var(--st-1-bg)}.s2{color:var(--st-2);background:var(--st-2-bg)}.s3{color:var(--st-3);background:var(--st-3-bg)}.sx{color:var(--fg-muted);background:var(--surface-2)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button{font:inherit;font-weight:700;border-radius:10px;padding:11px 18px;cursor:pointer;border:2px solid var(--accent)}
+button.primary{background:var(--accent);color:var(--accent-fg)}
+button.ghost{background:transparent;color:var(--accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.status{font-size:14px;color:var(--fg-muted)}
+#copyFallback{width:100%;min-height:160px;font-size:13px}
+.contact{border-top:1px solid var(--line);padding-top:18px;display:grid;gap:8px}
+.contact h3{font-family:var(--font-display);font-size:16px;margin:0}
+.contact p{margin:0;color:var(--fg-muted)}
+.mail{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.mail code{font-family:var(--font-body);font-weight:700;color:var(--fg);background:var(--bg);padding:6px 10px;border-radius:8px;user-select:all}
+footer .wrap{padding-block:0 40px;font-size:13px;color:var(--fg-muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="band"><div class="wrap">
+<p class="eyebrow">Q-Logic &middot; Black Elephant</p>
+<h1>AI-jaarplancheck <span>voor HR</span></h1>
+<p class="lede">Vijf vragen om te toetsen hoe AI in jullie plan voor 2027 staat. Je krijgt per vraag een stand van zaken en een concrete eerste stap voor het eerste kwartaal.</p>
+<p class="meta">Bij de ontbijtsessie &ldquo;HR als regisseur van AI-transformatie&rdquo;, 12 november 2026, Utrecht &middot; ongeveer 3 minuten</p>
+</div></header>
+<main><div class="wrap">
+<p class="privacy">Je antwoorden blijven op je eigen scherm. Er wordt niets opgeslagen of verstuurd.</p>
+<form id="check" novalidate></form>
+<section class="result" id="result" aria-live="polite">
+<div><h2>Jouw uitkomst</h2><p class="progress" id="progress">Beantwoord de vijf vragen hierboven. Je uitkomst verschijnt hier.</p></div>
+<div class="bar" aria-hidden="true"><i id="barFill"></i></div>
+<div class="firststep" id="firstStep" hidden><span class="lbl">Jouw eerste stap in Q1 2027</span><span class="ttl" id="fsTitle"></span><p id="fsText"></p></div>
+<div class="rows" id="rows"></div>
+<div class="actions"><button type="button" class="primary" id="copyBtn" disabled>Kopieer mijn uitkomst</button><button type="button" class="ghost" id="resetBtn">Opnieuw beginnen</button><span class="status" id="copyStatus" role="status"></span></div>
+<textarea id="copyFallback" hidden readonly aria-label="Je uitkomst als tekst"></textarea>
+<div class="contact"><h3>Verder met deze vragen in je eigen organisatie?</h3><p>Neem contact op met Michael Salmagne, Black Elephant. Of praat erover met je contactpersoon bij Q-Logic.</p>
+<div class="mail"><code id="mailAddr">info@blackelephant.nl</code><button type="button" class="ghost" id="mailCopy">Kopieer adres</button></div></div>
+</section>
+</div></main>
+<footer><div class="wrap">Ontwikkeld door Black Elephant voor de ontbijtsessie van Q-Logic.</div></footer>
+<script>
+(function(){
+var Q=[
+{key:"weten",title:"Wat weten we?",text:"Weet HR wie in jullie organisatie AI gebruikt, en waarvoor?",opts:["Geen idee","We vermoeden het, maar hebben het nooit uitgevraagd","We hebben een globaal beeld per afdeling","Ja, we weten het en houden het bij"],step:"Voer in januari vijf gesprekken met teamleiders. Stel één vraag: gebruik jij of iemand in je team AI, waarvoor, en wat werkt wel en niet? Dat geeft meer zicht dan een enquête."},
+{key:"afspreken",title:"Wat spreken we af?",text:"Zijn er afspraken over AI-gebruik die medewerkers kennen?",opts:["Nee, er is niets","Er wordt aan gewerkt, of het ligt bij IT of juridisch","Er is beleid, maar weinig mensen kennen het","Ja, kort en bij iedereen bekend"],step:"Leg drie afspraken vast op één A4: wat gaat er niet in een AI-tool, wie is verantwoordelijk voor de uitkomst, en hoe bespreken we het gebruik. Deel ze via de leidinggevenden."},
+{key:"verandert",title:"Wat verandert er?",text:"Weten jullie welke taken over twee jaar anders zijn, en welke rollen dat raakt?",opts:["Daar hebben we nog niet naar gekeken","We hebben ideeën, maar niets uitgewerkt","Voor een paar afdelingen is het in beeld","Het zit in onze strategische personeelsplanning"],step:"Kies één afdeling en breng samen met de manager in kaart welke taken verschuiven. Let extra op het werk waarmee junioren nu hun vak leren."},
+{key:"leidt",title:"Wie leidt dit?",text:"Staat AI-transformatie op iemands agenda binnen HR, met mandaat en tijd?",opts:["Nee","Iemand doet het erbij","Er is een eigenaar, maar zonder tijd of mandaat","Ja, met tijd en mandaat"],step:"Wijs één eigenaar aan binnen HR en spreek af hoeveel tijd die er in het eerste kwartaal aan besteedt. Zonder eigenaar blijft het bij goede bedoelingen."},
+{key:"beginnen",title:"Waar beginnen we?",text:"Is er een concrete eerste actie gepland voor het eerste kwartaal van 2027?",opts:["Nee","AI staat in het jaarplan, maar niet concreet","Er is een actie, nog zonder datum of eigenaar","Ja, met datum en eigenaar"],step:"Maak je eerste actie klein en concreet: wat, wie en wanneer. Het hoeft niet de grootste stap te zijn, wel de eerste."}];
+var ST=["Nog niet gestart","Eerste aanzet","Op weg","Op orde"],form=document.getElementById("check");
+Q.forEach(function(q,i){var fs=document.createElement("fieldset");fs.className="q";
+var h='<legend><span class="q-head"><span class="q-nr" aria-hidden="true">'+(i+1)+'</span><span><span class="q-title">'+q.title+'</span><span class="q-text">'+q.text+'</span></span></span></legend><div class="opts">';
+q.opts.forEach(function(o,v){var id="q"+(i+1)+"o"+v;h+='<label class="opt" for="'+id+'"><input type="radio" id="'+id+'" name="'+q.key+'" value="'+v+'"><span class="dot" aria-hidden="true"></span><span>'+o+'</span></label>';});
+h+='</div>';if(i===Q.length-1)h+='<div class="free"><label for="eigenStap">Wat is jouw eerste stap? Schrijf hem op in je eigen woorden (optioneel).</label><textarea id="eigenStap" placeholder="Bijvoorbeeld: in januari vijf teamleiders spreken over hun AI-gebruik"></textarea></div>';
+fs.innerHTML=h;form.appendChild(fs);});
+var rows=document.getElementById("rows"),progress=document.getElementById("progress"),barFill=document.getElementById("barFill"),firstStep=document.getElementById("firstStep"),copyBtn=document.getElementById("copyBtn"),copyStatus=document.getElementById("copyStatus"),fallback=document.getElementById("copyFallback");
+function answers(){return Q.map(function(q){var el=form.querySelector('input[name="'+q.key+'"]:checked');return el?Number(el.value):null;});}
+function render(){var a=answers(),done=a.filter(function(v){return v!==null;}).length;barFill.style.width=(done/Q.length*100)+"%";rows.innerHTML="";
+Q.forEach(function(q,i){var v=a[i],row=document.createElement("div");row.className="row";
+var pill=v===null?'<span class="pill sx">Nog open</span>':'<span class="pill s'+v+'">'+ST[v]+'</span>';
+var sub=v===null?"":(v<3?q.step:"Hier staan jullie goed. Houd het vast en deel wat werkt.");
+row.innerHTML='<span class="n">'+(i+1)+'</span><div class="t"><div class="th"><b>'+q.title+'</b>'+pill+'</div>'+(sub?'<span>'+sub+'</span>':'')+'</div>';rows.appendChild(row);});
+if(done<Q.length){progress.textContent=done===0?"Beantwoord de vijf vragen hierboven. Je uitkomst verschijnt hier.":done+" van de 5 vragen beantwoord.";firstStep.hidden=true;copyBtn.disabled=true;return;}
+var t=a.reduce(function(s,v){return s+v;},0);
+progress.textContent=(t<=5?"Startfase: AI is in jullie organisatie nog geen HR-onderwerp.":t<=10?"Op weg: de basis is er deels, nu scherp maken.":"Voorloper: HR heeft de regie, nu doorpakken.")+" ("+t+" van 15 punten)";
+var min=Math.min.apply(null,a),idx=a.indexOf(min);
+if(min===3){document.getElementById("fsTitle").textContent="Deel wat werkt";document.getElementById("fsText").textContent="Op alle vijf vragen staan jullie er goed voor. Maak je aanpak zichtbaar voor andere organisaties en blijf toetsen of de afspraken in de praktijk leven.";}
+else{document.getElementById("fsTitle").textContent=(idx+1)+". "+Q[idx].title;document.getElementById("fsText").textContent=Q[idx].step;}
+firstStep.hidden=false;copyBtn.disabled=false;}
+function summary(){var a=answers(),l=["AI-jaarplancheck voor HR","Ontbijtsessie Q-Logic, 12 november 2026",""];
+Q.forEach(function(q,i){l.push((i+1)+". "+q.title+" "+(a[i]===null?"nog open":ST[a[i]]+" ("+q.opts[a[i]]+")"));if(a[i]!==null&&a[i]<3)l.push("   Stap: "+q.step);});
+var own=document.getElementById("eigenStap").value.trim();l.push("");l.push("Eerste stap: "+document.getElementById("fsTitle").textContent+". "+document.getElementById("fsText").textContent);
+if(own)l.push("Mijn eigen stap: "+own);l.push("","Contact: Michael Salmagne, Black Elephant, info@blackelephant.nl");return l.join("\n");}
+function copyText(text){var ok=function(){copyStatus.textContent="Gekopieerd. Plak het in een mail of in je jaarplan.";fallback.hidden=true;};
+var fail=function(){fallback.value=text;fallback.hidden=false;fallback.focus();fallback.select();copyStatus.textContent="Kopiëren lukte niet automatisch. Selecteer de tekst en kopieer hem zelf.";};
+try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(ok,fail);else fail();}catch(e){fail();}}
+form.addEventListener("change",render);form.addEventListener("submit",function(e){e.preventDefault();});
+copyBtn.addEventListener("click",function(){copyText(summary());});
+document.getElementById("resetBtn").addEventListener("click",function(){form.reset();copyStatus.textContent="";fallback.hidden=true;render();window.scrollTo({top:0,behavior:"smooth"});});
+document.getElementById("mailCopy").addEventListener("click",function(){try{navigator.clipboard.writeText("info@blackelephant.nl").then(function(){copyStatus.textContent="Adres gekopieerd.";},sel);}catch(e){sel();}});
+function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("mailAddr"));var s=window.getSelection();s.removeAllRanges();s.addRange(r);copyStatus.textContent="Adres geselecteerd. Kopieer het met Cmd+C.";}
+render();})();
+</script>
+</body>
+</html>
