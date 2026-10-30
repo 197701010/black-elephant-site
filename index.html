@@ -1,168 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Black Elephant · AI-transformatie</title>
-<meta name="description" content="Black Elephant helpt organisaties van AI-strategie naar werkend resultaat: strategie en transformatie, keynotes, workshops en zelfgebouwde AI-oplossingen.">
-<meta property="og:title" content="Black Elephant · AI-transformatie">
-<meta property="og:description" content="Van AI-strategie naar werkend resultaat. Strategie, keynotes, workshops en AI-oplossingen.">
-<meta property="og:url" content="https://blackelephant.nl/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Elephant</title>
+<meta name="description" content="Black Elephant — AI Transformatie Consultancy">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0B0B0C;--ink-2:#141416;--ink-3:#1C1C1F;--line:#2A2A2E;--paper:#F4F2EE;--paper-2:#E9E6E0;--muted:#A3A09A;--muted-dark:#5C5A56;--star:#F2B544;--star-soft:rgba(242,181,68,.12);--display:"Poppins","Segoe UI",Arial,sans-serif;--body:"Space Grotesk","Segoe UI",Arial,sans-serif;color-scheme:dark}
-*,*::before,*::after{box-sizing:border-box}
-[hidden]{display:none!important}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-img{max-width:100%}
-.wrap{max-width:1140px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
-.star{color:var(--star)}
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:16px;text-decoration:none;border-radius:999px;padding:14px 24px;border:1.5px solid transparent;transition:transform .15s,background .15s,color .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn:focus-visible,a:focus-visible{outline:2px solid var(--star);outline-offset:3px}
-.btn-star{background:var(--star);color:var(--ink)}
-.btn-line{border-color:var(--line);color:var(--paper)}
-.btn-line:hover{border-color:var(--paper)}
-nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(11,11,12,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
-.brand img{display:block;height:46px;width:auto}
-.links{display:flex;gap:28px;align-items:center;font-size:15px}
-.links a{text-decoration:none;color:var(--muted)}
-.links a:hover{color:var(--paper)}
-.links .btn{padding:10px 18px;font-size:15px;color:var(--ink)}
-@media (max-width:820px){.links a:not(.btn){display:none}}
-.hero .wrap{padding-block:96px 88px;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:end}
-.hero h1{font-size:clamp(40px,6.4vw,78px)}
-.hero h1 em{font-style:normal;color:var(--star)}
-.hero .lede{font-size:clamp(18px,1.6vw,21px);color:var(--paper-2);max-width:56ch;margin:28px 0 36px}
-.ctas{display:flex;flex-wrap:wrap;gap:14px}
-.hero aside{border-left:1px solid var(--line);padding-left:28px;display:grid;gap:22px}
-.fact b{display:block;font-family:var(--display);font-size:28px;color:var(--paper);line-height:1.1}
-.fact span{font-size:15px;color:var(--muted)}
-@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;padding-block:64px 56px;gap:40px}.hero aside{border-left:0;border-top:1px solid var(--line);padding:28px 0 0;grid-template-columns:repeat(2,1fr)}}
-.band{background:var(--paper);color:var(--ink)}
-.band .wrap{padding-block:72px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start}
-.band .mark{font-family:var(--display);font-size:64px;line-height:.8;color:var(--star)}
-.band blockquote{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(24px,3vw,36px);line-height:1.25;max-width:30ch}
-.band p{margin:18px 0 0;color:var(--muted-dark);max-width:62ch}
-@media (max-width:600px){.band .wrap{grid-template-columns:1fr;gap:8px}}
-section.block .wrap{padding-block:96px}
-.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
-.head h2{font-size:clamp(32px,4vw,48px)}
-.head p{margin:0;color:var(--muted);max-width:52ch}
-@media (max-width:820px){.head{grid-template-columns:1fr;gap:16px}section.block .wrap{padding-block:72px}}
-.services{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.svc{background:var(--ink-2);padding:36px 32px 34px;display:grid;gap:12px;align-content:start;min-width:0}
-.svc .tag{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--star)}
-.svc h3{font-size:26px}
-.svc p{margin:0;color:var(--paper-2)}
-.svc ul{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:6px;color:var(--muted);font-size:15px}
-.svc li::before{content:"✦";color:var(--star);margin-right:10px;font-size:12px}
-@media (max-width:760px){.services{grid-template-columns:1fr}}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.step{border-top:2px solid var(--paper);padding-top:22px;display:grid;gap:10px}
-.step .n{font-family:var(--display);font-size:14px;color:var(--star);letter-spacing:.1em}
-.step h3{font-size:24px}
-.step p{margin:0;color:var(--muted)}
-@media (max-width:760px){.steps{grid-template-columns:1fr;gap:36px}}
-.tool{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;background:var(--ink-3);border:1px solid var(--line);border-radius:24px;padding:44px}
-.tool h3{font-size:clamp(26px,3vw,34px);margin-bottom:14px}
-.tool p{margin:0 0 26px;color:var(--paper-2)}
-.mini{display:grid;gap:10px}
-.mini div{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:15px}
-.mini span:last-child{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
-.p0{background:rgba(229,139,126,.15);color:#E58B7E}.p1{background:var(--star-soft);color:var(--star)}.p2{background:rgba(125,183,216,.15);color:#7DB7D8}
-@media (max-width:820px){.tool{grid-template-columns:1fr;padding:28px}}
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
-.about h2{font-size:clamp(32px,4vw,48px)}
-.about .txt p{margin:0 0 18px;color:var(--paper-2)}
-.creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.creds span{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px;color:var(--muted)}
-@media (max-width:820px){.about{grid-template-columns:1fr;gap:24px}}
-.contact{border-top:1px solid var(--line)}
-.contact .wrap{padding-block:96px}
-.contact h2{font-size:clamp(40px,6vw,72px);max-width:16ch}
-.contact p{color:var(--paper-2);max-width:52ch;margin:24px 0 32px}
-.mailrow{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-.mailrow code{font-family:var(--body);font-size:18px;font-weight:600;color:var(--paper);user-select:all}
-footer{border-top:1px solid var(--line)}
-footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:14px;color:var(--muted)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    background:#fff;
+    color:#171717;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:40px 24px;
+  }
+  .mail{
+    margin-top:48px;
+    font-size:15px;
+    color:#999;
+    text-decoration:none;
+    letter-spacing:0.5px;
+    transition:color .15s ease;
+  }
+  .mail:hover{color:#171717}
 </style>
 </head>
 <body>
-<nav class="top" aria-label="Hoofdmenu"><div class="wrap">
-<a class="brand" href="/" aria-label="Black Elephant, naar de homepage"><img src="/aicheck/logo-white.svg" alt="Black Elephant"></a>
-<div class="links"><a href="#diensten">Diensten</a><a href="#aanpak">Aanpak</a><a href="#tools">Tools</a><a href="#over">Over</a><a class="btn btn-star" href="#contact">Contact</a></div>
-</div></nav>
-<header class="hero"><div class="wrap">
-<div>
-<p class="eyebrow">AI-transformatie <span class="star">✦</span> Keynotes <span class="star">✦</span> Workshops <span class="star">✦</span> AI-oplossingen</p>
-<h1>Bij AI is de olifant in de kamer <em>zelden de technologie.</em></h1>
-<p class="lede">De meeste AI-trajecten lopen niet vast op software, maar op mensen, rollen en regie. Black Elephant helpt organisaties van AI-ambitie naar werkend resultaat. We benoemen wat iedereen al ziet, en bouwen daarna mee aan wat werkt.</p>
-<div class="ctas"><a class="btn btn-star" href="#contact">Plan een kennismaking</a><a class="btn btn-line" href="/aicheck/">Doe de AI-jaarplancheck</a></div>
-</div>
-<aside aria-label="Achtergrond">
-<div class="fact"><b>15+ jaar</b><span>financiële dienstverlening, van verzekeraar tot bank</span></div>
-<div class="fact"><b>INSEAD</b><span>AI &amp; transformatie</span></div>
-<div class="fact"><b>TEDxHaarlem</b><span>spreker, oktober 2026</span></div>
-<div class="fact"><b>Bouwt zelf</b><span>agents, assistenten en tools die in de praktijk draaien</span></div>
-</aside>
-</div></header>
-<div class="band"><div class="wrap">
-<span class="mark" aria-hidden="true">“</span>
-<div><blockquote>Nieuwe technologie creëert zelden nieuwe menselijke dilemma’s. Ze geeft oude dilemma’s alleen nieuwe vormen.</blockquote>
-<p>Daarom kijken we naar beide: naar wat AI kan, en naar wat het in een organisatie raakt. Wie beslist, wie eigenaar is, welk werk verandert en wie het gesprek voert.</p></div>
-</div></div>
-<section class="block" id="diensten"><div class="wrap">
-<div class="head"><div><p class="eyebrow">Diensten</p><h2>Alles wat AI in een organisatie raakt.</h2></div><p>Van de eerste inspiratiesessie tot een werkende oplossing in je eigen processen. Los inzetbaar, of als één traject.</p></div>
-<div class="services">
-<article class="svc"><span class="tag">Strategie &amp; transformatie</span><h3>Van PowerPoint naar praktijk.</h3><p>Als adviseur of interim: richting kiezen, prioriteren en zorgen dat het ook gebeurt.</p><ul><li>AI-strategie en roadmap</li><li>Governance, AI Act en spelregels</li><li>Adoptie, champions en verandering</li></ul></article>
-<article class="svc"><span class="tag">Keynotes &amp; sessies</span><h3>Een verhaal dat blijft hangen.</h3><p>Lezingen en ontbijtsessies over AI, leiderschap en de mens in het midden, met verhalen en mythologie als spiegel.</p><ul><li>Keynotes voor directies en congressen</li><li>Interactieve sessies voor teams en klanten</li><li>Op maat van de zaal en het moment</li></ul></article>
-<article class="svc"><span class="tag">Workshops &amp; training</span><h3>Teams die het zelf kunnen.</h3><p>Praktisch, met de eigen organisatie als casus. Zodat mensen weten wat ze ermee kunnen en mogen.</p><ul><li>AI-geletterdheid voor medewerkers</li><li>HR en management als regisseur</li><li>AI-klaar in 90 dagen</li></ul></article>
-<article class="svc"><span class="tag">AI-oplossingen</span><h3>Werkende tools, geen demo’s.</h3><p>We bouwen agents, assistenten en apps die in jouw processen draaien en die je mensen echt gebruiken.</p><ul><li>AI-agents en assistenten</li><li>Prototypes binnen weken</li><li>Van proef naar productie</li></ul></article>
-</div>
-</div></section>
-<section class="block" id="aanpak" style="background:var(--ink-2)"><div class="wrap">
-<div class="head"><div><p class="eyebrow">Aanpak</p><h2>Eerst zien. Dan kiezen. Dan bouwen.</h2></div><p>Geen groot plan vooraf. Wel een scherpe blik op wat er al gebeurt, en snel iets werkends.</p></div>
-<div class="steps">
-<div class="step"><span class="n">01</span><h3>Zien wat er is</h3><p>Wie gebruikt AI al, waarvoor, en waar wringt het? We maken zichtbaar wat er onder de oppervlakte speelt.</p></div>
-<div class="step"><span class="n">02</span><h3>Kiezen wat telt</h3><p>Eén focus, één eigenaar, een paar heldere afspraken. Wie de regie pakt, bepaalt het tempo.</p></div>
-<div class="step"><span class="n">03</span><h3>Bouwen en borgen</h3><p>Een eerste toepassing die werkt, mensen die ermee kunnen, en een ritme om door te gaan.</p></div>
-</div>
-</div></section>
-<section class="block" id="tools"><div class="wrap">
-<div class="tool">
-<div><p class="eyebrow">Gratis tool</p><h3>AI-jaarplancheck voor HR</h3><p>Vijf vragen, drie minuten. Je ziet waar je organisatie staat en krijgt een concrete eerste stap voor het komende kwartaal.</p><a class="btn btn-star" href="/aicheck/">Start de check</a></div>
-<div class="mini" aria-hidden="true">
-<div><span>1. Wat weten we?</span><span class="p1">Eerste aanzet</span></div>
-<div><span>2. Wat spreken we af?</span><span class="p0">Nog niet gestart</span></div>
-<div><span>3. Wat verandert er?</span><span class="p2">Op weg</span></div>
-<div><span>4. Wie leidt dit?</span><span class="p1">Eerste aanzet</span></div>
-<div><span>5. Waar beginnen we?</span><span class="p1">Eerste aanzet</span></div>
-</div>
-</div>
-</div></section>
-<section class="block" id="over" style="background:var(--ink-2)"><div class="wrap about">
-<div><p class="eyebrow">Over</p><h2>Michael Salmagne</h2></div>
-<div class="txt">
-<p>Michael begon als management trainee bij Delta Lloyd en werkte daarna ruim vijftien jaar in senior commerciële rollen in de financiële sector, onder meer bij ABN AMRO en Nationale-Nederlanden. Hij zette een eigen verzekeraar op en weet dus hoe het is om zelf te moeten leveren.</p>
-<p>Na een programma in AI en transformatie aan INSEAD richtte hij Black Elephant op. Hij helpt verzekeraars, pensioenuitvoerders en andere organisaties de stap te zetten van AI-ambitie naar AI-praktijk. Als adviseur, als spreker en als bouwer.</p>
-<div class="creds"><span>Delta Lloyd</span><span>ABN AMRO</span><span>Nationale-Nederlanden</span><span>INSEAD</span><span>TEDxHaarlem 2026</span></div>
-</div>
-</div></section>
-<section class="contact" id="contact"><div class="wrap">
-<p class="eyebrow">Contact</p>
-<h2>Wat is de olifant in jouw kamer?</h2>
-<p>Een keynote, een workshop, een traject of een eerste verkennend gesprek. Mail kort waar je staat, dan plannen we een kennismaking.</p>
-<div class="mailrow"><a class="btn btn-star" href="mailto:info@blackelephant.nl?subject=Kennismaking%20Black%20Elephant">Mail Black Elephant</a><code>info@blackelephant.nl</code></div>
-</div></section>
-<footer><div class="wrap"><span>© 2026 Black Elephant · Haarlem</span><span><a href="/aicheck/">AI-jaarplancheck</a></span></div></footer>
+  <svg viewBox="0 0 595.28 841.89" width="240" xmlns="http://www.w3.org/2000/svg">
+    <defs><style>.cls-1{fill:#1d1d1b}.cls-2{fill:#ffb71e}</style></defs>
+    <path class="cls-2" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.44-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.92,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/>
+    <g>
+      <g>
+        <path class="cls-1" d="M305.64,691.18c-3.18,0-6.37-2.55-6.37-7.32v-16.07h-21.96v23.39h-4.22c-3.66,0-6.6-2.55-6.6-7.32v-47.19h5.33c3.1,0,5.41,2.63,5.41,5.73v16.24h22.04v-21.96h4.93c2.78,0,5.81,2.23,5.81,5.73v48.78h-4.38Z"/>
+        <path class="cls-1" d="M414.84,691.18c-4.22,0-8.83-1.27-15.6-14.41l-9.95-19.34c-1.51-3.02-2.7-5.09-3.66-6.37v40.11h-4.3c-3.18,0-6.6-2.39-6.6-7.16v-47.34h5.41c7.16,0,11.78,3.82,15.44,11.14l9.55,19.1c1.11,2.23,2.39,5.49,3.18,7.32v-37.55h4.85c2.78,0,5.97,2.78,5.97,6.28v48.22h-4.3Z"/>
+        <path class="cls-1" d="M462.68,646.22h-10.02v44.96h-4.38c-3.82,0-6.61-2.47-6.61-7.32v-37.64h-15.67v-3.58c0-2.62,2.15-5.96,6.6-5.96h36.6v3.42c0,2.63-2.94,6.13-6.53,6.13Z"/>
+      </g>
+      <path class="cls-1" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.82-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.53-2.34-11.49-1.66-2.18-3.49-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/>
+      <path class="cls-1" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.87,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/>
+      <path class="cls-1" d="M416.57,540.36v27.78c7.92-11.68,15.84-23.88,25.58-34.27,4.67-5.06,6.62-5.45,13.5-5.45h12.2v.65c-6.88,7.01-24.54,28.17-33.49,40.9,8.31,12.07,22.11,31.45,33.21,41.72h0c-1.08,2.42-2.83,6.06-9.97,6.06-4.28,0-9.35-2.21-12.46-5.72-10.91-12.59-19.73-25.44-28.56-39.59v45.24h-5.84c-8.57,0-11.68-6.29-11.68-12.39v-76.86h5.71c8.57,0,11.81,5.71,11.81,11.94Z"/>
+      <path class="cls-1" d="M383.53,594.11h-.2c-4.8,5.06-14.67,8.57-23.5,8.57-16.75,0-28.3-10.52-28.3-31.42,0-17.27,11.81-28.69,27.65-28.69,7.63,0,18.75,2.33,24.35,9.54v-11.82c-2.56-8.82-12.09-13.17-24.48-13.17-27.13,0-45.44,19.34-45.44,46.74s20.25,44.27,43.88,44.27c11.09,0,23.62-4.22,26.04-13.95v-10.07Z"/>
+      <path class="cls-1" d="M143.93,681.7v-37.45c.01-3.96-2.05-7.59-7.5-7.59h-3.63v46.59c0,3.88,1.98,7.88,7.43,7.88h11.39c.37.01.72.04,1.1.04h4.22c.8,0,1.54-.03,2.24-.08h1.78c4.94,0,7.24-1.87,7.31-5.58.05-.38.08-.77.09-1.18v-2.62h-24.43Z"/>
+      <path class="cls-1" d="M184.27,601.41l-.14-60.51c0-8.82-3.76-12.98-11.03-12.98h-7.08v77.35h0c0,6.1,3.12,12.39,11.68,12.39h5.84v-.02h18.01s3.6-.01,3.6-.01c14.67,0,18.56-5.06,18.56-12.85v-3.27h-.03l-39.44-.1Z"/>
+      <path class="cls-1" d="M283.04,536.59h0c-3.27-6.69-5.74-8.67-11.04-8.67h-10.41c-11.08,12.34-24.28,49.52-28.84,69.92-.83,3.39-3.18,13.07-4.46,19.79h10.92s.05,0,.07,0h6.88c1.3-7.53,2.86-15.48,4.67-23.01h35.44c.79,3.26,1.48,7.13,2.16,11.91h0s.06.39.15,1.02c.06.4.11.8.17,1.21,0,.03.01.07.02.1.38,2.66.96,6.89,1.14,8.83h10.6c.06,0,.12,0,.18,0h7.27c-3.5-28.11-16.88-66.71-24.93-81.12ZM254.74,580.47c2.99-12.34,8.57-26.48,13.76-35.7,4.67,8.31,10.78,23.24,13.76,35.7h-27.52Z"/>
+      <path class="cls-1" d="M366.31,691.08c-2.13-17.05-10.23-40.45-15.12-49.2-1.98-4.05-3.48-5.26-6.7-5.26h-6.31c-6.72,7.48-14.72,30.03-17.49,42.4-.51,2.05-1.93,7.93-2.7,12h6.62s.03,0,.04,0h4.17c.79-4.56,1.73-9.39,2.83-13.96h21.49c.55,2.28,1.02,5.04,1.5,8.58,0,.01,0,.02,0,.03.23,1.61.58,4.2.69,5.38h6.48s.04,0,.06,0h4.41ZM334.03,668.49c1.81-7.48,5.2-16.06,8.35-21.65,2.83,5.04,6.53,14.09,8.35,21.65h-16.69Z"/>
+      <path class="cls-1" d="M183.97,681.71v-13.98h0v-.02h14.38c4.38,0,6.6-1.43,6.6-5.01v-3.9h-20.98v-.02h0v-12.72h19.61c4.91-.04,7.18-1.94,7.18-5.73v-3.66h-30.5c-5.45,0-7.43,4-7.43,7.88v38.65c0,3.88,1.98,7.88,7.43,7.88h2.42s.04,0,.07,0h20.7c4.94,0,7.24-1.87,7.31-5.58,0,0,0,0,0,0,.05-.38.08-.76.09-1.18v-2.61h-26.87Z"/>
+      <path class="cls-1" d="M96.87,681.71v-13.98h0v-.02h14.38c4.38,0,6.6-1.43,6.6-5.01v-3.9h-20.98v-.02h0v-12.72h19.61c4.91-.04,7.18-1.94,7.18-5.73v-3.66h-30.5c-5.45,0-7.43,4-7.43,7.88v38.65c0,3.88,1.98,7.88,7.43,7.88h2.42s.04,0,.07,0h20.7c4.94,0,7.24-1.87,7.31-5.58,0,0,0,0,0,0,.05-.38.08-.76.09-1.18v-2.61h-26.87Z"/>
+      <path class="cls-1" d="M134.84,570.35c8.83-2.6,14.15-8.96,14.15-18.83,0-14.54-12.07-23.5-29.08-23.5h-1.55l-.1-.09h-32.62v4.11s0,0-.01,0v64.52c0,.29.02.56.03.84v7.86c0,6.1,3.12,12.39,11.68,12.39h5.84v-.02h6.77c.16,0,.31.02.47.02h9.61c16.23,0,30.51-9.92,30.51-27.84,0-7.8-6.75-17.01-15.71-19.48ZM103.16,563.86v-20.12s0,0,.01,0v-.9h7.52s.09,0,.13,0h6.62c6.62,0,13.76,2.46,13.76,10.26s-6.49,10.77-14.41,10.77h-13.63ZM118.35,601.51h-7.27s-.04,0-.06,0h-7.72v-5.51s0-.04,0-.06v-18.31h14.15c10.39,0,15.19,3.12,15.19,12.72,0,6.75-4.67,11.17-14.28,11.17Z"/>
+      <path class="cls-1" d="M240.69,636.28h-1.49v-.02h-18.79v2.56s-.01,0-.01,0v44.56c0,5.81,3.58,7.8,6.6,7.8h4.3v-21.17c2.23,1.19,5.33,1.83,9.15,1.83,10.42,0,18.38-7.08,18.38-18.62,0-10.9-7.56-16.95-18.14-16.95ZM239.02,662.62c-2.78,0-5.81-.39-7.72-.95v-15.44s.01,0,.02,0v-.68h4.17c.11,0,.24-.02.34-.02h3.5c5.73,0,8.28,2.46,8.28,8.67,0,5.25-3.02,8.44-8.59,8.44Z"/>
+    </g>
+  </svg>
+  <a class="mail" href="mailto:hello@blackelephant.nl">hello@blackelephant.nl</a>
 </body>
 </html>
