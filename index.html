@@ -34,8 +34,8 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;margin:0;le
 
 /* nav */
 .navwrap{position:sticky;top:max(12px,env(safe-area-inset-top,0px));z-index:30;padding:12px max(16px,env(safe-area-inset-left,0px)) 0 max(16px,env(safe-area-inset-right,0px))}
-nav.top{max-width:1180px;margin:0 auto;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;box-shadow:0 6px 24px rgba(14,14,16,.06);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 8px 8px 22px}
-.brand img{display:block;height:40px;width:auto}
+nav.top{max-width:1180px;margin:0 auto;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;box-shadow:0 6px 24px rgba(14,14,16,.06);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:6px 10px 6px 18px}
+.brand img{display:block;height:62px;width:auto}
 .links{display:flex;gap:26px;font-size:15px}
 .links a{text-decoration:none;color:var(--ink-2)}
 .links a:hover{color:var(--ink)}
@@ -60,7 +60,11 @@ nav .btn{padding:11px 20px;font-size:15px}
 @media (max-width:560px){.routes{grid-template-columns:1fr}}
 
 /* proof */
-.proof .wrap{padding-block:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proof .wrap{padding-block:36px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.plabel{margin:0 0 18px;text-align:center;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 44px}
+.logos span{font-family:var(--display);font-weight:600;font-size:20px;color:#8A8680;letter-spacing:-.01em;white-space:nowrap}
+.logos img{height:30px;width:auto;filter:grayscale(1);opacity:.7}
 .proof b{display:block;font-family:var(--display);font-size:22px;font-weight:600}
 .proof span{font-size:14.5px;color:var(--muted)}
 @media (max-width:800px){.proof .wrap{grid-template-columns:repeat(2,1fr)}}
@@ -182,18 +186,22 @@ footer a{text-decoration:none}
 .steps3 div,form.offer{background:var(--deep-2);border-color:rgba(255,255,255,.12)}
 .f input,.f select,.f textarea{background:rgba(0,0,0,.25);border-color:rgba(255,255,255,.18)}
 .steps3 b{color:#fff;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.route:nth-child(1){background:var(--t1)}.route:nth-child(2){background:var(--t2)}.route:nth-child(3){background:var(--t3)}.route:nth-child(4){background:var(--t4)}
-.route:nth-child(1) .ic{color:var(--a1)}.route:nth-child(2) .ic{color:var(--a2)}.route:nth-child(3) .ic{color:var(--a3)}.route:nth-child(4) .ic{color:var(--a4)}
+.route{background:#fff;position:relative;overflow:hidden}
+.route::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--grad);opacity:0;transition:opacity .2s}
+.route:hover::before{opacity:1}
+.route:hover{background:#fff;box-shadow:0 14px 34px rgba(30,27,75,.08)}
+.route .ic{background:var(--bg);border-color:var(--line)}
 .wcard{border-top:4px solid var(--a1)}.wcard:nth-child(2){border-top-color:var(--a2)}.wcard:nth-child(3){border-top-color:var(--a3)}
 .wcard .tag{color:var(--a1)}.wcard:nth-child(2) .tag{color:var(--a2)}.wcard:nth-child(3) .tag{color:var(--a3)}
 .wcard li::before,.acard li::before,.knbox li::before{color:var(--a2)}
 .quote{border-left-color:var(--a2)}
-.proof b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
 .status{color:#FFC8D2}.dlg .status{color:var(--a3)}
 </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4F46E5"/><stop offset=".5" stop-color="#9333EA"/><stop offset="1" stop-color="#E85D75"/></linearGradient></defs></svg>
 <div class="navwrap">
   <nav class="top" aria-label="Hoofdmenu">
     <a class="brand" href="/" aria-label="Black Elephant, naar de homepage"><img src="/assets/logo-black.svg" alt="Black Elephant"></a>
@@ -219,20 +227,18 @@ footer a{text-decoration:none}
     </div>
 
     <div class="routes">
-      <a class="route" href="#keynotes"><div class="top"><span class="ic" aria-hidden="true">✦</span><span>01 · Inspireer</span></div><h3>Ik zoek een spreker</h3><p>Een keynote die je publiek aan het denken zet en in beweging brengt.</p><span class="go">Keynotes</span></a>
-      <a class="route" href="#workshops"><div class="top"><span class="ic" aria-hidden="true">◐</span><span>02 · Leer</span></div><h3>Ik wil een workshop</h3><p>Open workshops en trainingen op maat, met je eigen organisatie als casus.</p><span class="go">Workshops</span></a>
-      <a class="route" href="#advies"><div class="top"><span class="ic" aria-hidden="true">◇</span><span>03 · Bouw</span></div><h3>Ik wil AI implementeren</h3><p>Strategie, governance en werkende AI-oplossingen in je eigen processen.</p><span class="go">Strategie &amp; oplossingen</span></a>
-      <a class="route" href="#advies"><div class="top"><span class="ic" aria-hidden="true">◎</span><span>04 · Versterk</span></div><h3>Ik zoek een interim</h3><p>Een ervaren transformatielead die het programma trekt en laat landen.</p><span class="go">Interim management</span></a>
+      <a class="route" href="#keynotes"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></span><span>01 · Inspireer</span></div><h3>Ik zoek een spreker</h3><p>Een keynote die je publiek aan het denken zet en in beweging brengt.</p><span class="go">Keynotes</span></a>
+      <a class="route" href="#workshops"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/></svg></span><span>02 · Leer</span></div><h3>Ik wil een workshop</h3><p>Open workshops en trainingen op maat, met je eigen organisatie als casus.</p><span class="go">Workshops</span></a>
+      <a class="route" href="#advies"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></span><span>03 · Bouw</span></div><h3>Ik wil AI implementeren</h3><p>Strategie, governance en werkende AI-oplossingen in je eigen processen.</p><span class="go">Strategie &amp; oplossingen</span></a>
+      <a class="route" href="#advies"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><span>04 · Versterk</span></div><h3>Ik zoek een interim</h3><p>Een ervaren transformatielead die het programma trekt en laat landen.</p><span class="go">Interim management</span></a>
     </div>
   </div>
 </header>
 
 <div class="proof">
   <div class="wrap">
-    <div><b>TEDxHaarlem</b><span>spreker 2026, uitverkochte Stadsschouwburg</span></div>
-    <div><b>15+ jaar</b><span>ervaring in de financiële sector</span></div>
-    <div><b>INSEAD</b><span>AI &amp; transformatie</span></div>
-    <div><b>Eén partner</b><span>van inspiratie tot implementatie</span></div>
+    <p class="plabel">Opdrachtgevers en podia</p>
+    <div class="logos"><span>Univé</span><span>Athora</span><span>Zwitserleven</span><span>Reaal</span><span>ABN AMRO</span><span>Yellow Dress</span><span>Meesman Indexbeleggen</span><span>TEDxHaarlem</span></div>
   </div>
 </div>
 
