@@ -1,59 +1,461 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Black Elephant</title>
-<meta name="description" content="Black Elephant — AI Transformatie Consultancy">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Black Elephant · AI-transformatie, keynotes en workshops</title>
+<meta name="description" content="Black Elephant helpt organisaties van AI-ambitie naar AI-praktijk: keynotes, open workshops, strategie, AI-oplossingen en interim management.">
+<meta property="og:title" content="Black Elephant · Van AI-ambitie naar AI-praktijk">
+<meta property="og:description" content="Keynotes, open workshops, strategie, AI-oplossingen en interim management.">
+<meta property="og:url" content="https://blackelephant.nl/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{
-    font-family:'Space Grotesk',system-ui,sans-serif;
-    background:#fff;
-    color:#171717;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:40px 24px;
-  }
-  .mail{
-    margin-top:48px;
-    font-size:15px;
-    color:#999;
-    text-decoration:none;
-    letter-spacing:0.5px;
-    transition:color .15s ease;
-  }
-  .mail:hover{color:#171717}
+:root{--bg:#FAF8F4;--card:#F2EFE9;--card-2:#FFFFFF;--ink:#0E0E10;--ink-2:#3B3A37;--muted:#6E6B66;--line:#E3DFD7;--star:#F2B544;--star-ink:#8A5A00;--dark:#0E0E10;--dark-2:#1A1A1D;--display:"Poppins","Segoe UI",Arial,sans-serif;--body:"Space Grotesk","Segoe UI",Arial,sans-serif;--r:22px;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;margin:0;letter-spacing:-.02em;text-wrap:balance}
+.label{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;display:flex;align-items:center;gap:10px}
+.label::before{content:"✦";color:var(--star);font-size:13px}
+.hl{background:linear-gradient(transparent 58%,var(--star) 58%,var(--star) 92%,transparent 92%);padding:0 .06em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:600;font-size:16px;text-decoration:none;border-radius:999px;padding:14px 24px;border:1.5px solid transparent;cursor:pointer;transition:transform .15s,background .15s,border-color .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--star);outline-offset:3px}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-star{background:var(--star);color:var(--ink)}
+.arrow::after{content:"↗";font-size:15px}
+
+/* nav */
+.navwrap{position:sticky;top:max(12px,env(safe-area-inset-top,0px));z-index:30;padding:12px max(16px,env(safe-area-inset-left,0px)) 0 max(16px,env(safe-area-inset-right,0px))}
+nav.top{max-width:1180px;margin:0 auto;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;box-shadow:0 6px 24px rgba(14,14,16,.06);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 8px 8px 22px}
+.brand img{display:block;height:40px;width:auto}
+.links{display:flex;gap:26px;font-size:15px}
+.links a{text-decoration:none;color:var(--ink-2)}
+.links a:hover{color:var(--ink)}
+nav .btn{padding:11px 20px;font-size:15px}
+@media (max-width:900px){.links{display:none}}
+
+/* hero */
+.hero .wrap{padding-block:88px 40px}
+.hero h1{font-size:clamp(42px,7vw,92px);max-width:13ch}
+.hero .lede{font-size:clamp(18px,1.7vw,21px);color:var(--ink-2);max-width:60ch;margin:26px 0 34px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.routes{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+.route{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px 24px;display:grid;gap:12px;align-content:start;text-decoration:none;min-width:0;transition:background .15s,transform .15s}
+.route:hover{background:#fff;transform:translateY(-2px)}
+.route .top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.route .ic{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:18px;color:var(--star-ink)}
+.route h3{font-size:24px;margin-top:10px}
+.route p{margin:0;color:var(--ink-2);font-size:15.5px}
+.route .go{margin-top:8px;font-weight:600;font-size:15px}
+.route .go::after{content:" ↗"}
+@media (max-width:1000px){.routes{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.routes{grid-template-columns:1fr}}
+
+/* proof */
+.proof .wrap{padding-block:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proof b{display:block;font-family:var(--display);font-size:22px;font-weight:600}
+.proof span{font-size:14.5px;color:var(--muted)}
+@media (max-width:800px){.proof .wrap{grid-template-columns:repeat(2,1fr)}}
+
+section.block .wrap{padding-block:96px}
+.head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:44px}
+.head h2{font-size:clamp(34px,4.4vw,56px)}
+.head p{margin:0;color:var(--ink-2)}
+@media (max-width:860px){.head{grid-template-columns:1fr;gap:16px}section.block .wrap{padding-block:72px}}
+
+/* check band */
+.check{background:var(--dark);color:#fff}
+.check .wrap{padding-block:72px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.check h2{font-size:clamp(30px,3.6vw,46px)}
+.check p{color:#C9C6C0;margin:18px 0 28px;max-width:52ch}
+.check .label{color:#A3A09A}
+.steps3{display:grid;gap:10px}
+.steps3 div{display:flex;gap:14px;align-items:center;background:var(--dark-2);border:1px solid #2C2C30;border-radius:14px;padding:14px 18px;font-size:15.5px}
+.steps3 b{font-family:var(--display);color:var(--star);font-size:14px;min-width:24px}
+@media (max-width:860px){.check .wrap{grid-template-columns:1fr}}
+
+/* workshops */
+.ws{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.wcard{background:var(--card-2);border:1px solid var(--line);border-radius:var(--r);padding:28px 26px 26px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.wcard .tag{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--star-ink);font-weight:600}
+.wcard h3{font-size:25px}
+.wcard p{margin:0;color:var(--ink-2);font-size:15.5px}
+.wcard ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px;color:var(--ink-2)}
+.wcard li::before{content:"✦";color:var(--star);margin-right:10px;font-size:11px}
+.meta{margin-top:auto;border-top:1px solid var(--line);padding-top:16px;display:grid;gap:6px;font-size:14.5px}
+.meta div{display:flex;justify-content:space-between;gap:12px}
+.meta span:first-child{color:var(--muted)}
+.price{font-family:var(--display);font-size:26px;font-weight:600}
+.price small{font-family:var(--body);font-size:13px;color:var(--muted);font-weight:400}
+.wcard .btn{width:100%}
+.note{margin-top:22px;font-size:15px;color:var(--ink-2);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+@media (max-width:960px){.ws{grid-template-columns:1fr}}
+
+/* keynotes */
+.kn{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.talks{display:grid;gap:12px}
+.talk{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.talk h3{font-size:21px;margin-bottom:6px}
+.talk p{margin:0;color:var(--ink-2);font-size:15.5px}
+.knbox{background:var(--dark);color:#fff;border-radius:var(--r);padding:34px 32px;display:flex;flex-direction:column;gap:16px}
+.knbox h3{font-size:30px}
+.knbox p{margin:0;color:#C9C6C0}
+.knbox .price{color:#fff}
+.knbox .price small{color:#A3A09A}
+.knbox ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;color:#E6E3DD;font-size:15.5px}
+.knbox li::before{content:"✦";color:var(--star);margin-right:10px;font-size:11px}
+@media (max-width:860px){.kn{grid-template-columns:1fr}}
+
+/* advies */
+.adv{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.acard{background:var(--card-2);border:1px solid var(--line);border-radius:var(--r);padding:32px 30px;display:flex;flex-direction:column;gap:14px}
+.acard h3{font-size:28px}
+.acard p{margin:0;color:var(--ink-2)}
+.acard ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:7px;color:var(--ink-2);font-size:15.5px}
+.acard li::before{content:"✦";color:var(--star);margin-right:10px;font-size:11px}
+.acard .foot{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line)}
+.acard .foot span{font-size:14.5px;color:var(--muted)}
+@media (max-width:860px){.adv{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px}
+.about h2{font-size:clamp(34px,4.4vw,56px)}
+.about p{margin:0 0 18px;color:var(--ink-2)}
+.quote{margin:8px 0 22px;padding-left:18px;border-left:3px solid var(--star);font-family:var(--display);font-size:20px;line-height:1.35;color:var(--ink)}
+.creds{display:flex;flex-wrap:wrap;gap:8px}
+.creds span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--ink-2)}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:20px}}
+
+/* contact */
+.contact{background:var(--dark);color:#fff}
+.contact .wrap{padding-block:96px;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.contact h2{font-size:clamp(36px,5vw,64px)}
+.contact .intro p{color:#C9C6C0;margin:20px 0}
+.contact .label{color:#A3A09A}
+.contact .direct{display:grid;gap:6px;margin-top:26px;font-size:15.5px;color:#C9C6C0}
+.contact .direct b{color:#fff;font-weight:600}
+form.offer{background:var(--dark-2);border:1px solid #2C2C30;border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f{display:grid;gap:6px;min-width:0}
+.f.full{grid-column:1/-1}
+.f label{font-size:13.5px;color:#C9C6C0}
+.f input,.f select,.f textarea{font:inherit;font-size:16px;color:#fff;background:#0E0E10;border:1px solid #33333A;border-radius:12px;padding:12px 14px;width:100%}
+.f textarea{min-height:110px;resize:vertical}
+.f select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#C9C6C0 50%),linear-gradient(135deg,#C9C6C0 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat}
+form.offer .btn{grid-column:1/-1;justify-self:start}
+.status{grid-column:1/-1;font-size:14.5px;color:var(--star);min-height:1em}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr;gap:32px}form.offer{grid-template-columns:1fr}}
+
+/* dialog */
+dialog{border:0;border-radius:var(--r);padding:0;width:min(560px,calc(100% - 32px));background:#fff;color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.25)}
+dialog::backdrop{background:rgba(14,14,16,.55)}
+.dlg{padding:28px;display:grid;gap:14px}
+.dlg h3{font-size:24px}
+.dlg .sub{margin:0;color:var(--muted);font-size:15px}
+.dlg .f label{color:var(--ink-2)}
+.dlg .f input,.dlg .f select{color:var(--ink);background:var(--bg);border-color:var(--line)}
+.dlg .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dlg .chk{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink-2)}
+.dlg .chk input{margin-top:4px;width:18px;height:18px;accent-color:var(--ink)}
+.dlg .acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.dlg .status{color:var(--star-ink)}
+@media (max-width:560px){.dlg .row{grid-template-columns:1fr}}
+
+footer .wrap{padding-block:30px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:14px;color:var(--muted)}
+footer a{text-decoration:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.route{transition:none}}
+
+/* kleurthema */
+:root{--deep:#1E1B4B;--deep-2:#2A2660;--a1:#4F46E5;--a2:#9333EA;--a3:#E85D75;--a4:#F59E0B;--t1:#EEF0FF;--t2:#F5ECFF;--t3:#FFEEF1;--t4:#FFF5E3;--grad:linear-gradient(90deg,var(--a1),var(--a2) 50%,var(--a3))}
+.hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0}
+.label::before{content:"✦";background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn-dark{background:var(--deep);color:#fff}
+.btn-star{background:var(--grad);color:#fff}
+.check,.contact,.knbox{background:var(--deep)}
+.steps3 div,form.offer{background:var(--deep-2);border-color:rgba(255,255,255,.12)}
+.f input,.f select,.f textarea{background:rgba(0,0,0,.25);border-color:rgba(255,255,255,.18)}
+.steps3 b{color:#fff;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.route:nth-child(1){background:var(--t1)}.route:nth-child(2){background:var(--t2)}.route:nth-child(3){background:var(--t3)}.route:nth-child(4){background:var(--t4)}
+.route:nth-child(1) .ic{color:var(--a1)}.route:nth-child(2) .ic{color:var(--a2)}.route:nth-child(3) .ic{color:var(--a3)}.route:nth-child(4) .ic{color:var(--a4)}
+.wcard{border-top:4px solid var(--a1)}.wcard:nth-child(2){border-top-color:var(--a2)}.wcard:nth-child(3){border-top-color:var(--a3)}
+.wcard .tag{color:var(--a1)}.wcard:nth-child(2) .tag{color:var(--a2)}.wcard:nth-child(3) .tag{color:var(--a3)}
+.wcard li::before,.acard li::before,.knbox li::before{color:var(--a2)}
+.quote{border-left-color:var(--a2)}
+.proof b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.status{color:#FFC8D2}.dlg .status{color:var(--a3)}
 </style>
 </head>
 <body>
-  <svg viewBox="0 0 595.28 841.89" width="240" xmlns="http://www.w3.org/2000/svg">
-    <defs><style>.cls-1{fill:#1d1d1b}.cls-2{fill:#ffb71e}</style></defs>
-    <path class="cls-2" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.44-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.92,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/>
-    <g>
-      <g>
-        <path class="cls-1" d="M305.64,691.18c-3.18,0-6.37-2.55-6.37-7.32v-16.07h-21.96v23.39h-4.22c-3.66,0-6.6-2.55-6.6-7.32v-47.19h5.33c3.1,0,5.41,2.63,5.41,5.73v16.24h22.04v-21.96h4.93c2.78,0,5.81,2.23,5.81,5.73v48.78h-4.38Z"/>
-        <path class="cls-1" d="M414.84,691.18c-4.22,0-8.83-1.27-15.6-14.41l-9.95-19.34c-1.51-3.02-2.7-5.09-3.66-6.37v40.11h-4.3c-3.18,0-6.6-2.39-6.6-7.16v-47.34h5.41c7.16,0,11.78,3.82,15.44,11.14l9.55,19.1c1.11,2.23,2.39,5.49,3.18,7.32v-37.55h4.85c2.78,0,5.97,2.78,5.97,6.28v48.22h-4.3Z"/>
-        <path class="cls-1" d="M462.68,646.22h-10.02v44.96h-4.38c-3.82,0-6.61-2.47-6.61-7.32v-37.64h-15.67v-3.58c0-2.62,2.15-5.96,6.6-5.96h36.6v3.42c0,2.63-2.94,6.13-6.53,6.13Z"/>
-      </g>
-      <path class="cls-1" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.82-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.53-2.34-11.49-1.66-2.18-3.49-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/>
-      <path class="cls-1" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.87,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/>
-      <path class="cls-1" d="M416.57,540.36v27.78c7.92-11.68,15.84-23.88,25.58-34.27,4.67-5.06,6.62-5.45,13.5-5.45h12.2v.65c-6.88,7.01-24.54,28.17-33.49,40.9,8.31,12.07,22.11,31.45,33.21,41.72h0c-1.08,2.42-2.83,6.06-9.97,6.06-4.28,0-9.35-2.21-12.46-5.72-10.91-12.59-19.73-25.44-28.56-39.59v45.24h-5.84c-8.57,0-11.68-6.29-11.68-12.39v-76.86h5.71c8.57,0,11.81,5.71,11.81,11.94Z"/>
-      <path class="cls-1" d="M383.53,594.11h-.2c-4.8,5.06-14.67,8.57-23.5,8.57-16.75,0-28.3-10.52-28.3-31.42,0-17.27,11.81-28.69,27.65-28.69,7.63,0,18.75,2.33,24.35,9.54v-11.82c-2.56-8.82-12.09-13.17-24.48-13.17-27.13,0-45.44,19.34-45.44,46.74s20.25,44.27,43.88,44.27c11.09,0,23.62-4.22,26.04-13.95v-10.07Z"/>
-      <path class="cls-1" d="M143.93,681.7v-37.45c.01-3.96-2.05-7.59-7.5-7.59h-3.63v46.59c0,3.88,1.98,7.88,7.43,7.88h11.39c.37.01.72.04,1.1.04h4.22c.8,0,1.54-.03,2.24-.08h1.78c4.94,0,7.24-1.87,7.31-5.58.05-.38.08-.77.09-1.18v-2.62h-24.43Z"/>
-      <path class="cls-1" d="M184.27,601.41l-.14-60.51c0-8.82-3.76-12.98-11.03-12.98h-7.08v77.35h0c0,6.1,3.12,12.39,11.68,12.39h5.84v-.02h18.01s3.6-.01,3.6-.01c14.67,0,18.56-5.06,18.56-12.85v-3.27h-.03l-39.44-.1Z"/>
-      <path class="cls-1" d="M283.04,536.59h0c-3.27-6.69-5.74-8.67-11.04-8.67h-10.41c-11.08,12.34-24.28,49.52-28.84,69.92-.83,3.39-3.18,13.07-4.46,19.79h10.92s.05,0,.07,0h6.88c1.3-7.53,2.86-15.48,4.67-23.01h35.44c.79,3.26,1.48,7.13,2.16,11.91h0s.06.39.15,1.02c.06.4.11.8.17,1.21,0,.03.01.07.02.1.38,2.66.96,6.89,1.14,8.83h10.6c.06,0,.12,0,.18,0h7.27c-3.5-28.11-16.88-66.71-24.93-81.12ZM254.74,580.47c2.99-12.34,8.57-26.48,13.76-35.7,4.67,8.31,10.78,23.24,13.76,35.7h-27.52Z"/>
-      <path class="cls-1" d="M366.31,691.08c-2.13-17.05-10.23-40.45-15.12-49.2-1.98-4.05-3.48-5.26-6.7-5.26h-6.31c-6.72,7.48-14.72,30.03-17.49,42.4-.51,2.05-1.93,7.93-2.7,12h6.62s.03,0,.04,0h4.17c.79-4.56,1.73-9.39,2.83-13.96h21.49c.55,2.28,1.02,5.04,1.5,8.58,0,.01,0,.02,0,.03.23,1.61.58,4.2.69,5.38h6.48s.04,0,.06,0h4.41ZM334.03,668.49c1.81-7.48,5.2-16.06,8.35-21.65,2.83,5.04,6.53,14.09,8.35,21.65h-16.69Z"/>
-      <path class="cls-1" d="M183.97,681.71v-13.98h0v-.02h14.38c4.38,0,6.6-1.43,6.6-5.01v-3.9h-20.98v-.02h0v-12.72h19.61c4.91-.04,7.18-1.94,7.18-5.73v-3.66h-30.5c-5.45,0-7.43,4-7.43,7.88v38.65c0,3.88,1.98,7.88,7.43,7.88h2.42s.04,0,.07,0h20.7c4.94,0,7.24-1.87,7.31-5.58,0,0,0,0,0,0,.05-.38.08-.76.09-1.18v-2.61h-26.87Z"/>
-      <path class="cls-1" d="M96.87,681.71v-13.98h0v-.02h14.38c4.38,0,6.6-1.43,6.6-5.01v-3.9h-20.98v-.02h0v-12.72h19.61c4.91-.04,7.18-1.94,7.18-5.73v-3.66h-30.5c-5.45,0-7.43,4-7.43,7.88v38.65c0,3.88,1.98,7.88,7.43,7.88h2.42s.04,0,.07,0h20.7c4.94,0,7.24-1.87,7.31-5.58,0,0,0,0,0,0,.05-.38.08-.76.09-1.18v-2.61h-26.87Z"/>
-      <path class="cls-1" d="M134.84,570.35c8.83-2.6,14.15-8.96,14.15-18.83,0-14.54-12.07-23.5-29.08-23.5h-1.55l-.1-.09h-32.62v4.11s0,0-.01,0v64.52c0,.29.02.56.03.84v7.86c0,6.1,3.12,12.39,11.68,12.39h5.84v-.02h6.77c.16,0,.31.02.47.02h9.61c16.23,0,30.51-9.92,30.51-27.84,0-7.8-6.75-17.01-15.71-19.48ZM103.16,563.86v-20.12s0,0,.01,0v-.9h7.52s.09,0,.13,0h6.62c6.62,0,13.76,2.46,13.76,10.26s-6.49,10.77-14.41,10.77h-13.63ZM118.35,601.51h-7.27s-.04,0-.06,0h-7.72v-5.51s0-.04,0-.06v-18.31h14.15c10.39,0,15.19,3.12,15.19,12.72,0,6.75-4.67,11.17-14.28,11.17Z"/>
-      <path class="cls-1" d="M240.69,636.28h-1.49v-.02h-18.79v2.56s-.01,0-.01,0v44.56c0,5.81,3.58,7.8,6.6,7.8h4.3v-21.17c2.23,1.19,5.33,1.83,9.15,1.83,10.42,0,18.38-7.08,18.38-18.62,0-10.9-7.56-16.95-18.14-16.95ZM239.02,662.62c-2.78,0-5.81-.39-7.72-.95v-15.44s.01,0,.02,0v-.68h4.17c.11,0,.24-.02.34-.02h3.5c5.73,0,8.28,2.46,8.28,8.67,0,5.25-3.02,8.44-8.59,8.44Z"/>
-    </g>
-  </svg>
-  <a class="mail" href="mailto:hello@blackelephant.nl">hello@blackelephant.nl</a>
+
+<div class="navwrap">
+  <nav class="top" aria-label="Hoofdmenu">
+    <a class="brand" href="/" aria-label="Black Elephant, naar de homepage"><img src="/assets/logo-black.svg" alt="Black Elephant"></a>
+    <div class="links">
+      <a href="#keynotes">Keynotes</a>
+      <a href="#workshops">Workshops</a>
+      <a href="#advies">Strategie &amp; interim</a>
+      <a href="/aicheck/">AI-check</a>
+      <a href="#over">Over ons</a>
+    </div>
+    <a class="btn btn-dark arrow" href="#contact">Offerte</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="label">AI-transformatie · Keynotes · Workshops · Interim</p>
+    <h1>Van AI-ambitie naar <span class="hl">AI-praktijk.</span></h1>
+    <p class="lede">De meeste AI-trajecten lopen niet vast op technologie, maar op mensen, rollen en regie. Black Elephant benoemt de olifant in de kamer en bouwt mee aan wat werkt. Van een keynote die je zaal wakker schudt tot een programma dat écht landt.</p>
+    <div class="ctas">
+      <a class="btn btn-dark arrow" href="#contact">Vraag een offerte aan</a>
+      <a class="btn btn-line" href="#workshops">Bekijk open workshops</a>
+    </div>
+
+    <div class="routes">
+      <a class="route" href="#keynotes"><div class="top"><span class="ic" aria-hidden="true">✦</span><span>01 · Inspireer</span></div><h3>Ik zoek een spreker</h3><p>Een keynote die je publiek aan het denken zet en in beweging brengt.</p><span class="go">Keynotes</span></a>
+      <a class="route" href="#workshops"><div class="top"><span class="ic" aria-hidden="true">◐</span><span>02 · Leer</span></div><h3>Ik wil een workshop</h3><p>Open workshops en trainingen op maat, met je eigen organisatie als casus.</p><span class="go">Workshops</span></a>
+      <a class="route" href="#advies"><div class="top"><span class="ic" aria-hidden="true">◇</span><span>03 · Bouw</span></div><h3>Ik wil AI implementeren</h3><p>Strategie, governance en werkende AI-oplossingen in je eigen processen.</p><span class="go">Strategie &amp; oplossingen</span></a>
+      <a class="route" href="#advies"><div class="top"><span class="ic" aria-hidden="true">◎</span><span>04 · Versterk</span></div><h3>Ik zoek een interim</h3><p>Een ervaren transformatielead die het programma trekt en laat landen.</p><span class="go">Interim management</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="proof">
+  <div class="wrap">
+    <div><b>TEDxHaarlem</b><span>spreker 2026, uitverkochte Stadsschouwburg</span></div>
+    <div><b>15+ jaar</b><span>ervaring in de financiële sector</span></div>
+    <div><b>INSEAD</b><span>AI &amp; transformatie</span></div>
+    <div><b>Eén partner</b><span>van inspiratie tot implementatie</span></div>
+  </div>
+</div>
+
+<section class="check" aria-labelledby="check-title">
+  <div class="wrap">
+    <div>
+      <p class="label">Gratis · 3 minuten</p>
+      <h2 id="check-title">Waar staat jouw organisatie met AI?</h2>
+      <p>Doe de AI-jaarplancheck. Vijf vragen, en je krijgt per vraag een stand van zaken en een concrete eerste stap voor het komende kwartaal. Daarna weet je ook welke workshop bij je past.</p>
+      <a class="btn btn-star arrow" href="/aicheck/">Start de check</a>
+    </div>
+    <div class="steps3" aria-hidden="true">
+      <div><b>01</b>Beantwoord vijf vragen over AI in je organisatie</div>
+      <div><b>02</b>Zie per vraag waar je staat</div>
+      <div><b>03</b>Krijg je eerste stap, en de workshop die erbij past</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="workshops">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="label">Open workshops · voorjaar 2027</p><h2>Leer het met vakgenoten.</h2></div>
+      <p>Halve dagen, maximaal 12 deelnemers, praktisch en met je eigen organisatie als casus. Je gaat naar huis met een concrete eerste stap. Liever met je eigen team? Elke workshop kan ook in-company.</p>
+    </div>
+    <div class="ws">
+      <article class="wcard">
+        <span class="tag">AI voor HR</span>
+        <h3>HR als regisseur van AI-transformatie</h3>
+        <p>AI is geen IT-onderwerp. Leer hoe HR de regie pakt: van nulmeting en spelregels tot rollen, cultuur en je jaarplan.</p>
+        <ul><li>Waar staat je organisatie nu?</li><li>Drie spelregels voor AI-gebruik</li><li>Welke taken en rollen verschuiven</li></ul>
+        <div class="meta">
+          <div><span>Datum</span><b>do 21 januari 2027</b></div>
+          <div><span>Tijd</span><span>09:00 – 12:30</span></div>
+          <div><span>Locatie</span><span>Utrecht</span></div>
+          <div><span>Groep</span><span>max. 12 deelnemers</span></div>
+          <div class="price">€ 595 <small>p.p. excl. btw</small></div>
+          <div><span>Early bird</span><span>€ 495 t/m 15 december</span></div>
+        </div>
+        <button class="btn btn-dark" type="button" data-ws="HR als regisseur van AI-transformatie" data-date="donderdag 21 januari 2027, 09:00-12:30">Inschrijven</button>
+      </article>
+      <article class="wcard">
+        <span class="tag">AI &amp; leiderschap</span>
+        <h3>Leiden als AI meebeslist</h3>
+        <p>Wat vraagt AI van leiders? Over regie, eigenaarschap, angst en tempo. En over het gesprek dat je met je team moet voeren.</p>
+        <ul><li>De olifant in jouw kamer</li><li>Eigenaarschap zonder te micromanagen</li><li>Je eerste 90 dagen</li></ul>
+        <div class="meta">
+          <div><span>Datum</span><b>do 4 februari 2027</b></div>
+          <div><span>Tijd</span><span>09:00 – 12:30</span></div>
+          <div><span>Locatie</span><span>Utrecht</span></div>
+          <div><span>Groep</span><span>max. 12 deelnemers</span></div>
+          <div class="price">€ 595 <small>p.p. excl. btw</small></div>
+          <div><span>Early bird</span><span>€ 495 t/m 15 december</span></div>
+        </div>
+        <button class="btn btn-dark" type="button" data-ws="Leiden als AI meebeslist" data-date="donderdag 4 februari 2027, 09:00-12:30">Inschrijven</button>
+      </article>
+      <article class="wcard">
+        <span class="tag">Storytelling</span>
+        <h3>Mythes lezen: oude verhalen, nieuwe vragen</h3>
+        <p>Nieuwe technologie geeft oude dilemma's een nieuwe vorm. Leer mythes lezen als spiegel voor verandering, leiderschap en betekenis.</p>
+        <ul><li>De vraag achter het verhaal</li><li>De herhaling en het detail dat niet klopt</li><li>De spiegel: wat zegt het over ons?</li></ul>
+        <div class="meta">
+          <div><span>Datum</span><b>do 18 februari 2027</b></div>
+          <div><span>Tijd</span><span>09:00 – 12:30</span></div>
+          <div><span>Locatie</span><span>Haarlem</span></div>
+          <div><span>Groep</span><span>max. 12 deelnemers</span></div>
+          <div class="price">€ 595 <small>p.p. excl. btw</small></div>
+          <div><span>Early bird</span><span>€ 495 t/m 15 december</span></div>
+        </div>
+        <button class="btn btn-dark" type="button" data-ws="Mythes lezen: oude verhalen, nieuwe vragen" data-date="donderdag 18 februari 2027, 09:00-12:30">Inschrijven</button>
+      </article>
+    </div>
+    <p class="note"><b>In-company:</b> elke workshop ook voor je eigen team, op locatie, vanaf € 2.500 per dagdeel (tot 15 deelnemers). <a href="#contact">Vraag een offerte aan</a>.</p>
+  </div>
+</section>
+
+<section class="block" id="keynotes" style="background:#F4F1EB">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="label">Keynotes</p><h2>Een verhaal dat blijft hangen.</h2></div>
+      <p>Over AI, leiderschap en de mens in het midden. Met verhalen en mythologie als spiegel, en altijd met iets waar je zaal maandag mee verder kan.</p>
+    </div>
+    <div class="kn">
+      <div class="talks">
+        <div class="talk"><h3>De olifant in de kamer</h3><p>Waarom AI-trajecten zelden op technologie vastlopen, en wat er wél gebeurt.</p></div>
+        <div class="talk"><h3>HR als regisseur van AI-transformatie</h3><p>Voor HR-teams en directies: wie neemt de mensen mee als de technologie er al is?</p></div>
+        <div class="talk"><h3>Oude verhalen, nieuwe technologie</h3><p>Mythologie als spiegel voor de vragen die AI oproept. Persoonlijk, beeldend en scherp.</p></div>
+      </div>
+      <div class="knbox">
+        <p class="label" style="color:#C7C3F5;margin:0">Keynote boeken</p>
+        <h3>Keynote op maat</h3>
+        <p>Afgestemd op je publiek, je thema en het moment. Van congres tot directiedag of ontbijtsessie. Spreker: Michael Salmagne, oprichter van Black Elephant en spreker op TEDxHaarlem.</p>
+        <ul><li>Voorgesprek en maatwerk</li><li>20 tot 60 minuten, met of zonder interactie</li><li>Inclusief reiskosten en nagesprek</li></ul>
+        <div class="price">vanaf € 2.500 <small>excl. btw</small></div>
+        <a class="btn btn-star arrow" href="#contact" data-interest="Keynote">Check beschikbaarheid</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="advies">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="label">Strategie, oplossingen &amp; interim</p><h2>Van PowerPoint naar praktijk.</h2></div>
+      <p>Voor organisaties die verder willen dan inspiratie. Als adviseur, als bouwer of als interim-lead in je organisatie.</p>
+    </div>
+    <div class="adv">
+      <article class="acard">
+        <span class="label" style="margin:0">Strategie &amp; AI-oplossingen</span>
+        <h3>Richting kiezen, en iets werkends bouwen.</h3>
+        <p>We starten met wat er al gebeurt, kiezen één focus en bouwen een eerste toepassing die je mensen echt gebruiken.</p>
+        <ul><li>Nulmeting en AI-roadmap</li><li>Governance, AI Act en spelregels</li><li>Agents, assistenten en prototypes binnen weken</li></ul>
+        <div class="foot"><span>Op maat · vaste prijs per fase</span><a class="btn btn-dark arrow" href="#contact" data-interest="Strategie / AI-oplossing">Plan een gesprek</a></div>
+      </article>
+      <article class="acard">
+        <span class="label" style="margin:0">Interim management</span>
+        <h3>Een transformatielead die het laat landen.</h3>
+        <p>Ervaring in verzekeraars, pensioenuitvoerders en banken. Als AI-programmamanager of transformatielead, tijdelijk in je organisatie.</p>
+        <ul><li>AI-programma's en adoptie</li><li>Governance, champions en verandering</li><li>2 tot 4 dagen per week</li></ul>
+        <div class="foot"><span>Op aanvraag</span><a class="btn btn-dark arrow" href="#contact" data-interest="Interim management">Bespreek je vraag</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="over" style="background:#F4F1EB">
+  <div class="wrap about">
+    <div><p class="label">Over Black Elephant</p><h2>We benoemen de olifant in de kamer.</h2></div>
+    <div>
+      <p class="quote">"Nieuwe technologie creëert zelden nieuwe menselijke dilemma's. Ze geeft oude dilemma's alleen nieuwe vormen."</p>
+      <p>Black Elephant is een bureau voor AI-transformatie. We helpen organisaties de stap te zetten van AI-ambitie naar AI-praktijk, met aandacht voor wat het echt lastig maakt: mensen, rollen, regie en cultuur.</p>
+      <p>Onze aanpak is eenvoudig: eerst zien wat er al gebeurt, dan kiezen wat telt, dan bouwen en borgen. Met ervaring uit verzekeraars, pensioenuitvoerders en banken, en met verhalen als middel om verandering voelbaar te maken.</p>
+      <div class="creds"><span>Verzekeraars</span><span>Pensioenuitvoerders</span><span>Banken</span><span>Zakelijke dienstverlening</span><span>HR &amp; leiderschap</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="intro">
+      <p class="label">Offerte &amp; contact</p>
+      <h2>Wat is de olifant in jouw kamer?</h2>
+      <p>Vertel kort waar je staat en waar je naar zoekt. Je hoort binnen twee werkdagen van ons, met een voorstel of een moment voor een kennismaking van 20 minuten.</p>
+      <div class="direct"><span>Direct mailen</span><b>info@blackelephant.nl</b></div>
+    </div>
+    <form class="offer" id="offerForm" novalidate>
+      <div class="f"><label for="o-naam">Naam</label><input id="o-naam" required autocomplete="name"></div>
+      <div class="f"><label for="o-org">Organisatie</label><input id="o-org" autocomplete="organization"></div>
+      <div class="f"><label for="o-mail">E-mail</label><input id="o-mail" type="email" required autocomplete="email"></div>
+      <div class="f"><label for="o-tel">Telefoon (optioneel)</label><input id="o-tel" type="tel" autocomplete="tel"></div>
+      <div class="f full"><label for="o-int">Waar gaat het over?</label>
+        <select id="o-int"><option>Keynote</option><option>Workshop in-company</option><option>Open workshop</option><option>Strategie / AI-oplossing</option><option>Interim management</option><option>Iets anders</option></select></div>
+      <div class="f full"><label for="o-msg">Je vraag (datum, aantal deelnemers, context)</label><textarea id="o-msg"></textarea></div>
+      <button class="btn btn-star arrow" type="submit">Verstuur aanvraag</button>
+      <p class="status" id="o-status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Black Elephant · Haarlem</span><span><a href="/aicheck/">AI-jaarplancheck</a> · info@blackelephant.nl</span></div></footer>
+
+<dialog id="wsDialog" aria-labelledby="ws-title">
+  <form class="dlg" id="wsForm" method="dialog" novalidate>
+    <h3 id="ws-title">Inschrijven</h3>
+    <p class="sub" id="ws-sub"></p>
+    <div class="row">
+      <div class="f"><label for="w-naam">Naam</label><input id="w-naam" required autocomplete="name"></div>
+      <div class="f"><label for="w-mail">E-mail</label><input id="w-mail" type="email" required autocomplete="email"></div>
+    </div>
+    <div class="row">
+      <div class="f"><label for="w-org">Organisatie</label><input id="w-org" autocomplete="organization"></div>
+      <div class="f"><label for="w-functie">Functie</label><input id="w-functie" autocomplete="organization-title"></div>
+    </div>
+    <div class="f"><label for="w-aantal">Aantal deelnemers</label><select id="w-aantal"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+    <label class="chk"><input type="checkbox" id="w-ql"> Ik was bij de ontbijtsessie van Q-Logic (deelnemersprijs € 495)</label>
+    <p class="status" id="w-status" role="status"></p>
+    <div class="acts"><button class="btn btn-line" type="button" id="w-cancel">Annuleren</button><button class="btn btn-dark" type="submit">Inschrijving versturen</button></div>
+  </form>
+</dialog>
+
+<script>
+(function(){
+  var MAIL="info@blackelephant.nl";
+  function mailto(subject, lines){ window.location.href="mailto:"+MAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lines.join("\n")); }
+  function val(id){ return (document.getElementById(id).value||"").trim(); }
+  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  // Offerte-knoppen vullen het onderwerp voor
+  document.querySelectorAll("[data-interest]").forEach(function(a){
+    a.addEventListener("click",function(){ var s=document.getElementById("o-int"); s.value=a.getAttribute("data-interest"); });
+  });
+
+  // Offerteformulier
+  var offer=document.getElementById("offerForm"), os=document.getElementById("o-status");
+  offer.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!val("o-naam")||!validEmail(val("o-mail"))){ os.textContent="Vul je naam en een geldig e-mailadres in."; return; }
+    mailto("Aanvraag: "+val("o-int")+" ("+(val("o-org")||val("o-naam"))+")",[
+      "Naam: "+val("o-naam"),"Organisatie: "+val("o-org"),"E-mail: "+val("o-mail"),"Telefoon: "+val("o-tel"),"Onderwerp: "+val("o-int"),"","Vraag:",val("o-msg")]);
+    os.textContent="Je mailprogramma opent met je aanvraag. Verstuur de mail, dan hoor je binnen twee werkdagen van ons.";
+  });
+
+  // Inschrijven workshops
+  var dlg=document.getElementById("wsDialog"), wf=document.getElementById("wsForm"), ws=document.getElementById("w-status"), current={};
+  document.querySelectorAll("[data-ws]").forEach(function(b){
+    b.addEventListener("click",function(){
+      current={name:b.getAttribute("data-ws"),date:b.getAttribute("data-date")};
+      document.getElementById("ws-title").textContent=current.name;
+      document.getElementById("ws-sub").textContent=current.date+" · € 595 p.p. excl. btw (early bird € 495 t/m 15 december)";
+      ws.textContent="";
+      if(typeof dlg.showModal==="function"){ dlg.showModal(); } else { dlg.setAttribute("open",""); }
+    });
+  });
+  document.getElementById("w-cancel").addEventListener("click",function(){ dlg.close ? dlg.close() : dlg.removeAttribute("open"); });
+  wf.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!val("w-naam")||!validEmail(val("w-mail"))){ ws.textContent="Vul je naam en een geldig e-mailadres in."; return; }
+    var ql=document.getElementById("w-ql").checked;
+    mailto("Inschrijving: "+current.name+" ("+current.date+")",[
+      "Workshop: "+current.name,"Datum: "+current.date,"","Naam: "+val("w-naam"),"E-mail: "+val("w-mail"),"Organisatie: "+val("w-org"),"Functie: "+val("w-functie"),"Aantal deelnemers: "+val("w-aantal"),"Q-Logic ontbijtsessie (deelnemersprijs € 495): "+(ql?"ja":"nee")]);
+    ws.textContent="Je mailprogramma opent met je inschrijving. Verstuur de mail. Je krijgt binnen twee werkdagen een bevestiging en de factuur.";
+  });
+})();
+</script>
 </body>
 </html>
