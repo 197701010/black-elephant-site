@@ -220,6 +220,18 @@ footer a{text-decoration:none}
 .route .ic svg{transition:transform .3s ease}
 .route:hover .ic svg{transform:scale(1.15) rotate(-6deg)}
 @media (prefers-reduced-motion:reduce){.hero .orb,.hl,.marquee .logos{animation:none}.js .rv{opacity:1;transform:none}.marquee .logos{flex-wrap:wrap;justify-content:center;width:auto}}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
+.pillar{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 26px;display:grid;gap:10px;align-content:start}
+.pillar .pn{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pillar h3{font-size:23px}
+.pillar p{margin:0;color:var(--ink-2);font-size:15.5px}
+.sectors{margin-top:56px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.sgrid div{padding:20px 22px 20px 0;border-bottom:1px solid var(--line);display:grid;gap:4px}
+.sgrid b{font-family:var(--display);font-weight:600;font-size:18px}
+.sgrid span{color:var(--ink-2);font-size:15px}
+@media (max-width:860px){.pillars,.sgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -232,7 +244,7 @@ footer a{text-decoration:none}
       <a href="#keynotes">Keynotes</a>
       <a href="#workshops">Workshops</a>
       <a href="#advies">Strategie &amp; interim</a>
-      <a href="/aicheck/">AI-check</a>
+      <a href="/aiscan/">AI-scan</a>
       <a href="#over">Over ons</a>
     </div>
     <a class="btn btn-dark arrow" href="#contact">Offerte</a>
@@ -269,15 +281,15 @@ footer a{text-decoration:none}
 <section class="check" aria-labelledby="check-title">
   <div class="wrap">
     <div>
-      <p class="label">Gratis · 3 minuten</p>
+      <p class="label">Gratis · 12 vragen · 4 minuten</p>
       <h2 id="check-title">Waar staat jouw organisatie met AI?</h2>
-      <p>Doe de AI-jaarplancheck. Vijf vragen, en je krijgt per vraag een stand van zaken en een concrete eerste stap voor het komende kwartaal. Daarna weet je ook welke workshop bij je past.</p>
-      <a class="btn btn-star arrow" href="/aicheck/">Start de check</a>
+      <p>Doe de AI-scan: twaalf vragen over zes thema's. Je krijgt een profiel per thema, ziet waar de olifant in jouw kamer staat en krijgt drie concrete stappen. Daarna weet je ook welke workshop bij je past.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-star arrow" href="/aiscan/">Start de AI-scan</a><a class="btn" style="border-color:rgba(255,255,255,.5);color:#fff" href="/aiscan/hr/">Versie voor HR</a></div>
     </div>
     <div class="steps3" aria-hidden="true">
-      <div><b>01</b>Beantwoord vijf vragen over AI in je organisatie</div>
-      <div><b>02</b>Zie per vraag waar je staat</div>
-      <div><b>03</b>Krijg je eerste stap, en de workshop die erbij past</div>
+      <div><b>01</b>Beantwoord twaalf vragen over zes thema's</div>
+      <div><b>02</b>Zie je profiel en de olifant in jouw kamer</div>
+      <div><b>03</b>Krijg drie concrete stappen en een passende vervolgstap</div>
     </div>
   </div>
 </section>
@@ -295,14 +307,14 @@ footer a{text-decoration:none}
         <p>AI is geen IT-onderwerp. Leer hoe HR de regie pakt: van nulmeting en spelregels tot rollen, cultuur en je jaarplan.</p>
         <ul><li>Waar staat je organisatie nu?</li><li>Drie spelregels voor AI-gebruik</li><li>Welke taken en rollen verschuiven</li></ul>
         <div class="meta">
-          <div><span>Datum</span><b>do 21 januari 2027</b></div>
+          <div><span>Data</span><b>do 21 jan of do 18 mrt 2027</b></div>
           <div><span>Tijd</span><span>09:00 – 12:30</span></div>
           <div><span>Locatie</span><span>Utrecht</span></div>
           <div><span>Groep</span><span>max. 12 deelnemers</span></div>
           <div class="price">€ 595 <small>p.p. excl. btw</small></div>
           <div><span>Early bird</span><span>€ 495 t/m 15 december</span></div>
         </div>
-        <button class="btn btn-dark" type="button" id="ws-hr" data-ws="HR als regisseur van AI-transformatie" data-date="donderdag 21 januari 2027, 09:00-12:30">Inschrijven</button>
+        <button class="btn btn-dark" type="button" id="ws-hr" data-ws="HR als regisseur van AI-transformatie" data-date="donderdag 21 januari 2027, 09:00-12:30|donderdag 18 maart 2027, 09:00-12:30">Inschrijven</button>
       </article>
       <article class="rv wcard">
         <span class="tag">AI &amp; leiderschap</span>
@@ -335,7 +347,7 @@ footer a{text-decoration:none}
         <button class="btn btn-dark" type="button" id="ws-mythes" data-ws="Mythes lezen: oude verhalen, nieuwe vragen" data-date="donderdag 18 februari 2027, 09:00-12:30">Inschrijven</button>
       </article>
     </div>
-    <p class="note"><b>In-company:</b> elke workshop ook voor je eigen team, op locatie, vanaf € 2.500 per dagdeel (tot 15 deelnemers). <a href="#contact">Vraag een offerte aan</a>.</p>
+    <p class="note"><b>Andere datum nodig?</b> Laat het ons weten via het <a href="#contact">contactformulier</a>. <b>In-company:</b> elke workshop ook voor je eigen team, op locatie, vanaf € 2.500 per dagdeel (tot 15 deelnemers). <a href="#contact">Vraag een offerte aan</a>.</p>
   </div>
 </section>
 
@@ -389,13 +401,30 @@ footer a{text-decoration:none}
 </section>
 
 <section class="block" id="over" style="background:#F4F1EB">
-  <div class="wrap about">
-    <div><p class="label">Over Black Elephant</p><h2>We benoemen de olifant in de kamer.</h2></div>
-    <div>
-      <p class="quote">"Nieuwe technologie creëert zelden nieuwe menselijke dilemma's. Ze geeft oude dilemma's alleen nieuwe vormen."</p>
-      <p>Black Elephant is een bureau voor AI-transformatie. We helpen organisaties de stap te zetten van AI-ambitie naar AI-praktijk, met aandacht voor wat het echt lastig maakt: mensen, rollen, regie en cultuur.</p>
-      <p>Onze aanpak is eenvoudig: eerst zien wat er al gebeurt, dan kiezen wat telt, dan bouwen en borgen. Met ervaring uit verzekeraars, pensioenuitvoerders en banken, en met verhalen als middel om verandering voelbaar te maken.</p>
-      <div class="creds"><span>Verzekeraars</span><span>Pensioenuitvoerders</span><span>Banken</span><span>Zakelijke dienstverlening</span><span>HR &amp; leiderschap</span></div>
+  <div class="wrap">
+    <div class="about rv">
+      <div><p class="label">Over Black Elephant</p><h2>We benoemen de olifant in de kamer.</h2></div>
+      <div>
+        <p class="quote">"Nieuwe technologie creëert zelden nieuwe menselijke dilemma's. Ze geeft oude dilemma's alleen nieuwe vormen."</p>
+        <p>Black Elephant is een bureau voor AI-transformatie. We helpen organisaties de stap te zetten van AI-ambitie naar AI-praktijk, met aandacht voor wat het echt lastig maakt: mensen, rollen, regie en cultuur.</p>
+        <p>De olifant in de kamer is het onderwerp dat iedereen ziet, maar niemand benoemt. Bij AI is dat zelden de technologie. Het is de vraag wie eigenaar is, welk werk verandert en wat dat met mensen doet. Daar beginnen wij.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar rv"><span class="pn">Eerlijk</span><h3>We zeggen wat we zien.</h3><p>Ook als het ongemakkelijk is. Een scherpe diagnose is meer waard dan een mooi rapport.</p></div>
+      <div class="pillar rv"><span class="pn">Praktisch</span><h3>Binnen weken iets dat werkt.</h3><p>Geen dikke strategie vooraf. Eén focus, één eigenaar en een eerste toepassing die mensen echt gebruiken.</p></div>
+      <div class="pillar rv"><span class="pn">Menselijk</span><h3>Technologie volgt mensen.</h3><p>Verandering landt pas als mensen weten waarom. Daarom werken we met verhalen, gesprekken en de eigen organisatie als casus.</p></div>
+    </div>
+    <div class="sectors rv">
+      <p class="label" style="margin-bottom:18px">Waar we werken</p>
+      <div class="sgrid">
+        <div><b>Verzekeraars</b><span>Van schadebehandeling tot klantcontact: AI in sterk gereguleerde processen.</span></div>
+        <div><b>Pensioenuitvoerders</b><span>Grote hoeveelheden tekst, data en communicatie, met hoge eisen aan zorgvuldigheid.</span></div>
+        <div><b>Banken en beleggen</b><span>Advies, compliance en klantcommunicatie, onder toezicht.</span></div>
+        <div><b>Zakelijke dienstverlening</b><span>Kennisorganisaties waar AI het werk zelf raakt: advocatuur, advies, recruitment.</span></div>
+        <div><b>HR en leiderschap</b><span>Iedere organisatie: de rol van HR en leiders in de verandering.</span></div>
+        <div><b>Retail en creatief</b><span>Werkende AI-tools in ontwerp- en productieprocessen.</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -422,7 +451,7 @@ footer a{text-decoration:none}
   </div>
 </section>
 
-<footer><div class="wrap"><span>© 2026 Black Elephant · Haarlem</span><span><a href="/aicheck/">AI-jaarplancheck</a> · info@blackelephant.nl</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Black Elephant · Haarlem</span><span><a href="/aiscan/">AI-scan</a> · info@blackelephant.nl</span></div></footer>
 
 <dialog id="wsDialog" aria-labelledby="ws-title">
   <form class="dlg" id="wsForm" method="dialog" novalidate>
@@ -436,6 +465,7 @@ footer a{text-decoration:none}
       <div class="f"><label for="w-org">Organisatie</label><input id="w-org" autocomplete="organization"></div>
       <div class="f"><label for="w-functie">Functie</label><input id="w-functie" autocomplete="organization-title"></div>
     </div>
+    <div class="f" id="w-datewrap" hidden><label for="w-date">Datum</label><select id="w-date"></select></div>
     <div class="f"><label for="w-aantal">Aantal deelnemers</label><select id="w-aantal"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
     <label class="chk"><input type="checkbox" id="w-ql"> Ik was bij de ontbijtsessie van Q-Logic (deelnemersprijs € 495)</label>
     <p class="status" id="w-status" role="status"></p>
@@ -480,7 +510,12 @@ footer a{text-decoration:none}
   var dlg=document.getElementById("wsDialog"), wf=document.getElementById("wsForm"), ws=document.getElementById("w-status"), current={};
   document.querySelectorAll("[data-ws]").forEach(function(b){
     b.addEventListener("click",function(){
-      current={name:b.getAttribute("data-ws"),date:b.getAttribute("data-date")};
+      var dates=b.getAttribute("data-date").split("|");
+      current={name:b.getAttribute("data-ws"),date:dates[0]};
+      var dw=document.getElementById("w-datewrap"), dsel=document.getElementById("w-date");
+      dsel.innerHTML=dates.map(function(d){return "<option>"+d+"</option>";}).join("");
+      dw.hidden=dates.length<2;
+      dsel.onchange=function(){current.date=dsel.value;document.getElementById("ws-sub").textContent=current.date+" · € 595 p.p. excl. btw (early bird € 495 t/m 15 december)";};
       document.getElementById("ws-title").textContent=current.name;
       document.getElementById("ws-sub").textContent=current.date+" · € 595 p.p. excl. btw (early bird € 495 t/m 15 december)";
       ws.textContent="";
