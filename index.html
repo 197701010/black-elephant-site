@@ -54,7 +54,9 @@ nav .btn{padding:11px 20px;font-size:15px}
 .route .ic{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:18px;color:var(--star-ink)}
 .route h3{font-size:24px;margin-top:10px}
 .route p{margin:0;color:var(--ink-2);font-size:15.5px}
-.route .go{margin-top:8px;font-weight:600;font-size:15px}
+.route{display:flex;flex-direction:column}
+.route h3{min-height:2.2em}
+.route .go{margin-top:auto;padding-top:14px;font-weight:600;font-size:15px}
 .route .go::after{content:" ↗"}
 @media (max-width:1000px){.routes{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.routes{grid-template-columns:1fr}}
@@ -197,6 +199,27 @@ footer a{text-decoration:none}
 .quote{border-left-color:var(--a2)}
 
 .status{color:#FFC8D2}.dlg .status{color:var(--a3)}
+
+/* beweging */
+.hero{position:relative;overflow:hidden}
+.hero .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;pointer-events:none;z-index:0}
+.hero .o1{width:520px;height:520px;background:#8B7CF6;top:-140px;right:-120px;animation:drift1 22s ease-in-out infinite alternate}
+.hero .o2{width:420px;height:420px;background:#F59EB3;top:220px;right:180px;animation:drift2 26s ease-in-out infinite alternate}
+.hero .wrap{position:relative;z-index:1}
+@keyframes drift1{to{transform:translate(-80px,60px) scale(1.08)}}
+@keyframes drift2{to{transform:translate(70px,-50px) scale(.92)}}
+.hl{background-size:200% 100%;animation:shine 8s ease-in-out infinite alternate}
+@keyframes shine{from{background-position:0% 50%}to{background-position:100% 50%}}
+:root{--grad:linear-gradient(90deg,#4F46E5,#9333EA 35%,#E85D75 65%,#9333EA)}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee .logos{flex-wrap:nowrap;justify-content:flex-start;width:max-content;animation:scroll 38s linear infinite}
+.marquee:hover .logos{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.route .ic svg{transition:transform .3s ease}
+.route:hover .ic svg{transform:scale(1.15) rotate(-6deg)}
+@media (prefers-reduced-motion:reduce){.hero .orb,.hl,.marquee .logos{animation:none}.js .rv{opacity:1;transform:none}.marquee .logos{flex-wrap:wrap;justify-content:center;width:auto}}
 </style>
 </head>
 <body>
@@ -217,6 +240,7 @@ footer a{text-decoration:none}
 </div>
 
 <header class="hero">
+  <span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
   <div class="wrap">
     <p class="label">AI-transformatie · Keynotes · Workshops · Interim</p>
     <h1>Van AI-ambitie naar <span class="hl">AI-praktijk.</span></h1>
@@ -227,10 +251,10 @@ footer a{text-decoration:none}
     </div>
 
     <div class="routes">
-      <a class="route" href="#keynotes"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></span><span>01 · Inspireer</span></div><h3>Ik zoek een spreker</h3><p>Een keynote die je publiek aan het denken zet en in beweging brengt.</p><span class="go">Keynotes</span></a>
-      <a class="route" href="#workshops"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/></svg></span><span>02 · Leer</span></div><h3>Ik wil een workshop</h3><p>Open workshops en trainingen op maat, met je eigen organisatie als casus.</p><span class="go">Workshops</span></a>
-      <a class="route" href="#advies"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></span><span>03 · Bouw</span></div><h3>Ik wil AI implementeren</h3><p>Strategie, governance en werkende AI-oplossingen in je eigen processen.</p><span class="go">Strategie &amp; oplossingen</span></a>
-      <a class="route" href="#advies"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><span>04 · Versterk</span></div><h3>Ik zoek een interim</h3><p>Een ervaren transformatielead die het programma trekt en laat landen.</p><span class="go">Interim management</span></a>
+      <a class="rv route" href="#keynotes"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></span><span>01 · Inspireer</span></div><h3>Ik zoek een spreker</h3><p>Een keynote die je publiek aan het denken zet en in beweging brengt.</p><span class="go">Keynotes</span></a>
+      <a class="rv route" href="#workshops"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/></svg></span><span>02 · Leer</span></div><h3>Ik wil een workshop</h3><p>Open workshops en trainingen op maat, met je eigen organisatie als casus.</p><span class="go">Workshops</span></a>
+      <a class="rv route" href="#advies"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></span><span>03 · Bouw</span></div><h3>Ik wil AI implementeren</h3><p>Strategie, governance en werkende AI-oplossingen in je eigen processen.</p><span class="go">Strategie &amp; oplossingen</span></a>
+      <a class="rv route" href="#advies"><div class="top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="url(#g)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><span>04 · Versterk</span></div><h3>Ik zoek een interim</h3><p>Een ervaren transformatielead die het programma trekt en laat landen.</p><span class="go">Interim management</span></a>
     </div>
   </div>
 </header>
@@ -238,7 +262,7 @@ footer a{text-decoration:none}
 <div class="proof">
   <div class="wrap">
     <p class="plabel">Opdrachtgevers en podia</p>
-    <div class="logos"><span>Univé</span><span>Athora</span><span>Zwitserleven</span><span>Reaal</span><span>ABN AMRO</span><span>Yellow Dress</span><span>Meesman Indexbeleggen</span><span>TEDxHaarlem</span></div>
+    <div class="marquee"><div class="logos"><span>Univé</span><span>Athora</span><span>Zwitserleven</span><span>Reaal</span><span>ABN AMRO</span><span>Yellow Dress</span><span>Meesman Indexbeleggen</span><span>TEDxHaarlem</span><span aria-hidden="true">Univé</span><span aria-hidden="true">Athora</span><span aria-hidden="true">Zwitserleven</span><span aria-hidden="true">Reaal</span><span aria-hidden="true">ABN AMRO</span><span aria-hidden="true">Yellow Dress</span><span aria-hidden="true">Meesman Indexbeleggen</span><span aria-hidden="true">TEDxHaarlem</span></div></div>
   </div>
 </div>
 
@@ -260,12 +284,12 @@ footer a{text-decoration:none}
 
 <section class="block" id="workshops">
   <div class="wrap">
-    <div class="head">
+    <div class="rv head">
       <div><p class="label">Open workshops · voorjaar 2027</p><h2>Leer het met vakgenoten.</h2></div>
       <p>Halve dagen, maximaal 12 deelnemers, praktisch en met je eigen organisatie als casus. Je gaat naar huis met een concrete eerste stap. Liever met je eigen team? Elke workshop kan ook in-company.</p>
     </div>
     <div class="ws">
-      <article class="wcard">
+      <article class="rv wcard">
         <span class="tag">AI voor HR</span>
         <h3>HR als regisseur van AI-transformatie</h3>
         <p>AI is geen IT-onderwerp. Leer hoe HR de regie pakt: van nulmeting en spelregels tot rollen, cultuur en je jaarplan.</p>
@@ -278,9 +302,9 @@ footer a{text-decoration:none}
           <div class="price">€ 595 <small>p.p. excl. btw</small></div>
           <div><span>Early bird</span><span>€ 495 t/m 15 december</span></div>
         </div>
-        <button class="btn btn-dark" type="button" data-ws="HR als regisseur van AI-transformatie" data-date="donderdag 21 januari 2027, 09:00-12:30">Inschrijven</button>
+        <button class="btn btn-dark" type="button" id="ws-hr" data-ws="HR als regisseur van AI-transformatie" data-date="donderdag 21 januari 2027, 09:00-12:30">Inschrijven</button>
       </article>
-      <article class="wcard">
+      <article class="rv wcard">
         <span class="tag">AI &amp; leiderschap</span>
         <h3>Leiden als AI meebeslist</h3>
         <p>Wat vraagt AI van leiders? Over regie, eigenaarschap, angst en tempo. En over het gesprek dat je met je team moet voeren.</p>
@@ -293,9 +317,9 @@ footer a{text-decoration:none}
           <div class="price">€ 595 <small>p.p. excl. btw</small></div>
           <div><span>Early bird</span><span>€ 495 t/m 15 december</span></div>
         </div>
-        <button class="btn btn-dark" type="button" data-ws="Leiden als AI meebeslist" data-date="donderdag 4 februari 2027, 09:00-12:30">Inschrijven</button>
+        <button class="btn btn-dark" type="button" id="ws-leiden" data-ws="Leiden als AI meebeslist" data-date="donderdag 4 februari 2027, 09:00-12:30">Inschrijven</button>
       </article>
-      <article class="wcard">
+      <article class="rv wcard">
         <span class="tag">Storytelling</span>
         <h3>Mythes lezen: oude verhalen, nieuwe vragen</h3>
         <p>Nieuwe technologie geeft oude dilemma's een nieuwe vorm. Leer mythes lezen als spiegel voor verandering, leiderschap en betekenis.</p>
@@ -308,7 +332,7 @@ footer a{text-decoration:none}
           <div class="price">€ 595 <small>p.p. excl. btw</small></div>
           <div><span>Early bird</span><span>€ 495 t/m 15 december</span></div>
         </div>
-        <button class="btn btn-dark" type="button" data-ws="Mythes lezen: oude verhalen, nieuwe vragen" data-date="donderdag 18 februari 2027, 09:00-12:30">Inschrijven</button>
+        <button class="btn btn-dark" type="button" id="ws-mythes" data-ws="Mythes lezen: oude verhalen, nieuwe vragen" data-date="donderdag 18 februari 2027, 09:00-12:30">Inschrijven</button>
       </article>
     </div>
     <p class="note"><b>In-company:</b> elke workshop ook voor je eigen team, op locatie, vanaf € 2.500 per dagdeel (tot 15 deelnemers). <a href="#contact">Vraag een offerte aan</a>.</p>
@@ -317,17 +341,17 @@ footer a{text-decoration:none}
 
 <section class="block" id="keynotes" style="background:#F4F1EB">
   <div class="wrap">
-    <div class="head">
+    <div class="rv head">
       <div><p class="label">Keynotes</p><h2>Een verhaal dat blijft hangen.</h2></div>
       <p>Over AI, leiderschap en de mens in het midden. Met verhalen en mythologie als spiegel, en altijd met iets waar je zaal maandag mee verder kan.</p>
     </div>
     <div class="kn">
       <div class="talks">
-        <div class="talk"><h3>De olifant in de kamer</h3><p>Waarom AI-trajecten zelden op technologie vastlopen, en wat er wél gebeurt.</p></div>
-        <div class="talk"><h3>HR als regisseur van AI-transformatie</h3><p>Voor HR-teams en directies: wie neemt de mensen mee als de technologie er al is?</p></div>
-        <div class="talk"><h3>Oude verhalen, nieuwe technologie</h3><p>Mythologie als spiegel voor de vragen die AI oproept. Persoonlijk, beeldend en scherp.</p></div>
+        <div class="rv talk"><h3>De olifant in de kamer</h3><p>Waarom AI-trajecten zelden op technologie vastlopen, en wat er wél gebeurt.</p></div>
+        <div class="rv talk"><h3>HR als regisseur van AI-transformatie</h3><p>Voor HR-teams en directies: wie neemt de mensen mee als de technologie er al is?</p></div>
+        <div class="rv talk"><h3>Oude verhalen, nieuwe technologie</h3><p>Mythologie als spiegel voor de vragen die AI oproept. Persoonlijk, beeldend en scherp.</p></div>
       </div>
-      <div class="knbox">
+      <div class="rv knbox">
         <p class="label" style="color:#C7C3F5;margin:0">Keynote boeken</p>
         <h3>Keynote op maat</h3>
         <p>Afgestemd op je publiek, je thema en het moment. Van congres tot directiedag of ontbijtsessie. Spreker: Michael Salmagne, oprichter van Black Elephant en spreker op TEDxHaarlem.</p>
@@ -341,19 +365,19 @@ footer a{text-decoration:none}
 
 <section class="block" id="advies">
   <div class="wrap">
-    <div class="head">
+    <div class="rv head">
       <div><p class="label">Strategie, oplossingen &amp; interim</p><h2>Van PowerPoint naar praktijk.</h2></div>
       <p>Voor organisaties die verder willen dan inspiratie. Als adviseur, als bouwer of als interim-lead in je organisatie.</p>
     </div>
     <div class="adv">
-      <article class="acard">
+      <article class="rv acard">
         <span class="label" style="margin:0">Strategie &amp; AI-oplossingen</span>
         <h3>Richting kiezen, en iets werkends bouwen.</h3>
         <p>We starten met wat er al gebeurt, kiezen één focus en bouwen een eerste toepassing die je mensen echt gebruiken.</p>
         <ul><li>Nulmeting en AI-roadmap</li><li>Governance, AI Act en spelregels</li><li>Agents, assistenten en prototypes binnen weken</li></ul>
         <div class="foot"><span>Op maat · vaste prijs per fase</span><a class="btn btn-dark arrow" href="#contact" data-interest="Strategie / AI-oplossing">Plan een gesprek</a></div>
       </article>
-      <article class="acard">
+      <article class="rv acard">
         <span class="label" style="margin:0">Interim management</span>
         <h3>Een transformatielead die het laat landen.</h3>
         <p>Ervaring in verzekeraars, pensioenuitvoerders en banken. Als AI-programmamanager of transformatielead, tijdelijk in je organisatie.</p>
@@ -421,6 +445,9 @@ footer a{text-decoration:none}
 
 <script>
 (function(){
+  document.documentElement.classList.add("js");
+  if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});document.querySelectorAll(".rv").forEach(function(el,i){el.style.transitionDelay=(i%4)*70+"ms";io.observe(el);});}else{document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in");});}
+
   var MAIL="info@blackelephant.nl";
   function mailto(subject, lines){ window.location.href="mailto:"+MAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lines.join("\n")); }
   function val(id){ return (document.getElementById(id).value||"").trim(); }
@@ -461,6 +488,10 @@ footer a{text-decoration:none}
       "Workshop: "+current.name,"Datum: "+current.date,"","Naam: "+val("w-naam"),"E-mail: "+val("w-mail"),"Organisatie: "+val("w-org"),"Functie: "+val("w-functie"),"Aantal deelnemers: "+val("w-aantal"),"Q-Logic ontbijtsessie (deelnemersprijs € 495): "+(ql?"ja":"nee")]);
     ws.textContent="Je mailprogramma opent met je inschrijving. Verstuur de mail. Je krijgt binnen twee werkdagen een bevestiging en de factuur.";
   });
+  // deeplink: /#ws-hr opent direct de inschrijving
+  var h=location.hash.replace("#","");
+  if(/^ws-/.test(h)){var b=document.getElementById(h);if(b){setTimeout(function(){b.scrollIntoView({block:"center"});b.click();},400);}}
+  var params=new URLSearchParams(location.search); if(params.get("ql")==="1"){var c=document.getElementById("w-ql"); if(c) c.checked=true;}
 })();
 </script>
 </body>
