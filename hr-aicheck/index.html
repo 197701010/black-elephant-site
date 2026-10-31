@@ -146,7 +146,7 @@ footer a{text-decoration:none}
     <p class="label">Gratis · 12 vragen · 4 minuten</p>
     <h1>HR <span class="hl">AI-check</span></h1>
     <p class="lede">Twaalf vragen over zes thema's: zicht, de rol van HR, spelregels, mensen, regie en je eerste stap. Je krijgt een profiel per thema, ziet waar de olifant in jouw kamer staat en krijgt drie concrete stappen.</p>
-    <p class="qlbar" id="qlbar" hidden>✦ <span>Je was bij de ontbijtsessie van Q-Logic: je krijgt de <b>deelnemersprijs van € 495</b> voor de workshop.</span></p>
+    <p class="qlbar" id="qlbar" hidden>✦ <span>Je was bij de ontbijtsessie van Q-Logic: je krijgt de <b>deelnemersprijs van € 795</b> (in plaats van € 995) voor de HR-workshop.</span></p>
     <p class="switch">Geen HR? Doe de <a href="/aicheck/">AI-check voor je organisatie</a>.</p>
   </div>
 </header>
@@ -225,14 +225,15 @@ footer a{text-decoration:none}
   function answers(){return Q.map(function(q){var el=form.querySelector('input[name="'+q.key+'"]:checked');return el?Number(el.value):null;});}
   function themeScores(a){return T.map(function(t,ti){var s=0,m=0;Q.forEach(function(q,i){if(q.theme===ti){s+=a[i];m+=3;}});return Math.round(s/m*100);});}
   function offerFor(pct,weak){
-    var price=QL?"€ 495 (deelnemersprijs)":"€ 595 · early bird € 495 t/m 15 december";
+    var price=QL?"€ 795 (deelnemersprijs)":"€ 995 · early bird € 895 t/m 15 december";
+    var price2="€ 695 · early bird € 595 t/m 15 december";
     var base=QL?"/?ql=1":"/";
-    var hr={title:"Workshop: HR als regisseur van AI-transformatie",meta:["<b>do 21 januari of 18 maart 2027</b>","09:00–12:30","max. 12 deelnemers",price],href:base+"#ws-hr"};
-    var lead={title:"Workshop: Leiden als AI meebeslist",meta:["<b>do 4 februari 2027</b>","09:00–12:30","max. 12 deelnemers",price],href:base+"#ws-leiden"};
+    var hr={title:"Workshop: HR als regisseur van AI-transformatie",meta:["<b>do 21 januari of 18 maart 2027</b>","hele dag, 09:30–16:30","max. 12 deelnemers",price],href:base+"#ws-hr"};
+    var lead={title:"Workshop: Leiden als AI meebeslist",meta:["<b>do 4 februari 2027</b>","09:00–12:30","max. 12 deelnemers",price2],href:base+"#ws-leiden"};
     if(pct>=70) return {title:"Van plan naar resultaat: een strategiegesprek",text:"Jullie hebben de basis staan. De volgende stap is versnellen: één toepassing die aantoonbaar waarde levert en een ritme om door te gaan. We denken graag mee in een vrijblijvend gesprek van 20 minuten.",meta:["<b>gratis kennismaking</b>","20 minuten","online of op locatie"],acts:[["Plan een gesprek","#lead","btn-grad"],["Bekijk strategie & interim","/#advies","btn-line"]]};
     var w = (VARIANT==="hr") ? hr : ((T[weak].key==="regie"||T[weak].key==="richting") ? lead : hr);
     if(VARIANT==="breed" && w===hr && T[weak].key!=="mensen") w=lead;
-    return {title:w.title,text:pct<40?"Je staat aan het begin, en dat is precies waar deze halve dag voor is. Met maximaal 12 vakgenoten werk je je eigen eerste stap uit.":"De basis is er deels. Wat nu helpt, is focus en eigenaarschap. In een halve dag maak je je aanpak voor het eerste kwartaal concreet. Liever met je eigen team? Dat kan ook in-company.",meta:w.meta,acts:[["Schrijf je in",w.href,"btn-grad"],[pct<40?"Liever eerst een gesprek":"In-company aanvragen",pct<40?"#lead":"/#contact","btn-line"]]};
+    return {title:w.title,text:pct<40?"Je staat aan het begin, en dat is precies waar deze workshop voor is. Met maximaal 12 vakgenoten werk je je eigen eerste stap uit.":"De basis is er deels. Wat nu helpt, is focus en eigenaarschap. In één workshop maak je je aanpak voor het eerste kwartaal concreet. Liever met je eigen team? Dat kan ook in-company.",meta:w.meta,acts:[["Schrijf je in",w.href,"btn-grad"],[pct<40?"Liever eerst een gesprek":"In-company aanvragen",pct<40?"#lead":"/#contact","btn-line"]]};
   }
   function render(){
     var a=answers(), done=a.filter(function(v){return v!==null;}).length;
