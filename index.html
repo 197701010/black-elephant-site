@@ -306,6 +306,32 @@ footer .wrap a:hover{text-decoration:underline}
 .oltxt p{margin:0;color:#D4D1F5;max-width:62ch}
 .olgo{font-weight:600;margin-top:6px}.olgo::after{content:" →"}
 @media (max-width:760px){.olteaser{grid-template-columns:1fr}.olcov svg{min-height:0;aspect-ratio:600/380}.oltxt{padding:22px}}
+.wbtns .btn-star{box-shadow:0 8px 20px rgba(147,51,234,.25)}
+.wurg{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;font-size:13.5px;color:var(--muted);margin:-4px 0 2px}
+.wurg .seats{display:inline-flex;align-items:center;gap:7px}
+.wurg .seats::before{content:"";width:8px;height:8px;border-radius:50%;background:#10B981;box-shadow:0 0 0 3px rgba(16,185,129,.18)}
+.wurg .seats.low{color:#C2410C;font-weight:600}.wurg .seats.low::before{background:#F97316;box-shadow:0 0 0 3px rgba(249,115,22,.2)}
+.wurg .seats.full{color:var(--a3);font-weight:600}.wurg .seats.full::before{background:var(--a3)}
+.wurg .eb{color:var(--a2);font-weight:600}
+dialog.info{width:min(680px,calc(100% - 32px));max-height:calc(100dvh - 40px);overflow:hidden;display:none;flex-direction:column;border-radius:26px}
+dialog.info[open]{display:flex}
+.ihead{flex-shrink:0;position:relative;background:var(--deep);color:#fff;padding:30px clamp(20px,4vw,36px) 26px;overflow:hidden}
+.ihead::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:var(--ic,#9333EA);filter:blur(70px);opacity:.5;right:-90px;top:-130px}
+.ihead>*{position:relative;z-index:1}
+.ihead::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--ic,#9333EA);z-index:2}
+.itag{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F7B4C3}
+.ihead h3{font-size:clamp(24px,3vw,32px);margin:8px 0 8px;color:#fff;max-width:20ch}
+.ihead p{margin:0;color:#D4D1F5;font-size:15.5px;max-width:56ch}
+.iclose{position:absolute!important;right:14px;top:14px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:24px;line-height:1;cursor:pointer;z-index:3}
+.ibody{overflow:auto;padding:22px clamp(20px,4vw,36px) 10px;display:grid;gap:14px}
+.ifacts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ifacts div{background:#F4F1EB;border-radius:14px;padding:12px 14px}
+.ifacts span{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ifacts b{font-family:var(--display);font-weight:600;font-size:15px;line-height:1.35}
+#i-detail{border-top:0;padding-top:0;animation:none}
+.ifoot{flex-shrink:0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px;padding:16px clamp(20px,4vw,36px) 20px;border-top:1px solid var(--line);background:#fff}
+.ifoot span{font-size:14px;color:var(--a2);font-weight:600}
+@media (max-width:560px){.ifacts{grid-template-columns:1fr 1fr}.ifacts div:nth-child(2){grid-column:1/-1;order:3}.ifacts b{font-size:14px}.ihead{padding-top:24px}.ihead p{font-size:14.5px}.ifoot .btn{width:100%}}
 </style>
 </head>
 <body>
@@ -382,14 +408,15 @@ footer .wrap a:hover{text-decoration:underline}
       <p>Halve dagen en één verdiepende dag, maximaal 12 deelnemers, praktisch en met je eigen organisatie als casus. Je gaat naar huis met een concrete eerste stap. Liever met je eigen team? Elke workshop kan ook in-company.</p>
     </div>
     <div class="ws">
-      <article class="rv wcard">
+      <article class="rv wcard" data-seats="12" data-taken="0">
         <span class="tag">AI voor HR · hele dag</span>
         <h3>HR als regisseur van AI-transformatie</h3>
         <p>AI is geen IT-onderwerp. Leer hoe HR de regie pakt: van nulmeting en spelregels tot rollen, cultuur en je eigen plan.</p>
         <div class="wmeta"><span>do 21 jan of do 18 mrt 2027 · Utrecht</span><span class="wprice">€ 995 <small>p.p. excl. btw</small></span></div>
+        <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
-          <button class="btn btn-line wmore" type="button" aria-expanded="false" aria-controls="d-ws-hr">Meer info</button>
-          <button class="btn btn-dark" type="button" id="ws-hr" data-ws="HR als regisseur van AI-transformatie" data-date="donderdag 21 januari 2027, 09:30-16:30|donderdag 18 maart 2027, 09:30-16:30" data-price="€ 995 p.p. excl. btw (early bird € 895 t/m 15 december, deelnemers Q-Logic € 795)">Inschrijven</button>
+          <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-hr">Meer info</button>
+          <button class="btn btn-star" type="button" id="ws-hr" data-ws="HR als regisseur van AI-transformatie" data-date="donderdag 21 januari 2027, 09:30-16:30|donderdag 18 maart 2027, 09:30-16:30" data-price="€ 995 p.p. excl. btw (early bird € 895 t/m 15 december, deelnemers Q-Logic € 795)">Inschrijven</button>
         </div>
         <div class="wdetail" id="d-ws-hr" hidden>
           <h4>Programma</h4><ul class="wprog"><li><span>09:30</span>Ontvangst en kennismaking: met welke vraag kom je?</li><li><span>10:00</span>De wereld kantelt: wat AI is, en waarom dit een HR-onderwerp is</li><li><span>10:45</span>Nulmeting: waar staat jouw organisatie? Met de HR AI-check</li><li><span>11:30</span>Spelregels: drie afspraken die je direct invoert, en de AI Act voor HR</li><li><span>12:30</span>Lunch</li><li><span>13:15</span>Taken en rollen: welk werk verschuift, en wat betekent dat voor je personeelsplanning?</li><li><span>14:30</span>Regie en cultuur: het gesprek met leiders en medewerkers</li><li><span>15:30</span>Je eigen plan voor Q1: wat, wie, wanneer, en de business case</li><li><span>16:15</span>Afsluiting en vervolg</li></ul>
@@ -399,14 +426,15 @@ footer .wrap a:hover{text-decoration:underline}
           <dl class="wprak"><div><dt>Tijd</dt><dd>09:30 – 16:30, incl. lunch</dd></div><div><dt>Locatie</dt><dd>Utrecht</dd></div><div><dt>Groep</dt><dd>max. 12 deelnemers</dd></div><div><dt>Prijs</dt><dd>€ 995 p.p. excl. btw</dd></div><div><dt>Early bird</dt><dd>€ 895 t/m 15 december</dd></div><div><dt>Q-Logic</dt><dd>deelnemers € 795</dd></div></dl>
         </div>
       </article>
-      <article class="rv wcard">
+      <article class="rv wcard" data-seats="12" data-taken="0">
         <span class="tag">AI &amp; leiderschap</span>
         <h3>Leiden als AI meebeslist</h3>
         <p>Wat vraagt AI van leiders? Over regie, eigenaarschap, onzekerheid en tempo. En over het gesprek dat je met je team moet voeren.</p>
         <div class="wmeta"><span>do 4 feb 2027 · Utrecht</span><span class="wprice">€ 695 <small>p.p. excl. btw</small></span></div>
+        <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
-          <button class="btn btn-line wmore" type="button" aria-expanded="false" aria-controls="d-ws-leiden">Meer info</button>
-          <button class="btn btn-dark" type="button" id="ws-leiden" data-ws="Leiden als AI meebeslist" data-date="donderdag 4 februari 2027, 09:00-12:30">Inschrijven</button>
+          <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-leiden">Meer info</button>
+          <button class="btn btn-star" type="button" id="ws-leiden" data-ws="Leiden als AI meebeslist" data-date="donderdag 4 februari 2027, 09:00-12:30">Inschrijven</button>
         </div>
         <div class="wdetail" id="d-ws-leiden" hidden>
           <h4>Programma</h4><ul class="wprog"><li><span>09:00</span>De olifant in jouw kamer: wat AI van leiders vraagt</li><li><span>09:45</span>Eigenaarschap zonder te micromanagen</li><li><span>10:30</span>Pauze</li><li><span>10:45</span>Het gesprek met je team: onzekerheid, tempo en ruimte om te experimenteren</li><li><span>11:45</span>Je eerste 90 dagen</li><li><span>12:15</span>Afsluiting</li></ul>
@@ -416,14 +444,15 @@ footer .wrap a:hover{text-decoration:underline}
           <dl class="wprak"><div><dt>Tijd</dt><dd>09:00 – 12:30</dd></div><div><dt>Locatie</dt><dd>Utrecht</dd></div><div><dt>Groep</dt><dd>max. 12 deelnemers</dd></div><div><dt>Prijs</dt><dd>€ 695 p.p. excl. btw</dd></div><div><dt>Early bird</dt><dd>€ 595 t/m 15 december</dd></div></dl>
         </div>
       </article>
-      <article class="rv wcard">
+      <article class="rv wcard" data-seats="12" data-taken="0">
         <span class="tag">Mythologie · Hele dag</span>
         <h3>Mythes lezen: oude verhalen, nieuwe vragen</h3>
         <p>Nieuwe technologie geeft oude dilemma&#x27;s een nieuwe vorm. Leer mythes lezen als spiegel voor verandering, leiderschap en betekenis. Inclusief museumbezoek.</p>
         <div class="wmeta"><span>do 18 feb 2027 · Haarlem</span><span class="wprice">€ 995 <small>p.p. excl. btw</small></span></div>
+        <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
-          <button class="btn btn-line wmore" type="button" aria-expanded="false" aria-controls="d-ws-mythes">Meer info</button>
-          <button class="btn btn-dark" type="button" id="ws-mythes" data-ws="Mythes lezen: oude verhalen, nieuwe vragen" data-date="donderdag 18 februari 2027, 09:30-16:30" data-price="€ 995 p.p. excl. btw (early bird € 895 t/m 15 december)">Inschrijven</button>
+          <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-mythes">Meer info</button>
+          <button class="btn btn-star" type="button" id="ws-mythes" data-ws="Mythes lezen: oude verhalen, nieuwe vragen" data-date="donderdag 18 februari 2027, 09:30-16:30" data-price="€ 995 p.p. excl. btw (early bird € 895 t/m 15 december)">Inschrijven</button>
         </div>
         <div class="wdetail" id="d-ws-mythes" hidden>
           <h4>Programma</h4><ul class="wprog"><li><span>09:30</span>Ontvangst: waarom oude verhalen nieuwe vragen zichtbaar maken</li><li><span>10:00</span>Lens 1 en 2: de vraag achter het verhaal, en de herhaling</li><li><span>11:00</span>Lens 3 en 4: het detail dat niet klopt, en de spiegel</li><li><span>12:15</span>Lunch</li><li><span>13:00</span>Museumbezoek: de vier lenzen toepassen op beelden en verhalen in de zaal</li><li><span>14:45</span>Je eigen vraagstuk: welke mythe houdt jou een spiegel voor?</li><li><span>15:45</span>Vertellen en delen in kleine groep</li><li><span>16:15</span>Afsluiting</li></ul>
@@ -433,14 +462,15 @@ footer .wrap a:hover{text-decoration:underline}
           <dl class="wprak"><div><dt>Tijd</dt><dd>09:30 – 16:30, incl. lunch en museumentree</dd></div><div><dt>Locatie</dt><dd>Haarlem</dd></div><div><dt>Groep</dt><dd>max. 12 deelnemers</dd></div><div><dt>Prijs</dt><dd>€ 995 p.p. excl. btw</dd></div><div><dt>Early bird</dt><dd>€ 895 t/m 15 december</dd></div></dl>
         </div>
       </article>
-      <article class="rv wcard">
+      <article class="rv wcard" data-seats="12" data-taken="0">
         <span class="tag">Storytelling</span>
         <h3>Vertellen dat blijft hangen</h3>
         <p>Een strategie, een verandering of een pitch: mensen onthouden geen slides, wel verhalen. Leer een verhaal bouwen dat raakt en in beweging brengt.</p>
         <div class="wmeta"><span>do 4 mrt 2027 · Haarlem</span><span class="wprice">€ 695 <small>p.p. excl. btw</small></span></div>
+        <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
-          <button class="btn btn-line wmore" type="button" aria-expanded="false" aria-controls="d-ws-story">Meer info</button>
-          <button class="btn btn-dark" type="button" id="ws-story" data-ws="Vertellen dat blijft hangen" data-date="donderdag 4 maart 2027, 09:00-12:30">Inschrijven</button>
+          <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-story">Meer info</button>
+          <button class="btn btn-star" type="button" id="ws-story" data-ws="Vertellen dat blijft hangen" data-date="donderdag 4 maart 2027, 09:00-12:30">Inschrijven</button>
         </div>
         <div class="wdetail" id="d-ws-story" hidden>
           <h4>Programma</h4><ul class="wprog"><li><span>09:00</span>Waarom mensen verhalen onthouden en slides vergeten</li><li><span>09:30</span>De opbouw van een sterk verhaal</li><li><span>10:30</span>Pauze</li><li><span>10:45</span>Van boodschap naar beeld: je eigen verhaal bouwen</li><li><span>11:30</span>Vertellen en feedback in een kleine groep</li><li><span>12:15</span>Afsluiting</li></ul>
@@ -450,14 +480,15 @@ footer .wrap a:hover{text-decoration:underline}
           <dl class="wprak"><div><dt>Tijd</dt><dd>09:00 – 12:30</dd></div><div><dt>Locatie</dt><dd>Haarlem</dd></div><div><dt>Groep</dt><dd>max. 12 deelnemers</dd></div><div><dt>Prijs</dt><dd>€ 695 p.p. excl. btw</dd></div><div><dt>Early bird</dt><dd>€ 595 t/m 15 december</dd></div></dl>
         </div>
       </article>
-      <article class="rv wcard">
+      <article class="rv wcard" data-seats="12" data-taken="0">
         <span class="tag">Verandering</span>
         <h3>AI-verandering die landt</h3>
         <p>Een AI-programma op papier is geen verandering. Leer hoe je mensen meekrijgt: van eigenaarschap en champions tot weerstand en tempo.</p>
         <div class="wmeta"><span>do 11 mrt 2027 · Utrecht</span><span class="wprice">€ 695 <small>p.p. excl. btw</small></span></div>
+        <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
-          <button class="btn btn-line wmore" type="button" aria-expanded="false" aria-controls="d-ws-change">Meer info</button>
-          <button class="btn btn-dark" type="button" id="ws-change" data-ws="AI-verandering die landt" data-date="donderdag 11 maart 2027, 09:00-12:30">Inschrijven</button>
+          <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-change">Meer info</button>
+          <button class="btn btn-star" type="button" id="ws-change" data-ws="AI-verandering die landt" data-date="donderdag 11 maart 2027, 09:00-12:30">Inschrijven</button>
         </div>
         <div class="wdetail" id="d-ws-change" hidden>
           <h4>Programma</h4><ul class="wprog"><li><span>09:00</span>Waarom AI-programma&#x27;s vastlopen, en hoe je dat herkent</li><li><span>09:45</span>Eigenaarschap, champions en ritme</li><li><span>10:30</span>Pauze</li><li><span>10:45</span>Weerstand en tempo: wat werkt wel?</li><li><span>11:30</span>Je veranderplan voor de eerste 90 dagen</li><li><span>12:15</span>Afsluiting</li></ul>
@@ -467,14 +498,15 @@ footer .wrap a:hover{text-decoration:underline}
           <dl class="wprak"><div><dt>Tijd</dt><dd>09:00 – 12:30</dd></div><div><dt>Locatie</dt><dd>Utrecht</dd></div><div><dt>Groep</dt><dd>max. 12 deelnemers</dd></div><div><dt>Prijs</dt><dd>€ 695 p.p. excl. btw</dd></div><div><dt>Early bird</dt><dd>€ 595 t/m 15 december</dd></div></dl>
         </div>
       </article>
-      <article class="rv wcard">
+      <article class="rv wcard" data-seats="12" data-taken="0">
         <span class="tag">AI-geletterdheid</span>
         <h3>AI-geletterd in één ochtend</h3>
         <p>Sinds 2025 verplicht, en vooral nuttig: wat kan AI wel en niet, hoe gebruik je het verantwoord, en wat betekent het voor jouw werk?</p>
         <div class="wmeta"><span>do 25 mrt 2027 · Utrecht</span><span class="wprice">€ 695 <small>p.p. excl. btw</small></span></div>
+        <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
-          <button class="btn btn-line wmore" type="button" aria-expanded="false" aria-controls="d-ws-literacy">Meer info</button>
-          <button class="btn btn-dark" type="button" id="ws-literacy" data-ws="AI-geletterd in één ochtend" data-date="donderdag 25 maart 2027, 09:00-12:30">Inschrijven</button>
+          <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-literacy">Meer info</button>
+          <button class="btn btn-star" type="button" id="ws-literacy" data-ws="AI-geletterd in één ochtend" data-date="donderdag 25 maart 2027, 09:00-12:30">Inschrijven</button>
         </div>
         <div class="wdetail" id="d-ws-literacy" hidden>
           <h4>Programma</h4><ul class="wprog"><li><span>09:00</span>Wat AI is, en wat het niet is</li><li><span>09:45</span>Veilig en verantwoord: wat mag wel en wat niet?</li><li><span>10:30</span>Pauze</li><li><span>10:45</span>Oefenen met je eigen werk</li><li><span>11:45</span>Afspraken voor jouw team</li><li><span>12:15</span>Afsluiting</li></ul>
@@ -603,6 +635,15 @@ footer .wrap a:hover{text-decoration:underline}
 
 <footer><div class="wrap"><span>© 2026 Black Elephant · Haarlem</span><span><a href="/aicheck/">AI-check</a> · <a href="/privacy/">Privacy</a> · info@blackelephant.nl</span></div></footer>
 
+<dialog id="infoDialog" class="info" aria-labelledby="i-title">
+  <div class="ihead"><button class="iclose" type="button" aria-label="Sluiten">×</button><span class="itag" id="i-tag"></span><h3 id="i-title"></h3><p id="i-intro"></p></div>
+  <div class="ibody">
+    <div class="ifacts"><div><span>Datum</span><b id="i-date"></b></div><div><span>Prijs</span><b id="i-price"></b></div><div><span>Beschikbaarheid</span><b id="i-seats"></b></div></div>
+    <div id="i-detail" class="wdetail"></div>
+  </div>
+  <div class="ifoot"><span id="i-eb"></span><button class="btn btn-star arrow" type="button" id="i-go">Inschrijven</button></div>
+</dialog>
+
 <dialog id="wsDialog" aria-labelledby="ws-title">
   <form class="dlg" id="wsForm" method="dialog" novalidate>
     <input type="checkbox" name="botcheck" id="w-bot" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -692,7 +733,30 @@ footer .wrap a:hover{text-decoration:underline}
   var bg=document.querySelector(".burger"), mm=document.getElementById("mmenu");
   bg.addEventListener("click",function(){var o=mm.hidden;mm.hidden=!o;bg.setAttribute("aria-expanded",String(o));});
   mm.addEventListener("click",function(e){if(e.target.tagName==="A"){mm.hidden=true;bg.setAttribute("aria-expanded","false");}});
-  document.querySelectorAll(".wmore").forEach(function(b){b.addEventListener("click",function(){var d=document.getElementById(b.getAttribute("aria-controls"));var o=d.hidden;d.hidden=!o;b.setAttribute("aria-expanded",String(o));b.textContent=o?"Minder info":"Meer info";});});
+  // seats + early bird
+  var EB=new Date("2026-12-15T23:59:59+01:00"),days=Math.ceil((EB-new Date())/864e5);
+  function seatTxt(a){var t=+a.getAttribute("data-seats"),k=+a.getAttribute("data-taken")||0,l=t-k;if(l<=0)return["Volgeboekt, wachtlijst open","full"];if(k===0)return[t+" plekken · kleine groep",""];if(l<=4)return["Nog maar "+l+" plekken","low"];return["Nog "+l+" van "+t+" plekken",""];}
+  document.querySelectorAll(".wcard[data-seats]").forEach(function(a){var st=seatTxt(a),e=a.querySelector(".wurg .seats");e.textContent=st[0];if(st[1])e.classList.add(st[1]);var eb=a.querySelector(".wurg .eb");if(days>0)eb.textContent="Early bird nog "+days+(days===1?" dag":" dagen");});
+  // Meer info opent als eigen kaart
+  var idl=document.getElementById("infoDialog"),igo=null;
+  var COLORS=["#4F46E5","#9333EA","#E85D75"];
+  document.querySelectorAll(".wmore").forEach(function(b,i){b.addEventListener("click",function(){
+    var a=b.closest("article"),src=document.getElementById(b.getAttribute("aria-controls")),wb=a.querySelector("[data-ws]");
+    idl.style.setProperty("--ic",COLORS[i%3]);
+    document.getElementById("i-tag").textContent=a.querySelector(".tag").textContent;
+    document.getElementById("i-title").textContent=a.querySelector("h3").textContent;
+    document.getElementById("i-intro").textContent=a.querySelector("p").textContent;
+    document.getElementById("i-date").textContent=a.querySelector(".wmeta span").textContent;
+    document.getElementById("i-price").textContent=(wb.getAttribute("data-price")||"€ 695 p.p. excl. btw (early bird € 595 t/m 15 december)");
+    document.getElementById("i-seats").textContent=seatTxt(a)[0];
+    document.getElementById("i-eb").textContent=days>0?"✦ Early bird nog "+days+(days===1?" dag":" dagen"):"";
+    document.getElementById("i-detail").innerHTML=src.innerHTML;
+    igo=wb; idl.querySelector(".ibody").scrollTop=0;
+    if(idl.showModal)idl.showModal();else idl.setAttribute("open","");
+  });});
+  idl.querySelector(".iclose").addEventListener("click",function(){idl.close();});
+  idl.addEventListener("click",function(e){if(e.target===idl)idl.close();});
+  document.getElementById("i-go").addEventListener("click",function(){idl.close();if(igo)igo.click();});
   var nw=document.querySelector(".navwrap");function sc(){nw.classList.toggle("scrolled",window.scrollY>20);}window.addEventListener("scroll",sc,{passive:true});sc();
   // deeplink: /#ws-hr opent direct de inschrijving
   var h=location.hash.replace("#","");
