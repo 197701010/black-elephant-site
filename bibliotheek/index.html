@@ -110,7 +110,7 @@ blockquote b{display:block;color:#F7B4C3;font-size:12.5px;letter-spacing:.14em;t
 .btn-grad.lesbtn{background:var(--grad);background-size:200% 100%;color:#fff}
 .ctas .lesbtn{font-size:16px;padding:13px 22px}
 .locknote{display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--muted)!important}
-.featured{grid-column:1/-1;display:grid;grid-template-columns:1.05fr 1fr;border:0;position:relative;background:linear-gradient(#fff,#fff) padding-box,var(--grad) border-box;border:3px solid transparent;box-shadow:0 20px 50px rgba(147,51,234,.16)}
+.featured{grid-column:1/-1;display:grid;grid-template-columns:1.05fr 1fr;position:relative;background:#fff;border:0;box-shadow:0 20px 50px rgba(147,51,234,.16)}
 .featured .cover{aspect-ratio:auto;min-height:100%}
 .featured .cover svg{position:absolute;inset:0}
 .featured .cbody{padding:34px 36px}
@@ -252,8 +252,14 @@ footer a{text-decoration:none}
 #wl{gap:18px}
 .lcta{flex-direction:column;align-items:flex-start;gap:10px;padding-top:6px}
 .lcta span{font-size:14.5px;line-height:1.5}
+.featured::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:3px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none;z-index:3}
+.featured .cbody{background:#fff}
+.ok .golinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.ok .golinks a{background:#fff;color:var(--deep);font-weight:600;text-decoration:none;padding:12px 18px;border-radius:999px;font-size:15px}
+.ok .alt{font-size:14.5px;color:#C9C6EE}.ok .alt a{color:#fff;font-weight:600}
 </style>
 <script>document.documentElement.classList.add("js")</script>
+<script data-goatcounter="https://blackelephant.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div class="navwrap">
@@ -405,9 +411,9 @@ footer a{text-decoration:none}
           <input type="checkbox" name="botcheck" id="wl-bot" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="btn btn-grad" type="submit">Stuur mij les 2 gratis</button>
           <p id="wl-status" role="status" aria-live="polite"></p>
-          <p class="fnote">Voor een team? Mail <a href="mailto:info@blackelephant.nl">info@blackelephant.nl</a>. We gebruiken je e-mailadres alleen hiervoor. Zie ons <a href="/privacy/">privacybeleid</a>.</p>
+          <p class="fnote">Voor een team? Mail <a href="mailto:hello@blackelephant.nl">hello@blackelephant.nl</a>. We gebruiken je e-mailadres alleen hiervoor. Zie ons <a href="/privacy/">privacybeleid</a>.</p>
         </form>
-        <div class="ok" id="wl-ok" hidden><b>Komt eraan.</b><p>Dank je wel. Je krijgt les 2 in je inbox zodra de cursus start, samen met je introductiekorting.</p><p><a href="/#workshops" style="color:#F7B4C3;font-weight:600">Liever nu al live? Bekijk de workshops</a></p></div>
+        <div class="ok" id="wl-ok" hidden><b>Hier is je les 2.</b><p>Dank je wel. Je kunt meteen verder lezen. Bewaar de link, dan vind je de les later terug.</p><div class="golinks" id="wl-links"></div><p class="alt">Liever samen in een zaal? <a href="/#workshops">Bekijk de live workshops</a></p></div>
       </div>
     </div>
   </div>
@@ -421,7 +427,7 @@ footer a{text-decoration:none}
       <details><summary>Wanneer starten de cursussen?</summary><p>De eerste cursussen staan gepland voor voorjaar 2027. We beginnen met Mythes lezen. De volgorde daarna hangt af van de belangstelling.</p></details>
       <details><summary>Wat is gratis en wat niet?</summary><p>De eerste les van elke cursus is gratis en zonder account te lezen. De overige modules, het werkboek en het bewijs van deelname ontgrendel je na aankoop.</p></details>
       <details><summary>Wat kost een cursus?</summary><p>De prijs staat bij elke cursus. Heb je les 2 gratis aangevraagd, dan krijg je bij de start 30% introductiekorting.</p></details>
-      <details><summary>Kan ik met mijn team deelnemen?</summary><p>Ja. Voor teams bieden we licenties met groepskorting, eventueel gecombineerd met een live sessie op locatie. Mail ons via info@blackelephant.nl en we maken een voorstel.</p></details>
+      <details><summary>Kan ik met mijn team deelnemen?</summary><p>Ja. Voor teams bieden we licenties met groepskorting, eventueel gecombineerd met een live sessie op locatie. Mail ons via hello@blackelephant.nl en we maken een voorstel.</p></details>
       <details><summary>Wat is het verschil met de live workshops?</summary><p>De online cursus geeft je de inhoud en de oefeningen in je eigen tempo. Een <a href="/#workshops">live workshop</a> geeft je daarnaast de uitwisseling met vakgenoten en directe feedback.</p></details>
       <details><summary>Krijg ik een bewijs van deelname?</summary><p>Ja, na afronding krijg je een bewijs van deelname. Bij AI-geletterd voor teams is dat een certificaat dat je kunt gebruiken voor je AI-geletterdheidsdossier.</p></details>
       <details><summary>Zit ik ergens aan vast?</summary><p>Nee. Les 1 en 2 zijn vrijblijvend. Je betaalt pas als je besluit verder te gaan.</p></details>
@@ -575,7 +581,7 @@ footer a{text-decoration:none}
   </div>
 </dialog>
 
-<footer><div class="wrap"><span>© 2026 Black Elephant · Haarlem</span><span><a href="/">blackelephant.nl</a> · <a href="/privacy/">Privacy</a> · info@blackelephant.nl</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Black Elephant · Haarlem</span><span><a href="/">blackelephant.nl</a> · <a href="/privacy/">Privacy</a> · hello@blackelephant.nl</span></div></footer>
 
 <script>
 (function(){
@@ -606,8 +612,8 @@ footer a{text-decoration:none}
     var data={naam:naam,email:email,cursus:cur};
     var subj="Les 2 gratis: "+cur;
     st.textContent="Bezig met versturen…";
-    function done(){f.hidden=true;document.getElementById("wl-ok").hidden=false;}
-    function fallback(){location.href="mailto:info@blackelephant.nl?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(["Naam: "+data.naam,"E-mail: "+data.email,"Cursus: "+data.cursus].join("\n"));}
+    function done(){var M={"Mythes lezen: de vier lenzen":"mythes","Vertellen dat blijft hangen":"story","HR als regisseur van AI-transformatie":"hr","AI-geletterd voor teams":"ai"};var L=document.getElementById("wl-links");var ks=M[cur]?[cur]:Object.keys(M);L.innerHTML=ks.map(function(n){return '<a href="/bibliotheek/les2-'+M[n]+'/">'+(ks.length>1?n:"Open les 2")+" &rarr;</a>"}).join("");f.hidden=true;document.getElementById("wl-ok").hidden=false;}
+    function fallback(){location.href="mailto:hello@blackelephant.nl?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(["Naam: "+data.naam,"E-mail: "+data.email,"Cursus: "+data.cursus].join("\n"));}
     fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:W3F_KEY,subject:subj,from_name:"Online cursus, les 2",replyto:email},data))})
       .then(function(r){return r.json()}).then(function(j){if(j&&j.success)done();else{st.textContent="Versturen lukte niet. We openen je e-mail.";fallback();}})
       .catch(function(){st.textContent="Versturen lukte niet. We openen je e-mail.";fallback();});

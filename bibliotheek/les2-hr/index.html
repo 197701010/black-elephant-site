@@ -98,7 +98,7 @@ blockquote b{display:block;color:#F7B4C3;font-size:12.5px;letter-spacing:.14em;t
 .btn-grad.lesbtn{background:var(--grad);background-size:200% 100%;color:#fff}
 .ctas .lesbtn{font-size:16px;padding:13px 22px}
 .locknote{display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--muted)!important}
-.featured{grid-column:1/-1;display:grid;grid-template-columns:1.05fr 1fr;border:0;position:relative;background:linear-gradient(#fff,#fff) padding-box,var(--grad) border-box;border:3px solid transparent;box-shadow:0 20px 50px rgba(147,51,234,.16)}
+.featured{grid-column:1/-1;display:grid;grid-template-columns:1.05fr 1fr;position:relative;background:#fff;border:0;box-shadow:0 20px 50px rgba(147,51,234,.16)}
 .featured .cover{aspect-ratio:auto;min-height:100%}
 .featured .cover svg{position:absolute;inset:0}
 .featured .cbody{padding:34px 36px}
@@ -240,6 +240,11 @@ footer a{text-decoration:none}
 #wl{gap:18px}
 .lcta{flex-direction:column;align-items:flex-start;gap:10px;padding-top:6px}
 .lcta span{font-size:14.5px;line-height:1.5}
+.featured::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:3px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none;z-index:3}
+.featured .cbody{background:#fff}
+.ok .golinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.ok .golinks a{background:#fff;color:var(--deep);font-weight:600;text-decoration:none;padding:12px 18px;border-radius:999px;font-size:15px}
+.ok .alt{font-size:14.5px;color:#C9C6EE}.ok .alt a{color:#fff;font-weight:600}
 </style><style>
 body{background:var(--bg)}
 .lpage{max-width:760px;margin:0 auto;padding:28px 16px 60px}
@@ -251,7 +256,7 @@ body{background:var(--bg)}
 .done{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
 .done i{display:block;flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
 .done i::after{content:"";display:block;height:100%;width:var(--p);background:var(--grad)}
-</style></head><body>
+</style><script data-goatcounter="https://blackelephant.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script></head><body>
 <div class="lpage">
  <div class="ltop"><a href="/bibliotheek/"><img src="/assets/logo-black.svg" alt="Black Elephant"></a><a class="back" href="/bibliotheek/">Naar De Bibliotheek</a></div>
  <article class="lcard">
@@ -270,7 +275,7 @@ body{background:var(--bg)}
    <div class="task"><b>Opdracht</b><ol><li>Doe de HR AI-check op blackelephant.nl/hr-aicheck.</li><li>Vraag twee collega’s hetzelfde te doen.</li><li>Noteer jullie score per thema, waar jullie het meest verschillen en welk thema de olifant in jullie kamer is.</li></ol></div>
    <div class="ltake"><b>Neem mee</b><ul><li>Een nulmeting moet in één gesprek passen.</li><li>Begin bij je laagste score.</li><li>De verschillen tussen collega’s zijn de echte boodschap.</li></ul></div>
    <div class="next"><b>Verder in de cursus</b><ul><li><span class="lk"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>03 · Spelregels en de AI Act voor HR</li><li><span class="lk"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>04 · Taken en rollen: welk werk verschuift?</li><li><span class="lk"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>05 · Regie en cultuur: het gesprek met leiders en medewerkers</li><li><span class="lk"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>06 · Je plan voor het eerste kwartaal, met business case</li></ul></div>
-   <div class="lcta"><a class="btn btn-grad" href="mailto:info@blackelephant.nl?subject=Ik wil verder: HR als regisseur van AI-transformatie">Ik wil verder, met 30% korting</a><span>€ 276 in plaats van € 395 p.p. excl. btw · teamlicentie op aanvraag. Liever live? <a href="/#workshops" style="color:var(--a2);font-weight:600">Bekijk de workshops</a></span></div>
+   <div class="lcta"><a class="btn btn-grad" href="mailto:hello@blackelephant.nl?subject=Ik wil verder: HR als regisseur van AI-transformatie">Ik wil verder, met 30% korting</a><span>€ 276 in plaats van € 395 p.p. excl. btw · teamlicentie op aanvraag. Liever samen in een zaal? <a href="/#workshops" style="color:var(--a2);font-weight:600">Bekijk de live workshops</a></span></div>
   </div>
  </article>
 </div></body></html>

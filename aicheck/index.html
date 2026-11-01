@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>AI-check · Black Elephant</title>
 <meta name="description" content="Twaalf vragen, vier minuten. Zie per thema waar je organisatie staat met AI en krijg concrete stappen.">
+<link rel="canonical" href="https://blackelephant.nl/aicheck/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -130,7 +131,16 @@ footer a{text-decoration:none}
 .switch{font-size:14.5px;color:var(--muted);margin-top:14px}
 .switch a{color:var(--a2);font-weight:600}
 @media (max-width:600px){.bar-row{grid-template-columns:1fr 44px}.bar-row .nm{grid-column:1/-1}}
+
+@media (max-width:900px){
+  .navwrap{padding-top:6px;margin-bottom:-74px}
+  nav.top{background:transparent;border-color:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:4px 4px 4px 8px;transition:background .25s,box-shadow .25s}
+  .navwrap.scrolled nav.top{background:rgba(250,248,244,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line);box-shadow:0 6px 24px rgba(14,14,16,.06)}
+  .brand img{height:46px!important}
+  .hero .wrap{padding-top:104px!important}
+}
 </style>
+<script data-goatcounter="https://blackelephant.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div class="navwrap">
@@ -143,7 +153,7 @@ footer a{text-decoration:none}
 <header class="hero">
   <span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
   <div class="wrap">
-    <p class="label">Gratis · 12 vragen · 4 minuten</p>
+    <p class="label">Gratis · 12 vragen · 4 minuten · geen account nodig</p>
     <h1>Hoe AI-volwassen is <span class="hl">jouw organisatie?</span></h1>
     <p class="lede">Twaalf vragen over zes thema's: zicht, richting, spelregels, mensen, regie en waarde. Je krijgt een profiel per thema, ziet waar de olifant in jouw kamer staat en krijgt drie concrete stappen.</p>
     <p class="qlbar" id="qlbar" hidden>✦ <span>Je was bij de ontbijtsessie van Q-Logic: je krijgt de <b>deelnemersprijs van € 795</b> (in plaats van € 995) voor de HR-workshop.</span></p>
@@ -182,6 +192,7 @@ footer a{text-decoration:none}
         <h3>Ontvang je profiel en persoonlijk advies</h3>
         <p>We sturen je je scores per thema, met een korte toelichting en drie concrete stappen. Geen nieuwsbrief, tenzij je dat wilt.</p>
         <form id="leadForm" novalidate>
+          <input type="checkbox" name="botcheck" id="l-bot" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input id="l-naam" placeholder="Naam" autocomplete="name" aria-label="Naam">
           <input id="l-mail" type="email" placeholder="E-mail" autocomplete="email" aria-label="E-mail">
           <input id="l-org" placeholder="Organisatie" autocomplete="organization" aria-label="Organisatie">
@@ -201,7 +212,7 @@ footer a{text-decoration:none}
   </div>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Black Elephant · Haarlem</span><span><a href="/">blackelephant.nl</a> · <a href="/privacy/">Privacy</a> · info@blackelephant.nl</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Black Elephant · Haarlem</span><span><a href="/">blackelephant.nl</a> · <a href="/privacy/">Privacy</a> · hello@blackelephant.nl</span></div></footer>
 
 <script>
 (function(){
@@ -272,12 +283,13 @@ footer a{text-decoration:none}
   var lf=document.getElementById("leadForm"), ls=document.getElementById("l-status");
   lf.addEventListener("submit",function(e){
     e.preventDefault();
+    if(document.getElementById("l-bot").checked){ls.textContent="Dank je wel.";return;}
     var naam=document.getElementById("l-naam").value.trim(), mail=document.getElementById("l-mail").value.trim();
     if(!naam||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){ls.textContent="Vul je naam en een geldig e-mailadres in.";return;}
     var data={naam:naam,email:mail,organisatie:document.getElementById("l-org").value.trim(),functie:document.getElementById("l-functie").value.trim(),wil_gesprek:document.getElementById("l-contact").checked?"ja":"nee",q_logic:QL?"ja":"nee",scan:VARIANT,uitkomst:summary()};
     var subj=(VARIANT==="hr"?"HR AI-check: ":"AI-check: ")+naam+(data.organisatie?" ("+data.organisatie+")":"");
     ls.textContent="Bezig met versturen…";
-    function fallback(){location.href="mailto:info@blackelephant.nl?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(["Naam: "+data.naam,"E-mail: "+data.email,"Organisatie: "+data.organisatie,"Functie: "+data.functie,"Wil gesprek: "+data.wil_gesprek,"",data.uitkomst].join("\n"));ls.textContent="Versturen via de site lukte niet. Je mailprogramma opent als alternatief.";}
+    function fallback(){location.href="mailto:hello@blackelephant.nl?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(["Naam: "+data.naam,"E-mail: "+data.email,"Organisatie: "+data.organisatie,"Functie: "+data.functie,"Wil gesprek: "+data.wil_gesprek,"",data.uitkomst].join("\n"));ls.textContent="Versturen via de site lukte niet. Je mailprogramma opent als alternatief.";}
     fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:W3F_KEY,subject:subj,from_name:"AI-check"},data))})
       .then(function(r){return r.json();}).then(function(j){if(j.success){ls.textContent="Dank je wel. Je ontvangt je profiel en advies binnen twee werkdagen.";lf.reset();}else fallback();}).catch(fallback);
   });
@@ -286,5 +298,6 @@ footer a{text-decoration:none}
   render();
 })();
 </script>
+<script>(function(){var n=document.querySelector(".navwrap");function s(){n.classList.toggle("scrolled",window.scrollY>20);}window.addEventListener("scroll",s,{passive:true});s();})();</script>
 </body>
 </html>
