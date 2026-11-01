@@ -608,12 +608,12 @@ footer a{text-decoration:none}
     if(document.getElementById("wl-bot").checked){st.textContent="Dank je wel.";return;}
     var naam=document.getElementById("wl-naam").value.trim(),email=document.getElementById("wl-email").value.trim(),cur=document.getElementById("wl-cursus").value;
     if(!naam||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){st.textContent="Vul je voornaam en een geldig e-mailadres in.";return;}
-    var data={naam:naam,email:email,cursus:cur};
-    var subj="Les 2 gratis: "+cur;
+    var M2={"Mythes lezen: de vier lenzen":"mythes","Vertellen dat blijft hangen":"story","HR als regisseur van AI-transformatie":"hr","AI-geletterd voor teams":"ai"};var link=M2[cur]?"https://blackelephant.nl/bibliotheek/les2-"+M2[cur]+"/":"Alle cursussen: https://blackelephant.nl/bibliotheek/";var data={"Naam":naam,"E-mail":email,"Cursus":cur,"Les 2 (al getoond op de site)":link,"Aangemeld op":new Date().toLocaleString("nl-NL",{dateStyle:"long",timeStyle:"short"}),"Volgende stap":"Klik op Beantwoorden om "+naam+" persoonlijk te mailen. Je antwoord gaat direct naar "+email+"."};
+    var subj="Nieuwe aanmelding: "+naam+" · "+cur;
     st.textContent="Bezig met versturen…";
     function done(){var M={"Mythes lezen: de vier lenzen":"mythes","Vertellen dat blijft hangen":"story","HR als regisseur van AI-transformatie":"hr","AI-geletterd voor teams":"ai"};var L=document.getElementById("wl-links");var ks=M[cur]?[cur]:Object.keys(M);L.innerHTML=ks.map(function(n){return '<a href="/bibliotheek/les2-'+M[n]+'/">'+(ks.length>1?n:"Open les 2")+" &rarr;</a>"}).join("");f.hidden=true;document.getElementById("wl-ok").hidden=false;}
-    function fallback(){location.href="mailto:hello@blackelephant.nl?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(["Naam: "+data.naam,"E-mail: "+data.email,"Cursus: "+data.cursus].join("\n"));}
-    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:W3F_KEY,subject:subj,from_name:"Online cursus, les 2",replyto:email},data))})
+    function fallback(){location.href="mailto:hello@blackelephant.nl?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(["Naam: "+naam,"E-mail: "+email,"Cursus: "+cur].join("\n"));}
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:W3F_KEY,subject:subj,from_name:"Black Elephant · De Bibliotheek",replyto:email},data))})
       .then(function(r){return r.json()}).then(function(j){if(j&&j.success)done();else{st.textContent="Versturen lukte niet. We openen je e-mail.";fallback();}})
       .catch(function(){st.textContent="Versturen lukte niet. We openen je e-mail.";fallback();});
   });
