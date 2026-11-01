@@ -212,9 +212,6 @@ footer a{text-decoration:none}
 
 /* beweging */
 .hero{position:relative;overflow:hidden}
-.hero .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;pointer-events:none;z-index:0}
-.hero .o1{width:520px;height:520px;background:#8B7CF6;top:-140px;right:-120px;animation:drift1 22s ease-in-out infinite alternate}
-.hero .o2{width:420px;height:420px;background:#F59EB3;top:220px;right:180px;animation:drift2 26s ease-in-out infinite alternate}
 .hero .wrap{position:relative;z-index:1}
 @keyframes drift1{to{transform:translate(-80px,60px) scale(1.08)}}
 @keyframes drift2{to{transform:translate(70px,-50px) scale(.92)}}
@@ -332,6 +329,15 @@ dialog.info[open]{display:flex}
 .ifoot{flex-shrink:0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px;padding:16px clamp(20px,4vw,36px) 20px;border-top:1px solid var(--line);background:#fff}
 .ifoot span{font-size:14px;color:var(--a2);font-weight:600}
 @media (max-width:560px){.ifacts{grid-template-columns:1fr 1fr}.ifacts div:nth-child(2){grid-column:1/-1;order:3}.ifacts b{font-size:14px}.ihead{padding-top:24px}.ihead p{font-size:14.5px}.ifoot .btn{width:100%}}
+/* wind: kleurverloop dat langzaam beweegt */
+.hero .orb{position:absolute;filter:blur(72px);opacity:.38;pointer-events:none;z-index:0;will-change:transform,border-radius}
+.hero .o1{width:540px;height:500px;background:#8B7CF6;top:-150px;right:-120px;border-radius:58% 42% 55% 45%/48% 60% 40% 52%;animation:wind1 34s ease-in-out infinite}
+.hero .o2{width:440px;height:400px;background:#F59EB3;top:200px;right:160px;border-radius:45% 55% 40% 60%/55% 45% 58% 42%;animation:wind2 41s ease-in-out infinite}
+.hero .o3{width:360px;height:320px;background:#C4B5FD;top:40px;right:420px;opacity:.28;border-radius:50% 50% 45% 55%/60% 40% 60% 40%;animation:wind3 47s ease-in-out infinite}
+@keyframes wind1{0%,100%{transform:translate(0,0) rotate(0deg) scale(1);border-radius:58% 42% 55% 45%/48% 60% 40% 52%}25%{transform:translate(-70px,40px) rotate(18deg) scale(1.06);border-radius:45% 55% 62% 38%/55% 42% 58% 45%}50%{transform:translate(-130px,90px) rotate(32deg) scale(1.1);border-radius:62% 38% 45% 55%/40% 58% 42% 60%}75%{transform:translate(-50px,120px) rotate(12deg) scale(1.02);border-radius:50% 50% 38% 62%/58% 45% 55% 42%}}
+@keyframes wind2{0%,100%{transform:translate(0,0) rotate(0deg) scale(1);border-radius:45% 55% 40% 60%/55% 45% 58% 42%}30%{transform:translate(90px,-40px) rotate(-14deg) scale(.94);border-radius:60% 40% 55% 45%/42% 58% 45% 55%}60%{transform:translate(40px,-110px) rotate(-26deg) scale(1.05);border-radius:38% 62% 50% 50%/60% 40% 62% 38%}80%{transform:translate(-40px,-50px) rotate(-8deg) scale(.98);border-radius:55% 45% 60% 40%/45% 55% 40% 60%}}
+@keyframes wind3{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-120px,80px) scale(1.12)}66%{transform:translate(60px,140px) scale(.9)}}
+@media (prefers-reduced-motion:reduce){.hero .orb{animation:none}}
 </style>
 </head>
 <body>
@@ -356,7 +362,7 @@ dialog.info[open]{display:flex}
 </div>
 
 <header class="hero">
-  <span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
+  <span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span><span class="orb o3" aria-hidden="true"></span>
   <div class="wrap">
     <p class="label">AI-transformatie · Keynotes · Workshops · Interim</p>
     <h1>Iedereen ziet de olifant. <span class="hl">Wij benoemen hem.</span></h1>
