@@ -643,7 +643,7 @@ dialog.info[open]{display:flex}
   </div>
 </section>
 
-<footer><div class="wrap"><span>© 2026 Black Elephant · Haarlem</span><span><a href="/aicheck/">AI-check</a> · <a href="/privacy/">Privacy</a> · hello@blackelephant.nl</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Black Elephant · een handelsnaam van Stagefinder B.V. · KvK 68775520 · Haarlem</span><span><a href="/aicheck/">AI-check</a> · <a href="/privacy/">Privacy</a> · <a href="/voorwaarden/">Voorwaarden</a> · hello@blackelephant.nl</span></div></footer>
 
 <dialog id="infoDialog" class="info" aria-labelledby="i-title">
   <div class="ihead"><button class="iclose" type="button" aria-label="Sluiten">×</button><span class="itag" id="i-tag"></span><h3 id="i-title"></h3><p id="i-intro"></p></div>
@@ -671,7 +671,7 @@ dialog.info[open]{display:flex}
     <div class="f"><label for="w-aantal">Aantal deelnemers</label><select id="w-aantal"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
     <label class="chk"><input type="checkbox" id="w-ql"> Ik was bij de ontbijtsessie van Q-Logic (deelnemersprijs HR-workshop € 795)</label>
     <p class="status" id="w-status" role="status"></p>
-    <p class="privacy-note">We gebruiken je gegevens alleen voor je inschrijving. <a href="/privacy/">Privacyverklaring</a></p>
+    <p class="privacy-note">Met je inschrijving ga je akkoord met de <a href="/voorwaarden/">algemene voorwaarden</a>. We gebruiken je gegevens alleen voor je inschrijving. <a href="/privacy/">Privacyverklaring</a></p>
     <div class="acts"><button class="btn btn-line" type="button" id="w-cancel">Annuleren</button><button class="btn btn-dark" type="submit">Inschrijving versturen</button></div>
   </form>
 </dialog>
@@ -686,12 +686,12 @@ dialog.info[open]{display:flex}
     window.addEventListener("beforeprint",function(){document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in");});});})();
 
   var MAIL="hello@blackelephant.nl", W3F_KEY="21d207d9-3485-426b-9e0b-11423f0f483e";
-  function send(subject, data, lines, statusEl, okMsg){
+  function send(subject, data, lines, statusEl, okMsg, onOk){
     if((document.getElementById("o-bot")||{}).checked||(document.getElementById("w-bot")||{}).checked){statusEl.textContent=okMsg;return;}
     statusEl.textContent="Bezig met versturen…";
     fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:W3F_KEY,subject:subject,from_name:"blackelephant.nl"},data))})
       .then(function(r){return r.json();})
-      .then(function(j){ if(j.success){statusEl.textContent=okMsg;} else { mailto(subject,lines); statusEl.textContent="Versturen via de site lukte niet. Je mailprogramma opent als alternatief."; } })
+      .then(function(j){ if(j.success){statusEl.textContent=okMsg; if(onOk)onOk();} else { mailto(subject,lines); statusEl.textContent="Versturen via de site lukte niet. Je mailprogramma opent als alternatief."; } })
       .catch(function(){ mailto(subject,lines); statusEl.textContent="Versturen via de site lukte niet. Je mailprogramma opent als alternatief."; });
   }
   function mailto(subject, lines){ window.location.href="mailto:"+MAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lines.join("\n")); }
@@ -719,7 +719,7 @@ dialog.info[open]{display:flex}
   document.querySelectorAll("[data-ws]").forEach(function(b){
     b.addEventListener("click",function(){
       var dates=b.getAttribute("data-date").split("|");
-      current={name:b.getAttribute("data-ws"),date:dates[0]};
+      current={name:b.getAttribute("data-ws"),date:dates[0],pay:b.getAttribute("data-pay")||""};
       var dw=document.getElementById("w-datewrap"), dsel=document.getElementById("w-date");
       dsel.innerHTML=dates.map(function(d){return "<option>"+d+"</option>";}).join("");
       dw.hidden=dates.length<2;
@@ -738,7 +738,7 @@ dialog.info[open]{display:flex}
     var ql=document.getElementById("w-ql").checked;
     var subj="Inschrijving: "+current.name+" ("+current.date+")";
     var lines=["Workshop: "+current.name,"Datum: "+current.date,"","Naam: "+val("w-naam"),"E-mail: "+val("w-mail"),"Organisatie: "+val("w-org"),"Functie: "+val("w-functie"),"Aantal deelnemers: "+val("w-aantal"),"Q-Logic ontbijtsessie (deelnemersprijs HR-workshop € 795): "+(ql?"ja":"nee")];
-    send(subj,{workshop:current.name,datum:current.date,naam:val("w-naam"),email:val("w-mail"),organisatie:val("w-org"),functie:val("w-functie"),aantal:val("w-aantal"),q_logic:ql?"ja":"nee"},lines,ws,"Dank je wel, je inschrijving is binnen. Je krijgt binnen twee werkdagen een bevestiging en de factuur.");
+    send(subj,{workshop:current.name,datum:current.date,naam:val("w-naam"),email:val("w-mail"),organisatie:val("w-org"),functie:val("w-functie"),aantal:val("w-aantal"),q_logic:ql?"ja":"nee"},lines,ws,current.pay?"Dank je wel, je inschrijving is binnen. Rond je plek af met de betaling.":"Dank je wel, je inschrijving is binnen. Je krijgt binnen twee werkdagen een bevestiging en de factuur.",function(){if(current.pay){var a=document.createElement("a");a.className="btn btn-star";a.href=current.pay;a.textContent="Betaal nu (iDEAL of creditcard)";a.style.marginTop="10px";a.style.display="inline-flex";ws.appendChild(document.createElement("br"));ws.appendChild(a);}});
   });
   var bg=document.querySelector(".burger"), mm=document.getElementById("mmenu");
   bg.addEventListener("click",function(){var o=mm.hidden;mm.hidden=!o;bg.setAttribute("aria-expanded",String(o));});
