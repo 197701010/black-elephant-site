@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Black Elephant · Iedereen ziet de olifant. Wij benoemen hem.</title>
+<title>Black Elephant · AI-transformatie: keynotes, workshops en interim</title>
 <meta name="description" content="Black Elephant helpt organisaties van AI-ambitie naar AI-praktijk: keynotes, open workshops, strategie, AI-oplossingen en interim management.">
 <meta property="og:title" content="Black Elephant · Van AI-ambitie naar AI-praktijk">
 <meta property="og:description" content="Keynotes, open workshops, strategie, AI-oplossingen en interim management.">
@@ -183,7 +183,8 @@ dialog::backdrop{background:rgba(14,14,16,.55)}
 @media (max-width:560px){.dlg .row{grid-template-columns:1fr}}
 
 footer .wrap{padding-block:30px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:14px;color:var(--muted)}
-footer a{text-decoration:none}
+footer a{text-decoration:none;display:inline-block;padding:6px 0}
+summary{padding:10px 0}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.route{transition:none}}
 
 /* kleurthema */
@@ -256,7 +257,7 @@ footer .wrap a:hover{text-decoration:underline}
 .wprog li::before{content:none!important}
 .wcard .wtake li::before{content:"✦"}
 .wmeta{margin-top:auto;border-top:1px solid var(--line);padding-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:14.5px;color:var(--ink-2)}
-.wprice{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);white-space:nowrap}
+.wprice{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);white-space:nowrap}.wprice .was{font-size:15px;color:var(--muted);font-weight:500;margin-right:6px}.wprice .was:empty{display:none}
 .wprice small{font-family:var(--body);font-size:12.5px;font-weight:400;color:var(--muted)}
 .wbtns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .wbtns .btn{padding:12px 14px;font-size:15px}
@@ -347,7 +348,7 @@ dialog.info[open]{display:flex}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4F46E5"/><stop offset=".5" stop-color="#9333EA"/><stop offset="1" stop-color="#E85D75"/></linearGradient></defs></svg>
 <div class="navwrap">
   <nav class="top" aria-label="Hoofdmenu">
-    <a class="brand" href="/" aria-label="Black Elephant, naar de homepage"><img src="/assets/logo-black.svg" alt="Black Elephant"></a>
+    <a class="brand" href="/" aria-label="Black Elephant, naar de homepage"><img src="/assets/logo-black.svg" alt="Black Elephant" width="200" height="62"></a>
     <div class="links">
       <a href="#keynotes">Keynotes</a>
       <a href="#workshops">Workshops</a>
@@ -356,7 +357,7 @@ dialog.info[open]{display:flex}
       <a href="/aicheck/">AI-check</a>
       <a href="#over">Over ons</a>
     </div>
-    <div class="navr"><a class="btn btn-dark arrow" href="#contact">Offerte</a><button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button></div>
+    <div class="navr"><a class="btn btn-dark arrow" href="#contact">Contact</a><button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button></div>
   </nav>
   <div class="mmenu" id="mmenu" hidden>
     <a href="#keynotes">Keynotes</a><a href="#workshops">Workshops</a><a href="/bibliotheek/">Bibliotheek</a><a href="#advies">Strategie &amp; interim</a><a href="/aicheck/">AI-check</a><a href="#over">Over ons</a><a href="#contact">Contact</a>
@@ -371,7 +372,7 @@ dialog.info[open]{display:flex}
     <h1>Iedereen ziet de olifant. <span class="hl">Wij benoemen hem.</span></h1>
     <p class="lede">Een <b>black elephant</b> is een risico dat iedereen ziet aankomen, maar dat niemand benoemt. Tot het misgaat en iedereen verbaasd is. Bij AI is dat zelden de technologie, maar mensen, rollen en regie. Wij maken zichtbaar wat niemand hardop zegt, en bouwen mee aan wat werkt.</p>
     <div class="ctas">
-      <a class="btn btn-dark arrow" href="#contact" data-interest="Kennismaking (20 minuten)">Plan een kennismaking</a>
+      <a class="btn btn-dark arrow" href="#contact" data-interest="Kennismaking (20 minuten)">Plan een gratis kennismaking</a>
       <a class="btn btn-line" href="/aicheck/">Doe de gratis AI-check</a>
     </div>
     <p class="trust">✦ Gratis kennismaking van 20 minuten · Reactie binnen twee werkdagen · Geen verplichtingen</p>
@@ -420,7 +421,7 @@ dialog.info[open]{display:flex}
         <span class="tag">AI voor HR · hele dag</span>
         <h3>HR als regisseur van AI-transformatie</h3>
         <p>AI is geen IT-onderwerp. Leer hoe HR de regie pakt: van nulmeting en spelregels tot rollen, cultuur en je eigen plan.</p>
-        <div class="wmeta"><span>do 21 jan of do 18 mrt 2027 · Utrecht</span><span class="wprice">€ 995 <small>p.p. excl. btw</small></span></div>
+        <div class="wmeta"><span>do 21 jan of do 18 mrt 2027 · Utrecht</span><span class="wprice"><s class="was"></s>€ 995 <small>p.p. excl. btw</small></span></div>
         <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
           <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-hr">Meer info</button>
@@ -438,7 +439,7 @@ dialog.info[open]{display:flex}
         <span class="tag">AI &amp; leiderschap</span>
         <h3>Leiden als AI meebeslist</h3>
         <p>Wat vraagt AI van leiders? Over regie, eigenaarschap, onzekerheid en tempo. En over het gesprek dat je met je team moet voeren.</p>
-        <div class="wmeta"><span>do 4 feb 2027 · Utrecht</span><span class="wprice">€ 695 <small>p.p. excl. btw</small></span></div>
+        <div class="wmeta"><span>do 4 feb 2027 · Utrecht</span><span class="wprice"><s class="was"></s>€ 695 <small>p.p. excl. btw</small></span></div>
         <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
           <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-leiden">Meer info</button>
@@ -456,7 +457,7 @@ dialog.info[open]{display:flex}
         <span class="tag">Mythologie · Hele dag</span>
         <h3>Mythes lezen: oude verhalen, nieuwe vragen</h3>
         <p>Nieuwe technologie geeft oude dilemma&#x27;s een nieuwe vorm. Leer mythes lezen als spiegel voor verandering, leiderschap en betekenis. Inclusief museumbezoek.</p>
-        <div class="wmeta"><span>do 18 feb 2027 · Haarlem</span><span class="wprice">€ 995 <small>p.p. excl. btw</small></span></div>
+        <div class="wmeta"><span>do 18 feb 2027 · Haarlem</span><span class="wprice"><s class="was"></s>€ 995 <small>p.p. excl. btw</small></span></div>
         <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
           <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-mythes">Meer info</button>
@@ -474,7 +475,7 @@ dialog.info[open]{display:flex}
         <span class="tag">Storytelling</span>
         <h3>Vertellen dat blijft hangen</h3>
         <p>Een strategie, een verandering of een pitch: mensen onthouden geen slides, wel verhalen. Leer een verhaal bouwen dat raakt en in beweging brengt.</p>
-        <div class="wmeta"><span>do 4 mrt 2027 · Haarlem</span><span class="wprice">€ 695 <small>p.p. excl. btw</small></span></div>
+        <div class="wmeta"><span>do 4 mrt 2027 · Haarlem</span><span class="wprice"><s class="was"></s>€ 695 <small>p.p. excl. btw</small></span></div>
         <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
           <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-story">Meer info</button>
@@ -492,7 +493,7 @@ dialog.info[open]{display:flex}
         <span class="tag">Verandering</span>
         <h3>AI-verandering die landt</h3>
         <p>Een AI-programma op papier is geen verandering. Leer hoe je mensen meekrijgt: van eigenaarschap en champions tot weerstand en tempo.</p>
-        <div class="wmeta"><span>do 11 mrt 2027 · Utrecht</span><span class="wprice">€ 695 <small>p.p. excl. btw</small></span></div>
+        <div class="wmeta"><span>do 11 mrt 2027 · Utrecht</span><span class="wprice"><s class="was"></s>€ 695 <small>p.p. excl. btw</small></span></div>
         <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
           <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-change">Meer info</button>
@@ -509,8 +510,8 @@ dialog.info[open]{display:flex}
       <article class="rv wcard" data-seats="12" data-taken="3" data-eb="2027-02-11">
         <span class="tag">AI-geletterdheid</span>
         <h3>AI-geletterd in één ochtend</h3>
-        <p>Sinds 2025 verplicht, en vooral nuttig: wat kan AI wel en niet, hoe gebruik je het verantwoord, en wat betekent het voor jouw werk?</p>
-        <div class="wmeta"><span>do 25 mrt 2027 · Utrecht</span><span class="wprice">€ 695 <small>p.p. excl. btw</small></span></div>
+        <p>Sinds februari 2025 vraagt de AI Act erom, en het is vooral nuttig: wat kan AI wel en niet, hoe gebruik je het verantwoord, en wat betekent het voor jouw werk?</p>
+        <div class="wmeta"><span>do 25 mrt 2027 · Utrecht</span><span class="wprice"><s class="was"></s>€ 695 <small>p.p. excl. btw</small></span></div>
         <div class="wurg"><span class="seats"></span><span class="eb"></span></div>
         <div class="wbtns">
           <button class="btn btn-line wmore" type="button" aria-haspopup="dialog" aria-controls="d-ws-literacy">Meer info</button>
@@ -621,7 +622,7 @@ dialog.info[open]{display:flex}
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="intro">
-      <p class="label">Offerte &amp; contact</p>
+      <p class="label">Contact</p>
       <h2>Wat is de olifant in jouw kamer?</h2>
       <p>Vertel kort waar je staat en waar je naar zoekt. Je hoort binnen twee werkdagen van ons, met een voorstel of een moment voor een kennismaking van 20 minuten.</p>
       <div class="direct"><span>Direct mailen</span><b>hello@blackelephant.nl</b></div>
@@ -635,7 +636,7 @@ dialog.info[open]{display:flex}
       <div class="f full"><label for="o-int">Waar gaat het over?</label>
         <select id="o-int"><option>Kennismaking (20 minuten)</option><option>Keynote</option><option>Workshop in-company</option><option>Open workshop</option><option>Strategie / AI-oplossing</option><option>Interim management</option><option>Iets anders</option></select></div>
       <div class="f full"><label for="o-msg">Je vraag (datum, aantal deelnemers, context)</label><textarea id="o-msg"></textarea></div>
-      <button class="btn btn-star arrow" type="submit">Verstuur aanvraag</button>
+      <button class="btn btn-star arrow" type="submit">Vraag een voorstel aan</button>
       <p class="status" id="o-status" role="status"></p>
       <p class="privacy-note">We gebruiken je gegevens alleen om je aanvraag te beantwoorden. <a href="/privacy/">Privacyverklaring</a></p>
     </form>
@@ -668,7 +669,7 @@ dialog.info[open]{display:flex}
     </div>
     <div class="f" id="w-datewrap" hidden><label for="w-date">Datum</label><select id="w-date"></select></div>
     <div class="f"><label for="w-aantal">Aantal deelnemers</label><select id="w-aantal"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
-    <label class="chk"><input type="checkbox" id="w-ql"> Ik was bij de ontbijtsessie van Q-Logic (deelnemersprijs HR-workshop € 795)</label>
+    <label class="chk" id="w-ql-wrap" hidden><input type="checkbox" id="w-ql"> Ik was bij de ontbijtsessie van Q-Logic (deelnemersprijs HR-workshop € 795)</label>
     <p class="status" id="w-status" role="status"></p>
     <p class="privacy-note">Met je inschrijving ga je akkoord met de <a href="/voorwaarden/">algemene voorwaarden</a>. We gebruiken je gegevens alleen voor je inschrijving. <a href="/privacy/">Privacyverklaring</a></p>
     <div class="acts"><button class="btn btn-line" type="button" id="w-cancel">Annuleren</button><button class="btn btn-dark" type="submit">Inschrijving versturen</button></div>
@@ -690,7 +691,7 @@ dialog.info[open]{display:flex}
     statusEl.textContent="Bezig met versturen…";
     fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:W3F_KEY,subject:subject,from_name:"blackelephant.nl"},data))})
       .then(function(r){return r.json();})
-      .then(function(j){ if(j.success){statusEl.textContent=okMsg; if(onOk)onOk();} else { mailto(subject,lines); statusEl.textContent="Versturen via de site lukte niet. Je mailprogramma opent als alternatief."; } })
+      .then(function(j){ if(j.success){statusEl.textContent=okMsg; if(window.goatcounter)goatcounter.count({path:"event/verzonden-"+subject.split(":")[0],title:"Formulier verzonden",event:true}); if(onOk)onOk();} else { mailto(subject,lines); statusEl.textContent="Versturen via de site lukte niet. Je mailprogramma opent als alternatief."; } })
       .catch(function(){ mailto(subject,lines); statusEl.textContent="Versturen via de site lukte niet. Je mailprogramma opent als alternatief."; });
   }
   function mailto(subject, lines){ window.location.href="mailto:"+MAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lines.join("\n")); }
@@ -724,10 +725,12 @@ dialog.info[open]{display:flex}
       dw.hidden=dates.length<2;
       dsel.onchange=function(){current.date=dsel.value;document.getElementById("ws-sub").textContent=current.date+" · "+current.price;};
       document.getElementById("ws-title").textContent=current.name;
-      current.price=b.getAttribute("data-price")||"€ 695 p.p. excl. btw (early bird € 595 t/m 11 februari)";
+      current.price=priceTxt(b.closest("article"));
       document.getElementById("ws-sub").textContent=current.date+" · "+current.price;
       ws.textContent="";
       if(typeof dlg.showModal==="function"){ dlg.showModal(); } else { dlg.setAttribute("open",""); }
+      var fn=document.getElementById("w-naam");if(fn)setTimeout(function(){fn.focus();},0);
+      if(window.goatcounter)goatcounter.count({path:"event/inschrijfdialog-"+current.name,title:"Inschrijfdialog",event:true});
     });
   });
   document.getElementById("w-cancel").addEventListener("click",function(){ dlg.close ? dlg.close() : dlg.removeAttribute("open"); });
@@ -745,7 +748,12 @@ dialog.info[open]{display:flex}
   // seats + early bird
   function ebDays(a){var d=a.getAttribute("data-eb");if(!d)return 0;return Math.ceil((new Date(d+"T23:59:59+01:00")-new Date())/864e5);}
   function seatTxt(a){var t=+a.getAttribute("data-seats"),k=+a.getAttribute("data-taken")||0,l=t-k;if(l<=0)return["Volgeboekt, wachtlijst open","full"];if(k===0)return[t+" plekken · kleine groep",""];if(l<=4)return["Nog maar "+l+" plekken","low"];return["Nog "+l+" van "+t+" plekken",""];}
-  document.querySelectorAll(".wcard[data-seats]").forEach(function(a){var st=seatTxt(a),e=a.querySelector(".wurg .seats");e.textContent=st[0];if(st[1])e.classList.add(st[1]);var eb=a.querySelector(".wurg .eb"),days=ebDays(a);if(days>0)eb.textContent="Early bird nog "+days+(days===1?" dag":" dagen");});
+  function ebPrice(a){var m=/early bird (€ \d+)/.exec(a.querySelector("[data-ws]").getAttribute("data-price")||"");return m?m[1]:"";}
+  function priceTxt(a){var p=a.querySelector("[data-ws]").getAttribute("data-price")||"";p=p.replace(/,\s*deelnemers Q-Logic € \d+/,"");if(ebDays(a)<=0)p=p.replace(/\s*\(early bird[^)]*\)/,"");if(QL&&/Q-Logic/.test(a.querySelector("[data-ws]").getAttribute("data-price")))p=/\)$/.test(p)?p.replace(/\)$/,", deelnemers Q-Logic € 795)"):p+" (deelnemers Q-Logic € 795)";return p;}
+  var QL=/[?&]ql=1/.test(location.search);
+  if(QL){var qw=document.getElementById("w-ql-wrap");if(qw)qw.hidden=false;}
+  document.querySelectorAll(".wcard[data-seats]").forEach(function(a){var st=seatTxt(a),e=a.querySelector(".wurg .seats");e.textContent=st[0];if(st[1])e.classList.add(st[1]);var eb=a.querySelector(".wurg .eb"),days=ebDays(a),ebp=ebPrice(a),wp=a.querySelector(".wprice"),was=wp&&wp.querySelector(".was");
+    if(days>0&&ebp){eb.textContent="Early bird "+ebp+" · nog "+days+(days===1?" dag":" dagen");if(was){was.textContent=wp.childNodes[1].textContent.trim();wp.childNodes[1].textContent=ebp+" ";}}else{if(was)was.remove();}});
   // Meer info opent als eigen kaart
   var idl=document.getElementById("infoDialog"),igo=null;
   var COLORS=["#4F46E5","#9333EA","#E85D75"];
@@ -756,7 +764,7 @@ dialog.info[open]{display:flex}
     document.getElementById("i-title").textContent=a.querySelector("h3").textContent;
     document.getElementById("i-intro").textContent=a.querySelector("p").textContent;
     document.getElementById("i-date").textContent=a.querySelector(".wmeta span").textContent;
-    document.getElementById("i-price").textContent=(wb.getAttribute("data-price")||"€ 695 p.p. excl. btw (early bird € 595 t/m 11 februari)");
+    document.getElementById("i-price").textContent=priceTxt(a);
     document.getElementById("i-seats").textContent=seatTxt(a)[0];
     var days=ebDays(a);document.getElementById("i-eb").textContent=days>0?"✦ Early bird nog "+days+(days===1?" dag":" dagen"):"";
     document.getElementById("i-detail").innerHTML=src.innerHTML;
