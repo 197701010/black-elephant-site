@@ -1,0 +1,96 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toets · AI-geletterd voor teams · Black Elephant</title><meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+:root{--bg:#FAF8F4;--card:#FFFFFF;--soft:#F4F1EB;--ink:#0E0E10;--ink-2:#3B3A37;--muted:#6E6B66;--line:#E3DFD7;--deep:#1E1B4B;--deep-2:#2A2660;--a1:#4F46E5;--a2:#9333EA;--a3:#E85D75;--grad:linear-gradient(90deg,#4F46E5,#9333EA 35%,#E85D75 65%,#9333EA);--display:"Poppins","Segoe UI",Arial,sans-serif;--body:"Space Grotesk","Segoe UI",Arial,sans-serif;--r:22px;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:32px 20px 80px}
+h1,h2{font-family:var(--display);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin:0}
+h1{font-size:clamp(30px,5vw,44px);margin:18px 0 12px}
+.label{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.top img{height:54px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;margin:20px 0}
+.f{display:grid;gap:6px;font-size:14.5px;font-weight:600}
+.f input{height:50px;border:1.5px solid var(--line);border-radius:12px;padding:0 14px;font:inherit;font-weight:400}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid .full{grid-column:1/-1}
+.q{border:1px solid var(--line);border-radius:18px;background:#fff;padding:18px 20px;margin:0 0 14px}
+.q legend{font-weight:600;padding:0;display:flex;gap:12px;float:left;width:100%;margin-bottom:10px}
+.q legend b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--deep);color:#fff;display:grid;place-items:center;font-size:14px}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:12px;cursor:pointer;clear:both}
+.opt:hover{background:var(--soft)}.opt input{margin-top:6px;accent-color:#9333EA}.opt span{font-weight:600;color:var(--muted)}
+.q.bad{border-color:#E85D75;background:#FFF6F7}.q.good{border-color:#9AD8B4}
+.fb{margin:6px 0 0;font-size:14.5px;color:#B4304A;font-weight:600;min-height:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:600 16px var(--body);border-radius:999px;padding:14px 24px;border:0;cursor:pointer;background:var(--grad);color:#fff;text-decoration:none}
+.btn.line{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+#msg{font-weight:600;color:#B4304A}
+.res{border-radius:22px;padding:24px;background:var(--deep);color:#fff;margin:20px 0}
+.res h2{font-size:28px;margin-bottom:8px}
+/* certificaat */
+.cert{background:#fff;border-radius:6px;box-shadow:0 10px 40px rgba(14,14,16,.12);aspect-ratio:297/210;width:100%;position:relative;overflow:hidden;padding:5.5% 7%;display:flex;flex-direction:column;container-type:inline-size}
+.cert::before{content:"";position:absolute;inset:2.2%;border:1px solid #D9D3F3;border-radius:4px;pointer-events:none}
+.cert::after{content:"";position:absolute;left:0;right:0;top:0;height:1.4%;background:var(--grad)}
+.cert .ch{display:flex;justify-content:space-between;align-items:flex-start}
+.cert .ch img{height:9cqw}
+.cert .no{font-size:1.5cqw;color:var(--muted);text-align:right}
+.cert .k{font:600 1.6cqw var(--body);letter-spacing:.2em;text-transform:uppercase;color:#9333EA;margin:4cqw 0 1cqw}
+.cert .nm{font:600 5.4cqw/1.05 var(--display);letter-spacing:-.02em;margin:0 0 1.6cqw}
+.cert .tx{font-size:1.85cqw;line-height:1.5;color:var(--ink-2);max-width:78%}
+.cert .tx b{color:var(--ink)}
+.cert .cf{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;font-size:1.5cqw;color:var(--ink-2)}
+.cert .sig b{display:block;font:600 2cqw var(--display);color:var(--ink)}
+.cert .sig i{display:block;width:22cqw;height:1px;background:var(--ink);margin:3cqw 0 .8cqw}
+.cert .seal{width:11cqw;height:11cqw;border-radius:50%;background:var(--deep);color:#fff;display:grid;place-items:center;text-align:center;font:600 1.3cqw/1.2 var(--body);letter-spacing:.08em;text-transform:uppercase}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+@media (max-width:600px){.grid{grid-template-columns:1fr}}
+@media print{@page{size:A4 landscape;margin:0}body{background:#fff}body>*:not(#print){display:none!important}#print{display:block!important}#print .cert{box-shadow:none;width:297mm;height:210mm;border-radius:0;aspect-ratio:auto}}
+</style></head><body>
+<div class="wrap" id="main">
+<a class="top" href="/bibliotheek/"><img src="/assets/logo-black.svg" alt="Black Elephant"></a>
+<p class="label" style="margin-top:28px">AI-geletterd voor teams · Toets</p>
+<h1>Tien vragen. Bij acht goed je bewijs van deelname.</h1>
+<p>De toets gaat over de zes lessen. Je mag hem zo vaak overdoen als je wilt. Vul je naam in zoals hij op je bewijs van deelname moet staan.</p>
+<form id="t" novalidate>
+<div class="card grid">
+<label class="f">Voor- en achternaam<input id="naam" autocomplete="name" required></label>
+<label class="f">E-mail<input id="email" type="email" autocomplete="email" required></label>
+<label class="f">Organisatie (optioneel)<input id="org" autocomplete="organization"></label>
+<label class="f">Deelnemerscode<input id="code" autocomplete="off" placeholder="staat in je mail"></label>
+</div>
+<fieldset class="q" id="f0"><legend><b>1</b>Hoe komt een AI-taalmodel aan een antwoord?</legend><label class="opt"><input type="radio" name="q0" value="0"><span>A</span>Het zoekt het op in een database met feiten.</label><label class="opt"><input type="radio" name="q0" value="1"><span>B</span>Het voorspelt welke woorden het meest waarschijnlijk volgen.</label><label class="opt"><input type="radio" name="q0" value="2"><span>C</span>Het begrijpt de vraag zoals een mens.</label><p class="fb"></p></fieldset><fieldset class="q" id="f1"><legend><b>2</b>Waar is een AI-assistent het sterkst in?</legend><label class="opt"><input type="radio" name="q1" value="0"><span>A</span>Teksten samenvatten, herschrijven en een eerste opzet maken.</label><label class="opt"><input type="radio" name="q1" value="1"><span>B</span>Garanderen dat feiten kloppen.</label><label class="opt"><input type="radio" name="q1" value="2"><span>C</span>Beslissen of een klant een uitzondering verdient.</label><p class="fb"></p></fieldset><fieldset class="q" id="f2"><legend><b>3</b>Wie is verantwoordelijk voor een mail die AI schreef en jij verstuurde?</legend><label class="opt"><input type="radio" name="q2" value="0"><span>A</span>De leverancier van de tool.</label><label class="opt"><input type="radio" name="q2" value="1"><span>B</span>Niemand, het was een concept.</label><label class="opt"><input type="radio" name="q2" value="2"><span>C</span>Jij.</label><p class="fb"></p></fieldset><fieldset class="q" id="f3"><legend><b>4</b>Welke vijf onderdelen horen bij een goede opdracht?</legend><label class="opt"><input type="radio" name="q3" value="0"><span>A</span>Rol, context, opdracht, vorm, voorbeeld.</label><label class="opt"><input type="radio" name="q3" value="1"><span>B</span>Doel, budget, planning, risico, eigenaar.</label><label class="opt"><input type="radio" name="q3" value="2"><span>C</span>Vraag, antwoord, bron, controle, akkoord.</label><p class="fb"></p></fieldset><fieldset class="q" id="f4"><legend><b>5</b>Je vraagt ‘Klopt het dat…?’ en AI zegt ja. Wat doe je?</legend><label class="opt"><input type="radio" name="q4" value="0"><span>A</span>Aannemen, AI heeft het gecontroleerd.</label><label class="opt"><input type="radio" name="q4" value="1"><span>B</span>Zelf nagaan, want AI gaat vaak mee met de vraag.</label><label class="opt"><input type="radio" name="q4" value="2"><span>C</span>Dezelfde vraag nog een keer stellen.</label><p class="fb"></p></fieldset><fieldset class="q" id="f5"><legend><b>6</b>AI noemt een wetsartikel als bron. Wat doe je?</legend><label class="opt"><input type="radio" name="q5" value="0"><span>A</span>Het artikel overnemen.</label><label class="opt"><input type="radio" name="q5" value="1"><span>B</span>Het artikel opzoeken en lezen of het klopt.</label><label class="opt"><input type="radio" name="q5" value="2"><span>C</span>AI vragen of het zeker is.</label><p class="fb"></p></fieldset><fieldset class="q" id="f6"><legend><b>7</b>In welke kleur van het stoplicht valt een klantdossier met naam, adres en BSN?</legend><label class="opt"><input type="radio" name="q6" value="0"><span>A</span>Groen.</label><label class="opt"><input type="radio" name="q6" value="1"><span>B</span>Oranje.</label><label class="opt"><input type="radio" name="q6" value="2"><span>C</span>Rood.</label><p class="fb"></p></fieldset><fieldset class="q" id="f7"><legend><b>8</b>Je hebt per ongeluk gevoelige gegevens in een gratis tool gezet. Wat doe je?</legend><label class="opt"><input type="radio" name="q7" value="0"><span>A</span>Niets, het is al gebeurd.</label><label class="opt"><input type="radio" name="q7" value="1"><span>B</span>Het gesprek in de tool verwijderen en verder niets.</label><label class="opt"><input type="radio" name="q7" value="2"><span>C</span>Het meteen melden bij je leidinggevende of de privacyfunctionaris.</label><p class="fb"></p></fieldset><fieldset class="q" id="f8"><legend><b>9</b>Wat geldt volgens de AI Act als een klant met een chatbot praat?</legend><label class="opt"><input type="radio" name="q8" value="0"><span>A</span>De klant moet weten dat hij met AI te maken heeft.</label><label class="opt"><input type="radio" name="q8" value="1"><span>B</span>Niets, zolang de antwoorden kloppen.</label><label class="opt"><input type="radio" name="q8" value="2"><span>C</span>De chatbot mag alleen buiten kantoortijden.</label><p class="fb"></p></fieldset><fieldset class="q" id="f9"><legend><b>10</b>Wanneer maak je teamafspraken over AI het best?</legend><label class="opt"><input type="radio" name="q9" value="0"><span>A</span>Als er iets misgaat.</label><label class="opt"><input type="radio" name="q9" value="1"><span>B</span>Vooraf, samen, en na drie maanden bijstellen.</label><label class="opt"><input type="radio" name="q9" value="2"><span>C</span>Pas als de organisatie een volledig beleid heeft.</label><p class="fb"></p></fieldset>
+<button class="btn" type="submit">Bekijk mijn uitslag</button> <span id="msg" role="status" aria-live="polite"></span>
+</form>
+<div id="out" hidden></div>
+</div>
+<div id="print" hidden></div>
+<script>
+(function(){
+var KEY=[1, 0, 2, 0, 1, 1, 2, 2, 0, 1],CODES=["odysseus"],W3F="21d207d9-3485-426b-9e0b-11423f0f483e";
+var f=document.getElementById("t"),msg=document.getElementById("msg"),out=document.getElementById("out");
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+f.addEventListener("submit",function(e){e.preventDefault();
+ var naam=document.getElementById("naam").value.trim(),email=document.getElementById("email").value.trim(),org=document.getElementById("org").value.trim(),code=document.getElementById("code").value.trim().toLowerCase();
+ if(naam.length<3||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){msg.textContent="Vul je naam en een geldig e-mailadres in.";return;}
+ if(CODES.indexOf(code)<0){msg.textContent="Die deelnemerscode klopt niet. Je vindt hem in de mail van 16 december.";return;}
+ var score=0,open=0,wrong=[];
+ KEY.forEach(function(a,i){var fs=document.getElementById("f"+i),c=f.querySelector('input[name=q'+i+']:checked');fs.classList.remove("bad","good");fs.querySelector(".fb").textContent="";
+  if(!c){open++;fs.classList.add("bad");fs.querySelector(".fb").textContent="Nog niet beantwoord.";return;}
+  if(+c.value===a){score++;fs.classList.add("good");}else{wrong.push(i+1);fs.classList.add("bad");fs.querySelector(".fb").textContent="Nog niet goed. Kijk terug in de les en probeer het opnieuw.";}});
+ if(open){msg.textContent="Beantwoord alle tien de vragen.";document.getElementById("f"+KEY.findIndex(function(a,i){return !f.querySelector('input[name=q'+i+']:checked')})).scrollIntoView({behavior:"smooth",block:"center"});return;}
+ msg.textContent="";
+ var d=new Date(),ds=d.toLocaleDateString("nl-NL",{day:"numeric",month:"long",year:"numeric"});
+ var nr="BE-AI-"+d.getFullYear()+String(d.getMonth()+1).padStart(2,"0")+String(d.getDate()).padStart(2,"0")+"-"+Math.random().toString(36).slice(2,6).toUpperCase();
+ try{fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({access_key:W3F,subject:"Toets AI-geletterd: "+naam+" ("+score+"/10)"+(score>=8?" GESLAAGD":""),from_name:"Black Elephant Toets",naam:naam,email:email,organisatie:org,score:score+"/10",fout:wrong.join(", ")||"-",certificaatnummer:score>=8?nr:"-",datum:ds})})}catch(x){}
+ if(score<8){out.hidden=false;out.innerHTML='<div class="res"><h2>'+score+' van de 10 goed.</h2><p>Je hebt er acht nodig. De vragen die nog niet goed zijn, staan rood gemarkeerd: '+wrong.join(", ")+'. Pas ze aan en probeer het opnieuw.</p></div>';out.scrollIntoView({behavior:"smooth"});return;}
+ var cert='<div class="cert"><div class="ch"><img src="/assets/logo-black.svg" alt="Black Elephant"><div class="no">Nr. '+nr+'<br>'+ds+'</div></div>'+
+ '<div class="k">Bewijs van deelname</div><div class="nm">'+esc(naam)+'</div>'+
+ '<div class="tx">heeft de online cursus <b>AI-geletterd voor teams</b> gevolgd (6 lessen en 3 live sessies, ca. 6 uur) en de afsluitende toets met goed gevolg gemaakt ('+score+' van de 10).'+(org?' Organisatie: '+esc(org)+'.':'')+' Onderwerpen: werking en grenzen van AI, veilig en verantwoord gebruik (AVG en AI Act), goed vragen, controleren en teamafspraken. Deze cursus ondersteunt de invulling van AI-geletterdheid (artikel 4 AI Act).</div>'+
+ '<div class="cf"><div class="sig"><i></i><b>Michael Salmagne</b>Black Elephant · een handelsnaam van Stagefinder B.V.</div><div class="seal">AI-<br>geletterd<br>2026</div></div></div>';
+ f.hidden=true;out.hidden=false;
+ out.innerHTML='<div class="res"><h2>Geslaagd: '+score+' van de 10.</h2><p>Gefeliciteerd, '+esc(naam.split(" ")[0])+'. Hieronder staat je bewijs van deelname. Bewaar het als pdf: kies bij het afdrukken voor ‘Opslaan als pdf’.</p></div>'+cert+'<div class="acts"><button class="btn" id="pr" type="button">Opslaan als pdf</button><a class="btn line" href="/bibliotheek/">Terug naar de Bibliotheek</a></div>';
+ document.getElementById("print").innerHTML=cert;
+ document.getElementById("pr").onclick=function(){window.print()};
+ window.scrollTo({top:0,behavior:"smooth"});
+});
+})();
+</script></body></html>
