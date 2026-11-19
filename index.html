@@ -4,426 +4,325 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Black Elephant · The School for the Future</title>
-<meta name="description" content="Black Elephant brengt de verhalen van gisteren samen met de grote vragen van morgen. Keynotes, workshops en leiderschapsontwikkeling voor leiders en professionals die richting willen geven aan verandering.">
-<meta property="og:title" content="Black Elephant · The School for the Future">
-<meta property="og:description" content="Oude wijsheid voor een wereld die nog niet bestaat.">
-<meta property="og:image" content="https://blackelephant.nl/assets/home/img/hero.webp">
+<meta name="description" content="Oude wijsheid voor een wereld die nog niet bestaat. Verhalen uit mythologie, filosofie, film en geschiedenis voor leiders en organisaties in verandering. Keynotes, workshops, Academy en AI-transformatie.">
+<link rel="canonical" href="https://blackelephant.nl/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#242239">
+<meta property="og:site_name" content="Black Elephant">
+<meta property="og:title" content="Black Elephant · The School for the Future">
+<meta property="og:description" content="Oude wijsheid voor een wereld die nog niet bestaat. Verhalen uit mythologie, filosofie, film en geschiedenis voor leiders en organisaties in verandering. Keynotes, workshops, Academy en AI-transformatie.">
+<meta property="og:url" content="https://blackelephant.nl/">
+<meta property="og:image" content="https://blackelephant.nl/assets/be/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F7F3EC">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="/assets/home/img/hero.webp" as="image">
-<link rel="preload" href="/assets/home/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/be/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/be/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/be/be-chrome.css">
+<link rel="stylesheet" href="/assets/be/be.css">
+<script>
+/* Oude ankers en Q-Logic-links van de vorige homepage doorsturen */
+(function(){var h=location.hash.slice(1),q=location.search,map={keynotes:"/practice/#keynotes",advies:"/practice/#transformatie",over:"/over/",contact:"/contact/"};
+if(/^ws-/.test(h)||h==="workshops"){location.replace("/workshops/"+q+(h==="workshops"?"":"#"+h));}
+else if(map[h]){location.replace(map[h]);}
+else if(/[?&]ql=1/.test(q)){location.replace("/workshops/"+q);}})();
+</script>
 <style>
-@font-face{font-family:"Fraunces";src:url(/assets/home/fonts/fraunces-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Fraunces";src:url(/assets/home/fonts/fraunces-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"Fraunces";src:url(/assets/home/fonts/fraunces-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Inter";src:url(/assets/home/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Inter";src:url(/assets/home/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Inter";src:url(/assets/home/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
-
-:root{
-  --paper:#F7F4EE; --paper-2:#F1EAE0; --card:#FBF8F3;
-  --ink:#222137; --ink-soft:#57536A; --dark:#242239; --night:#1B1A2C;
-  --accent:#B97445; --accent-light:#F2D2AD; --violet:#7A68A6; --line:#E3D6C6;
-  --serif:"Fraunces",Georgia,"Times New Roman",serif;
-  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:2px}
-.shell{max-width:1240px;margin:0 auto;padding:0 32px}
-section{scroll-margin-top:84px}
-h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.015em}
-h2{font-size:clamp(34px,4.2vw,54px);line-height:1.1}
-p{margin:0 0 16px}
-.eyebrow{white-space:nowrap;display:inline-flex;align-items:center;gap:14px;font:600 11px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--ink);margin:0 0 20px}
-.eyebrow.rule::after,.eyebrow.rules::after,.eyebrow.rules::before{content:"";width:56px;height:1px;background:var(--accent)}
-.eyebrow.accent{color:var(--accent)}
-.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:6px;font:600 15px/1.2 var(--sans);border:1px solid transparent;transition:background .2s,border-color .2s,transform .2s}
-.btn:hover{transform:translateY(-1px)}
-.btn.light{background:linear-gradient(180deg,#F6DDBE,#ECC59A);color:var(--ink);border-color:#D9A877}
-.btn.light:hover{background:#F6DDBE}
-.btn.dark{background:var(--dark);color:#fff}
-.btn.dark:hover{background:#34314F}
-.btn.ghost{color:#fff;border-color:rgba(255,255,255,.45)}
-.btn.ghost:hover{border-color:#fff}
-.link{display:inline-flex;align-items:center;gap:14px;font:600 15px/1.3 var(--sans);padding-bottom:8px;border-bottom:2px solid var(--accent);color:var(--ink)}
-.link span{color:var(--accent);transition:transform .2s}
-.link:hover span{transform:translateX(4px)}
-
-/* Header */
-header{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand svg{width:46px;height:auto;flex:none}
-.foot-brand{display:flex;align-items:center;gap:12px}
-.foot-brand svg{width:40px;height:auto}
-.brand b{display:block;font:600 14px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase}
-.brand small{display:block;margin-top:6px;font:500 9px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
-.navlinks{display:flex;align-items:center;gap:36px;font:400 15px var(--serif)}
-.navlinks a:not(.btn):hover{color:var(--accent)}
-.navlinks .btn{font:500 14px var(--serif);padding:10px 18px;border-radius:8px}
-.menu{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--ink)}
-.menu svg{width:26px;height:26px}
-
-/* Hero */
-.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--night);color:#fff;min-height:640px;display:flex;align-items:center}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url(/assets/home/img/hero.webp) right center/cover no-repeat}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#1B1A2C 6%,rgba(27,26,44,.93) 30%,rgba(27,26,44,.55) 52%,rgba(27,26,44,0) 80%),linear-gradient(0deg,rgba(27,26,44,.45),transparent 35%)}
-.hero .shell{width:100%;padding-top:96px;padding-bottom:96px}
-.hero .eyebrow{color:var(--accent-light)}
-.hero h1{font-size:clamp(46px,6.4vw,86px);line-height:1.02;max-width:760px}
-.hero h1 em{font-style:italic;color:var(--accent-light)}
-.hero .lead{max-width:500px;margin:28px 0 34px;font-size:19px;color:#ECE6E1}
-.actions{display:flex;flex-wrap:wrap;gap:14px}
-
-.strip{background:#EAE0D2;text-align:center;padding:18px 20px;font:600 11px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase}
-.strip span{color:var(--accent);margin:0 14px}
-
-/* Visie */
-.visie{padding:110px 0 90px}
-.visie-grid{display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:start}
-.visie .text{font-size:18px;color:var(--ink-soft)}
-.visie .text strong{color:var(--ink);font-weight:500}
-.method{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
-.method div{padding:34px 34px 10px 0}
-.method div+div{padding-left:34px;border-left:1px solid var(--line)}
-.method .num{font:400 13px var(--sans);color:var(--accent);letter-spacing:.2em}
-.method h3{font-size:30px;margin:10px 0 10px}
-.method p{color:var(--ink-soft);font-size:16px}
-
-/* Verhaal */
-.verhaal{background:#ECE6F0;padding:90px 0}
-.verhaal-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:8%;align-items:center}
-.verhaal figure{margin:0;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(36,34,57,.55);aspect-ratio:16/10}
-.verhaal figure img{width:100%;height:100%;object-fit:cover;object-position:70% center}
-.verhaal .eyebrow{color:var(--violet)}
-.verhaal h2{margin-bottom:22px}
-.verhaal p{color:#3C3950}
-details{margin-top:24px;border-top:1px solid #CFC3DA;padding-top:18px}
-summary{cursor:pointer;font-weight:600;list-style:none;display:flex;gap:12px;align-items:center}
-summary::-webkit-details-marker{display:none}
-summary::before{content:"+";display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);font-weight:400;transition:transform .2s}
-details[open] summary::before{transform:rotate(45deg)}
-details p{margin-top:16px}
-
-/* Drie werelden */
-.werelden{position:relative;overflow:hidden;padding:100px 0 110px;background:
-  radial-gradient(circle at 9% 9%,rgba(242,190,130,.55) 0 58px,rgba(242,190,130,0) 90px),
-  linear-gradient(180deg,#F6EEE6 0%,var(--paper) 60%)}
-.werelden::before,.slot::before{content:"";position:absolute;left:0;right:0;bottom:0;height:240px;pointer-events:none;opacity:.45;filter:blur(1px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 260' preserveAspectRatio='none'%3E%3Cpath fill='%23D9CCD6' d='M0 190 L120 120 L210 160 L330 70 L470 170 L560 130 L700 190 L1440 210 L1440 260 L0 260Z'/%3E%3Cpath fill='%23E6DCE0' d='M760 200 L900 110 L990 150 L1120 60 L1260 160 L1360 120 L1440 150 L1440 260 L740 260Z'/%3E%3C/svg%3E") bottom/100% 100% no-repeat}
-.werelden::after{content:"";position:absolute;left:0;top:70px;width:300px;height:260px;pointer-events:none;opacity:.35;filter:blur(1.5px);-webkit-mask-image:linear-gradient(#000 35%,transparent 85%);mask-image:linear-gradient(#000 35%,transparent 85%);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 300'%3E%3Cpath fill='%23D8CBD5' d='M0 120 L60 70 L110 100 L170 40 L240 130 L300 110 L340 150 L340 300 L0 300Z'/%3E%3C/svg%3E") left top/contain no-repeat}
-.werelden .shell{position:relative;z-index:1}
-.werelden-top{display:flex;align-items:center;justify-content:center;gap:48px;margin-bottom:56px;text-align:left}
-.werelden-top .titel{text-align:center}
-.werelden-top .eyebrow{justify-content:center}
-.werelden-top > p{max-width:250px;margin:0;padding-left:26px;border-left:1px solid var(--accent);color:var(--ink-soft);font:400 16px/1.5 var(--serif)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.card{display:flex;flex-direction:column;background:var(--card);border:1px solid #DCC3A3;border-radius:14px;overflow:hidden;box-shadow:0 22px 40px -28px rgba(70,50,30,.45);transition:transform .25s,box-shadow .25s}
-.card:hover{transform:translateY(-4px);box-shadow:0 30px 50px -28px rgba(70,50,30,.5)}
-.card img{width:100%;height:auto;aspect-ratio:384/163;object-fit:cover}
-.card .body{padding:26px 30px 32px;display:flex;flex-direction:column;flex:1}
-.card .eyebrow{font-size:10px;margin-bottom:16px}
-.card h3{font-size:30px;line-height:1.15;margin-bottom:12px}
-.card p:not(.eyebrow){color:var(--ink-soft);font:400 16px/1.55 var(--serif)}
-.card .link{align-self:flex-start;margin-top:auto}
-
-/* Practice */
-.practice{padding:100px 0;background:var(--paper)}
-.practice-top{display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:end;margin-bottom:50px}
-.practice-top > p{color:var(--ink-soft);font-size:18px;margin:0}
-.diensten{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.dienst{background:#fff;border:1px solid var(--line);border-radius:14px;padding:34px 36px;display:flex;flex-direction:column}
-.dienst .num{font:400 13px var(--sans);color:var(--accent);letter-spacing:.2em;margin-bottom:12px}
-.dienst{min-width:0}
-.dienst h3{font-size:28px;margin-bottom:10px;overflow-wrap:anywhere;hyphens:auto}
-@media (max-width:420px){.dienst h3{font-size:24px}}
-.dienst p{color:var(--ink-soft);font-size:16px}
-.dienst .link{align-self:flex-start;margin-top:auto}
-
-/* Reis */
-.reis{position:relative;overflow:hidden;background:linear-gradient(180deg,#2B2440,#211D33);color:#fff;padding:90px 0}
-.reis::before{content:"";position:absolute;left:-460px;top:50%;width:620px;height:620px;transform:translateY(-50%);border:1.5px solid rgba(232,176,120,.75);border-radius:50%}
-.reis::after{content:"";position:absolute;left:0;right:0;bottom:0;height:160px;opacity:.5;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160' preserveAspectRatio='none'%3E%3Cpath fill='%23453A5E' d='M0 120 L140 50 L260 100 L380 40 L520 130 L1440 150 L1440 160 L0 160Z'/%3E%3C/svg%3E") bottom/100% 100% no-repeat}
-.reis .shell{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr 1px 1fr;gap:7%;align-items:center}
-.reis .sep{align-self:stretch;background:rgba(255,255,255,.18)}
-.reis .eyebrow{color:#E8B078;font-size:10px}
-.reis h2{margin-bottom:18px}
-.reis p{color:#DDD5E6;max-width:520px}
-.reis .btn{margin-top:14px}
-.steps{list-style:none;margin:0;padding:0}
-.steps li{display:flex;align-items:baseline;gap:28px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.22);font:400 24px var(--serif)}
-.steps li span{font:600 12px var(--sans);color:#E8B078;letter-spacing:.12em}
-
-/* Slot */
-.slot{position:relative;overflow:hidden;text-align:center;padding:100px 0 150px;background:linear-gradient(180deg,var(--paper),#F3ECE6)}
-.slot .shell{position:relative;z-index:1}
-.slot .eyebrow{justify-content:center}
-.slot h2{margin:6px 0 18px}
-.slot p:not(.eyebrow){color:var(--ink-soft);font:400 18px var(--serif);margin-bottom:30px}
-
-footer{background:var(--night);color:#CFC8D8;padding:30px 0;font-size:14px}
-footer .shell{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer nav{min-height:0;gap:22px;flex-wrap:wrap}
-footer a:hover{color:#fff}
-
-@media (max-width:980px){
-  .werelden-top{flex-direction:column;gap:18px}
-  .werelden-top > p{border-left:0;padding-left:0;text-align:center;max-width:420px}
-  .cards{grid-template-columns:1fr;max-width:560px;margin:0 auto}
-  .reis .shell{grid-template-columns:1fr;gap:36px}
-  .reis .sep{display:none}
-}
-@media (max-width:860px){
-  .eyebrow{white-space:normal;flex-wrap:wrap}
-  .eyebrow{line-height:1.6}
-  .slot .eyebrow::before,.slot .eyebrow::after{display:none}
-  .reis::before{display:none}
-  .shell{padding:0 20px}
-  .menu{display:block}
-  .navlinks{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;gap:4px;padding:16px 20px 24px;background:var(--paper);border-bottom:1px solid var(--line)}
-  .navlinks.open{display:flex}
-  .navlinks a{padding:10px 0}
-  .navlinks .btn{justify-content:center;margin-top:8px}
-  .hero{min-height:0;align-items:flex-end}
-  .hero::before{background-size:auto 60%;background-position:62% top}
-  .hero::after{background:linear-gradient(0deg,#1B1A2C 0%,#1B1A2C 42%,rgba(27,26,44,.85) 55%,rgba(27,26,44,0) 82%)}
-  .hero .shell{padding-top:250px;padding-bottom:52px}
-  .hero .lead{font-size:17px}
-  .visie,.practice{padding:64px 0}
-  .visie-grid,.verhaal-grid,.practice-top{grid-template-columns:1fr;gap:22px}
-  .method{grid-template-columns:1fr;margin-top:48px}
-  .method div,.method div+div{padding:26px 0 6px;border-left:0}
-  .method div+div{border-top:1px solid var(--line)}
-  .verhaal,.reis{padding:60px 0}
-  .werelden{padding:64px 0 90px}
-  .diensten{grid-template-columns:1fr}
-  .dienst{padding:28px 24px}
-  .strip span{margin:0 6px}
-  .slot{padding:64px 0 120px}
-  .steps li{font-size:21px}
+.hero{position:relative;overflow:hidden;padding:70px 0 110px;background:radial-gradient(1200px 600px at 85% 0%,rgba(241,211,174,.55),transparent 60%),var(--paper)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:6%;align-items:center}
+.hero h1 em{color:var(--plum)}
+.hero .lede{margin:30px 0 38px}
+.hero .arch{aspect-ratio:3/3.7;width:100%;max-width:440px;justify-self:end}
+.hero figcaption{font:italic 400 15px/1.5 var(--serif);color:var(--muted);margin-top:16px;max-width:400px;justify-self:end;text-align:right}
+.hero figure{margin:0;display:grid}
+.chap{display:flex;align-items:baseline;gap:18px;margin-bottom:26px}
+.chap .numeral{font-size:clamp(46px,4.6vw,66px);letter-spacing:.02em}
+.chap span:not(.numeral){font:600 11px/1.4 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--copper)}
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);padding:20px 0;text-align:center;font:italic 400 clamp(18px,1.8vw,22px)/1.4 var(--serif);color:var(--ink-2)}
+.marquee b{font-style:normal;color:var(--copper);margin:0 14px;font-weight:400}
+.memory .arch{aspect-ratio:3/3.6;max-width:420px}
+.memory h2{margin-bottom:24px}
+.memory .quote{font:italic 400 clamp(22px,2.2vw,28px)/1.4 var(--serif);color:var(--ink);border-left:2px solid var(--copper);padding-left:22px;margin:30px 0}
+/* Interactieve ervaring */
+.lens{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start;margin-top:56px}
+.qs{display:grid;gap:12px}
+.q{all:unset;box-sizing:border-box;cursor:pointer;display:block;padding:22px 24px;border:1px solid rgba(255,255,255,.18);border-radius:var(--r);font:400 clamp(19px,1.7vw,23px)/1.35 var(--serif);color:#fff;transition:background .25s,border-color .25s}
+.q small{display:block;font:600 10.5px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.q:hover{border-color:rgba(255,255,255,.5)}
+.q[aria-selected="true"]{background:rgba(241,211,174,.1);border-color:var(--gold)}
+.q:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.stage{background:linear-gradient(160deg,#2A2540,#211E31);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:40px 44px;min-height:440px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.stage::before{content:"";position:absolute;right:-120px;top:-120px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(241,211,174,.18),transparent 70%)}
+.steps{display:flex;align-items:center;margin-bottom:34px;position:relative}
+.steps button{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;font:600 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#8F87A3;flex:none;transition:color .3s}
+.steps button i{width:14px;height:14px;border-radius:50%;border:1.5px solid currentColor;background:#211E31;transition:background .3s}
+.steps button[aria-current="step"],.steps button.done{color:var(--gold)}
+.steps button[aria-current="step"] i,.steps button.done i{background:var(--gold)}
+.steps button:focus-visible{outline:2px solid var(--gold);outline-offset:6px;border-radius:4px}
+.steps .ln{flex:1;height:1px;background:#4A4360;margin:0 10px 22px;position:relative;overflow:hidden}
+.steps .ln::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.steps .ln.done::after{transform:scaleX(1)}
+.stage .txt{font:400 clamp(21px,2vw,27px)/1.5 var(--serif);color:#fff;flex:1;margin:0;transition:opacity .35s,transform .35s}
+.stage .txt.fade{opacity:0;transform:translateY(8px)}
+.stage .lbl{font:italic 400 15px var(--serif);color:var(--gold);margin-bottom:12px}
+.stage .nav2{display:flex;justify-content:space-between;align-items:center;margin-top:30px;gap:16px;flex-wrap:wrap}
+.stage .hint{font-size:13px;color:#8F87A3;margin:0}
+/* Routes */
+.routes .row{grid-template-columns:1.2fr 1.4fr auto}
+/* Oprichter */
+.founder{display:grid;grid-template-columns:.8fr 1.2fr;gap:8%;align-items:center}
+.founder .arch{aspect-ratio:3/3.6;max-width:380px;background:linear-gradient(170deg,#EFE3D1,#E2D2BC);display:grid;place-items:center}
+.founder .arch svg{width:58%;opacity:.92}
+.tedx{display:inline-flex;flex-wrap:wrap;max-width:100%;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--line-2);border-radius:12px;background:var(--card);margin:6px 0 26px}
+.tedx b{font:700 15px var(--sans);letter-spacing:-.01em}
+.tedx b span{color:#E62B1E}
+.tedx small{display:block;color:var(--muted);font-size:13px}
+.close{text-align:center;padding:130px 0 140px;background:radial-gradient(800px 380px at 50% 100%,rgba(241,211,174,.55),transparent 70%),var(--paper)}
+.close h2{font-size:clamp(40px,5.4vw,76px);margin:8px auto 22px;max-width:900px}
+.close .lede{margin:0 auto 34px}
+.close .actions{justify-content:center}
+@media (max-width:920px){
+ .hero .wrap,.lens,.founder{grid-template-columns:1fr}
+ .hero{padding:40px 0 80px}
+ .hero .arch{justify-self:start;max-width:340px}
+ .hero figcaption{justify-self:start;text-align:left}
+ .stage{padding:30px 24px;min-height:0}
+ .routes .row{grid-template-columns:1fr}
+ .routes .row p,.routes .row .go{grid-column:1}
+ .founder .arch{max-width:300px}
 }
 </style>
-<script>(function(){var h=location.hash.slice(1);if(["workshops","keynotes","advies","over","contact"].indexOf(h)>-1&&!document.getElementById(h)||h==="workshops"||h==="keynotes"||h==="advies"||h==="over"){location.replace("/workshops/#"+h)}})();</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Black Elephant","alternateName":"Black Elephant · The School for the Future","url":"https://blackelephant.nl/","logo":"https://blackelephant.nl/apple-touch-icon.png","email":"hello@blackelephant.nl","founder":{"@type":"Person","name":"Michael Salmagne"},"address":{"@type":"PostalAddress","addressLocality":"Haarlem","addressCountry":"NL"}}</script>
 </head>
 <body>
-
-<header>
-  <nav class="shell" aria-label="Hoofdmenu">
-    <a href="/" class="brand" aria-label="Black Elephant, naar de homepage">
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="site-head">
+  <div class="sh-in">
+    <a href="/" class="sh-brand" aria-label="Black Elephant, naar de homepage">
       <svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#772683" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#1d1d1b" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#1d1d1b" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg>
       <span><b>Black Elephant</b><small>The School for the Future</small></span>
     </a>
-    <button class="menu" aria-expanded="false" aria-controls="navlinks" aria-label="Menu openen">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-    </button>
-    <div class="navlinks" id="navlinks">
-      <a href="#visie">Onze visie</a>
-      <a href="#werelden">Academy</a>
-      <a href="#verhaal">Library</a>
-      <a href="#practice">Practice</a>
-      <a href="/workshops/">Workshops</a>
-      <a class="btn light" href="/workshops/#contact">Plan een kennismaking ↗</a>
-    </div>
-  </nav>
+    <button class="sh-menu" aria-expanded="false" aria-controls="nav" aria-label="Menu openen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <nav class="sh-nav" id="nav" aria-label="Hoofdmenu">
+      <a href="/library/">Library</a>
+      <a href="/academy/">Academy</a>
+      <a href="/practice/">Practice</a>
+      <a href="/over/">Over</a>
+      <a class="sh-cta" href="/contact/">Plan een gesprek</a>
+    </nav>
+  </div>
 </header>
+<main id="main">
 
-<main>
-<section class="hero" id="home" aria-label="Introductie">
-  <div class="shell">
-    <p class="eyebrow">The School for the Future</p>
-    <h1>Oude wijsheid voor een wereld <em>die nog niet bestaat.</em></h1>
-    <p class="lead">We brengen de verhalen van gisteren samen met de grote vragen van morgen. Voor leiders en professionals die richting willen geven aan verandering.</p>
-    <div class="actions">
-      <a class="btn light" href="#werelden">Ontdek Black Elephant <span aria-hidden="true">→</span></a>
-      <a class="btn ghost" href="#verhaal">Lees een verhaal</a>
-    </div>
-  </div>
-</section>
-
-<div class="strip">Mythologie<span aria-hidden="true">·</span>Verhalen<span aria-hidden="true">·</span>Leiderschap</div>
-
-<section class="visie" id="visie">
-  <div class="shell">
-    <div class="visie-grid">
-      <div>
-        <p class="eyebrow accent">01 · Onze overtuiging</p>
-        <h2>De wereld verandert. De menselijke vragen blijven.</h2>
-      </div>
-      <div class="text">
-        <p>Nieuwe tijden creëren zelden nieuwe menselijke dilemma's. Ze geven oude dilemma's alleen een nieuwe vorm. <strong>Macht en verantwoordelijkheid. Weten en twijfelen. Vasthouden en loslaten.</strong></p>
-        <p>Al duizenden jaren vertellen mensen verhalen om betekenis te geven aan een veranderende wereld. Misschien hoeven we de wijsheid die we morgen nodig hebben niet opnieuw uit te vinden. Misschien moeten we haar vooral herinneren.</p>
-      </div>
-    </div>
-    <div class="method">
-      <div>
-        <span class="num">01</span>
-        <h3>Verplaatsen</h3>
-        <p>We stappen even uit de vergaderzaal en betreden een andere wereld: een mythe, een film, een moment uit de geschiedenis.</p>
-      </div>
-      <div>
-        <span class="num">02</span>
-        <h3>Doorzien</h3>
-        <p>Op afstand worden patronen zichtbaar. Wat in je eigen organisatie te dichtbij is, zie je ineens scherp in het verhaal van een ander.</p>
-      </div>
-      <div>
-        <span class="num">03</span>
-        <h3>Terugkeren</h3>
-        <p>Met die nieuwe blik kijken we opnieuw naar je eigen situatie. Niet met een model, maar met betere vragen.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="verhaal" id="verhaal">
-  <div class="shell verhaal-grid">
-    <figure><img src="/assets/home/img/prometheus.webp" alt="Prometheus op een bergtop, met het hemelse vuur in zijn hand" width="1672" height="941" loading="lazy"></figure>
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
     <div>
-      <p class="eyebrow">02 · Het verhaal weer centraal</p>
-      <h2>Het vuur van Prometheus.</h2>
-      <p>Toen Prometheus het vuur van de goden stal, gaf hij de mensheid ongekende mogelijkheden. Voor zijn daad werd hij zwaar gestraft.</p>
-      <p>Duizenden jaren later staan we opnieuw voor dezelfde vraag: kunnen we omgaan met de macht die onze eigen uitvindingen ons geven?</p>
-      <details>
-        <summary>Wat dit verhaal ons vandaag kan vertellen</summary>
-        <p>Prometheus staat voor de vernieuwer die grenzen verlegt. Maar ook voor de verantwoordelijkheid die met nieuwe macht meekomt. Welke van die twee krachten herken je in jouw organisatie? En welke stem krijgt te weinig aandacht?</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="werelden" id="werelden">
-  <div class="shell">
-    <div class="werelden-top">
-      <div class="titel">
-        <p class="eyebrow rules">Black Elephant</p>
-        <h2>Drie werelden. Eén filosofie.</h2>
+      <div class="chap rv"><span class="numeral" aria-hidden="true">i</span><span>Hoofdstuk één · De toekomst</span></div>
+      <h1 id="h1" class="rv">Oude wijsheid voor een wereld <em>die nog niet bestaat.</em></h1>
+      <p class="lede rv">Black Elephant is The School for the Future. We brengen verhalen uit mythologie, filosofie, film en geschiedenis samen met de grote vragen van nu. Voor leiders en professionals die richting willen geven aan verandering.</p>
+      <div class="actions rv">
+        <a class="btn btn-ink" href="#andere-blik">Ervaar hoe wij kijken <span class="ar" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="/contact/">Plan een gesprek</a>
       </div>
-      <p>Een plek om te leren, te herinneren en in praktijk te brengen.</p>
     </div>
-    <div class="cards">
-      <article class="card" id="academy">
-        <img src="/assets/home/img/academy.webp" alt="Een stenen poort met een pad omhoog, in zacht avondlicht" width="768" height="326" loading="lazy">
-        <div class="body">
-          <p class="eyebrow rule">The Academy</p>
-          <h3>Anders leren kijken.</h3>
-          <p>Ontdekkingsreizen voor leiders en professionals in een veranderende wereld.</p>
-          <a class="link" href="/bibliotheek/">Ontdek de academie <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-      <article class="card" id="library">
-        <img src="/assets/home/img/library.webp" alt="Een opengeslagen boek in een maanverlicht berglandschap" width="768" height="326" loading="lazy">
-        <div class="body">
-          <p class="eyebrow rule">The Library</p>
-          <h3>Herinner wat we al weten.</h3>
-          <p>Verhalen uit mythologie, filosofie en geschiedenis die nieuw licht werpen op vandaag.</p>
-          <a class="link" href="#verhaal">Lees het eerste verhaal <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-      <article class="card">
-        <img src="/assets/home/img/practice.webp" alt="Twee klassieke stenen profielen die elkaar aankijken" width="768" height="326" loading="lazy">
-        <div class="body">
-          <p class="eyebrow rule">The Practice</p>
-          <h3>Breng wijsheid in beweging.</h3>
-          <p>Keynotes, workshops en leiderschapsontwikkeling voor organisaties die betekenisvol willen veranderen.</p>
-          <a class="link" href="#practice">Bespreek jullie uitdaging <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-    </div>
+    <figure class="rv">
+      <div class="arch ring"><img src="/assets/be/img/hero-arch.webp" alt="Mensen rond een kampvuur bij zonsondergang, een oudere man vertelt een verhaal" width="519" height="634" fetchpriority="high"></div>
+      <figcaption>Al duizenden jaren vertellen mensen elkaar verhalen om een veranderende wereld te begrijpen.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="practice" id="practice">
-  <div class="shell">
-    <div class="practice-top">
-      <div>
-        <p class="eyebrow accent">03 · The Practice</p>
-        <h2>De toekomst is mensenwerk.</h2>
-      </div>
-      <p>We verbinden oude verhalen met de dagelijkse werkelijkheid van organisaties. Geen kant-en-klare modellen, wel een andere blik op de vraag die op tafel ligt.</p>
-    </div>
-    <div class="diensten">
-      <article class="dienst">
-        <span class="num">01</span>
-        <h3>Keynotes</h3>
-        <p>Verhalen uit mythologie, film en geschiedenis die een zaal laten stilvallen en daarna in beweging zetten. Onder meer te zien op TEDxHaarlem.</p>
-        <a class="link" href="/workshops/#keynotes">Bekijk de keynotes <span aria-hidden="true">→</span></a>
-      </article>
-      <article class="dienst">
-        <span class="num">02</span>
-        <h3>Workshops</h3>
-        <p>Samen een verhaal doorleven, het gesprek aangaan en terugkeren naar de eigen praktijk. Van storytelling tot mythes leren lezen.</p>
-        <a class="link" href="/workshops/#workshops">Bekijk de open workshops <span aria-hidden="true">→</span></a>
-      </article>
-      <article class="dienst">
-        <span class="num">03</span>
-        <h3>Leiderschapsontwikkeling</h3>
-        <p>Richting geven zonder jezelf te verliezen. Trajecten voor leiders en teams die willen onderzoeken wie ze zijn en waar ze voor staan.</p>
-        <a class="link" href="/workshops/#contact">Bespreek jullie uitdaging <span aria-hidden="true">→</span></a>
-      </article>
-      <article class="dienst">
-        <span class="num">04</span>
-        <h3>Technologie &amp; verandering</h3>
-        <p>Nieuwe technologie vraagt vooral om mensen die anders durven te werken. Strategische begeleiding bij AI en verandering, met de mens als uitgangspunt.</p>
-        <a class="link" href="/aicheck/">Doe de AI-check <span aria-hidden="true">→</span></a>
-      </article>
-    </div>
-  </div>
-</section>
+<div class="marquee" aria-hidden="true">Mythologie  <b>✦</b> Filosofie  <b>✦</b> Film  <b>✦</b> Geschiedenis  <b>✦</b> Leiderschap</div>
 
-<section class="reis" id="reis">
-  <div class="shell">
+<section class="sec memory" id="herinnering" aria-labelledby="h-mem">
+  <div class="wrap split r">
+    <div class="arch ring rv"><img src="/assets/be/img/prometheus-arch.webp" alt="Prometheus op een bergtop met het hemelse vuur in zijn hand" width="519" height="634" loading="lazy"></div>
     <div>
-      <p class="eyebrow">The Academy / Eerste reis · in ontwikkeling</p>
-      <h2>De geboorte van de nieuwe leider.</h2>
-      <p>Een reis met verhalen over identiteit, moed en betekenis, in een wereld die zichzelf opnieuw uitvindt.</p>
-      <a class="btn light" href="/bibliotheek/">Bekijk de cursussen <span aria-hidden="true">→</span></a>
+      <div class="chap rv"><span class="numeral" aria-hidden="true">ii</span><span>Hoofdstuk twee · De herinnering</span></div>
+      <h2 id="h-mem" class="rv">Misschien is dit niet de eerste keer.</h2>
+      <p class="lede rv">Toen Prometheus het vuur van de goden stal, gaf hij de mensheid ongekende mogelijkheden. Voor zijn daad werd hij zwaar gestraft. Duizenden jaren later staan we opnieuw voor dezelfde vraag: kunnen we omgaan met de macht die onze eigen uitvindingen ons geven?</p>
+      <p class="quote rv">Nieuwe technologie creëert zelden nieuwe menselijke dilemma's. Ze geeft oude dilemma's alleen een nieuwe vorm.</p>
+      <a class="link rv" href="/library/">Ontdek de dilemma's in The Library <span class="ar" aria-hidden="true">→</span></a>
     </div>
-    <div class="sep" aria-hidden="true"></div>
-    <ol class="steps">
-      <li><span>01</span>Het ontwaken</li>
-      <li><span>02</span>Het herinneren</li>
-      <li><span>03</span>Het worden</li>
-    </ol>
   </div>
 </section>
 
-<section class="slot" id="contact">
-  <div class="shell">
-    <p class="eyebrow rules">Een ander perspectief begint met een gesprek</p>
-    <h2>De toekomst begint met herinneren.</h2>
-    <p>Benieuwd wat Black Elephant voor jou of jouw organisatie kan betekenen?</p>
-    <a class="btn dark" href="/workshops/#contact">Plan een kennismaking ↗</a>
+<section class="sec sec-night on-dark" id="andere-blik" aria-labelledby="h-lens">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <div class="chap rv"><span class="numeral" aria-hidden="true">iii</span><span style="color:var(--gold)">Hoofdstuk drie · Een andere blik</span></div>
+        <h2 id="h-lens" class="rv">Soms moet je even verdwalen om richting te vinden.</h2>
+      </div>
+      <p class="lede rv">We stappen even uit de vergaderzaal en een ander verhaal binnen. Op afstand worden patronen zichtbaar. Daarna kijk je opnieuw naar je eigen situatie. Verplaatsen, doorzien, terugkeren. Probeer het zelf.</p>
+    </div>
+    <div class="lens rv">
+      <div class="qs" role="tablist" aria-label="Kies een vraag die je herkent">
+        <button class="q" role="tab" aria-selected="true" aria-controls="lens-panel" tabindex="0"><small>Technologie</small>We kunnen steeds meer. Maar mogen we ook alles?</button>
+        <button class="q" role="tab" aria-selected="false" aria-controls="lens-panel" tabindex="-1"><small>Leiderschap</small>Iedereen ziet het. Waarom zegt niemand het?</button>
+        <button class="q" role="tab" aria-selected="false" aria-controls="lens-panel" tabindex="-1"><small>Jouw vraag</small>Wat draag jij al een tijd met je mee?</button>
+      </div>
+      <div class="stage" id="lens-panel" role="tabpanel" aria-live="polite">
+        <div class="steps">
+          <button type="button" aria-current="step"><i></i>Verplaatsen</button><span class="ln"></span>
+          <button type="button"><i></i>Doorzien</button><span class="ln"></span>
+          <button type="button"><i></i>Terugkeren</button>
+        </div>
+        <p class="lbl" id="lens-lbl">Verplaatsen</p>
+        <p class="txt" id="lens-txt">Een titaan klimt de berg van de goden op en neemt het vuur mee.</p>
+        <div class="nav2">
+          <p class="hint">Kies links een vraag. Loop daarna de drie stappen door.</p>
+          <button class="btn btn-warm" id="lens-next" type="button">Volgende stap <span class="ar" aria-hidden="true">→</span></button>
+          <a class="btn btn-warm" id="lens-cta" href="/practice/" hidden>Ontdek hoe wij dit doen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="werelden" aria-labelledby="h-prak">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <div class="chap rv"><span class="numeral" aria-hidden="true">iv</span><span>Hoofdstuk vier · De praktijk</span></div>
+        <h2 id="h-prak" class="rv">De toekomst is mensenwerk.</h2>
+      </div>
+      <p class="lede rv">Drie werelden, één filosofie. Ontdek een verhaal, leer anders kijken, of breng het in beweging in je eigen organisatie.</p>
+    </div>
+    <div class="worlds">
+      <article class="world rv">
+        <div class="arch"><img src="/assets/be/img/library.webp" alt="Een opengeslagen boek in een maanverlicht berglandschap" width="768" height="326" loading="lazy" style="object-position:50% 40%"></div>
+        <p class="eyebrow plain" style="margin-bottom:8px">The Library</p>
+        <h3>Herinner wat we al weten.</h3>
+        <p>Menselijke dilemma's die nooit oud worden, gezien door de verhalen die mensen er al eeuwen over vertellen. Gratis te ontdekken.</p>
+        <a class="link" href="/library/">Ontdek de dilemma's <span class="ar" aria-hidden="true">→</span></a>
+      </article>
+      <article class="world rv">
+        <div class="arch"><img src="/assets/be/img/academy.webp" alt="Een stenen poort met een pad omhoog in zacht avondlicht" width="768" height="326" loading="lazy" style="object-position:62% 50%"></div>
+        <p class="eyebrow plain" style="margin-bottom:8px">The Academy</p>
+        <h3>Leer anders kijken.</h3>
+        <p>Live workshops in Utrecht en Haarlem en online cursussen in je eigen tempo. Over leiderschap, verhalen, mythologie en AI.</p>
+        <a class="link" href="/academy/">Bekijk het programma <span class="ar" aria-hidden="true">→</span></a>
+      </article>
+      <article class="world rv">
+        <div class="arch"><img src="/assets/be/img/practice.webp" alt="Twee klassieke stenen profielen die elkaar aankijken" width="768" height="326" loading="lazy" style="object-position:50% 50%"></div>
+        <p class="eyebrow plain" style="margin-bottom:8px">The Practice</p>
+        <h3>Breng wijsheid in beweging.</h3>
+        <p>Keynotes, workshops op maat, leiderschapsontwikkeling en begeleiding van AI-transformatie, met de mens als uitgangspunt.</p>
+        <a class="link" href="/practice/">Bespreek jullie vraag <span class="ar" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-sand routes" aria-labelledby="h-routes">
+  <div class="wrap">
+    <p class="eyebrow rv">Waar wil je beginnen?</p>
+    <h2 id="h-routes" class="rv" style="margin-bottom:40px">Vier ingangen, één verhaal.</h2>
+    <div class="rows">
+      <a class="row rv" href="/practice/#keynotes"><h3>Ik zoek een spreker</h3><p>Een keynote die je zaal laat stilvallen en daarna in beweging brengt.</p><span class="go">Keynotes →</span></a>
+      <a class="row rv" href="/workshops/"><h3>Ik wil zelf leren</h3><p>Open workshops met maximaal twaalf vakgenoten, of een online cursus.</p><span class="go">Academy →</span></a>
+      <a class="row rv" href="/practice/"><h3>Mijn organisatie moet veranderen</h3><p>Van AI-strategie en governance tot interim-leiderschap en workshops op maat.</p><span class="go">Practice →</span></a>
+      <a class="row rv" href="/library/"><h3>Ik wil eerst rondkijken</h3><p>Begin bij een dilemma dat je herkent. Zonder account, zonder verplichtingen.</p><span class="go">Library →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-founder">
+  <div class="wrap founder">
+    <div class="arch rv" aria-hidden="true"><svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#772683" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#1d1d1b" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#1d1d1b" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg></div>
+    <div>
+      <p class="eyebrow rv">De oprichter</p>
+      <h2 id="h-founder" class="rv" style="margin-bottom:22px">Michael Salmagne</h2>
+      <div class="tedx rv"><b>TEDx<span>Haarlem</span></b><span><b style="font-weight:600">Het Vergeetlepeltje</b><small>Stadsschouwburg Haarlem · 28 oktober 2026</small></span></div>
+      <p class="lede rv">Meer dan vijftien jaar werkte Michael in de financiële dienstverlening, en als adviseur en interim-lead bij AI-transformaties van verzekeraars, pensioenuitvoerders en banken. Daar zag hij steeds hetzelfde: het lastigste aan verandering is zelden de technologie.</p>
+      <p class="rv" style="color:var(--ink-2);max-width:620px">Hij gebruikt mythologie als diagnose: oude verhalen die nieuwe vragen zichtbaar maken. Zijn repertoire telt inmiddels zo'n honderd verhalen uit tien tradities.</p>
+      <a class="link rv" href="/over/">Meer over Black Elephant <span class="ar" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight sec-sand" aria-labelledby="h-names">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow c rv" id="h-names">Opdrachtgevers en podia</p>
+    <div class="names rv"><span>Univé</span><span>Athora</span><span>Zwitserleven</span><span>Reaal</span><span>ABN AMRO</span><span>Yellow Dress</span><span>Meesman Indexbeleggen</span><span>TEDxHaarlem</span></div>
+  </div>
+</section>
+
+<section class="close" aria-labelledby="h-close">
+  <div class="wrap">
+    <div class="thread rv" aria-hidden="true"><b class="f"></b><i></i><b class="f"></b><i></i><b class="f"></b></div>
+    <p class="eyebrow c rv" style="margin-top:34px">Een ander perspectief begint met een gesprek</p>
+    <h2 id="h-close" class="rv">De toekomst begint met herinneren.</h2>
+    <p class="lede rv">Benieuwd wat Black Elephant voor jou of jouw organisatie kan betekenen? Een kennismaking duurt twintig minuten en is vrijblijvend.</p>
+    <div class="actions rv"><a class="btn btn-ink" href="/contact/">Plan een kennismaking <span class="ar" aria-hidden="true">→</span></a><a class="btn btn-ghost" href="/library/">Begin bij een verhaal</a></div>
   </div>
 </section>
 </main>
-
-<footer>
-  <div class="shell">
-    <span class="foot-brand"><svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#fff" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#fff" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#fff" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg>© 2026 Black Elephant · The School for the Future</span>
-    <nav aria-label="Footer">
-      <a href="/workshops/">Workshops</a>
-      <a href="/bibliotheek/">Bibliotheek</a>
-      <a href="/aicheck/">AI-check</a>
-      <a href="/voorwaarden/">Voorwaarden</a>
-      <a href="/privacy/">Privacy</a>
-      <a href="mailto:hello@blackelephant.nl">hello@blackelephant.nl</a>
-    </nav>
+<footer class="site-foot">
+  <div class="sf-in">
+    <p class="sf-big">Oude wijsheid voor een wereld <em>die nog niet bestaat.</em></p>
+    <div class="sf-cols">
+      <div>
+        <div class="sf-brand"><svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#F1D3AE" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#fff" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#fff" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg><span><b>Black Elephant</b><small>The School for the Future</small></span></div>
+        <p>Verhalen uit mythologie, filosofie, film en geschiedenis, verbonden met de vragen van leiders en organisaties van nu.</p>
+        <p><a href="mailto:hello@blackelephant.nl">hello@blackelephant.nl</a></p>
+      </div>
+      <div>
+        <h4>The Library</h4>
+        <a href="/library/">Menselijke dilemma's</a>
+        <a href="/library/#prometheus">Het vuur van Prometheus</a>
+        <a href="/library/#aanmelden">Nieuwe verhalen ontvangen</a>
+      </div>
+      <div>
+        <h4>The Academy</h4>
+        <a href="/workshops/">Live workshops</a>
+        <a href="/bibliotheek/">Online cursussen</a>
+        <a href="/academy/#reis">De eerste reis</a>
+      </div>
+      <div>
+        <h4>The Practice</h4>
+        <a href="/practice/#keynotes">Keynotes</a>
+        <a href="/practice/#incompany">Workshops in-company</a>
+        <a href="/practice/#transformatie">AI &amp; transformatie</a>
+        <a href="/aicheck/">AI-check</a> <a href="/hr-aicheck/">HR AI-check</a>
+      </div>
+    </div>
+    <div class="sf-legal">
+      <span>© 2026 Black Elephant · een handelsnaam van Stagefinder B.V. · KvK 68775520 · btw NL857586750B01 · Haarlem</span>
+      <span><a href="/over/">Over</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/voorwaarden/">Voorwaarden</a></span>
+    </div>
   </div>
 </footer>
-
+<script src="/assets/be/site.js"></script>
 <script>
 (function(){
-  var b=document.querySelector('.menu'),n=document.getElementById('navlinks');
-  function close(){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Menu openen')}
-  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menu sluiten':'Menu openen')});
-  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+var D=[
+ {v:"Een titaan klimt de berg van de goden op en neemt het vuur mee. Hij brengt het naar beneden, naar de mensen. Vanaf die nacht kunnen ze koken, smeden en bouwen. De goden zijn woedend.",
+  d:"Het verhaal gaat niet over het vuur. Het gaat over wat er gebeurt met wie het brengt, en met wie het krijgt. Elke nieuwe kracht stelt dezelfde oude vraag: wie draagt de verantwoordelijkheid?",
+  t:"Welk vuur brengt jouw organisatie nu binnen? En wie houdt het vast als het gaat branden?"},
+ {v:"Midden in de vergaderzaal staat een olifant. Iedereen loopt er voorzichtig omheen. Niemand noemt hem. Tot hij zich op een dag beweegt, en iedereen zegt dat niemand dit had kunnen zien aankomen.",
+  d:"De olifant in de kamer en de zwarte zwaan, samen: een black elephant. Een risico dat iedereen ziet, maar niemand benoemt. Bij verandering is dat zelden de technologie. Het zijn mensen, rollen en regie.",
+  t:"Welke olifant staat er in jouw kamer? En wat zou er gebeuren als jij hem morgen hardop benoemt?"},
+ {v:"Elke organisatie draagt een vraag mee die groter is dan het volgende project. Een vraag die terugkomt in elk overleg, maar nooit op de agenda staat.",
+  d:"Meestal is die vraag niet nieuw. Iemand, ergens, heeft er al eens een verhaal over verteld. Op afstand van je eigen situatie zie je het patroon scherper dan van dichtbij.",
+  t:"Wat is de vraag die jij al een tijd met je meedraagt? Vertel het ons. Dan zoeken wij het verhaal dat haar zichtbaar maakt.", cta:1}
+];
+var L=["Verplaatsen","Doorzien","Terugkeren"], k="vdt";
+var qs=[].slice.call(document.querySelectorAll(".q")), st=[].slice.call(document.querySelectorAll(".steps button")), ln=[].slice.call(document.querySelectorAll(".steps .ln"));
+var txt=document.getElementById("lens-txt"), lbl=document.getElementById("lens-lbl"), nx=document.getElementById("lens-next"), ct=document.getElementById("lens-cta"), cur=0, s=0;
+function show(){txt.classList.add("fade");setTimeout(function(){txt.textContent=D[cur][k[s]];lbl.textContent=L[s];txt.classList.remove("fade");},180);
+ st.forEach(function(b,i){b.classList.toggle("done",i<s);if(i===s)b.setAttribute("aria-current","step");else b.removeAttribute("aria-current");});
+ ln.forEach(function(l,i){l.classList.toggle("done",i<s);});
+ var last=s===2; nx.hidden=last; ct.hidden=!last;
+ ct.textContent=D[cur].cta?"Vertel ons je vraag":"Ontdek hoe wij dit doen";ct.href=D[cur].cta?"/contact/?onderwerp=Kennismaking":"/practice/";
+ if(window.goatcounter&&goatcounter.count&&s===2)goatcounter.count({path:"event/lens-"+cur,title:"Lens doorlopen",event:true});}
+qs.forEach(function(q,i){q.addEventListener("click",function(){cur=i;s=0;qs.forEach(function(x,j){x.setAttribute("aria-selected",String(j===i));x.tabIndex=j===i?0:-1;});show();});
+ q.addEventListener("keydown",function(e){var n=e.key==="ArrowDown"||e.key==="ArrowRight"?1:e.key==="ArrowUp"||e.key==="ArrowLeft"?-1:0;if(n){e.preventDefault();var j=(i+n+qs.length)%qs.length;qs[j].focus();qs[j].click();}});});
+st.forEach(function(b,i){b.addEventListener("click",function(){s=i;show();});});
+nx.addEventListener("click",function(){if(s<2){s++;show();}});
+show();
 })();
 </script>
 <script data-goatcounter="https://blackelephant.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

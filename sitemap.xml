@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://blackelephant.nl/</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://blackelephant.nl/aicheck/</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://blackelephant.nl/hr-aicheck/</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://blackelephant.nl/bibliotheek/</loc></url>
+  <url><loc>https://blackelephant.nl/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/library/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/academy/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/workshops/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/bibliotheek/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/practice/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/over/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/contact/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/aicheck/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/hr-aicheck/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/privacy/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://blackelephant.nl/voorwaarden/</loc><lastmod>2026-11-19</lastmod></url>
 </urlset>

@@ -1,0 +1,73 @@
+/* Black Elephant · The School for the Future — basis: fonts, kleuren, header, footer (alle pagina's) */
+@font-face{font-family:"Fraunces";src:url(/assets/be/fonts/fraunces-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(/assets/be/fonts/fraunces-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(/assets/be/fonts/fraunces-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(/assets/be/fonts/fraunces-latin-600-normal.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url(/assets/be/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Inter";src:url(/assets/be/fonts/inter-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Inter";src:url(/assets/be/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+
+:root{
+  --paper:#F7F3EC; --paper-2:#F0E9DE; --card:#FCFAF6; --sand:#E9DCC8; --mist:#ECE6F1;
+  --ink:#1F1D2B; --ink-2:#4A4658; --muted:#6E697A; --line:#E2D7C7; --line-2:#D6C8B4;
+  --plum:#772683; --plum-2:#5B1D66; --copper:#A9643A; --copper-2:#C98A5A; --gold:#F1D3AE;
+  --night:#1C1A29; --night-2:#272338;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  --r:14px; --wrap:1240px;
+  --shadow:0 30px 60px -36px rgba(40,28,20,.45);
+}
+.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font:600 14px var(--sans)}
+.skip:focus{left:12px}
+
+/* Header */
+.site-head{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.93);-webkit-backdrop-filter:saturate(1.2) blur(10px);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s;font-family:var(--sans)}
+.site-head.scrolled{border-bottom-color:var(--line)}
+.site-head .sh-in{max-width:var(--wrap);margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px;position:relative}
+.site-head a{color:var(--ink);text-decoration:none}
+.sh-brand{display:flex;align-items:center;gap:12px;flex:none}
+.sh-brand svg{width:46px;height:auto;display:block}
+.sh-brand b{display:block;font:600 13.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
+.sh-brand small{display:block;margin-top:6px;font:500 9px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.sh-nav{display:flex;align-items:center;gap:30px}
+.sh-nav a{font:400 16px/1.2 var(--serif);position:relative;padding:6px 0}
+.sh-nav a:not(.sh-cta)::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--copper);transition:right .25s}
+.sh-nav a:not(.sh-cta):hover::after,.sh-nav a[aria-current="page"]::after{right:0}
+.sh-nav .sh-cta{font:600 14px/1.2 var(--sans);padding:11px 18px;border-radius:999px;background:var(--ink);color:#fff;transition:background .2s}
+.sh-nav .sh-cta:hover{background:var(--plum-2)}
+.sh-menu{display:none;background:none;border:0;padding:8px;color:var(--ink);cursor:pointer}
+.sh-menu svg{width:26px;height:26px;display:block}
+
+/* Footer */
+.site-foot{background:var(--night);color:#CFC8DA;padding:90px 0 36px;font:400 16px/1.6 var(--sans)}
+.site-foot .sf-in{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.site-foot a{color:#E8E3EE;text-decoration:none}
+.site-foot a:hover{color:#fff}
+.sf-big{font:400 clamp(34px,4.6vw,64px)/1.05 var(--serif);color:#fff;letter-spacing:-.02em;max-width:860px;margin:0 0 60px}
+.sf-big em{color:var(--gold);font-style:italic}
+.sf-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding:44px 0;border-top:1px solid rgba(255,255,255,.14)}
+.sf-cols h4{font:600 11px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:0 0 16px}
+.sf-cols a{display:block;padding:5px 0}
+.sf-cols p{margin:0 0 10px;color:#B9B1C7;font-size:15px}
+.sf-brand{display:flex;gap:14px;align-items:center;color:#fff;margin-bottom:18px}
+.sf-brand svg{width:52px;display:block}
+.sf-brand b{display:block;font:600 13px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase}
+.sf-brand small{display:block;margin-top:6px;font:500 9px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:#9F97AE}
+.sf-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:#9F97AE;padding-top:26px;border-top:1px solid rgba(255,255,255,.1)}
+.sf-legal a{color:#9F97AE}
+
+@media (max-width:1080px){.sh-nav{gap:22px}.sf-cols{grid-template-columns:1fr 1fr}}
+@media (max-width:920px){
+  .sh-menu{display:block}
+  .sh-nav{display:none;position:absolute;left:0;right:0;top:78px;flex-direction:column;align-items:stretch;gap:0;padding:10px 24px 26px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 20px 30px -20px rgba(0,0,0,.2)}
+  .sh-nav.open{display:flex}
+  .sh-nav a{padding:14px 0;border-bottom:1px solid var(--line);font-size:20px}
+  .sh-nav a:not(.sh-cta)::after{display:none}
+  .sh-nav .sh-cta{margin-top:16px;border-bottom:0;font-size:16px;padding:15px;text-align:center}
+}
+@media (max-width:640px){
+  .site-head .sh-in,.site-foot .sf-in{padding:0 20px}
+  .sh-brand b{font-size:12px;letter-spacing:.26em}
+  .sf-cols{grid-template-columns:1fr;gap:28px}
+  .site-foot{padding:64px 0 30px}
+}
