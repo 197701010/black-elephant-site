@@ -181,3 +181,6 @@ a.row:hover{background:linear-gradient(90deg,transparent,rgba(233,220,200,.45),t
 /* Lange Nederlandse woorden netjes afbreken op kleine schermen */
 .row>*,.dl>*,.tile .tt,.vdt3>div,.mv,.fw a{min-width:0}
 h1,h2,h3{overflow-wrap:break-word}
+/* Alle fotokoppen even hoog */
+.phead.photo{min-height:720px}
+@media (max-width:640px){.phead.photo{min-height:700px}}

@@ -19,8 +19,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/be/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/be/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/be/be-chrome.css?v=20261120d">
-<link rel="stylesheet" href="/assets/be/be.css?v=20261120d">
+<link rel="stylesheet" href="/assets/be/be-chrome.css?v=20261120e">
+<link rel="stylesheet" href="/assets/be/be.css?v=20261120e">
 <style>
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px}
 .chip{all:unset;cursor:pointer;font:500 14px var(--sans);padding:10px 16px;border-radius:999px;border:1px solid var(--line-2);transition:all .2s}
@@ -206,7 +206,7 @@
     </div>
   </div>
 </footer>
-<script src="/assets/be/site.js?v=20261120d"></script>
+<script src="/assets/be/site.js?v=20261120e"></script>
 <script>
 (function(){var c=[].slice.call(document.querySelectorAll(".chip")),it=[].slice.call(document.querySelectorAll(".dl,.story-card")),out=document.getElementById("dl-count"),q=document.getElementById("lib-q"),em=document.getElementById("dl-empty"),f="alle";
 function run(){var s=(q.value||"").toLowerCase().trim(),n=0;it.forEach(function(a){var txt=(a.textContent+" "+(a.getAttribute("data-q")||"")).toLowerCase();var on=(f==="alle"||a.getAttribute("data-t")===f)&&(!s||txt.indexOf(s)>-1);a.hidden=!on;if(on){n++;a.classList.add("in");}});out.textContent=n+(n===1?" resultaat":" resultaten");em.hidden=n>0;}
