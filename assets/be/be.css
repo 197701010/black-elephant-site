@@ -178,3 +178,6 @@ a.row:hover{background:linear-gradient(90deg,transparent,rgba(233,220,200,.45),t
 .phead.solo h1{color:#fff}.phead.solo .lede{color:#CFC8E2}
 .phead.solo .eyebrow{color:#F2C9A0}.phead.solo .crumbs,.phead.solo .crumbs a{color:#B9B1D0}
 .phead.solo h1 em{color:#F2C9A0}
+
+/* Accessibility and progressive enhancement */
+.btn{min-height:44px}.sh-menu{min-width:44px;min-height:44px}.field [aria-invalid=true]{border:2px solid #a52b40}.js .rv:focus-within,.js .rv:focus{opacity:1;transform:none;transition:none}.on-dark :focus-visible,.dk :focus-visible,.site-head :focus-visible{outline-color:#F2C9A0}.btn-ink{background:linear-gradient(100deg,#4338CA,#7825AD 65%,#AC355F)}@media(max-width:640px){.actions .btn{max-width:100%;white-space:normal}.grid2>* ,.grid3>* ,.split>*{min-width:0}}@media(max-width:920px){.sh-nav.open{max-height:calc(100dvh - 78px);overflow-y:auto}.site-head:not(.scrolled) .sh-menu{flex-shrink:0}}
