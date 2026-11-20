@@ -29,19 +29,21 @@ else if(map[h]){location.replace(map[h]);}
 else if(/[?&]ql=1/.test(q)){location.replace("/workshops/"+q);}})();
 </script>
 <style>
-.hero{position:relative;overflow:hidden;padding:70px 0 110px;background:radial-gradient(1200px 600px at 85% 0%,rgba(241,211,174,.55),transparent 60%),var(--paper)}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:6%;align-items:center}
-.hero h1 em{color:var(--plum)}
-.hero .lede{margin:30px 0 38px}
-.hero .arch{aspect-ratio:3/3.7;width:100%;max-width:440px;justify-self:end}
-.hero figcaption{font:italic 400 15px/1.5 var(--serif);color:var(--muted);margin-top:16px;max-width:400px;justify-self:end;text-align:right}
-.hero figure{margin:0;display:grid}
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:calc(100vh - 78px);min-height:calc(100svh - 78px);display:flex;align-items:center;color:#fff;background:var(--night)}
+.hero .bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:right center}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(28,26,41,.95) 0%,rgba(28,26,41,.85) 32%,rgba(28,26,41,.35) 62%,rgba(28,26,41,.05) 90%)}
+.hero .wrap{width:100%;padding-top:90px;padding-bottom:90px}
+.hero h1{color:#fff;max-width:780px}
+.hero h1 em{color:var(--gold)}
+.hero .lede{margin:30px 0 38px;color:#EDE7F1}
+.hero .chap span:not(.numeral){color:var(--gold)}
+.hero .numeral{color:var(--gold)}
 .chap{display:flex;align-items:baseline;gap:18px;margin-bottom:26px}
 .chap .numeral{font-size:clamp(46px,4.6vw,66px);letter-spacing:.02em}
 .chap span:not(.numeral){font:600 11px/1.4 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--copper)}
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);padding:20px 0;text-align:center;font:italic 400 clamp(18px,1.8vw,22px)/1.4 var(--serif);color:var(--ink-2)}
 .marquee b{font-style:normal;color:var(--copper);margin:0 14px;font-weight:400}
-.memory .arch{aspect-ratio:3/3.6;max-width:420px}
+
 .memory h2{margin-bottom:24px}
 .memory .quote{font:italic 400 clamp(22px,2.2vw,28px)/1.4 var(--serif);color:var(--ink);border-left:2px solid var(--copper);padding-left:22px;margin:30px 0}
 /* Interactieve ervaring */
@@ -83,10 +85,10 @@ else if(/[?&]ql=1/.test(q)){location.replace("/workshops/"+q);}})();
 .close .lede{margin:0 auto 34px}
 .close .actions{justify-content:center}
 @media (max-width:920px){
- .hero .wrap,.lens,.founder{grid-template-columns:1fr}
- .hero{padding:40px 0 80px}
- .hero .arch{justify-self:start;max-width:340px}
- .hero figcaption{justify-self:start;text-align:left}
+ .lens,.founder{grid-template-columns:1fr}
+ .hero .bg{object-position:62% center}
+ .hero::after{background:linear-gradient(0deg,rgba(28,26,41,.96) 0%,rgba(28,26,41,.8) 50%,rgba(28,26,41,.3) 100%)}
+ .hero{align-items:flex-end}
  .stage{padding:30px 24px;min-height:0}
  .routes .row{grid-template-columns:1fr}
  .routes .row p,.routes .row .go{grid-column:1}
@@ -115,29 +117,24 @@ else if(/[?&]ql=1/.test(q)){location.replace("/workshops/"+q);}})();
 </header>
 <main id="main">
 
-<section class="hero" aria-labelledby="h1">
+<section class="hero on-dark" aria-labelledby="h1">
+  <img class="bg" src="/assets/be/img/hero.webp" alt="Mensen rond een kampvuur bij zonsondergang, een oudere man vertelt een verhaal" width="1254" height="634" fetchpriority="high">
   <div class="wrap">
-    <div>
-      <div class="chap rv"><span class="numeral" aria-hidden="true">i</span><span>Hoofdstuk één · De toekomst</span></div>
-      <h1 id="h1" class="rv">Oude wijsheid voor een wereld <em>die nog niet bestaat.</em></h1>
-      <p class="lede rv">Black Elephant is The School for the Future. We brengen verhalen uit mythologie, filosofie, film en geschiedenis samen met de grote vragen van nu. Voor leiders en professionals die richting willen geven aan verandering.</p>
-      <div class="actions rv">
-        <a class="btn btn-ink" href="#andere-blik">Ervaar hoe wij kijken <span class="ar" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="/contact/">Plan een gesprek</a>
-      </div>
+    <div class="chap rv"><span class="numeral" aria-hidden="true">i</span><span>Hoofdstuk één · De toekomst</span></div>
+    <h1 id="h1" class="rv">Oude wijsheid voor een wereld <em>die nog niet bestaat.</em></h1>
+    <p class="lede rv">Black Elephant is The School for the Future. We brengen verhalen uit mythologie, filosofie, film en geschiedenis samen met de grote vragen van nu. Voor leiders en professionals die richting willen geven aan verandering.</p>
+    <div class="actions rv">
+      <a class="btn btn-warm" href="#andere-blik">Ervaar hoe wij kijken <span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="/contact/">Plan een gesprek</a>
     </div>
-    <figure class="rv">
-      <div class="arch ring"><img src="/assets/be/img/hero-arch.webp" alt="Mensen rond een kampvuur bij zonsondergang, een oudere man vertelt een verhaal" width="519" height="634" fetchpriority="high"></div>
-      <figcaption>Al duizenden jaren vertellen mensen elkaar verhalen om een veranderende wereld te begrijpen.</figcaption>
-    </figure>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true">Mythologie  <b>✦</b> Filosofie  <b>✦</b> Film  <b>✦</b> Geschiedenis  <b>✦</b> Leiderschap</div>
 
 <section class="sec memory" id="herinnering" aria-labelledby="h-mem">
-  <div class="wrap split r">
-    <div class="arch ring rv"><img src="/assets/be/img/prometheus-arch.webp" alt="Prometheus op een bergtop met het hemelse vuur in zijn hand" width="519" height="634" loading="lazy"></div>
+  <div class="wrap split">
+    <div class="arch rv" style="aspect-ratio:4/3.3"><img src="/assets/be/img/prometheus.webp" alt="Prometheus op een bergtop met het hemelse vuur in zijn hand" width="1672" height="941" loading="lazy" style="object-position:62% 40%"></div>
     <div>
       <div class="chap rv"><span class="numeral" aria-hidden="true">ii</span><span>Hoofdstuk twee · De herinnering</span></div>
       <h2 id="h-mem" class="rv">Misschien is dit niet de eerste keer.</h2>
