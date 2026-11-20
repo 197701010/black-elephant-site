@@ -34,3 +34,6 @@ h1{line-height:1.03!important}
 .be-mini svg{width:40px;height:auto}
 .be-mini b{font:600 12px/1 var(--body);letter-spacing:.28em;text-transform:uppercase}
 @media (max-width:640px){.be-sub .in{padding:10px 20px;gap:16px}}
+
+/* Footer-koppen niet in de displayletter */
+.site-foot .sf-cols h4{font:600 11px/1.4 var(--body)!important;letter-spacing:.24em!important;text-transform:uppercase;color:#F2C9A0}

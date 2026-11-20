@@ -19,8 +19,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/be/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/be/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/be/be-chrome.css?v=20261120c">
-<link rel="stylesheet" href="/assets/be/be.css?v=20261120c">
+<link rel="stylesheet" href="/assets/be/be-chrome.css?v=20261120d">
+<link rel="stylesheet" href="/assets/be/be.css?v=20261120d">
 <style>
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px}
 .chip{all:unset;cursor:pointer;font:500 14px var(--sans);padding:10px 16px;border-radius:999px;border:1px solid var(--line-2);transition:all .2s}
@@ -88,18 +88,6 @@
   </div>
 </section>
 
-<section class="sec sec-mist" id="prometheus" aria-labelledby="h-pro">
-  <div class="wrap feat">
-    <div class="arch ring rv"><img src="/assets/be/img/prometheus.webp" alt="Prometheus op een bergtop met het hemelse vuur in zijn hand" width="1672" height="941" style="object-position:60% 40%" loading="lazy"></div>
-    <div>
-      <p class="eyebrow rv">Uitgelicht · Technologie</p>
-      <h2 id="h-pro" class="rv">Kunnen we omgaan met wat we uitvinden?</h2>
-      <p class="lede rv" style="margin-top:22px">Prometheus gaf de mensen het vuur, en daarmee technologie. Maar in de versie van Plato blijkt dat niet genoeg. Een verhaal over vooruitgang, macht en het tweede geschenk dat we nog steeds nodig hebben.</p>
-      <p class="rv" style="font:italic 400 15px var(--serif);color:var(--muted)">Griekse mythologie · ca. 5 minuten lezen</p>
-      <div class="actions rv" style="margin-top:22px"><a class="btn btn-ink" href="/library/prometheus/">Lees het verhaal <span class="ar" aria-hidden="true">→</span></a></div>
-    </div>
-  </div>
-</section>
 
 <section class="sec" aria-labelledby="h-dl">
   <div class="wrap">
@@ -110,16 +98,16 @@
     <div class="search rv"><label for="lib-q" class="sr">Zoek in de Library</label><input id="lib-q" type="search" placeholder="Zoek een verhaal, thema of vraagstuk…" autocomplete="off"></div>
     <div class="chips" role="group" aria-label="Filter op bronsoort"><button type="button" class="chip" data-f="alle" aria-pressed="true">Alle</button><button type="button" class="chip" data-f="mythologie" aria-pressed="false">Mythologie</button><button type="button" class="chip" data-f="geschiedenis" aria-pressed="false">Geschiedenis</button><button type="button" class="chip" data-f="literatuur" aria-pressed="false">Literatuur</button><button type="button" class="chip" data-f="film" aria-pressed="false">Film</button><button type="button" class="chip" data-f="hedendaags" aria-pressed="false">Hedendaags</button></div>
     <p class="dl-count" id="dl-count" aria-live="polite"></p>
-    <a class="story-card rv" href="/library/prometheus/" data-t="mythologie" data-q="prometheus vuur innovatie macht verantwoordelijkheid technologie ai griekse mythologie"><img src="/assets/be/img/prometheus-kaart.webp" alt="" loading="lazy"><span><span class="tag">Mythologie · volledig verhaal</span><h3>Prometheus</h3><span class="sub">De prijs van vooruitgang. Innovatie, macht en verantwoordelijkheid.</span><span class="go">Lees het verhaal →</span></span></a>
+    <a class="story-card rv" id="prometheus" href="/library/prometheus/" data-t="mythologie" data-q="prometheus vuur innovatie macht verantwoordelijkheid technologie ai griekse mythologie"><img src="/assets/be/img/prometheus-kaart.webp" alt="" loading="lazy"><span><span class="tag">Mythologie · volledig verhaal</span><h3>Prometheus</h3><span class="sub">De prijs van vooruitgang. Innovatie, macht en verantwoordelijkheid.</span><span class="go">Lees het verhaal →</span></span></a>
     <p class="empty" id="dl-empty" hidden>Geen verhalen of dilemma's gevonden. Probeer een ander woord, of <a href="#" id="dl-reset">toon alles</a>.</p>
     <div class="dls">
 <article class="dl rv" data-t="mythologie">
   <span class="dn">01</span>
-  <div><span class="tag">Technologie</span><h3>Wat leren we nog zelf, als alles al geweten wordt?</h3><p>Als antwoorden gratis worden, verschuift de waarde van weten naar zoeken, twijfelen en oordelen. Wat betekent dat voor hoe we leren, en hoe we anderen laten leren?</p><p class="dw">Verhaalwereld: Een overlevering uit de TEDx-talk Het Vergeetlepeltje</p></div>
+  <div><span class="tag">Technologie</span><h3>Wat leren we nog zelf, als alles al geweten wordt?</h3><p>Als antwoorden gratis worden, verschuift de waarde van weten naar zoeken, twijfelen en oordelen. Wat betekent dat voor hoe we leren, en hoe we anderen laten leren?</p><p class="dw">Verhaalwereld: Talmoedische overlevering</p></div>
 </article>
 <article class="dl rv" data-t="hedendaags">
   <span class="dn">02</span>
-  <div><span class="tag">Leiderschap</span><h3>Wie benoemt wat iedereen ziet?</h3><p>In elke organisatie staat wel een olifant in de kamer. Iedereen loopt eromheen, tot hij beweegt. Wat kost het om hem te benoemen, en wat kost het om te zwijgen?</p><p class="dw">Verhaalwereld: De black elephant</p></div>
+  <div><span class="tag">Leiderschap</span><h3>Wie benoemt wat iedereen ziet?</h3><p>In elke organisatie staat wel een olifant in de kamer. Iedereen loopt eromheen, tot hij beweegt. Wat kost het om hem te benoemen, en wat kost het om te zwijgen?</p><p class="dw">Verhaalwereld: Hedendaags</p></div>
 </article>
 <article class="dl rv" data-t="mythologie">
   <span class="dn">03</span>
@@ -218,7 +206,7 @@
     </div>
   </div>
 </footer>
-<script src="/assets/be/site.js?v=20261120c"></script>
+<script src="/assets/be/site.js?v=20261120d"></script>
 <script>
 (function(){var c=[].slice.call(document.querySelectorAll(".chip")),it=[].slice.call(document.querySelectorAll(".dl,.story-card")),out=document.getElementById("dl-count"),q=document.getElementById("lib-q"),em=document.getElementById("dl-empty"),f="alle";
 function run(){var s=(q.value||"").toLowerCase().trim(),n=0;it.forEach(function(a){var txt=(a.textContent+" "+(a.getAttribute("data-q")||"")).toLowerCase();var on=(f==="alle"||a.getAttribute("data-t")===f)&&(!s||txt.indexOf(s)>-1);a.hidden=!on;if(on){n++;a.classList.add("in");}});out.textContent=n+(n===1?" resultaat":" resultaten");em.hidden=n>0;}

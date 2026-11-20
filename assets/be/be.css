@@ -178,3 +178,6 @@ a.row:hover{background:linear-gradient(90deg,transparent,rgba(233,220,200,.45),t
 .phead.solo h1{color:#fff}.phead.solo .lede{color:#CFC8E2}
 .phead.solo .eyebrow{color:#F2C9A0}.phead.solo .crumbs,.phead.solo .crumbs a{color:#B9B1D0}
 .phead.solo h1 em{color:#F2C9A0}
+/* Lange Nederlandse woorden netjes afbreken op kleine schermen */
+.row>*,.dl>*,.tile .tt,.vdt3>div,.mv,.fw a{min-width:0}
+h1,h2,h3{overflow-wrap:break-word}
