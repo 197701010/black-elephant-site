@@ -27,7 +27,7 @@
 .ct .side .facts{flex-direction:column;gap:10px}
 .ct>*{min-width:0}
 @media (max-width:920px){.ct{grid-template-columns:1fr;gap:30px}}
-</style>
+.contact-head.phead.photo{min-height:0;padding:42px 0 46px}.contact-head .bg{opacity:.35}.contact-head h1{font-size:clamp(38px,5vw,64px)}.contact-head .lede{margin-bottom:0}.contact-head .crumbs{margin-bottom:16px}.contact-head .eyebrow{margin-bottom:14px}</style>
 </head>
 <body>
 <a class="skip" href="#main">Naar de inhoud</a>
@@ -47,7 +47,7 @@
     </nav>
   </div>
 </header>
-<main id="main"><section class="phead photo">
+<main id="main"><section class="phead photo contact-head">
   <img class="bg" src="/assets/be/img/reis.webp" alt="Een figuur in een wapperende mantel op een rots, met een enorme maan boven de bergen" style="object-position:60% 40%" fetchpriority="high">
   <div class="wrap">
     <p class="crumbs"><a href="/">Black Elephant</a> / Contact</p>
@@ -57,7 +57,7 @@
   </div>
 </section>
 
-<section class="sec" style="padding-top:20px" aria-label="Contactformulier">
+<section id="contactformulier" class="sec" style="padding-top:36px" aria-label="Contactformulier">
   <div class="wrap ct">
     <div class="side rv">
       <ul class="facts"><li>Gratis kennismaking van 20 minuten</li><li>Reactie binnen twee werkdagen</li><li>Geen verplichtingen</li></ul>
@@ -67,16 +67,16 @@
     <form class="panel form rv" id="offerForm" novalidate>
       <input type="checkbox" name="botcheck" id="o-bot" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="two">
-        <div class="field"><label for="o-naam">Naam</label><input id="o-naam" required autocomplete="name"></div>
-        <div class="field"><label for="o-org">Organisatie</label><input id="o-org" autocomplete="organization"></div>
+        <div class="field"><label for="o-naam">Naam (verplicht)</label><input id="o-naam" required autocomplete="name"></div>
+        <div class="field"><label for="o-org">Organisatie (optioneel)</label><input id="o-org" autocomplete="organization"></div>
       </div>
       <div class="two">
-        <div class="field"><label for="o-mail">E-mail</label><input id="o-mail" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="o-mail">E-mail (verplicht)</label><input id="o-mail" type="email" required autocomplete="email"></div>
         <div class="field"><label for="o-tel">Telefoon (optioneel)</label><input id="o-tel" type="tel" autocomplete="tel"></div>
       </div>
       <div class="field"><label for="o-int">Waar gaat het over?</label>
         <select id="o-int"><option>Kennismaking (20 minuten)</option><option>Keynote</option><option>Workshop in-company</option><option>Open workshop</option><option>Online cursus</option><option>Leiderschapsontwikkeling</option><option>Strategie / AI-oplossing</option><option>Interim management</option><option>Iets anders</option></select></div>
-      <div class="field"><label for="o-msg">Je vraag (datum, aantal deelnemers, context)</label><textarea id="o-msg"></textarea></div>
+      <div class="field"><label for="o-msg">Wat kunnen we voor je betekenen? (optioneel)</label><textarea id="o-msg" placeholder="Vertel kort over je vraagstuk of bijeenkomst."></textarea></div>
       <p class="status" id="o-status" role="status"></p>
       <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
         <p class="privacy-note">We gebruiken je gegevens alleen om je aanvraag te beantwoorden. <a href="/privacy/">Privacyverklaring</a></p>
@@ -128,10 +128,10 @@
 (function(){
  var p=new URLSearchParams(location.search).get("onderwerp"), s=document.getElementById("o-int");
  if(p){for(var i=0;i<s.options.length;i++){if(s.options[i].text===p||s.options[i].text.indexOf(p)===0){s.selectedIndex=i;break;}}}
- var f=document.getElementById("offerForm"), st=document.getElementById("o-status");
+ var f=document.getElementById("offerForm"), st=document.getElementById("o-status");f.addEventListener("input",function(e){e.target.removeAttribute("aria-invalid");});
  f.addEventListener("submit",function(e){e.preventDefault();
   if(document.getElementById("o-bot").checked){st.textContent="Dank je wel.";return;}
-  if(!BE_val("o-naam")||!BE_mail(BE_val("o-mail"))){st.textContent="Vul je naam en een geldig e-mailadres in.";return;}
+  if(!BE_val("o-naam")||!BE_mail(BE_val("o-mail"))){st.textContent="Vul je naam en een geldig e-mailadres in.";var bad=document.getElementById(!BE_val("o-naam")?"o-naam":"o-mail");bad.setAttribute("aria-invalid","true");bad.focus();return;}
   var subj="Aanvraag: "+BE_val("o-int")+" ("+(BE_val("o-org")||BE_val("o-naam"))+")";
   var lines=["Naam: "+BE_val("o-naam"),"Organisatie: "+BE_val("o-org"),"E-mail: "+BE_val("o-mail"),"Telefoon: "+BE_val("o-tel"),"Onderwerp: "+BE_val("o-int"),"","Vraag:",BE_val("o-msg")];
   BE_send(subj,{naam:BE_val("o-naam"),email:BE_val("o-mail"),organisatie:BE_val("o-org"),telefoon:BE_val("o-tel"),onderwerp:BE_val("o-int"),vraag:BE_val("o-msg")},lines,st,"Dank je wel, je aanvraag is verstuurd. Je hoort binnen twee werkdagen van ons.",function(){f.reset();});
