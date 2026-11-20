@@ -27,7 +27,7 @@
     var form=status.closest("form"), button=form&&form.querySelector("button[type=submit]");if(button&&button.disabled)return;if(button)button.disabled=true;status.textContent="Bezig met versturen…";
     fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:KEY,subject:subject,from_name:"blackelephant.nl"},data))})
       .then(function(r){return r.json();})
-      .then(function(j){if(j.success){status.textContent=okMsg;if(window.goatcounter&&goatcounter.count)goatcounter.count({path:"event/formulier-verzonden",title:"Formulier verzonden",event:true});if(onOk)onOk();}else fail();})
+      .then(function(j){if(j.success){status.textContent=okMsg;try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:"event/formulier-verzonden",title:"Formulier verzonden",event:true});}catch(ignore){}try{if(onOk)onOk();}catch(ignore){} }else fail();})
       .catch(fail).finally(function(){if(button)button.disabled=false;});
     function fail(){location.href="mailto:"+MAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lines.join("\n"));status.textContent="Versturen via de site lukte niet. Je mailprogramma opent als alternatief.";}
   };
@@ -40,9 +40,9 @@
       e.preventDefault();
       var st=f.querySelector(".status"), m=f.querySelector("input[type=email]"), bot=f.querySelector(".hp");
       if(bot&&bot.checked){st.textContent="Dank je wel.";return;}
-      if(!BE_mail((m.value||"").trim())){st.textContent="Vul een geldig e-mailadres in.";return;}
+      if(!BE_mail((m.value||"").trim())){st.textContent="Vul een geldig e-mailadres in.";m.setAttribute("aria-invalid","true");m.focus();return;}m.removeAttribute("aria-invalid");
       var nm=(f.querySelector("input[name=naam]")||{}).value||"";
-      BE_send(f.getAttribute("data-subject")||"Aanmelding: nieuwe verhalen in The Library",{email:m.value.trim(),naam:nm,bron:f.getAttribute("data-signup")},["Aanmelding nieuwe verhalen","Naam: "+nm,"E-mail: "+m.value],st,f.getAttribute("data-ok")||"Dank je wel. Je hoort van ons zodra er een nieuw verhaal in The Library staat.",function(){f.reset();});
+      BE_send(f.getAttribute("data-subject")||"Aanmelding: nieuwe verhalen in The Library",{email:m.value.trim(),naam:nm,bron:f.getAttribute("data-signup")},[f.getAttribute("data-subject")||"Aanmelding nieuwe verhalen","Naam: "+nm,"E-mail: "+m.value],st,f.getAttribute("data-ok")||"Dank je wel. Je hoort van ons zodra er een nieuw verhaal in The Library staat.",function(){f.reset();});
     });
   });
 })();
