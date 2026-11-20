@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /bibliotheek/les2-
-Sitemap: https://blackelephant.nl/sitemap.xml
