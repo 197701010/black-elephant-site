@@ -13,14 +13,14 @@
 <meta property="og:url" content="https://blackelephant.nl/library/">
 <meta property="og:image" content="https://blackelephant.nl/assets/be/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F7F3EC">
+<meta name="theme-color" content="#0B0B1F">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/be/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/be/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/be/be-chrome.css?v=20261120">
-<link rel="stylesheet" href="/assets/be/be.css?v=20261120">
+<link rel="stylesheet" href="/assets/be/be-chrome.css?v=20261120c">
+<link rel="stylesheet" href="/assets/be/be.css?v=20261120c">
 <style>
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px}
 .chip{all:unset;cursor:pointer;font:500 14px var(--sans);padding:10px 16px;border-radius:999px;border:1px solid var(--line-2);transition:all .2s}
@@ -28,6 +28,19 @@
 .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .chip:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
 .dls{border-top:1px solid var(--line-2)}
+.search input{width:100%;max-width:640px;font:400 17px var(--sans);padding:16px 20px;border:1px solid #DCD3E8;border-radius:12px;background:#fff;margin-bottom:18px}
+.search input:focus{outline:0;border-color:var(--plum);box-shadow:0 0 0 3px rgba(147,51,234,.15)}
+.dl-count{font-size:14px;color:var(--muted);margin:0 0 18px}
+.story-card{display:grid;grid-template-columns:320px 1fr;gap:30px;align-items:center;background:#15152A;color:#fff;border-radius:12px;overflow:hidden;margin-bottom:30px;transition:transform .25s}
+.story-card:hover{transform:translateY(-3px)}
+.story-card img{width:100%;height:100%;min-height:180px;object-fit:cover}
+.story-card>span{padding:24px 28px 24px 0;display:block}
+.story-card h3{color:#fff;font-size:34px;margin:10px 0 4px}
+.story-card .sub{display:block;color:#CFC8E2;margin-bottom:12px}
+.story-card .go{color:#F2C9A0;font-weight:600;font-size:14px}
+.story-card .tag{background:rgba(242,201,160,.15);color:#F2C9A0}
+.empty{padding:30px 0;color:var(--ink-2)}
+@media (max-width:820px){.story-card{grid-template-columns:1fr}.story-card>span{padding:0 22px 24px}}
 .dl{display:grid;grid-template-columns:70px 1fr;gap:24px;padding:36px 0;border-bottom:1px solid var(--line-2)}
 .dl .dn{font:italic 400 30px/1 var(--serif);color:var(--copper)}
 .dl h3{font-size:clamp(26px,2.6vw,36px);margin:12px 0 12px;max-width:820px}
@@ -52,13 +65,13 @@
 <header class="site-head">
   <div class="sh-in">
     <a href="/" class="sh-brand" aria-label="Black Elephant, naar de homepage">
-      <svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#772683" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#1d1d1b" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#1d1d1b" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg>
+      <svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#B57BF0" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#fff" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#fff" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg>
       <span><b>Black Elephant</b><small>The School for the Future</small></span>
     </a>
     <button class="sh-menu" aria-expanded="false" aria-controls="nav" aria-label="Menu openen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     <nav class="sh-nav" id="nav" aria-label="Hoofdmenu">
-      <a href="/library/" aria-current="page">Library</a>
       <a href="/academy/">Academy</a>
+      <a href="/library/" aria-current="page">Library</a>
       <a href="/practice/">Practice</a>
       <a href="/over/">Over</a>
       <a class="sh-cta" href="/contact/">Plan een gesprek</a>
@@ -66,12 +79,12 @@
   </div>
 </header>
 <main id="main"><section class="phead photo">
-  <img class="bg" src="/assets/be/img/boek-olifant.webp" alt="Een opengeslagen oud boek, met in het licht erachter de schaduw van een olifant" style="object-position:50% 50%" fetchpriority="high">
+  <img class="bg" src="/assets/be/img/library-zaal.webp" alt="Een oude bibliotheekzaal met boekenkasten, zuilen en een armillairsfeer in warm licht" style="object-position:50% 50%" fetchpriority="high">
   <div class="wrap">
     <p class="crumbs"><a href="/">Black Elephant</a> / The Library</p>
     <p class="eyebrow">The Library</p>
     <h1>Sommige vragen worden <em>nooit oud.</em></h1>
-    <p class="lede" style="margin-top:26px">Een groeiende verzameling menselijke dilemma's. Niet om het verleden te begrijpen, maar om het heden scherper te zien. Elk dilemma heeft een verhaal dat mensen er al eeuwen over vertellen. Die verhalen hoor je live: in een keynote, een workshop of de Academy.</p>
+    <p class="lede" style="margin-top:26px">Een levende bibliotheek met verhalen die je helpen anders te kijken. Uit mythologie, geschiedenis, literatuur, film en het leven van vandaag.</p>
   </div>
 </section>
 
@@ -94,42 +107,45 @@
       <div><p class="eyebrow rv">De dilemma's</p><h2 id="h-dl" class="rv">Kies een vraag die je herkent.</h2></div>
       <p class="lede rv">Elke vraag hieronder komt terug in onze keynotes, workshops en trajecten. We vertellen er het verhaal bij dat haar zichtbaar maakt.</p>
     </div>
-    <div class="chips" role="group" aria-label="Filter op thema"><button type="button" class="chip" data-f="alle" aria-pressed="true">Alle dilemma's</button><button type="button" class="chip" data-f="technologie" aria-pressed="false">Technologie</button><button type="button" class="chip" data-f="leiderschap" aria-pressed="false">Leiderschap</button><button type="button" class="chip" data-f="verandering" aria-pressed="false">Verandering</button><button type="button" class="chip" data-f="mens" aria-pressed="false">Mens</button></div>
-    <p class="sr" id="dl-count" aria-live="polite"></p>
+    <div class="search rv"><label for="lib-q" class="sr">Zoek in de Library</label><input id="lib-q" type="search" placeholder="Zoek een verhaal, thema of vraagstuk…" autocomplete="off"></div>
+    <div class="chips" role="group" aria-label="Filter op bronsoort"><button type="button" class="chip" data-f="alle" aria-pressed="true">Alle</button><button type="button" class="chip" data-f="mythologie" aria-pressed="false">Mythologie</button><button type="button" class="chip" data-f="geschiedenis" aria-pressed="false">Geschiedenis</button><button type="button" class="chip" data-f="literatuur" aria-pressed="false">Literatuur</button><button type="button" class="chip" data-f="film" aria-pressed="false">Film</button><button type="button" class="chip" data-f="hedendaags" aria-pressed="false">Hedendaags</button></div>
+    <p class="dl-count" id="dl-count" aria-live="polite"></p>
+    <a class="story-card rv" href="/library/prometheus/" data-t="mythologie" data-q="prometheus vuur innovatie macht verantwoordelijkheid technologie ai griekse mythologie"><img src="/assets/be/img/prometheus-kaart.webp" alt="" loading="lazy"><span><span class="tag">Mythologie · volledig verhaal</span><h3>Prometheus</h3><span class="sub">De prijs van vooruitgang. Innovatie, macht en verantwoordelijkheid.</span><span class="go">Lees het verhaal →</span></span></a>
+    <p class="empty" id="dl-empty" hidden>Geen verhalen of dilemma's gevonden. Probeer een ander woord, of <a href="#" id="dl-reset">toon alles</a>.</p>
     <div class="dls">
-<article class="dl rv" data-t="technologie">
+<article class="dl rv" data-t="mythologie">
   <span class="dn">01</span>
   <div><span class="tag">Technologie</span><h3>Wat leren we nog zelf, als alles al geweten wordt?</h3><p>Als antwoorden gratis worden, verschuift de waarde van weten naar zoeken, twijfelen en oordelen. Wat betekent dat voor hoe we leren, en hoe we anderen laten leren?</p><p class="dw">Verhaalwereld: Een overlevering uit de TEDx-talk Het Vergeetlepeltje</p></div>
 </article>
-<article class="dl rv" data-t="leiderschap">
+<article class="dl rv" data-t="hedendaags">
   <span class="dn">02</span>
   <div><span class="tag">Leiderschap</span><h3>Wie benoemt wat iedereen ziet?</h3><p>In elke organisatie staat wel een olifant in de kamer. Iedereen loopt eromheen, tot hij beweegt. Wat kost het om hem te benoemen, en wat kost het om te zwijgen?</p><p class="dw">Verhaalwereld: De black elephant</p></div>
 </article>
-<article class="dl rv" data-t="leiderschap">
+<article class="dl rv" data-t="mythologie">
   <span class="dn">03</span>
   <div><span class="tag">Leiderschap</span><h3>Wanneer moet je de controle loslaten?</h3><p>Leiders worden gevraagd te sturen in een wereld die zich niet laat sturen. Soms is vertrouwen moeilijker dan ingrijpen.</p><p class="dw">Verhaalwereld: Griekse mythologie</p></div>
 </article>
-<article class="dl rv" data-t="leiderschap">
+<article class="dl rv" data-t="literatuur">
   <span class="dn">04</span>
   <div><span class="tag">Leiderschap</span><h3>Wie zoeken we eigenlijk als we een leider zoeken?</h3><p>We hopen vaak op één persoon die de weg weet. Oude verhalen wijzen soms een andere kant op: naar de groep die onderweg verandert.</p><p class="dw">Verhaalwereld: Perzische poëzie</p></div>
 </article>
-<article class="dl rv" data-t="leiderschap">
+<article class="dl rv" data-t="film">
   <span class="dn">05</span>
   <div><span class="tag">Leiderschap</span><h3>Wie mag jou nog tegenspreken?</h3><p>Hoe hoger je komt, hoe meer mensen ja knikken. En nu knikt ook de technologie mee. Waar organiseer je tegenspraak?</p><p class="dw">Verhaalwereld: Film</p></div>
 </article>
-<article class="dl rv" data-t="verandering">
+<article class="dl rv" data-t="mythologie">
   <span class="dn">06</span>
   <div><span class="tag">Verandering</span><h3>Wat doe je met een waarheid die niemand wil horen?</h3><p>Wie te vroeg waarschuwt, wordt zelden gehoord. Hoe vertel je iets wat mensen nog niet willen weten?</p><p class="dw">Verhaalwereld: Griekse mythologie</p></div>
 </article>
-<article class="dl rv" data-t="verandering">
+<article class="dl rv" data-t="geschiedenis">
   <span class="dn">07</span>
   <div><span class="tag">Verandering</span><h3>Waarom verandert er zo weinig, als alles verandert?</h3><p>Nieuwe technologie in een oude organisatie levert vooral een duurdere oude organisatie op. De echte verandering zit zelden in de motor.</p><p class="dw">Verhaalwereld: Geschiedenis</p></div>
 </article>
-<article class="dl rv" data-t="mens">
+<article class="dl rv" data-t="mythologie">
   <span class="dn">08</span>
   <div><span class="tag">Mens</span><h3>Wanneer is genoeg werkelijk genoeg?</h3><p>Ambitie brengt ons ver. Maar wie altijd verder wil, vergeet soms waarvoor. Een van de oudste geschreven verhalen gaat precies hierover.</p><p class="dw">Verhaalwereld: Mesopotamië</p></div>
 </article>
-<article class="dl rv" data-t="mens">
+<article class="dl rv" data-t="literatuur">
   <span class="dn">09</span>
   <div><span class="tag">Mens</span><h3>Hoe blijf je jezelf in een wereld die zichzelf opnieuw uitvindt?</h3><p>Rollen verdwijnen, vakken veranderen. Wat blijft er over van wie je bent, als wat je doet verandert?</p><p class="dw">Verhaalwereld: Wereldliteratuur</p></div>
 </article>
@@ -168,6 +184,7 @@
 <footer class="site-foot">
   <div class="sf-in">
     <p class="sf-big">Oude wijsheid voor een wereld <em>die nog niet bestaat.</em></p>
+    <p style="font:italic 400 20px var(--serif);color:#F2C9A0;margin:-40px 0 50px">The future begins with remembering.</p>
     <div class="sf-cols">
       <div>
         <div class="sf-brand"><svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#F1D3AE" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#fff" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#fff" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg><span><b>Black Elephant</b><small>The School for the Future</small></span></div>
@@ -179,6 +196,7 @@
         <a href="/library/">Menselijke dilemma's</a>
         <a href="/library/prometheus/">Het vuur van Prometheus</a>
         <a href="/library/#aanmelden">Nieuwe verhalen ontvangen</a>
+        <a href="/methode/">Narrative Diagnostics</a>
       </div>
       <div>
         <h4>The Academy</h4>
@@ -200,11 +218,12 @@
     </div>
   </div>
 </footer>
-<script src="/assets/be/site.js?v=20261120"></script>
+<script src="/assets/be/site.js?v=20261120c"></script>
 <script>
-(function(){var c=[].slice.call(document.querySelectorAll(".chip")),it=[].slice.call(document.querySelectorAll(".dl")),out=document.getElementById("dl-count");
-c.forEach(function(b){b.addEventListener("click",function(){var f=b.getAttribute("data-f"),n=0;c.forEach(function(x){x.setAttribute("aria-pressed",String(x===b));});
-it.forEach(function(a){var on=f==="alle"||a.getAttribute("data-t")===f;a.hidden=!on;if(on){n++;a.classList.add("in");}});out.textContent=n+(n===1?" dilemma":" dilemma's");});});})();
+(function(){var c=[].slice.call(document.querySelectorAll(".chip")),it=[].slice.call(document.querySelectorAll(".dl,.story-card")),out=document.getElementById("dl-count"),q=document.getElementById("lib-q"),em=document.getElementById("dl-empty"),f="alle";
+function run(){var s=(q.value||"").toLowerCase().trim(),n=0;it.forEach(function(a){var txt=(a.textContent+" "+(a.getAttribute("data-q")||"")).toLowerCase();var on=(f==="alle"||a.getAttribute("data-t")===f)&&(!s||txt.indexOf(s)>-1);a.hidden=!on;if(on){n++;a.classList.add("in");}});out.textContent=n+(n===1?" resultaat":" resultaten");em.hidden=n>0;}
+c.forEach(function(b){b.addEventListener("click",function(){f=b.getAttribute("data-f");c.forEach(function(x){x.setAttribute("aria-pressed",String(x===b));});run();});});
+q.addEventListener("input",run);document.getElementById("dl-reset").addEventListener("click",function(e){e.preventDefault();q.value="";f="alle";c.forEach(function(x){x.setAttribute("aria-pressed",String(x.getAttribute("data-f")==="alle"));});run();q.focus();});run();})();
 </script>
 <script data-goatcounter="https://blackelephant.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

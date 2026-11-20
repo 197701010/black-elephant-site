@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Narrative Diagnostics · Verhalen als diagnostiek · Black Elephant</title>
+<meta name="description" content="Narrative Diagnostics: de methode van Black Elephant om met verhalen menselijke en organisatorische vraagstukken te onderzoeken. Verplaatsen, doorzien, terugkeren. Inzicht, dialoog, handelen.">
+<link rel="canonical" href="https://blackelephant.nl/methode/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Black Elephant">
+<meta property="og:title" content="Narrative Diagnostics · Verhalen als diagnostiek · Black Elephant">
+<meta property="og:description" content="Narrative Diagnostics: de methode van Black Elephant om met verhalen menselijke en organisatorische vraagstukken te onderzoeken. Verplaatsen, doorzien, terugkeren. Inzicht, dialoog, handelen.">
+<meta property="og:url" content="https://blackelephant.nl/methode/">
+<meta property="og:image" content="https://blackelephant.nl/assets/be/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0B1F">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/be/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/be/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/be/be-chrome.css?v=20261120c">
+<link rel="stylesheet" href="/assets/be/be.css?v=20261120c">
+<style>
+.prism{width:100%;max-width:560px;height:auto;margin:0 auto;overflow:visible}
+.prism text{font-family:"Inter",Arial,sans-serif}
+.prism .pr-k{font-size:12px;letter-spacing:.32em;font-weight:600;fill:#fff;opacity:.85}
+.prism .pr-c{font-family:"Playfair Display",Georgia,serif;font-size:26px;fill:#fff}
+.prism .pr-o{font-size:15px;fill:#E7E1F2}
+.prism .pr-i{font-family:"Playfair Display",Georgia,serif;font-size:19px;fill:#fff}
+.prism .pr-m{font-size:14px;letter-spacing:.3em;font-weight:600;fill:#F2C9A0}
+.prism .pr-outer{transform-origin:300px 300px;animation:prspin 120s linear infinite}
+.prism .pr-core{transform-origin:300px 300px;animation:prpulse 6s ease-in-out infinite}
+@keyframes prspin{to{transform:rotate(360deg)}}
+@keyframes prpulse{50%{transform:scale(1.06)}}
+@media (prefers-reduced-motion:reduce){.prism .pr-outer,.prism .pr-core{animation:none}}
+</style>
+<style>
+.ndhead{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(900px 600px at 80% 30%,rgba(147,51,234,.3),transparent 65%),radial-gradient(700px 500px at 10% 100%,rgba(79,70,229,.25),transparent 65%),var(--night);color:#fff;padding:110px 0 100px}
+.ndhead .wrap{display:grid;grid-template-columns:1fr 1fr;gap:6%;align-items:center}
+.ndhead h1{font-size:clamp(46px,6vw,84px);color:#fff}
+.ndhead .lede{color:#CFC8E2;margin-top:24px}
+.ndhead .crumbs,.ndhead .crumbs a{color:#B9B1D0}
+.ndhead .eyebrow{color:#F2C9A0}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.vs div{padding:40px}
+.vs div:first-child{background:#fff}
+.vs div:last-child{background:linear-gradient(140deg,#15152A,#2A1D4F);color:#fff}
+.vs div:last-child h3,.vs div:last-child p{color:#fff}
+.vs h3{font-size:28px;margin:8px 0 12px}
+.vs .eyebrow{margin-bottom:6px}
+.moves{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:m}
+.mtabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.mtabs button{all:unset;cursor:pointer;display:flex;gap:10px;align-items:baseline;padding:14px 22px;border-radius:12px;border:1px solid #DCD3E8;background:#fff;font:400 22px var(--serif)}
+.mtabs button span{font:italic 400 18px var(--serif);color:var(--plum)}
+.mtabs button[aria-selected="true"]{background:#15152A;color:#fff;border-color:#15152A}
+.mtabs button[aria-selected="true"] span{color:#F2C9A0}
+.mtabs button:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+.mpanel{background:#fff;border:1px solid #E6DFEE;border-radius:12px;padding:34px 36px;max-width:820px}
+.mpanel p{font-size:18px;color:var(--ink-2)}
+.mpanel .q{display:block;font:italic 400 19px var(--serif);color:var(--plum)}
+.mv{padding:36px 32px;border-radius:16px;background:#fff;border:1px solid #E6DFEE;position:relative}
+.mv .n{font:italic 400 54px/1 var(--serif);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mv h3{font-size:30px;margin:10px 0 10px}
+.mv p{color:var(--ink-2);margin:0}
+.mv .q{display:block;margin-top:16px;font:italic 400 17px/1.5 var(--serif);color:var(--plum)}
+.lenses{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.14)}
+.lenses div{padding:26px 26px 26px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.lenses h3{font-size:24px;color:#fff;margin-bottom:6px}
+.lenses p{margin:0;color:#CFC8E2;font-size:15.5px}
+.outs3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.outs3 div{text-align:center;padding:30px}
+.outs3 i{display:inline-grid;place-items:center;width:64px;height:64px;border-radius:50%;border:1px solid var(--copper);color:var(--copper);margin-bottom:14px}
+.outs3 i svg{width:28px}
+.outs3 h3{font-size:28px;margin-bottom:8px}
+.outs3 p{color:var(--ink-2);margin:0}
+.uses .row{grid-template-columns:1.1fr 1.6fr auto}
+.note{font-size:14.5px;color:var(--muted);max-width:760px;margin:40px auto 0;text-align:center}
+@media (max-width:920px){.ndhead .wrap,.vs,.moves,.lenses,.outs3{grid-template-columns:1fr}.uses .row{grid-template-columns:1fr}.uses .row p,.uses .row .go{grid-column:1}.lenses div{padding-right:0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+<header class="site-head">
+  <div class="sh-in">
+    <a href="/" class="sh-brand" aria-label="Black Elephant, naar de homepage">
+      <svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#B57BF0" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#fff" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#fff" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg>
+      <span><b>Black Elephant</b><small>The School for the Future</small></span>
+    </a>
+    <button class="sh-menu" aria-expanded="false" aria-controls="nav" aria-label="Menu openen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <nav class="sh-nav" id="nav" aria-label="Hoofdmenu">
+      <a href="/academy/">Academy</a>
+      <a href="/library/">Library</a>
+      <a href="/practice/">Practice</a>
+      <a href="/over/">Over</a>
+      <a class="sh-cta" href="/contact/">Plan een gesprek</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="ndhead" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <p class="crumbs"><a href="/">Black Elephant</a> / Methode</p>
+      <p class="eyebrow rv">Narrative Diagnostics</p>
+      <h1 id="h1" class="rv">Verhalen als diagnostiek.</h1>
+      <p class="lede rv">Narrative Diagnostics is een manier om de werkelijkheid te onderzoeken aan de hand van verhalen. Niet om dé waarheid te vinden, maar om te ontdekken wat er óók aan de hand kan zijn.</p>
+      <p class="rv" style="font:italic 400 clamp(20px,2vw,25px)/1.45 var(--serif);color:#F2C9A0;margin-top:24px;max-width:560px">Storytelling leert mensen verhalen vertellen. Narrative Diagnostics leert mensen de wereld lezen.</p>
+    </div>
+    <div class="rv"><svg class="prism" viewBox="0 0 600 600" role="img" aria-labelledby="nd-t nd-d">
+<title id="nd-t">The Narrative Prism</title>
+<desc id="nd-d">Het verhaal in het midden. Daaromheen drie perspectieven: de wereld, jezelf en de ander. Daaromheen vier lenzen: patronen, paradoxen, symboliek en archetypen. De drie bewegingen zijn verplaatsen, doorzien en terugkeren.</desc>
+<defs>
+<radialGradient id="nd-core" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#F28CA8"/><stop offset=".45" stop-color="#B04BE8"/><stop offset="1" stop-color="#4F46E5"/></radialGradient>
+<radialGradient id="nd-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#9333EA" stop-opacity=".55"/><stop offset="1" stop-color="#9333EA" stop-opacity="0"/></radialGradient>
+<linearGradient id="nd-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2C9A0"/><stop offset=".5" stop-color="#B57BF0"/><stop offset="1" stop-color="#E85D75"/></linearGradient>
+</defs>
+<circle cx="300" cy="300" r="190" fill="url(#nd-glow)"/>
+<circle class="pr-outer" cx="300" cy="300" r="205" fill="none" stroke="url(#nd-ring)" stroke-width="1.4" stroke-dasharray="3 7"/>
+<circle class="pr-inner" cx="300" cy="300" r="140" fill="none" stroke="#B57BF0" stroke-opacity=".55" stroke-width="1.2"/>
+<circle class="pr-core" cx="300" cy="300" r="68" fill="url(#nd-core)"/>
+<text x="300" y="292" text-anchor="middle" class="pr-k">HET</text>
+<text x="300" y="320" text-anchor="middle" class="pr-c">Verhaal</text>
+<circle cx="300.0" cy="95.0" r="5" fill="#F2C9A0"/><text x="300.0" y="73.0" text-anchor="middle" class="pr-o">Patronen</text>
+<circle cx="495.0" cy="236.7" r="5" fill="#F2C9A0"/><text x="520.6" y="233.3" text-anchor="start" class="pr-o">Paradoxen</text>
+<circle cx="300.0" cy="505.0" r="5" fill="#F2C9A0"/><text x="300.0" y="537.0" text-anchor="middle" class="pr-o">Symboliek</text>
+<circle cx="105.0" cy="236.7" r="5" fill="#F2C9A0"/><text x="79.4" y="233.3" text-anchor="end" class="pr-o">Archetypen</text>
+<circle cx="300.0" cy="160.0" r="4.5" fill="#E85D75"/><text x="300.0" y="202.0" text-anchor="middle" class="pr-i">De wereld</text>
+<circle cx="414.7" cy="380.3" r="4.5" fill="#E85D75"/><text x="385.2" y="365.7" text-anchor="middle" class="pr-i">De ander</text>
+<circle cx="185.3" cy="380.3" r="4.5" fill="#E85D75"/><text x="214.8" y="365.7" text-anchor="middle" class="pr-i">Jezelf</text>
+<path d="M120 180 A 230 230 0 0 1 480 180" fill="none" stroke="#F2C9A0" stroke-opacity=".35" stroke-width="1"/><text x="300" y="38" text-anchor="middle" class="pr-m">VERPLAATSEN</text><text x="60" y="560" text-anchor="start" class="pr-m">DOORZIEN</text><text x="540" y="560" text-anchor="end" class="pr-m">TERUGKEREN</text></svg></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-vs">
+  <div class="wrap">
+    <div class="head-row" style="margin-bottom:40px">
+      <div><p class="eyebrow rv">Het verschil</p><h2 id="h-vs" class="rv">Niet storytelling, maar verhalen als diagnostiek.</h2></div>
+      <p class="lede rv">Achter veel nieuwe uitdagingen schuilen eeuwenoude menselijke dilemma's. Over macht, vertrouwen, identiteit, verantwoordelijkheid en betekenis. Verhalen maken die zichtbaar.</p>
+    </div>
+    <div class="vs rv">
+      <div><p class="eyebrow plain">Storytelling</p><h3>Een verhaal om iets te vertellen.</h3><p>Je hebt al een boodschap, en het verhaal helpt om die over te brengen. Het verhaal dient de spreker.</p></div>
+      <div><p class="eyebrow plain" style="color:#F2C9A0">Narrative Diagnostics</p><h3>Een verhaal om iets te zien.</h3><p>Je hebt een vraag, en het verhaal helpt om die te onderzoeken. Het verhaal dient het inzicht. Het vertelt niet wat de waarheid is, maar laat zien wat er óók waar zou kunnen zijn.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-sand" aria-labelledby="h-mv">
+  <div class="wrap">
+    <div class="head-row" style="margin-bottom:40px">
+      <div><p class="eyebrow rv">Drie bewegingen</p><h2 id="h-mv" class="rv">Verplaatsen. Doorzien. Terugkeren.</h2></div>
+      <p class="lede rv">Elke sessie, workshop of traject volgt dezelfde beweging. Van je eigen werkelijkheid, het verhaal in, en met een nieuwe blik weer terug.</p>
+    </div>
+    <div class="mtabs" role="tablist" aria-label="De drie bewegingen">
+      <button role="tab" aria-selected="true" aria-controls="mt-0" id="mtb-0"><span>i</span>Verplaatsen</button>
+      <button role="tab" aria-selected="false" aria-controls="mt-1" id="mtb-1" tabindex="-1"><span>ii</span>Doorzien</button>
+      <button role="tab" aria-selected="false" aria-controls="mt-2" id="mtb-2" tabindex="-1"><span>iii</span>Terugkeren</button>
+    </div>
+    <div class="mpanel" role="tabpanel" id="mt-0" aria-labelledby="mtb-0"><p>We verlaten tijdelijk onze eigen werkelijkheid en stappen de wereld van een verhaal binnen. Een mythe, een film, een moment uit de geschiedenis. We lezen zonder direct te oordelen.</p><span class="q">Wie heeft macht? Wie neemt een risico? Wie draagt de gevolgen?</span></div>
+    <div class="mpanel" role="tabpanel" id="mt-1" aria-labelledby="mtb-1" hidden><p>Vanuit verschillende perspectieven, de wereld, de ander en jezelf, worden patronen, archetypen, paradoxen en symboliek zichtbaar die we van dichtbij niet zagen. Dit zijn vrije interpretatielenzen, geen vaste stappen.</p><span class="q">Welke drijfveren en paradoxen worden zichtbaar?</span></div>
+    <div class="mpanel" role="tabpanel" id="mt-2" aria-labelledby="mtb-2" hidden><p>We keren terug naar onze eigen werkelijkheid. Welke lezing helpt, en welke feiten ondersteunen of weerspreken haar? Daaruit volgt inzicht, dialoog of handelen.</p><span class="q">Wat zou je anders kunnen vragen, vertellen of doen?</span></div>
+</div>
+  </div>
+</section>
+
+<section class="sec sec-night on-dark" aria-labelledby="h-pr">
+  <div class="wrap">
+    <div class="head-row" style="margin-bottom:40px">
+      <div><p class="eyebrow rv">The Narrative Prism</p><h2 id="h-pr" class="rv">Eén verhaal, vele perspectieven.</h2></div>
+      <p class="lede rv">Zoals een prisma licht in kleuren breekt, breekt een verhaal één vraag open in meerdere perspectieven. Het verhaal staat in het midden. Daaromheen kijken we vanuit de wereld, vanuit jezelf en vanuit de ander.</p>
+    </div>
+    <div class="lenses">
+      <div class="rv"><h3>Perspectieven</h3><p>De wereld, jezelf en de ander. Wie ziet wat, en vanuit welke positie?</p></div>
+      <div class="rv"><h3>Drijfveren</h3><p>Wat wil ieder personage eigenlijk? En wat staat daarbij op het spel?</p></div>
+      <div class="rv"><h3>Archetypen</h3><p>De vernieuwer, de bewaker, de twijfelaar. Rollen die in elke organisatie terugkomen.</p></div>
+      <div class="rv"><h3>Patronen</h3><p>Wat herhaalt zich? In het verhaal, en in de manier waarop wij werken en beslissen.</p></div>
+      <div class="rv"><h3>Symboliek</h3><p>Het vuur, de lever, het lepeltje. Beelden die meer zeggen dan een analyse.</p></div>
+      <div class="rv"><h3>Paradoxen</h3><p>Waar twee dingen allebei waar zijn. Daar zit meestal de echte vraag.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-night on-dark" aria-labelledby="h-ex">
+  <div class="wrap">
+    <div class="head-row" style="margin-bottom:36px">
+      <div><p class="eyebrow rv">Een uitgewerkt dilemma</p><h2 id="h-ex" class="rv">Een AI-transformatie stagneert.</h2></div>
+      <p class="lede rv">Drie verhalen openen drie mogelijke lezingen. Geen ervan is het antwoord. Elke lezing onderzoek je daarna met feiten en gesprekken: een verhaal bewijst geen oorzaak.</p>
+    </div>
+    <div class="lenses">
+      <div class="rv"><h3>Prometheus</h3><p>Opent de mogelijkheid dat vernieuwers worden geremd, of zelfs gestraft, voor wat ze binnenbrengen.</p></div>
+      <div class="rv"><h3>De elektrificatie van de fabriek</h3><p>Opent de mogelijkheid dat de technologie is vervangen, maar de processen en de manier van werken niet.</p></div>
+      <div class="rv"><h3>Een jury die twijfelt</h3><p>Opent de mogelijkheid dat aannames onvoldoende worden bevraagd, omdat iedereen snel naar een besluit wil.</p></div>
+    </div>
+    <div class="actions rv" style="margin-top:36px"><a class="btn btn-warm" href="/library/prometheus/">Probeer de methode met Prometheus <span class="ar" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-out">
+  <div class="wrap">
+    <p class="eyebrow c rv">Wat het oplevert</p>
+    <h2 id="h-out" class="rv" style="text-align:center;margin-bottom:40px">Inzicht. Dialoog. Handelen.</h2>
+    <div class="outs3">
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></i><h3>Inzicht</h3><p>Nieuwe perspectieven op een vraag die vastzat.</p></div>
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5h16v10H9l-5 4z"/></svg></i><h3>Dialoog</h3><p>Het andere gesprek: over wat iedereen ziet, maar niemand benoemt.</p></div>
+      <div class="rv"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></i><h3>Handelen</h3><p>Concrete keuzes en een eerste stap, voor jezelf of je organisatie.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-sand uses" aria-labelledby="h-use">
+  <div class="wrap">
+    <p class="eyebrow rv">Waar we het toepassen</p>
+    <h2 id="h-use" class="rv" style="margin-bottom:36px">Van één zaal tot een hele organisatie.</h2>
+    <div class="rows">
+      <a class="row rv" href="/practice/#keynotes"><h3>Keynotes</h3><p>Eén verhaal, een hele zaal die anders gaat kijken naar technologie, leiderschap en verandering.</p><span class="go">Practice →</span></a>
+      <a class="row rv" href="/practice/#dialoog"><h3>Strategische dialoog</h3><p>Een verhaal als gedeeld vertrekpunt voor het gesprek dat in de boardroom te weinig gevoerd wordt.</p><span class="go">Practice →</span></a>
+      <a class="row rv" href="/workshops/"><h3>Workshops en leergangen</h3><p>Zelf leren lezen met de vier lenzen en de drie bewegingen, met je eigen vraagstuk als casus.</p><span class="go">Academy →</span></a>
+      <a class="row rv" href="/practice/#verandering"><h3>Organisatieverandering en AI</h3><p>De menselijke kant van verandering zichtbaar maken, voordat de olifant in de kamer een zwarte zwaan wordt.</p><span class="go">Practice →</span></a>
+    </div>
+    <p class="note rv">Narrative Diagnostics is de eigen reflectiemethode van Black Elephant. Ze is gebaseerd op praktijkervaring en op de lange traditie van verhalen als spiegel, niet op een wetenschappelijk gevalideerd instrument.</p>
+  </div>
+</section>
+<section class="sec" style="text-align:center;background:radial-gradient(800px 360px at 50% 100%,rgba(241,211,174,.5),transparent 70%),var(--paper)">
+  <div class="wrap narrow" style="margin:0 auto">
+    <div class="thread" aria-hidden="true"><b class="f"></b><i></i><b class="f"></b><i></i><b class="f"></b></div>
+    <h2 class="rv" style="margin:30px 0 18px">Welke vraag zou jij willen doorzien?</h2>
+    <p class="lede rv" style="margin:0 auto 30px">Vertel ons de vraag die je al een tijd met je meedraagt. Dan zoeken wij het verhaal dat haar zichtbaar maakt.</p>
+    <div class="actions rv" style="justify-content:center"><a class="btn btn-ink" href="/contact/">Plan een gesprek <span class="ar" aria-hidden="true">→</span></a><a class="btn btn-ghost" href="/library/prometheus/">Lees het verhaal van Prometheus</a></div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="sf-in">
+    <p class="sf-big">Oude wijsheid voor een wereld <em>die nog niet bestaat.</em></p>
+    <p style="font:italic 400 20px var(--serif);color:#F2C9A0;margin:-40px 0 50px">The future begins with remembering.</p>
+    <div class="sf-cols">
+      <div>
+        <div class="sf-brand"><svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#F1D3AE" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#fff" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#fff" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg><span><b>Black Elephant</b><small>The School for the Future</small></span></div>
+        <p>Verhalen uit mythologie, filosofie, film en geschiedenis, verbonden met de vragen van leiders en organisaties van nu.</p>
+        <p><a href="mailto:hello@blackelephant.nl">hello@blackelephant.nl</a></p>
+      </div>
+      <div>
+        <h4>The Library</h4>
+        <a href="/library/">Menselijke dilemma's</a>
+        <a href="/library/prometheus/">Het vuur van Prometheus</a>
+        <a href="/library/#aanmelden">Nieuwe verhalen ontvangen</a>
+        <a href="/methode/">Narrative Diagnostics</a>
+      </div>
+      <div>
+        <h4>The Academy</h4>
+        <a href="/workshops/">Live workshops</a>
+        <a href="/bibliotheek/">Online cursussen</a>
+        <a href="/academy/#reis">De eerste reis</a>
+      </div>
+      <div>
+        <h4>The Practice</h4>
+        <a href="/practice/#keynotes">Keynotes</a>
+        <a href="/practice/#incompany">Workshops in-company</a>
+        <a href="/practice/#transformatie">AI &amp; transformatie</a>
+        <a href="/aicheck/">AI-check</a> <a href="/hr-aicheck/">HR AI-check</a>
+      </div>
+    </div>
+    <div class="sf-legal">
+      <span>© 2026 Black Elephant · een handelsnaam van Stagefinder B.V. · KvK 68775520 · btw NL857586750B01 · Haarlem</span>
+      <span><a href="/over/">Over</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/voorwaarden/">Voorwaarden</a></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/be/site.js?v=20261120c"></script>
+<script>(function(){var t=[].slice.call(document.querySelectorAll('.mtabs [role=tab]'));t.forEach(function(b,i){b.addEventListener('click',function(){t.forEach(function(x,j){x.setAttribute('aria-selected',String(j===i));x.tabIndex=j===i?0:-1;document.getElementById('mt-'+j).hidden=j!==i;});});b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){e.preventDefault();var k=(i+d+t.length)%t.length;t[k].focus();t[k].click();}});});})();</script>
+<script data-goatcounter="https://blackelephant.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

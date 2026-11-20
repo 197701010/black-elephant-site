@@ -13,14 +13,14 @@
 <meta property="og:url" content="https://blackelephant.nl/academy/">
 <meta property="og:image" content="https://blackelephant.nl/assets/be/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F7F3EC">
+<meta name="theme-color" content="#0B0B1F">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/be/fonts/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/be/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/be/be-chrome.css?v=20261120">
-<link rel="stylesheet" href="/assets/be/be.css?v=20261120">
+<link rel="stylesheet" href="/assets/be/be-chrome.css?v=20261120c">
+<link rel="stylesheet" href="/assets/be/be.css?v=20261120c">
 <style>
 .cal{border-top:1px solid var(--line-2)}
 .ce{display:grid;grid-template-columns:200px 1fr 120px 150px;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line-2);transition:background .25s}
@@ -41,6 +41,9 @@
 .course .pb small{color:var(--muted);font-size:13px}
 .course .link{align-self:flex-start;margin-top:auto}
 .ways .row{grid-template-columns:80px 1fr 1.3fr auto}
+.parts>div{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.2)}.parts>div:first-child{border-top:1px solid rgba(255,255,255,.2)}
+.parts h3{font-size:clamp(22px,2.2vw,28px);color:#fff;display:flex;gap:18px;align-items:baseline;margin-bottom:8px}.parts h3 span{font:600 12px var(--sans);letter-spacing:.14em;color:var(--gold)}
+.parts ul{margin:0;padding-left:36px;color:#CFC8E2;font-size:15px}.parts li{margin:3px 0}
 .journey .steps3{list-style:none;padding:0;margin:0;border-top:1px solid rgba(255,255,255,.2)}
 .journey .steps3 li{display:flex;gap:26px;align-items:baseline;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.2);font:400 clamp(22px,2.2vw,28px) var(--serif)}
 .journey .steps3 span{font:600 12px var(--sans);letter-spacing:.14em;color:var(--gold)}
@@ -52,13 +55,13 @@
 <header class="site-head">
   <div class="sh-in">
     <a href="/" class="sh-brand" aria-label="Black Elephant, naar de homepage">
-      <svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#772683" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#1d1d1b" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#1d1d1b" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg>
+      <svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#B57BF0" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#fff" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#fff" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg>
       <span><b>Black Elephant</b><small>The School for the Future</small></span>
     </a>
     <button class="sh-menu" aria-expanded="false" aria-controls="nav" aria-label="Menu openen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     <nav class="sh-nav" id="nav" aria-label="Hoofdmenu">
-      <a href="/library/">Library</a>
       <a href="/academy/" aria-current="page">Academy</a>
+      <a href="/library/">Library</a>
       <a href="/practice/">Practice</a>
       <a href="/over/">Over</a>
       <a class="sh-cta" href="/contact/">Plan een gesprek</a>
@@ -66,12 +69,12 @@
   </div>
 </header>
 <main id="main"><section class="phead photo">
-  <img class="bg" src="/assets/be/img/doorgang.webp" alt="Een figuur staat in een grote stenen boog en kijkt uit over een heuvellandschap" style="object-position:50% 50%" fetchpriority="high">
+  <img class="bg" src="/assets/be/img/academy-ruine.webp" alt="Klassieke zuilen en een stenen boog bij zonsondergang, met een pad dat het landschap in loopt" style="object-position:60% 50%" fetchpriority="high">
   <div class="wrap">
     <p class="crumbs"><a href="/">Black Elephant</a> / The Academy</p>
     <p class="eyebrow">The Academy</p>
-    <h1>Leer anders <em>kijken.</em></h1>
-    <p class="lede" style="margin-top:26px">Ontdekkingsreizen voor leiders en professionals in een veranderende wereld. Live met een kleine groep, online in je eigen tempo, of met je eigen team. Altijd met verhalen als lens en je eigen werk als casus.</p>
+    <h1>Leren kijken, duiden en handelen met de kracht van <em>verhalen.</em></h1>
+    <p class="lede" style="margin-top:26px">Ontwikkel je vermogen om menselijke patronen te herkennen en complexe vraagstukken vanuit verschillende perspectieven te onderzoeken. Zelfstandig online, live met anderen of binnen je organisatie.</p>
   </div>
 </section>
 
@@ -119,12 +122,35 @@
   </div>
 </section>
 
+<section class="sec sec-night on-dark" id="ontwikkeling" aria-labelledby="h-dev">
+  <div class="wrap">
+    <div class="head-row" style="margin-bottom:36px">
+      <div><p class="eyebrow rv">In ontwikkeling</p><h2 id="h-dev" class="rv">Wat eraan komt.</h2></div>
+      <p class="lede rv">De Academy groeit. Deze programma's zijn in voorbereiding. Laat je e-mailadres achter, dan hoor je als eerste wanneer ze opengaan.</p>
+    </div>
+    <div class="rows">
+      <div class="row rv"><span class="n">i</span><h3>Training in Narrative Diagnostics</h3><p>Zelf leren werken met de drie bewegingen en het Narrative Prism, voor trainers, coaches en leiders.</p><span class="go" style="color:var(--gold)">2027</span></div>
+      <div class="row rv"><span class="n">ii</span><h3>Masterclasses</h3><p>Verdiepende avonden rond één verhaal en één groot vraagstuk van nu.</p><span class="go" style="color:var(--gold)">2027</span></div>
+      <div class="row rv"><span class="n">iii</span><h3>Meerdaagse leiderschapsprogramma's</h3><p>Een reis in drie delen: ontwaken, herinneren, worden.</p><span class="go" style="color:var(--gold)">2027</span></div>
+      <div class="row rv"><span class="n">iv</span><h3>Verhalen- en reflectiesessies</h3><p>Samen een verhaal doorleven en terugkeren naar je eigen werk, in kleine groepen.</p><span class="go" style="color:var(--gold)">2027</span></div>
+    </div>
+    <form class="rv" data-signup="academy-ontwikkeling" data-subject="Aanmelding: nieuwe programma's Academy" data-ok="Dank je wel. Je hoort van ons zodra deze programma's opengaan." novalidate style="max-width:560px;margin-top:40px">
+      <input type="checkbox" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:end">
+        <div class="field" style="flex:1;min-width:220px"><label for="d-mail" style="color:#fff">E-mail</label><input id="d-mail" type="email" required autocomplete="email"></div>
+        <button class="btn btn-warm" type="submit">Houd me op de hoogte</button>
+      </div>
+      <p class="status" role="status" style="color:var(--gold);margin-top:10px"></p>
+    </form>
+  </div>
+</section>
+
 <section class="sec sec-night on-dark journey" id="reis" aria-labelledby="h-reis">
   <div class="wrap split">
     <div>
       <p class="eyebrow rv">Eerste reis · in ontwikkeling</p>
       <h2 id="h-reis" class="rv">De geboorte van de nieuwe leider.</h2>
-      <p class="lede rv" style="margin:22px 0 30px">Negen ontmoetingen in drie delen, over identiteit, moed en betekenis in een wereld die zichzelf opnieuw uitvindt. Elke les: een verhaal, meerdere perspectieven en een reflectie op je eigen situatie.</p>
+      <p class="lede rv" style="margin:22px 0 30px">Negen verhalen over identiteit, moed, verantwoordelijkheid en betekenis in een wereld die zichzelf opnieuw uitvindt. Elke les van 20 tot 30 minuten: een verhaal, een open vraag, meerdere lezingen en een terugkeer naar je eigen dilemma.</p>
       <form class="rv" data-signup="academy-reis" data-subject="Aanmelding: eerste reis Academy" data-ok="Dank je wel. Je hoort van ons zodra de eerste reis opengaat." novalidate style="max-width:520px">
         <input type="checkbox" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:end">
@@ -134,11 +160,11 @@
         <p class="status" role="status" style="color:var(--gold);margin-top:10px"></p>
       </form>
     </div>
-    <ol class="steps3 rv">
-      <li><span>01</span>Het ontwaken</li>
-      <li><span>02</span>Het herinneren</li>
-      <li><span>03</span>Het worden</li>
-    </ol>
+    <div class="parts rv">
+      <div><h3><span>01</span>Het ontwaken</h3><ul><li>Wat maakt ons mens als machines menselijke vermogens nabootsen?</li><li>Hoe geven we richting te midden van chaos?</li><li>Wie ben ik zonder functie of status?</li></ul></div>
+      <div><h3><span>02</span>Het herinneren</h3><ul><li>Welke principes zijn niet onderhandelbaar?</li><li>Welke rol spelen anderen in ons leiderschap?</li><li>Wanneer maakt kennis vrij?</li></ul></div>
+      <div><h3><span>03</span>Het worden</h3><ul><li>Hoe bewegen we door complexiteit zonder brute kracht?</li><li>Kunnen we ons doel veranderen zonder onze waarden op te geven?</li><li>Hoe handelen we zonder de uitkomst te beheersen?</li></ul></div>
+    </div>
   </div>
 </section>
 <section class="sec" style="text-align:center;background:radial-gradient(800px 360px at 50% 100%,rgba(241,211,174,.5),transparent 70%),var(--paper)">
@@ -153,6 +179,7 @@
 <footer class="site-foot">
   <div class="sf-in">
     <p class="sf-big">Oude wijsheid voor een wereld <em>die nog niet bestaat.</em></p>
+    <p style="font:italic 400 20px var(--serif);color:#F2C9A0;margin:-40px 0 50px">The future begins with remembering.</p>
     <div class="sf-cols">
       <div>
         <div class="sf-brand"><svg viewBox="80 110 480 400" aria-hidden="true"><path fill="#F1D3AE" d="M553.93,185.73l-43.56,16.48c-13.43,5.08-24,15.77-28.92,29.26l-15.36,42.09-16.47-43.56c-5.08-13.440-15.77-24-29.26-28.92l-42.09-15.36,42.09-15.36c13.5-4.92,24.18-15.48,29.26-28.92l16.47-43.56,15.36,42.09c4.920,13.5,15.49,24.18,28.92,29.26l43.56,16.48Z"/><path fill="#fff" d="M335.45,324.17h0c3.33,1.28,5.64.66,7.36-1.3,1.9-2.16,5.12-9.33,4.97-12.07-.13-2.54-1.02-4.3-3.12-5.72,0,0-1.89-1.34-10.57-5.58-34.74-17-33.820-58.75.57-67.3.49-.12-.49.18,0,0,2.91-.93,3.05-2.32,3.36-4.64.34-2.56-.85-9.530-2.34-11.49-1.66-2.18-3.490-2.75-5.21-2.51h-.05c-49.72,4.18-62.82,69.45-21.07,97.73,14.34,9.71,26.01,12.86,26.01,12.86h.08Z"/><path fill="#fff" d="M455.54,308.72q-.14-1.38-.19-2.43c.15-5.09,5.34-7.25,9.77-8.63,4.91-1.53,7.61-1.6,11.41.64,2.07,1.55,1.87,2.01,2.61,5.12,6.84,38.15,5.27,75.64-1.06,107.32,21.71,5.02,50.32-.57,60.4-2.98h0c.48,4.85-13.59,16.37-23.11,21.04-11.39,5.58-27.8,7.65-42.3,6.4,0,0-2.75,13.28-7.49,29.68-4.74,16.4-9.25,28.06-9.25,28.06h0c-.61,2-2.68,3.76-5.42,4.45-1.61.4-7.91-.78-10.4-1.55s-5.29-2.03-6.29-3.1c-1.92-2.07-2.7-4.61-2.12-6.62v-.06s3.99-12.2,9.12-29.51c5.4-18.24,7.09-28.06,7.09-28.06-31.32-10.19-56.24-23.82-76.09-49.84-9.01-11.81-10.72-17.4-10.72-17.4-17.04,43.48-7.34,91.28,6.72,135.17h-94.01s1.72-19.41,3.23-28.55c20.26-122.74-98-77.49-112.85,28.55h-75.02c-25.94-116.16,11.03-279.6,18.77-285.27,11.1-8.14,149.24-35.76,242.06-31.870,1.77.18,3.53,1.59,4.56,3.77,1.07,2.28.02,14.4-.94,16.86-.87,2.23-1.44,3-4.58,3.44-.54.06-1.15.04-1.67.04-80.03-3.03-191.11,17.52-221.3,26.55-9.65,31.12-31.55,148.93-16.86,242.28h35.18c13.39-51.19,46.83-85.2,76.94-97.1,21.74-8.59,43.16-6.29,58.78,6.31,14.38,11.61,29.67,36.71,20.81,90.38-.02.13-.04.27-.07.41h34.92c-8.93-36.7-13.02-78.84,2.53-119.11.09-.23.18-.47.27-.7.15-.43.43-1.11.6-1.54,5.66-15.06,20.07-29.08,29.17-26.63h0c1.85,7.4,13.62,28.07,22.72,39.72,14.35,18.39,33.67,31.38,63.03,41.36,4.4-22.28,8.04-56.97.95-97.06-.07-.31-.14-.6-.19-.87l-.09-.4c.06.23.11.46.18.7,0,0,0-.01,0-.02"/></svg><span><b>Black Elephant</b><small>The School for the Future</small></span></div>
@@ -164,6 +191,7 @@
         <a href="/library/">Menselijke dilemma's</a>
         <a href="/library/prometheus/">Het vuur van Prometheus</a>
         <a href="/library/#aanmelden">Nieuwe verhalen ontvangen</a>
+        <a href="/methode/">Narrative Diagnostics</a>
       </div>
       <div>
         <h4>The Academy</h4>
@@ -185,7 +213,7 @@
     </div>
   </div>
 </footer>
-<script src="/assets/be/site.js?v=20261120"></script>
+<script src="/assets/be/site.js?v=20261120c"></script>
 <script data-goatcounter="https://blackelephant.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
