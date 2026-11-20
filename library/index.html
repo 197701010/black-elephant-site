@@ -58,7 +58,7 @@
 .signup form{display:grid;gap:14px}
 .signup .two{display:grid;grid-template-columns:1fr 1.2fr auto;gap:12px;align-items:end}
 @media (max-width:920px){.feat,.signup{grid-template-columns:1fr}.signup .two{grid-template-columns:1fr}.dl{grid-template-columns:44px 1fr;gap:14px}}
-</style>
+.story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.story-grid .story-card{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:0}.story-grid .story-card img{height:auto;aspect-ratio:16/9;min-height:0}.story-grid .story-card>span{padding:24px;flex:1}.story-grid .story-card h3{font-size:clamp(24px,3vw,34px)}.chip{min-height:44px}@media(max-width:640px){.story-grid{grid-template-columns:1fr;gap:16px}} </style>
 </head>
 <body>
 <a class="skip" href="#main">Naar de inhoud</a>
@@ -84,7 +84,7 @@
     <p class="crumbs"><a href="/">Black Elephant</a> / The Library</p>
     <p class="eyebrow">The Library</p>
     <h1>Sommige vragen worden <em>nooit oud.</em></h1>
-    <p class="lede" style="margin-top:26px">Een levende bibliotheek met verhalen die je helpen anders te kijken. Uit mythologie, geschiedenis, literatuur, film en het leven van vandaag.</p>
+    <p class="lede" style="margin-top:26px">Een levende bibliotheek met verhalen die je helpen anders te kijken. Uit mythologie, geschiedenis, literatuur, film en het leven van vandaag.</p><div class="actions" style="margin-top:24px"><a class="btn btn-warm" href="#verhalen">Ontdek de verhalen →</a></div>
   </div>
 </section>
 
@@ -101,7 +101,7 @@
   </div>
 </section>
 
-<section class="sec" aria-labelledby="h-dl">
+<section class="sec" id="verhalen" aria-labelledby="h-dl">
   <div class="wrap">
     <div class="head-row" style="margin-bottom:34px">
       <div><p class="eyebrow rv">De dilemma's</p><h2 id="h-dl" class="rv">Kies een vraag die je herkent.</h2></div>
@@ -110,12 +110,12 @@
     <div class="search rv"><label for="lib-q" class="sr">Zoek in de Library</label><input id="lib-q" type="search" placeholder="Zoek een verhaal, thema of vraagstuk…" autocomplete="off"></div>
     <div class="chips" role="group" aria-label="Filter op bronsoort"><button type="button" class="chip" data-f="alle" aria-pressed="true">Alle</button><button type="button" class="chip" data-f="mythologie" aria-pressed="false">Mythologie</button><button type="button" class="chip" data-f="geschiedenis" aria-pressed="false">Geschiedenis</button><button type="button" class="chip" data-f="literatuur" aria-pressed="false">Literatuur</button><button type="button" class="chip" data-f="film" aria-pressed="false">Film</button><button type="button" class="chip" data-f="hedendaags" aria-pressed="false">Hedendaags</button></div>
     <p class="dl-count" id="dl-count" aria-live="polite"></p>
-    <a class="story-card rv" href="/library/prometheus/" data-t="mythologie" data-q="prometheus vuur innovatie macht verantwoordelijkheid technologie ai griekse mythologie"><img src="/assets/be/img/prometheus-kaart.webp" alt="" loading="lazy"><span><span class="tag">Mythologie · volledig verhaal</span><h3>Prometheus</h3><span class="sub">De prijs van vooruitgang. Innovatie, macht en verantwoordelijkheid.</span><span class="go">Lees het verhaal →</span></span></a>
+    <div class="story-grid"><a class="story-card rv" href="/library/prometheus/" data-t="mythologie" data-q="prometheus vuur innovatie macht verantwoordelijkheid technologie ai griekse mythologie"><img src="/assets/be/img/prometheus-kaart.webp" alt="" loading="lazy"><span><span class="tag">Mythologie · volledig verhaal</span><h3>Prometheus</h3><span class="sub">De prijs van vooruitgang. Innovatie, macht en verantwoordelijkheid.</span><span class="go">Lees het verhaal →</span></span></a>
     <a class="story-card rv" href="/library/orpheus/" data-t="mythologie" data-q="vertrouwen controle orpheus eurydice leiderschap"><img src="/assets/be/img/doorgang.webp" alt="" loading="lazy"><span><span class="tag">Mythologie · volledig verhaal</span><h3>Orpheus en Eurydice</h3><span class="sub">De paradox van controle.</span><span class="go">Lees het verhaal →</span></span></a>
     <a class="story-card rv" href="/library/inanna/" data-t="mythologie" data-q="inanna identiteit macht status"><img src="/assets/be/img/academy-boog.webp" alt="" loading="lazy"><span><span class="tag">Mythologie · volledig verhaal</span><h3>Inanna</h3><span class="sub">Wie ben je zonder je macht?</span><span class="go">Lees het verhaal →</span></span></a>
     <a class="story-card rv" href="/library/fabriek/" data-t="geschiedenis" data-q="ai technologie fabriek elektrificatie innovatie verandering productiviteit"><img src="/assets/be/img/architectuur.webp" alt="" loading="lazy"><span><span class="tag">Geschiedenis · volledig verhaal</span><h3>De elektrische fabriek</h3><span class="sub">Een nieuwe motor is nog geen nieuwe wereld.</span><span class="go">Lees het verhaal →</span></span></a>
-    <p class="empty" id="dl-empty" hidden>Geen verhalen of dilemma's gevonden. Probeer een ander woord, of <a href="#" id="dl-reset">toon alles</a>.</p>
-    <div class="dls">
+    </div><p class="empty" id="dl-empty" hidden>Geen verhalen of dilemma's gevonden. Probeer een ander woord, of <a href="#" id="dl-reset">toon alles</a>.</p>
+    <h3 style="margin:36px 0 18px">Meer dilemma’s om te onderzoeken</h3><div class="dls">
 <article class="dl rv" data-t="mythologie">
   <span class="dn">01</span>
   <div><span class="tag">Technologie</span><h3>Wat leren we nog zelf, als alles al geweten wordt?</h3><p>Als antwoorden gratis worden, verschuift de waarde van weten naar zoeken, twijfelen en oordelen. Wat betekent dat voor hoe we leren, en hoe we anderen laten leren?</p><p class="dw">Verhaalwereld: Een overlevering uit de TEDx-talk Het Vergeetlepeltje</p></div>
@@ -224,7 +224,7 @@
 <script src="/assets/be/site.js?v=20261120c"></script>
 <script>
 (function(){var c=[].slice.call(document.querySelectorAll(".chip")),it=[].slice.call(document.querySelectorAll(".dl,.story-card")),out=document.getElementById("dl-count"),q=document.getElementById("lib-q"),em=document.getElementById("dl-empty"),f="alle";
-function run(){var s=(q.value||"").toLowerCase().trim(),n=0;it.forEach(function(a){var txt=(a.textContent+" "+(a.getAttribute("data-q")||"")).toLowerCase();var on=(f==="alle"||a.getAttribute("data-t")===f)&&(!s||txt.indexOf(s)>-1);a.hidden=!on;if(on){n++;a.classList.add("in");}});out.textContent=n+(n===1?" resultaat":" resultaten");em.hidden=n>0;}
+function run(){var s=(q.value||"").toLowerCase().trim(),n=0;it.forEach(function(a){var txt=(a.textContent+" "+(a.getAttribute("data-q")||"")).toLowerCase();var on=(f==="alle"||a.getAttribute("data-t")===f)&&(!s||txt.indexOf(s)>-1);a.hidden=!on;if(on){n++;a.classList.add("in");}});var stories=it.filter(function(a){return a.classList.contains("story-card")&&!a.hidden;}).length;out.textContent=stories+" verhalen · "+(n-stories)+" dilemma’s";em.hidden=n>0;}
 c.forEach(function(b){b.addEventListener("click",function(){f=b.getAttribute("data-f");c.forEach(function(x){x.setAttribute("aria-pressed",String(x===b));});run();});});
 q.addEventListener("input",run);document.getElementById("dl-reset").addEventListener("click",function(e){e.preventDefault();q.value="";f="alle";c.forEach(function(x){x.setAttribute("aria-pressed",String(x.getAttribute("data-f")==="alle"));});run();q.focus();});run();})();
 </script>
