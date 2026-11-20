@@ -141,6 +141,21 @@ footer a{text-decoration:none}
 <script data-goatcounter="https://blackelephant.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="stylesheet" href="/assets/be/be-chrome.css?v=20261120f">
 <link rel="stylesheet" href="/assets/be/legacy.css?v=20261120f">
+<style id="be-photohero">
+.hero.ph{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:#0B0B1F!important;padding-top:110px!important;padding-bottom:90px!important}
+.hero.ph .phbg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+.hero.ph::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(11,11,31,.94) 0%,rgba(11,11,31,.78) 45%,rgba(11,11,31,.25) 100%),linear-gradient(0deg,rgba(11,11,31,.6),transparent 40%)}
+.hero.ph .orb{display:none}
+.hero.ph h1{color:#fff!important}
+.hero.ph h1 .hl{color:#F2C9A0!important}
+.hero.ph .label{color:#F2C9A0!important}
+.hero.ph .lede{color:#E7E1F2!important}
+.hero.ph .switch{color:#CFC8E2!important}
+.hero.ph .switch a{color:#F2C9A0!important}
+.hero.ph .qlbar b,.hero.ph .qlbar span{color:#F2C9A0!important}
+.hero.ph .qlbar{background:rgba(255,255,255,.1)!important;color:#fff!important;border-color:rgba(242,201,160,.4)!important}
+@media (max-width:760px){.hero.ph::after{background:linear-gradient(0deg,rgba(11,11,31,.95) 0%,rgba(11,11,31,.8) 60%,rgba(11,11,31,.5) 100%)}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Naar de inhoud</a>
@@ -162,7 +177,7 @@ footer a{text-decoration:none}
 </header>
 <div class="be-sub"><div class="in"><b>The Practice · AI-check</b><a href="/hr-aicheck/">HR AI-check</a><a href="/workshops/">Workshops</a><a href="/practice/#transformatie">AI & transformatie</a></div></div>
 
-<header class="hero">
+<header class="hero ph"><img class="phbg" src="/assets/be/img/architectuur.webp" alt="" fetchpriority="high" style="object-position:70% 50%">
   <span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span>
   <div class="wrap">
     <p class="label">Gratis · 12 vragen · 4 minuten · geen account nodig</p>
