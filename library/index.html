@@ -37,6 +37,9 @@
 .scard:first-child img{width:45%;min-height:280px}
 .scard:hover{transform:translateY(-3px)}
 .scard img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.scard.live{background:linear-gradient(135deg,#2A1D4F,#15152A 60%)}
+.scard .lq{display:flex;flex-direction:column;justify-content:center;aspect-ratio:16/9;padding:0 34px;background:radial-gradient(circle at 80% 20%,rgba(232,93,117,.35),transparent 55%),radial-gradient(circle at 10% 90%,rgba(79,70,229,.45),transparent 60%);font:400 clamp(30px,3.4vw,44px)/1.1 var(--serif);color:#fff}
+.scard .lq em{color:#F2C9A0}
 .scard .noimg{display:grid;place-items:center;aspect-ratio:16/9;background:radial-gradient(circle at 70% 30%,rgba(147,51,234,.45),transparent 60%),#15152A;font-size:64px;color:#F2C9A0}
 .scard .sct{padding:24px 26px 26px;display:block}
 .scard h3{color:#fff;font-size:30px;margin:10px 0 6px}
@@ -107,46 +110,46 @@
   <div class="wrap">
     <div class="head-row" style="margin-bottom:34px">
       <div><p class="eyebrow rv">De dilemma's</p><h2 id="h-dl" class="rv">Kies een verhaal of een vraag.</h2></div>
-      <p class="lede rv">Vijf verhalen zijn volledig uitgewerkt, met drie perspectieven, een tegenlezing, een praktijkopdracht en bronnen. De overige dilemma's krijgen hun verhaal binnenkort.</p>
+      <p class="lede rv">Vier verhalen zijn volledig uitgewerkt, met drie perspectieven, een tegenlezing, een praktijkopdracht en bronnen. Sommige verhalen vertellen we alleen live.</p>
     </div>
     <div class="search rv"><label for="lib-q" class="sr">Zoek in de Library</label><input id="lib-q" type="search" placeholder="Zoek een verhaal, thema of vraagstuk…" autocomplete="off"></div>
-    <div class="chips" role="group" aria-label="Filter op bronsoort"><button type="button" class="chip" data-f="alle" aria-pressed="true">Alle</button><button type="button" class="chip" data-f="mythologie" aria-pressed="false">Mythologie</button><button type="button" class="chip" data-f="geschiedenis" aria-pressed="false">Geschiedenis</button><button type="button" class="chip" data-f="literatuur" aria-pressed="false">Literatuur</button><button type="button" class="chip" data-f="film" aria-pressed="false">Film</button><button type="button" class="chip" data-f="hedendaags" aria-pressed="false">Hedendaags</button></div>
+    <div class="chips" role="group" aria-label="Filter op thema"><button type="button" class="chip" data-f="alle" aria-pressed="true">Alles</button><button type="button" class="chip" data-f="technologie" aria-pressed="false">Technologie</button><button type="button" class="chip" data-f="leiderschap" aria-pressed="false">Leiderschap</button><button type="button" class="chip" data-f="verandering" aria-pressed="false">Verandering</button><button type="button" class="chip" data-f="mens" aria-pressed="false">Identiteit</button></div>
     <p class="dl-count" id="dl-count" aria-live="polite"></p>
     <div class="stories">
-      <a class="scard rv" id="prometheus" href="/library/prometheus/" data-t="mythologie" data-q="prometheus vuur innovatie macht verantwoordelijkheid technologie ai griekse"><img src="/assets/be/img/prometheus-kaart.webp" alt="" loading="lazy"><span class="sct"><span class="tag">Mythologie · volledig verhaal</span><h3>Prometheus</h3><span class="sub">Het tweede geschenk. We beschikken over steeds krachtiger technologie. Maar wie leert ons ermee samenleven?</span><span class="go">Lees het verhaal →</span></span></a>
-      <a class="scard rv" id="orpheus" href="/library/orpheus/" data-t="mythologie" data-q="orpheus eurydice controle vertrouwen verlies leiderschap delegeren griekse"><img src="/assets/be/img/reis.webp" alt="" loading="lazy"><span class="sct"><span class="tag">Mythologie · volledig verhaal</span><h3>Orpheus en Eurydice</h3><span class="sub">De paradox van controle. Soms brengt juist de poging om iets te beschermen het in gevaar.</span><span class="go">Lees het verhaal →</span></span></a>
-      <a class="scard rv" id="inanna" href="/library/inanna/" data-t="mythologie" data-q="inanna soemerisch identiteit macht status verandering"><img src="/assets/be/img/hemelstad-1200.webp" alt="" loading="lazy"><span class="sct"><span class="tag">Mythologie · volledig verhaal</span><h3>Inanna</h3><span class="sub">De zeven poorten. Wie ben je als de tekenen van je macht verdwijnen?</span><span class="go">Lees het verhaal →</span></span></a>
-      <a class="scard rv" id="mensen-van-hout" href="/library/mensen-van-hout/" data-t="mythologie" data-q="popol vuh maya hout menselijk ai automatisering verantwoordelijkheid"><img src="/assets/be/img/mensen-van-hout.webp" alt="" loading="lazy"><span class="sct"><span class="tag">Mythologie · volledig verhaal</span><h3>De mensen van hout</h3><span class="sub">Wat maakt ons menselijk? De gelijkenis met een mens is nog geen antwoord.</span><span class="go">Lees het verhaal →</span></span></a>
-      <a class="scard rv" id="elektrische-fabriek" href="/library/elektrische-fabriek/" data-t="geschiedenis" data-q="fabriek elektriciteit ai transformatie innovatie productiviteit verandering"><span class="noimg" aria-hidden="true">⚙</span><span class="sct"><span class="tag">Geschiedenis · volledig verhaal</span><h3>De elektrische fabriek</h3><span class="sub">De machine is niet het systeem. Een nieuwe motor maakt nog geen nieuwe organisatie.</span><span class="go">Lees het verhaal →</span></span></a>
+      <a class="scard rv" id="prometheus" href="/library/prometheus/" data-t="technologie verandering" data-q="prometheus vuur innovatie macht verantwoordelijkheid technologie ai griekse"><img src="/assets/be/img/prometheus-kaart.webp" alt="" loading="lazy"><span class="sct"><span class="tag">Mythologie · volledig verhaal</span><h3>Prometheus</h3><span class="sub">Het tweede geschenk. We beschikken over steeds krachtiger technologie. Maar wie leert ons ermee samenleven?</span><span class="go">Lees het verhaal →</span></span></a>
+      <a class="scard rv" id="orpheus" href="/library/orpheus/" data-t="leiderschap mens" data-q="orpheus eurydice controle vertrouwen verlies leiderschap delegeren griekse"><img src="/assets/be/img/reis.webp" alt="" loading="lazy"><span class="sct"><span class="tag">Mythologie · volledig verhaal</span><h3>Orpheus en Eurydice</h3><span class="sub">De paradox van controle. Soms brengt juist de poging om iets te beschermen het in gevaar.</span><span class="go">Lees het verhaal →</span></span></a>
+      <a class="scard rv" id="inanna" href="/library/inanna/" data-t="mens leiderschap" data-q="inanna soemerisch identiteit macht status verandering"><img src="/assets/be/img/hemelstad-1200.webp" alt="" loading="lazy"><span class="sct"><span class="tag">Mythologie · volledig verhaal</span><h3>Inanna</h3><span class="sub">De zeven poorten. Wie ben je als de tekenen van je macht verdwijnen?</span><span class="go">Lees het verhaal →</span></span></a>
+      <a class="scard rv" id="mensen-van-hout" href="/library/mensen-van-hout/" data-t="technologie mens" data-q="popol vuh maya hout menselijk ai automatisering verantwoordelijkheid"><img src="/assets/be/img/mensen-van-hout.webp" alt="" loading="lazy"><span class="sct"><span class="tag">Mythologie · volledig verhaal</span><h3>De mensen van hout</h3><span class="sub">Wat maakt ons menselijk? De gelijkenis met een mens is nog geen antwoord.</span><span class="go">Lees het verhaal →</span></span></a>
+      <a class="scard live rv" id="elektrische-fabriek" href="/library/elektrische-fabriek/" data-t="verandering technologie" data-q="fabriek elektriciteit motor ai transformatie innovatie verandering keynote"><span class="lq" aria-hidden="true"><span>Nieuwe motor.</span><em>Oude fabriek.</em></span><span class="sct"><span class="tag">Live verhaal · keynote</span><h3>De elektrische fabriek</h3><span class="sub">Waarom een nieuwe motor nog geen nieuwe organisatie maakt. Dit verhaal vertellen we live.</span><span class="go">Lees de inleiding →</span></span></a>
     </div>
     <h3 class="dlh rv">Meer dilemma's, verhaal in voorbereiding</h3>
     <p class="empty" id="dl-empty" hidden>Geen verhalen of dilemma's gevonden. Probeer een ander woord, of <a href="#" id="dl-reset">toon alles</a>.</p>
     <div class="dls">
-<article class="dl rv" data-t="mythologie">
+<article class="dl rv" data-t="technologie">
   <span class="dn">01</span>
   <div><span class="tag">Technologie</span><h3>Wat leren we nog zelf, als alles al geweten wordt?</h3><p>Als antwoorden gratis worden, verschuift de waarde van weten naar zoeken, twijfelen en oordelen. Wat betekent dat voor hoe we leren, en hoe we anderen laten leren?</p><p class="dw">Verhaalwereld: Talmoedische overlevering</p></div>
 </article>
-<article class="dl rv" data-t="hedendaags">
+<article class="dl rv" data-t="leiderschap">
   <span class="dn">02</span>
   <div><span class="tag">Leiderschap</span><h3>Wie benoemt wat iedereen ziet?</h3><p>In elke organisatie staat wel een olifant in de kamer. Iedereen loopt eromheen, tot hij beweegt. Wat kost het om hem te benoemen, en wat kost het om te zwijgen?</p><p class="dw">Verhaalwereld: Hedendaags</p></div>
 </article>
-<article class="dl rv" data-t="literatuur">
+<article class="dl rv" data-t="leiderschap">
   <span class="dn">03</span>
   <div><span class="tag">Leiderschap</span><h3>Wie zoeken we eigenlijk als we een leider zoeken?</h3><p>We hopen vaak op één persoon die de weg weet. Oude verhalen wijzen soms een andere kant op: naar de groep die onderweg verandert.</p><p class="dw">Verhaalwereld: Perzische poëzie</p></div>
 </article>
-<article class="dl rv" data-t="film">
+<article class="dl rv" data-t="leiderschap">
   <span class="dn">04</span>
   <div><span class="tag">Leiderschap</span><h3>Wie mag jou nog tegenspreken?</h3><p>Hoe hoger je komt, hoe meer mensen ja knikken. En nu knikt ook de technologie mee. Waar organiseer je tegenspraak?</p><p class="dw">Verhaalwereld: Film</p></div>
 </article>
-<article class="dl rv" data-t="mythologie">
+<article class="dl rv" data-t="verandering">
   <span class="dn">05</span>
   <div><span class="tag">Verandering</span><h3>Wat doe je met een waarheid die niemand wil horen?</h3><p>Wie te vroeg waarschuwt, wordt zelden gehoord. Hoe vertel je iets wat mensen nog niet willen weten?</p><p class="dw">Verhaalwereld: Griekse mythologie</p></div>
 </article>
-<article class="dl rv" data-t="mythologie">
+<article class="dl rv" data-t="mens">
   <span class="dn">06</span>
   <div><span class="tag">Mens</span><h3>Wanneer is genoeg werkelijk genoeg?</h3><p>Ambitie brengt ons ver. Maar wie altijd verder wil, vergeet soms waarvoor. Een van de oudste geschreven verhalen gaat precies hierover.</p><p class="dw">Verhaalwereld: Mesopotamië</p></div>
 </article>
-<article class="dl rv" data-t="literatuur">
+<article class="dl rv" data-t="mens">
   <span class="dn">07</span>
   <div><span class="tag">Mens</span><h3>Hoe blijf je jezelf in een wereld die zichzelf opnieuw uitvindt?</h3><p>Rollen verdwijnen, vakken veranderen. Wat blijft er over van wie je bent, als wat je doet verandert?</p><p class="dw">Verhaalwereld: Wereldliteratuur</p></div>
 </article>
@@ -222,7 +225,7 @@
 <script src="/assets/be/site.js?v=20261120f"></script>
 <script>
 (function(){var c=[].slice.call(document.querySelectorAll(".chip")),it=[].slice.call(document.querySelectorAll(".dl,.scard")),out=document.getElementById("dl-count"),q=document.getElementById("lib-q"),em=document.getElementById("dl-empty"),f="alle";
-function run(){var s=(q.value||"").toLowerCase().trim(),n=0;it.forEach(function(a){var txt=(a.textContent+" "+(a.getAttribute("data-q")||"")).toLowerCase();var on=(f==="alle"||a.getAttribute("data-t")===f)&&(!s||txt.indexOf(s)>-1);a.hidden=!on;if(on){n++;a.classList.add("in");}});out.textContent=n+(n===1?" resultaat":" resultaten");em.hidden=n>0;}
+function run(){var s=(q.value||"").toLowerCase().trim(),n=0;it.forEach(function(a){var txt=(a.textContent+" "+(a.getAttribute("data-q")||"")).toLowerCase();var on=(f==="alle"||(" "+a.getAttribute("data-t")+" ").indexOf(" "+f+" ")>-1)&&(!s||txt.indexOf(s)>-1);a.hidden=!on;if(on){n++;a.classList.add("in");}});out.textContent=n+(n===1?" resultaat":" resultaten");em.hidden=n>0;}
 c.forEach(function(b){b.addEventListener("click",function(){f=b.getAttribute("data-f");c.forEach(function(x){x.setAttribute("aria-pressed",String(x===b));});run();});});
 q.addEventListener("input",run);document.getElementById("dl-reset").addEventListener("click",function(e){e.preventDefault();q.value="";f="alle";c.forEach(function(x){x.setAttribute("aria-pressed",String(x.getAttribute("data-f")==="alle"));});run();q.focus();});run();})();
 </script>
