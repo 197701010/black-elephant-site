@@ -362,7 +362,7 @@ dialog::backdrop{background:rgba(28,26,41,.55);-webkit-backdrop-filter:blur(3px)
   });
   // seats + early bird
   function ebDays(a){var d=a.getAttribute("data-eb");if(!d)return 0;return Math.ceil((new Date(d+"T23:59:59+01:00")-new Date())/864e5);}
-  function seatTxt(a){var t=+a.getAttribute("data-seats"),k=+a.getAttribute("data-taken")||0,l=t-k;if(l<=0)return["Volgeboekt, wachtlijst open","full"];if(k===0)return[t+" plekken · kleine groep",""];if(l<=4)return["Nog maar "+l+" plekken","low"];return["Nog "+l+" van "+t+" plekken",""];}
+  function seatTxt(a){return["Maximaal "+a.getAttribute("data-seats")+" deelnemers",""];} /* seatTxt_static */
   function ebPrice(a){var m=/early bird (€ \d+)/.exec(a.querySelector("[data-ws]").getAttribute("data-price")||"");return m?m[1]:"";}
   function priceTxt(a){var p=a.querySelector("[data-ws]").getAttribute("data-price")||"";p=p.replace(/,\s*deelnemers Q-Logic € \d+/,"");if(ebDays(a)<=0)p=p.replace(/\s*\(early bird[^)]*\)/,"");if(QL&&/Q-Logic/.test(a.querySelector("[data-ws]").getAttribute("data-price")))p=/\)$/.test(p)?p.replace(/\)$/,", deelnemers Q-Logic € 795)"):p+" (deelnemers Q-Logic € 795)";return p;}
   var QL=/[?&]ql=1/.test(location.search);
