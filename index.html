@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Black Elephant · AI-transformatie met verhalen</title>
-<meta name="description" content="Weten kan een machine. Begrijpen leer je met verhalen. Black Elephant helpt leiders en teams in een AI-transformatie met keynotes, sessies en trainingen over leiderschap, samenwerken en betekenis.">
+<meta name="description" content="AI-transformatie die ook bij mensen landt. Black Elephant helpt directies, HR en programmateams met keynotes, teamsessies en training over leiderschap, samenwerking en draagvlak. Met verhalen als werkvorm.">
 <link rel="canonical" href="https://blackelephant.nl/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Black Elephant">
 <meta property="og:title" content="Black Elephant · AI-transformatie met verhalen">
-<meta property="og:description" content="Weten kan een machine. Begrijpen leer je met verhalen. Black Elephant helpt leiders en teams in een AI-transformatie met keynotes, sessies en trainingen over leiderschap, samenwerken en betekenis.">
+<meta property="og:description" content="AI-transformatie die ook bij mensen landt. Black Elephant helpt directies, HR en programmateams met keynotes, teamsessies en training over leiderschap, samenwerking en draagvlak. Met verhalen als werkvorm.">
 <meta property="og:url" content="https://blackelephant.nl/">
 <meta property="og:image" content="https://blackelephant.nl/assets/be/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -169,6 +169,31 @@ body{background:var(--night)}
 .outs .thr a{color:#F2C9A0;text-decoration:none;border-bottom:1px solid rgba(242,201,160,.4)}
 @media (max-width:1080px){.method .outs{grid-template-columns:repeat(3,1fr)}.outs .thr{grid-column:1/-1;text-align:center}.out{text-align:left!important;justify-items:start!important;border-top:1px solid rgba(255,255,255,.14)!important;padding-top:18px}}
 @media (max-width:700px){.method .outs{grid-template-columns:1fr!important;gap:0!important}.out p{display:block!important}.thamus{padding:90px 0 80px}}
+.herken{background:var(--paper);padding:100px 0 40px;text-align:center;color:var(--ink)}
+.herken h2,.aanbod h2{font-size:clamp(32px,3.8vw,50px);margin:10px 0 44px;color:var(--ink)}
+.hk{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left}
+.hk a{display:flex;flex-direction:column;background:#fff;border:1px solid #E6DFEE;border-radius:14px;padding:30px 28px;color:var(--ink);text-decoration:none;transition:border-color .25s,transform .25s,box-shadow .25s}
+.hk a:hover{border-color:var(--plum);transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(79,70,229,.45)}
+.hk .rol{font:600 11.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--plum);margin-bottom:16px}
+.hk h3{font:400 clamp(21px,1.9vw,25px)/1.3 var(--serif);margin:0 0 14px}
+.hk p{color:var(--ink-2);font-size:16px;line-height:1.6;margin:0 0 22px}
+.hk .go,.ab .go{margin-top:auto;font:600 14.5px var(--sans);color:var(--plum)}
+.aanbod{background:var(--paper);padding:70px 0 80px;text-align:center;color:var(--ink)}
+.ab{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left}
+.ab a{display:flex;flex-direction:column;background:#fff;border:1px solid #E6DFEE;border-radius:14px;overflow:hidden;color:var(--ink);text-decoration:none;transition:border-color .25s,box-shadow .25s}
+.ab a:hover{border-color:var(--plum);box-shadow:0 18px 40px -24px rgba(79,70,229,.45)}
+.ab img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.ab a>div{display:flex;flex-direction:column;flex:1;padding:26px 28px 28px}
+.ab .k{font:600 11.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#A9643A;margin-bottom:10px}
+.ab h3{font-size:30px;margin:0 0 10px}
+.ab p{color:var(--ink-2);font-size:16px;line-height:1.6;margin:0 0 14px}
+.ab ul{list-style:none;margin:0 0 22px;padding:0;font-size:15px;color:var(--ink-2)}
+.ab li{padding:8px 0 8px 22px;border-top:1px solid #EEE8F3;position:relative}
+.ab li::before{content:"";position:absolute;left:2px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--grad)}
+.abn{margin:34px 0 0;color:var(--ink-2);font-size:16px}
+.abn a{color:var(--plum);font-weight:600;text-decoration:none}
+.names6{padding-top:10px}
+@media (max-width:920px){.hk,.ab{grid-template-columns:1fr}.herken{padding-top:70px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Black Elephant","alternateName":"Black Elephant · The School for the Future","url":"https://blackelephant.nl/","logo":"https://blackelephant.nl/apple-touch-icon.png","email":"hello@blackelephant.nl","founder":{"@type":"Person","name":"Michael Salmagne"},"address":{"@type":"PostalAddress","addressLocality":"Haarlem","addressCountry":"NL"}}</script>
 </head>
@@ -192,24 +217,56 @@ body{background:var(--night)}
 </header>
 <main id="main">
 <section class="hero dk" aria-labelledby="h1">
-  <img class="bg kb" src="/assets/be/img/marmeren-buste-1200.webp" srcset="/assets/be/img/marmeren-buste-1200.webp 1200w, /assets/be/img/marmeren-buste-2400.webp 2400w" sizes="(max-width:920px) 100vw, 62vw" alt="Een marmeren buste kijkt omhoog naar de maan, met een Griekse tempel in de wolken" width="1200" height="675" fetchpriority="high" style="object-position:right center">
+  <img class="bg kb" src="/assets/be/img/architectuur.webp" alt="Een figuur in een grote stenen hal kijkt uit over een zonnig landschap" width="1586" height="992" fetchpriority="high" style="object-position:70% 50%">
   <span class="arc" aria-hidden="true"></span>
   <div class="wrap">
-    <p class="eyebrow lt rv">The School for the Future</p>
-    <h1 id="h1" class="rv">Weten kan een machine. Begrijpen leer je met verhalen.</h1>
-    <span class="tag rv">De toekomst begint met herinneren.</span>
-    <p class="rv" style="color:#CFC8E2;max-width:540px;margin:-14px 0 34px;font-size:17.5px">AI verandert hoe we werken, beslissen en samenwerken. Systemen geven steeds meer antwoorden. Wat ze niet geven, is begrip: wat het betekent, wat je ermee moet en wat er verloren gaat. Black Elephant helpt leiders en teams in een AI-transformatie om dat begrip te vinden. Met verhalen.</p>
+    <p class="eyebrow lt rv">AI-transformatie · keynotes · sessies · training</p>
+    <h1 id="h1" class="rv">AI-transformatie die ook bij mensen landt.</h1>
+    <span class="tag rv">Weten kan een machine. Begrijpen leer je met verhalen.</span>
+    <p class="rv" style="color:#CFC8E2;max-width:540px;margin:-14px 0 34px;font-size:17.5px">De technologie werkt. De vraag is of je mensen meegaan. Black Elephant helpt directies, HR en programmateams bij de menselijke kant van AI: leiderschap, samenwerking en draagvlak. Met ervaring uit AI-programma's in de financiële sector, en met verhalen als werkvorm.</p>
     <div class="actions rv">
-      <a class="btn btn-ink" href="/methode/">Ontdek hoe wij werken <span class="ar" aria-hidden="true">→</span></a>
-      <a class="btn btn-ghost" href="/practice/#keynotes">Bekijk de keynotes</a>
+      <a class="btn btn-ink" href="#aanbod">Bekijk het aanbod <span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="/contact/">Plan een gesprek</a>
     </div>
+  </div>
+</section>
+
+<section class="herken" aria-labelledby="h-her">
+  <div class="wrap">
+    <p class="eyebrow c rv">Voor directie, programmateam en HR</p>
+    <h2 id="h-her" class="rv">Herken je dit?</h2>
+    <div class="hk">
+      <a class="rv" href="/practice/#keynotes"><span class="rol">Directie</span><h3>“We investeren in AI, maar zien het nog niet terug.”</h3><p>De tools zijn er. Het werk zelf is niet veranderd. Zolang dat zo blijft, blijft het rendement uit.</p><span class="go">Begin met een keynote →</span></a>
+      <a class="rv" href="/practice/#dialoog"><span class="rol">Programmamanager AI</span><h3>“De oplossing staat er. Mensen werken op de oude manier door.”</h3><p>Adoptie is zelden een technisch probleem. Het is een gesprek dat nog niet gevoerd is.</p><span class="go">De Overgang, met je team →</span></a>
+      <a class="rv" href="/workshops/#w-hr"><span class="rol">HR</span><h3>“Er is onrust, en niemand spreekt het uit.”</h3><p>Wat verandert er aan mijn werk, en wat blijft van mij? Wie die vragen negeert, krijgt weerstand.</p><span class="go">HR als regisseur →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="aanbod" id="aanbod" aria-labelledby="h-aan">
+  <div class="wrap">
+    <p class="eyebrow c rv">Aanbod</p>
+    <h2 id="h-aan" class="rv">Drie manieren om te beginnen.</h2>
+    <div class="ab">
+      <a class="rv" href="/practice/#keynotes"><img src="/assets/be/img/ws/hr-tall.webp" alt="" loading="lazy"><div><span class="k">20 tot 60 minuten</span><h3>Keynote</h3><p>Eén verhaal waardoor een hele zaal anders naar AI kijkt. Voor congres, directiedag of kick-off.</p><ul><li>Voorgesprek en maatwerk</li><li>Met iets waar je maandag mee verder kunt</li></ul><span class="go">Bekijk de keynotes →</span></div></a>
+      <a class="rv" href="/practice/#dialoog"><img src="/assets/be/img/ws/change.webp" alt="" loading="lazy"><div><span class="k">Een dagdeel · tot 20 mensen</span><h3>De Overgang</h3><p>Een sessie met het team dat de verandering moet dragen. Wat zeggen we niet, wat laten we achter, wat doen we maandag anders?</p><ul><li>Afspraken met eigenaar en datum</li><li>Terugkomsessie na zes weken mogelijk</li></ul><span class="go">Hoe het werkt →</span></div></a>
+      <a class="rv" href="/academy/"><img src="/assets/be/img/ws/leiden.webp" alt="" loading="lazy"><div><span class="k">Een dag, of zes weken online</span><h3>Training</h3><p>Open workshops en in-company over AI en leiderschap, AI voor HR en AI-geletterdheid voor teams.</p><ul><li>Maximaal twaalf deelnemers</li><li>Vanaf € 695 p.p. excl. btw</li></ul><span class="go">Naar de Academy →</span></div></a>
+    </div>
+    <p class="abn rv">Ook: advies en interim-leiding bij AI-programma's. <a href="/practice/#transformatie">Meer over AI &amp; transformatie →</a></p>
+  </div>
+</section>
+
+<section class="names6" aria-labelledby="h-names">
+  <div class="wrap">
+    <p class="eyebrow c rv" id="h-names">Opdrachtgevers en podia</p>
+    <div class="names rv"><span>Univé</span><span>Athora</span><span>Zwitserleven</span><span>Reaal</span><span>ABN AMRO</span><span>Yellow Dress</span><span>Meesman Indexbeleggen</span><span>Loyens &amp; Loeff</span><span>Q-Logic</span><span>TEDxHaarlem</span></div>
   </div>
 </section>
 
 <section class="thamus dk" aria-labelledby="h-th">
   <span class="stars s1" aria-hidden="true"></span><span class="stars s2" aria-hidden="true"></span>
   <div class="wrap">
-    <p class="eyebrow c lt rv" id="h-th">Het oudste verhaal over AI</p>
+    <p class="eyebrow c lt rv" id="h-th">Waarom verhalen · het oudste verhaal over AI</p>
     <div class="tale">
       <p class="rv">Een god komt bij de koning van Egypte met een uitvinding. <em>Hiermee,</em> zegt hij, <em>worden de mensen wijzer, en vergeten ze nooit meer iets.</em></p>
       <p class="rv" style="transition-delay:.5s">De koning bekijkt het lang. <em>Nee,</em> zegt hij. <em>Ze zullen veel gehoord hebben en weinig begrijpen. Ze zullen wijs lijken, zonder het te zijn.</em></p>
@@ -315,25 +372,6 @@ body{background:var(--night)}
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="worlds6 dk" aria-labelledby="h-w">
-  <div class="wrap">
-    <p class="eyebrow c lt rv">Voor organisaties in een AI-transformatie</p>
-    <h2 id="h-w" class="rv">Waar begin je?</h2>
-    <div class="tiles">
-<a class="tile rv" href="/practice/"><img src="/assets/be/img/practice-schip.webp" alt="" loading="lazy" style="object-position:40% 50%"><span class="tt"><h3>The Practice</h3><span class="ts">Met je organisatie.</span><span class="tp">Een keynote voor de zaal, De Overgang met je team, of begeleiding bij je AI-transformatie.</span></span><span class="go" aria-hidden="true">→</span></a>
-<a class="tile rv" href="/academy/"><img src="/assets/be/img/academy-ruine.webp" alt="" loading="lazy" style="object-position:60% 50%"><span class="tt"><h3>The Academy</h3><span class="ts">Zelf leren.</span><span class="tp">Workshops en online cursussen over leiden, samenwerken en vertellen in het tijdperk van AI.</span></span><span class="go" aria-hidden="true">→</span></a>
-<a class="tile rv" href="/library/"><img src="/assets/be/img/library-zaal.webp" alt="" loading="lazy" style="object-position:45% 50%"><span class="tt"><h3>The Library</h3><span class="ts">Begin met een verhaal.</span><span class="tp">Oude verhalen over nieuwe technologie, van Prometheus tot de mensen van hout. Gratis te lezen.</span></span><span class="go" aria-hidden="true">→</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="names6" aria-labelledby="h-names">
-  <div class="wrap">
-    <p class="eyebrow c rv" id="h-names">Opdrachtgevers en podia</p>
-    <div class="names rv"><span>Univé</span><span>Athora</span><span>Zwitserleven</span><span>Reaal</span><span>ABN AMRO</span><span>Yellow Dress</span><span>Meesman Indexbeleggen</span><span>Loyens &amp; Loeff</span><span>Q-Logic</span><span>TEDxHaarlem</span></div>
   </div>
 </section>
 
