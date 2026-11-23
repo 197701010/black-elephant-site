@@ -211,6 +211,17 @@ body{background:var(--night)}
 .feat .duo .nu{clip-path:polygon(68% 0,100% 0,100% 100%,50% 100%)}
 .feat .duo i{position:absolute;inset:0;background:#F2C9A0;clip-path:polygon(67.6% 0,68.2% 0,50.2% 100%,49.6% 100%);opacity:.9}
 @media (max-width:920px){.feat .duo{position:relative;width:100%;height:240px;-webkit-mask-image:linear-gradient(0deg,transparent,#000 40%);mask-image:linear-gradient(0deg,transparent,#000 40%)}}
+.thamus{text-align:left!important;min-height:720px;display:flex;align-items:center}
+.thamus .thbg{position:absolute;right:0;top:0;height:100%;width:72%;object-fit:cover;object-position:78% 40%;z-index:0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 45%);mask-image:linear-gradient(90deg,transparent 0,#000 45%)}
+.thamus::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,31,.97) 0%,rgba(11,11,31,.82) 42%,rgba(11,11,31,.15) 78%);z-index:0}
+.thamus .wrap{position:relative;z-index:1;width:100%}
+.thamus .eyebrow.c{justify-content:flex-start}.thamus .eyebrow.c::after{display:none}
+.thamus .tale{margin:30px 0 0!important;max-width:600px!important}
+.thamus .tale p{font-size:clamp(21px,2.1vw,28px)!important}
+.thamus .tale .reveal{font-size:clamp(32px,3.8vw,52px)!important;margin-top:36px!important}
+.thamus .after{margin:36px 0 0!important;max-width:520px!important}
+.stars{display:none}
+@media (max-width:920px){.thamus{min-height:0}.thamus .thbg{width:100%;opacity:.45;-webkit-mask-image:none;mask-image:none;object-position:72% 30%}.thamus::after{background:linear-gradient(0deg,rgba(11,11,31,.95),rgba(11,11,31,.7))}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Black Elephant","alternateName":"Black Elephant · The School for the Future","url":"https://blackelephant.nl/","logo":"https://blackelephant.nl/apple-touch-icon.png","email":"hello@blackelephant.nl","founder":{"@type":"Person","name":"Michael Salmagne"},"address":{"@type":"PostalAddress","addressLocality":"Haarlem","addressCountry":"NL"}}</script>
 </head>
@@ -266,9 +277,9 @@ body{background:var(--night)}
     <p class="eyebrow c rv">Aanbod</p>
     <h2 id="h-aan" class="rv">Drie manieren om te beginnen.</h2>
     <div class="ab">
-      <a class="rv" href="/practice/#keynotes"><img src="/assets/be/img/hero.webp" alt="" loading="lazy" style="object-position:50% 40%"><div><span class="k">20 tot 60 minuten</span><h3>Keynote</h3><p>Eén verhaal waardoor een hele zaal anders naar AI kijkt. Voor congres, directiedag of kick-off.</p><ul><li>Voorgesprek en maatwerk</li><li>Met iets waar je maandag mee verder kunt</li></ul><span class="go">Bekijk de keynotes →</span></div></a>
-      <a class="rv" href="/practice/#dialoog"><img src="/assets/be/img/doorgang.webp" alt="" loading="lazy" style="object-position:50% 55%"><div><span class="k">Een dagdeel · tot 20 mensen</span><h3>De Overgang</h3><p>Een sessie met het team dat de verandering moet dragen. Wat zeggen we niet, wat laten we achter, wat doen we maandag anders?</p><ul><li>Afspraken met eigenaar en datum</li><li>Terugkomsessie na zes weken mogelijk</li></ul><span class="go">Hoe het werkt →</span></div></a>
-      <a class="rv" href="/academy/"><img src="/assets/be/img/boek-olifant.webp" alt="" loading="lazy"><div><span class="k">Een dag, of zes weken online</span><h3>Training</h3><p>Open workshops en in-company over AI en leiderschap, AI voor HR en AI-geletterdheid voor teams.</p><ul><li>Maximaal twaalf deelnemers</li><li>Vanaf € 695 p.p. excl. btw</li></ul><span class="go">Naar de Academy →</span></div></a>
+      <a class="rv" href="/practice/#keynotes"><img src="/assets/be/img/n/keynote.webp" alt="Een spreker voor een volle zaal" loading="lazy" style="object-position:70% 40%"><div><span class="k">20 tot 60 minuten</span><h3>Keynote</h3><p>Eén verhaal waardoor een hele zaal anders naar AI kijkt. Voor congres, directiedag of kick-off.</p><ul><li>Voorgesprek en maatwerk</li><li>Met iets waar je maandag mee verder kunt</li></ul><span class="go">Bekijk de keynotes →</span></div></a>
+      <a class="rv" href="/practice/#dialoog"><img src="/assets/be/img/n/overgang.webp" alt="Een team loopt samen door een hoge stenen doorgang" loading="lazy" style="object-position:80% 45%"><div><span class="k">Een dagdeel · tot 20 mensen</span><h3>De Overgang</h3><p>Een sessie met het team dat de verandering moet dragen. Wat zeggen we niet, wat laten we achter, wat doen we maandag anders?</p><ul><li>Afspraken met eigenaar en datum</li><li>Terugkomsessie na zes weken mogelijk</li></ul><span class="go">Hoe het werkt →</span></div></a>
+      <a class="rv" href="/academy/"><img src="/assets/be/img/n/training.webp" alt="Een kleine groep in een kring, één persoon vertelt" loading="lazy" style="object-position:75% 40%"><div><span class="k">Een dag, of zes weken online</span><h3>Training</h3><p>Open workshops en in-company over AI en leiderschap, AI voor HR en AI-geletterdheid voor teams.</p><ul><li>Maximaal twaalf deelnemers</li><li>Vanaf € 695 p.p. excl. btw</li></ul><span class="go">Naar de Academy →</span></div></a>
     </div>
     <p class="abn rv">Ook: advies en interim-leiding bij AI-programma's. <a href="/practice/#transformatie">Meer over AI &amp; transformatie →</a></p>
   </div>
@@ -282,6 +293,7 @@ body{background:var(--night)}
 </section>
 
 <section class="thamus dk" aria-labelledby="h-th">
+  <img class="thbg" src="/assets/be/img/n/thamus.webp" alt="Een Egyptische koning bekijkt een papyrusrol, naast hem een figuur met een ibiskop" loading="lazy">
   <span class="stars s1" aria-hidden="true"></span><span class="stars s2" aria-hidden="true"></span>
   <div class="wrap">
     <p class="eyebrow c lt rv" id="h-th">Waarom verhalen · het oudste verhaal over AI</p>
@@ -311,7 +323,7 @@ body{background:var(--night)}
 <section class="feature dk" aria-labelledby="h-pro">
   <div class="wrap">
     <a class="feat rv" href="/library/prometheus/">
-      <div class="duo"><img src="/assets/be/img/prometheus-groot.webp" alt="Prometheus met het vuur in zijn hand" loading="lazy" style="object-position:38% 30%"><img class="nu" src="/assets/be/img/dialoog.webp" alt="Een team in gesprek aan tafel" loading="lazy" style="object-position:0% 40%"><i aria-hidden="true"></i></div>
+      <div class="duo"><img src="/assets/be/img/prometheus-groot.webp" alt="Prometheus met het vuur in zijn hand" loading="lazy" style="object-position:38% 30%"><img class="nu" src="/assets/be/img/n/nu-team.webp" alt="Een team kijkt samen naar een laptop" loading="lazy" style="object-position:62% 30%"><i aria-hidden="true"></i></div>
       <div class="ftxt">
         <p class="eyebrow lt">Uitgelicht verhaal</p>
         <h2 id="h-pro">Prometheus</h2>
@@ -326,7 +338,7 @@ body{background:var(--night)}
 <section class="feature dk" aria-labelledby="h-les" style="padding-top:0">
   <div class="wrap">
     <a class="feat rv" href="/academy/mensen-van-hout/">
-      <img src="/assets/be/img/mensen-van-hout.webp" alt="" loading="lazy" style="object-position:50% 50%">
+      <img src="/assets/be/img/mensen-van-hout.webp" alt="Houten mensfiguren in een nachtelijk regenwoud" loading="lazy" style="object-position:78% 40%">
       <div class="ftxt">
         <p class="eyebrow lt">Gratis proefles · 5 minuten</p>
         <h2 id="h-les">De mensen van hout</h2>
