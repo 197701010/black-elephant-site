@@ -194,6 +194,23 @@ body{background:var(--night)}
 .abn a{color:var(--plum);font-weight:600;text-decoration:none}
 .names6{padding-top:10px}
 @media (max-width:920px){.hk,.ab{grid-template-columns:1fr}.herken{padding-top:70px}}
+.method .grid{grid-template-columns:1.05fr .95fr!important;gap:70px!important;align-items:start!important}
+.hero .bg.kb{animation:cine 40s ease-in-out infinite alternate!important;transform-origin:70% 55%}
+@keyframes cine{from{transform:scale(1.03) translate(0,0)}to{transform:scale(1.15) translate(-2.2%,-1.2%)}}
+.cine-light{position:absolute;inset:-20%;z-index:0;pointer-events:none;background:radial-gradient(38% 46% at 72% 38%,rgba(255,214,160,.26),transparent 70%);mix-blend-mode:screen;animation:cinel 16s ease-in-out infinite alternate}
+@keyframes cinel{from{transform:translate(-4%,2%);opacity:.55}to{transform:translate(5%,-3%);opacity:1}}
+.cine-dust{position:absolute;left:0;top:0;width:3px;height:3px;border-radius:50%;background:transparent;z-index:0;pointer-events:none;filter:blur(.6px)}
+.cine-dust.d1{box-shadow:56vw 62vh rgba(255,226,186,.7),63vw 30vh rgba(255,226,186,.5),71vw 74vh rgba(255,255,255,.55),78vw 44vh rgba(255,226,186,.6),86vw 68vh rgba(255,255,255,.45),92vw 26vh rgba(255,226,186,.5),67vw 52vh rgba(255,255,255,.4);animation:dust 26s linear infinite}
+.cine-dust.d2{box-shadow:59vw 80vh rgba(255,226,186,.5),69vw 58vh rgba(255,255,255,.45),75vw 22vh rgba(255,226,186,.55),83vw 50vh rgba(255,255,255,.5),89vw 84vh rgba(255,226,186,.45),96vw 40vh rgba(255,255,255,.4);animation:dust 38s linear -12s infinite}
+@keyframes dust{0%{transform:translate(0,0);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translate(-5vw,-26vh);opacity:0}}
+.hero .wrap{position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){.hero .bg.kb,.cine-light,.cine-dust{animation:none!important}.cine-dust{display:none}}
+.feat .duo{position:absolute;left:0;top:0;width:60%;height:100%;z-index:-1;-webkit-mask-image:linear-gradient(90deg,#000 74%,transparent);mask-image:linear-gradient(90deg,#000 74%,transparent)}
+.feat .duo img{position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover;-webkit-mask-image:none!important;mask-image:none!important}
+.feat .duo img:first-child{width:70%!important;object-position:88% 20%!important}
+.feat .duo .nu{clip-path:polygon(68% 0,100% 0,100% 100%,50% 100%)}
+.feat .duo i{position:absolute;inset:0;background:#F2C9A0;clip-path:polygon(67.6% 0,68.2% 0,50.2% 100%,49.6% 100%);opacity:.9}
+@media (max-width:920px){.feat .duo{position:relative;width:100%;height:240px;-webkit-mask-image:linear-gradient(0deg,transparent,#000 40%);mask-image:linear-gradient(0deg,transparent,#000 40%)}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Black Elephant","alternateName":"Black Elephant · The School for the Future","url":"https://blackelephant.nl/","logo":"https://blackelephant.nl/apple-touch-icon.png","email":"hello@blackelephant.nl","founder":{"@type":"Person","name":"Michael Salmagne"},"address":{"@type":"PostalAddress","addressLocality":"Haarlem","addressCountry":"NL"}}</script>
 </head>
@@ -218,6 +235,7 @@ body{background:var(--night)}
 <main id="main">
 <section class="hero dk" aria-labelledby="h1">
   <img class="bg kb" src="/assets/be/img/architectuur.webp" alt="Een figuur in een grote stenen hal kijkt uit over een zonnig landschap" width="1586" height="992" fetchpriority="high" style="object-position:70% 50%">
+  <span class="cine-light" aria-hidden="true"></span><span class="cine-dust d1" aria-hidden="true"></span><span class="cine-dust d2" aria-hidden="true"></span>
   <span class="arc" aria-hidden="true"></span>
   <div class="wrap">
     <p class="eyebrow lt rv">AI-transformatie · keynotes · sessies · training</p>
@@ -286,27 +304,6 @@ body{background:var(--night)}
       <p class="rv" style="font:italic 400 19px/1.5 var(--serif);color:#F2C9A0">Verhalen vertellen ons niet wat de waarheid is. Ze laten zien wat er óók waar zou kunnen zijn.</p>
       <a class="link lt rv" href="/methode/">Ontdek hoe wij kijken <span class="ar" aria-hidden="true">→</span></a>
     </div>
-    <div class="rv"><svg class="prism" viewBox="-60 0 720 600" role="img" aria-label="The Narrative Prism" aria-describedby="home-d">
-<desc id="home-d">Het verhaal in het midden. Daaromheen drie perspectieven: de wereld, jezelf en de ander. Daaromheen vier lenzen: patronen, paradoxen, symboliek en archetypen. De drie bewegingen zijn verplaatsen, doorzien en terugkeren.</desc>
-<defs>
-<radialGradient id="home-core" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#F28CA8"/><stop offset=".45" stop-color="#B04BE8"/><stop offset="1" stop-color="#4F46E5"/></radialGradient>
-<radialGradient id="home-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#9333EA" stop-opacity=".55"/><stop offset="1" stop-color="#9333EA" stop-opacity="0"/></radialGradient>
-<linearGradient id="home-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2C9A0"/><stop offset=".5" stop-color="#B57BF0"/><stop offset="1" stop-color="#E85D75"/></linearGradient>
-</defs>
-<circle cx="300" cy="300" r="190" fill="url(#home-glow)"/>
-<circle class="pr-outer" cx="300" cy="300" r="205" fill="none" stroke="url(#home-ring)" stroke-width="1.4" stroke-dasharray="3 7"/>
-<circle class="pr-inner" cx="300" cy="300" r="140" fill="none" stroke="#B57BF0" stroke-opacity=".55" stroke-width="1.2"/>
-<circle class="pr-core" cx="300" cy="300" r="68" fill="url(#home-core)"/>
-<text x="300" y="292" text-anchor="middle" class="pr-k">HET</text>
-<text x="300" y="320" text-anchor="middle" class="pr-c">Verhaal</text>
-<circle cx="300.0" cy="95.0" r="5" fill="#F2C9A0"/><text x="300.0" y="70.0" text-anchor="middle" class="pr-o">Patronen</text>
-<circle cx="505.0" cy="300.0" r="5" fill="#F2C9A0"/><text x="522.0" y="305.0" text-anchor="start" class="pr-o">Paradoxen</text>
-<circle cx="300.0" cy="505.0" r="5" fill="#F2C9A0"/><text x="300.0" y="540.0" text-anchor="middle" class="pr-o">Symboliek</text>
-<circle cx="95.0" cy="300.0" r="5" fill="#F2C9A0"/><text x="78.0" y="305.0" text-anchor="end" class="pr-o">Archetypen</text>
-<circle cx="300.0" cy="160.0" r="4.5" fill="#E85D75"/><text x="300.0" y="202.0" text-anchor="middle" class="pr-i">De wereld</text>
-<circle cx="414.7" cy="380.3" r="4.5" fill="#E85D75"/><text x="385.2" y="365.7" text-anchor="middle" class="pr-i">De ander</text>
-<circle cx="185.3" cy="380.3" r="4.5" fill="#E85D75"/><text x="214.8" y="365.7" text-anchor="middle" class="pr-i">Jezelf</text>
-<text x="300" y="30" text-anchor="middle" class="pr-m">VERPLAATSEN</text><text x="40" y="590" text-anchor="start" class="pr-m">DOORZIEN</text><text x="560" y="590" text-anchor="end" class="pr-m">TERUGKEREN</text></svg></div>
     <div class="outs"><div class="out rv"><div><h3>Jezelf</h3><p class="pq">Wie ben ik als het systeem een deel van mijn werk doet?</p><p class="tp">Persoonlijk leiderschap · vakmanschap</p></div></div><div class="out rv"><div><h3>De ander</h3><p class="pq">Hoe werken we samen als AI meebeslist?</p><p class="tp">Samenwerken · weerstand · macht</p></div></div><div class="out rv"><div><h3>De wereld</h3><p class="pq">Waar gaan we naartoe, en wat willen we bewaren?</p><p class="tp">Leiderschap · verandering · betekenis</p></div></div><p class="thr rv">En door alles heen: leren het te vertellen. <a href="/academy/">Naar de Academy →</a></p></div>
   </div>
 </section>
@@ -314,12 +311,12 @@ body{background:var(--night)}
 <section class="feature dk" aria-labelledby="h-pro">
   <div class="wrap">
     <a class="feat rv" href="/library/prometheus/">
-      <img src="/assets/be/img/prometheus-groot.webp" alt="" loading="lazy" style="object-position:60% 35%">
+      <div class="duo"><img src="/assets/be/img/prometheus-groot.webp" alt="Prometheus met het vuur in zijn hand" loading="lazy" style="object-position:38% 30%"><img class="nu" src="/assets/be/img/dialoog.webp" alt="Een team in gesprek aan tafel" loading="lazy" style="object-position:0% 40%"><i aria-hidden="true"></i></div>
       <div class="ftxt">
         <p class="eyebrow lt">Uitgelicht verhaal</p>
         <h2 id="h-pro">Prometheus</h2>
-        <p class="sub">Over de prijs van vooruitgang.</p>
-        <p>Prometheus stal het vuur van de goden en gaf het aan de mensheid. Voor zijn daad werd hij gestraft. Wat vertelt dit verhaal ons over innovatie, macht en verantwoordelijkheid in het tijdperk van AI?</p>
+        <p class="sub">Toen het vuur. Nu AI.</p>
+        <p>Prometheus gaf de mensen het vuur, en niemand vroeg wie de gevolgen zou dragen. Dezelfde vraag ligt vandaag op tafel bij elk team dat AI invoert. Het verhaal is oud. Het gesprek is van nu.</p>
         <span class="btn btn-warm" style="margin-top:8px">Ontdek het verhaal <span class="ar" aria-hidden="true">→</span></span>
       </div>
     </a>
