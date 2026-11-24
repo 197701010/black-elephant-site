@@ -187,7 +187,7 @@ body{background:var(--night)}
 .sp .duo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,rgba(18,18,43,.75));pointer-events:none}
 .sp:hover .duo .toen{transform:scale(1.04)}
 .sp .lab{position:absolute;bottom:16px;font:600 10.5px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#fff;opacity:.8;z-index:1;text-shadow:0 1px 8px rgba(0,0,0,.7)}
-.sp .lab.l{left:20px}.sp .lab.r{left:42%}
+.sp .lab.l{left:20px}.sp .lab.r{left:48%}
 .sp .t{grid-column:2;padding:46px 56px 44px 34px;align-self:center}
 .sp .rol{font:600 11.5px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#C4A6FF}
 .sp blockquote{font:400 clamp(26px,2.7vw,38px)/1.2 var(--serif);margin:12px 0 10px;padding:0;border:0;color:#fff}
@@ -209,6 +209,21 @@ body{background:var(--night)}
 .method.licht .out .tp{color:#A9643A!important}
 .method.licht .outs .thr a,.method.licht a:not(.btn){color:var(--plum)!important;border-color:rgba(124,58,237,.35)!important}
 .method.licht em,.method.licht i{color:var(--plum)}
+.sp .duo canvas.fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.sp .duo .glow{position:absolute;width:44%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,170,70,.55),rgba(255,110,30,.18) 40%,transparent 68%);mix-blend-mode:screen;pointer-events:none;animation:flak 3.7s ease-in-out infinite}
+.sp .duo .beam{position:absolute;inset:-20% -40%;background:linear-gradient(112deg,transparent 38%,rgba(255,226,170,.30) 47%,rgba(255,226,170,.08) 54%,transparent 62%);mix-blend-mode:screen;pointer-events:none;animation:beam 16s ease-in-out infinite alternate}
+@keyframes flak{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}17%{opacity:.9;transform:translate(-50%,-51%) scale(1.07)}31%{opacity:.6;transform:translate(-50%,-50%) scale(.97)}48%{opacity:1;transform:translate(-51%,-52%) scale(1.1)}63%{opacity:.7;transform:translate(-50%,-50%) scale(1.02)}82%{opacity:.95;transform:translate(-49%,-51%) scale(1.06)}}
+@keyframes beam{from{transform:translateX(-14%)}to{transform:translateX(16%)}}
+@media (prefers-reduced-motion:reduce){.sp .duo .glow,.sp .duo .beam{animation:none}.sp .duo canvas.fx{display:none}}
+.hero .bg{width:100%!important;right:0;-webkit-mask-image:none!important;mask-image:none!important;opacity:1!important}
+.hero::before{background:linear-gradient(90deg,rgba(11,11,30,.96) 0%,rgba(11,11,30,.86) 30%,rgba(11,11,30,.38) 58%,rgba(11,11,30,.05) 80%),linear-gradient(0deg,rgba(11,11,30,.55),transparent 30%)!important}
+.hero .bg.kb{animation:cine 34s ease-in-out infinite alternate!important;transform-origin:78% 60%}
+.cine-ray{position:absolute;inset:-30% -20%;z-index:-2;pointer-events:none;background:linear-gradient(104deg,transparent 52%,rgba(255,222,170,.20) 60%,rgba(255,222,170,.05) 67%,transparent 74%);mix-blend-mode:screen;animation:ray 19s ease-in-out infinite alternate}
+@keyframes ray{from{transform:translateX(-5%) rotate(-1.5deg);opacity:.5}to{transform:translateX(7%) rotate(1.5deg);opacity:1}}
+.hero .cine-light{z-index:-2}
+canvas.hfx{position:absolute;right:0;top:0;width:60%;height:100%;z-index:-1;pointer-events:none}
+@media (max-width:820px){.hero::before{background:linear-gradient(0deg,rgba(11,11,30,.97) 0%,rgba(11,11,30,.9) 45%,rgba(11,11,30,.25) 78%,rgba(11,11,30,.1))!important}canvas.hfx{width:100%}.hero .bg{width:175%!important;right:-68%!important;left:auto!important}.hero .cine-light{display:none}.cine-ray{opacity:.5}}
+@media (prefers-reduced-motion:reduce){.cine-ray{animation:none}canvas.hfx{display:none}}
 .names6{padding-top:10px}
 .method .grid{grid-template-columns:1.05fr .95fr!important;gap:70px!important;align-items:start!important}
 .hero .bg.kb{animation:cine 40s ease-in-out infinite alternate!important;transform-origin:70% 55%}
@@ -269,9 +284,15 @@ body{background:var(--night)}
 </header>
 <main id="main">
 <section class="hero dk" aria-labelledby="h1">
-  <img class="bg kb" src="/assets/be/img/architectuur.webp" alt="Een figuur in een grote stenen hal kijkt uit over een zonnig landschap" width="1586" height="992" fetchpriority="high" style="object-position:70% 50%">
-  <span class="cine-light" aria-hidden="true"></span><span class="cine-dust d1" aria-hidden="true"></span><span class="cine-dust d2" aria-hidden="true"></span>
-  <span class="arc" aria-hidden="true"></span>
+  <svg class="bg kb" viewBox="0 0 1586 992" preserveAspectRatio="xMaxYMid slice" role="img" aria-label="Een figuur in een grote stenen hal kijkt uit over een zonnig landschap">
+    <defs>
+      <filter id="rimpel" filterUnits="userSpaceOnUse" x="870" y="680" width="716" height="312"><feTurbulence type="fractalNoise" baseFrequency="0.007 0.06" numOctaves="2" seed="7" result="n"><animate attributeName="baseFrequency" dur="13s" values="0.007 0.06;0.011 0.095;0.007 0.06" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="20" xChannelSelector="R" yChannelSelector="G"/></filter>
+      <clipPath id="water"><path d="M902 802 C932 772 1042 747 1322 724 L1586 707 L1586 992 L1164 992 C1022 932 932 872 902 802Z"/></clipPath>
+    </defs>
+    <image href="/assets/be/img/architectuur.webp" width="1586" height="992"/>
+    <g clip-path="url(#water)"><image href="/assets/be/img/architectuur.webp" width="1586" height="992" filter="url(#rimpel)"/></g>
+  </svg>
+  <span class="cine-light" aria-hidden="true"></span><span class="cine-ray" aria-hidden="true"></span><canvas class="fx hfx" data-fx="stof" aria-hidden="true"></canvas>
   <div class="wrap">
     <p class="eyebrow lt rv">AI-transformatie · keynotes · sessies · training</p>
     <h1 id="h1" class="rv">AI-transformatie die ook bij mensen landt.</h1>
@@ -292,15 +313,15 @@ body{background:var(--night)}
   </div>
   <div class="rijen">
     <a class="sp rv" href="/practice/#keynotes">
-      <div class="duo"><img class="toen" src="/assets/be/img/n/thema-transformatie.webp" alt="Een oude fabriekshal met een groot vliegwiel" loading="lazy" style="object-position:70% 50%"><img class="nu" src="/assets/be/img/n/thema-samenwerken.webp" alt="Een team aan een vergadertafel met een laptop" loading="lazy" style="object-position:40% 40%"><i aria-hidden="true"></i><span class="lab l" aria-hidden="true">Toen</span><span class="lab r" aria-hidden="true">Nu</span></div>
+      <div class="duo"><img class="toen" src="/assets/be/img/n/thema-transformatie.webp" alt="Een oude fabriekshal met een groot vliegwiel" loading="lazy" style="object-position:70% 50%"><span class="beam" aria-hidden="true"></span><canvas class="fx" data-fx="stof" aria-hidden="true"></canvas><img class="nu" src="/assets/be/img/n/thema-samenwerken.webp" alt="Een team aan een vergadertafel met een laptop" loading="lazy" style="object-position:40% 40%"><i aria-hidden="true"></i><span class="lab l" aria-hidden="true">Toen</span><span class="lab r" aria-hidden="true">Nu</span></div>
       <div class="t"><span class="rol">Directie</span><blockquote>“We investeren in AI, maar zien het nog niet terug.”</blockquote><p class="sub">Toen de dynamo. Nu AI.</p><p class="st">Fabrieken vervingen de stoommachine door een elektromotor en werkten verder zoals altijd. Het rendement kwam pas toen ze de fabriek zelf anders gingen inrichten. Dat duurde dertig jaar.</p><div class="bod"><b>Keynote</b><span>20 tot 60 minuten</span><em>Bekijk de keynotes →</em></div></div>
     </a>
     <a class="sp rv" href="/practice/#dialoog">
-      <div class="duo"><img class="toen" src="/assets/be/img/prometheus-groot.webp" alt="Prometheus met het vuur in zijn hand" loading="lazy" style="object-position:80% 20%"><img class="nu dk" src="/assets/be/img/n/nu-team.webp" alt="Een team kijkt samen naar een laptop" loading="lazy" style="object-position:62% 30%"><i aria-hidden="true"></i><span class="lab l" aria-hidden="true">Toen</span><span class="lab r" aria-hidden="true">Nu</span></div>
+      <div class="duo"><img class="toen" src="/assets/be/img/prometheus-groot.webp" alt="Prometheus met het vuur in zijn hand" loading="lazy" style="object-position:80% 20%"><span class="glow" style="left:28%;top:36%" aria-hidden="true"></span><canvas class="fx" data-fx="vuur" data-x=".28" data-y=".40" aria-hidden="true"></canvas><img class="nu dk" src="/assets/be/img/n/nu-team.webp" alt="Een team kijkt samen naar een laptop" loading="lazy" style="object-position:62% 30%"><i aria-hidden="true"></i><span class="lab l" aria-hidden="true">Toen</span><span class="lab r" aria-hidden="true">Nu</span></div>
       <div class="t"><span class="rol">Programmamanager AI</span><blockquote>“De oplossing staat er. Mensen werken op de oude manier door.”</blockquote><p class="sub">Toen het vuur. Nu AI.</p><p class="st">Prometheus gaf de mensen het vuur. Het was niet genoeg: ze moesten nog leren hoe ze er samen mee konden leven. Die tweede les kwam later, en zonder die les werkte de eerste niet.</p><div class="bod"><b>De Overgang</b><span>Een dagdeel · tot 20 mensen</span><em>Hoe het werkt →</em></div></div>
     </a>
     <a class="sp rv" href="/workshops/#w-hr">
-      <div class="duo"><img class="toen" src="/assets/be/img/n/thema-storytelling.webp" alt="Mensen rond een kampvuur luisteren naar een verteller" loading="lazy" style="object-position:62% 55%"><img class="nu" src="/assets/be/img/n/training.webp" alt="Een kleine groep in een kring" loading="lazy" style="object-position:72% 35%"><i aria-hidden="true"></i><span class="lab l" aria-hidden="true">Toen</span><span class="lab r" aria-hidden="true">Nu</span></div>
+      <div class="duo"><img class="toen" src="/assets/be/img/n/thema-storytelling.webp" alt="Mensen rond een kampvuur luisteren naar een verteller" loading="lazy" style="object-position:62% 55%"><span class="glow" style="left:43%;top:60%;width:36%" aria-hidden="true"></span><canvas class="fx" data-fx="vuur" data-x=".43" data-y=".62" aria-hidden="true"></canvas><img class="nu" src="/assets/be/img/n/training.webp" alt="Een kleine groep in een kring" loading="lazy" style="object-position:72% 35%"><i aria-hidden="true"></i><span class="lab l" aria-hidden="true">Toen</span><span class="lab r" aria-hidden="true">Nu</span></div>
       <div class="t"><span class="rol">HR</span><blockquote>“Er is onrust, en niemand spreekt het uit.”</blockquote><p class="sub">Toen het kampvuur. Nu de vergadering.</p><p class="st">Rond het vuur werd gezegd wat overdag niet gezegd kon worden. In de vergadering is daar geen plek voor. Wat niet wordt uitgesproken, verdwijnt niet. Het wordt weerstand.</p><div class="bod"><b>Training</b><span>Een dag, of zes weken online</span><em>HR als regisseur →</em></div></div>
     </a>
   </div>
@@ -466,6 +487,20 @@ st.forEach(function(b,i){b.addEventListener("click",function(){s=i;show();});});
 nx.addEventListener("click",function(){if(s<2){s++;show();}});
 show();
 })();
+</script>
+<script>
+(function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches||!window.IntersectionObserver){var sv=document.querySelector('.hero svg.bg');if(sv&&sv.pauseAnimations)sv.pauseAnimations();return}
+document.querySelectorAll('canvas.fx').forEach(function(c){var x=c.getContext('2d'),vuur=c.dataset.fx=='vuur',ox=+c.dataset.x||.5,oy=+c.dataset.y||.5,P=[],on=false,W,H,d=Math.min(window.devicePixelRatio||1,2);
+function rs(){W=c.clientWidth;H=c.clientHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0)}rs();addEventListener('resize',rs);
+function sp(){return vuur?{x:ox*W+(Math.random()-.5)*W*.07,y:oy*H+(Math.random()-.5)*H*.05,vx:(Math.random()-.5)*.3,vy:-(.45+Math.random()*1.0),l:0,m:130+Math.random()*170,r:1+Math.random()*2.1}:{x:Math.random()*W*.7,y:Math.random()*H,vx:.04+Math.random()*.1,vy:-.04+Math.random()*.07,l:0,m:320+Math.random()*320,r:.8+Math.random()*1.6}}
+function f(){if(!on)return;x.clearRect(0,0,W,H);x.globalCompositeOperation='lighter';x.shadowBlur=vuur?8:4;x.shadowColor=vuur?'rgba(255,150,50,.9)':'rgba(255,235,200,.6)';
+if(P.length<(vuur?80:60)&&Math.random()<(vuur?.7:.3))P.push(sp());
+for(var i=P.length-1;i>=0;i--){var p=P[i];p.l++;if(p.l>=p.m){P.splice(i,1);continue}
+p.x+=p.vx+Math.sin((p.l+i*9)/24)*.22;p.y+=p.vy;var k=p.l/p.m,a=Math.sin(Math.PI*k);
+x.fillStyle=vuur?'rgba(255,'+Math.round(220-110*k)+','+Math.round(120-90*k)+','+(a*.95).toFixed(3)+')':'rgba(255,238,205,'+(a*.7).toFixed(3)+')';
+x.beginPath();x.arc(p.x,p.y,p.r*(vuur?1-k*.5:1),0,6.3);x.fill()}
+requestAnimationFrame(f)}
+new IntersectionObserver(function(e){var v=e[0].isIntersecting;if(v&&!on){on=true;rs();f()}else if(!v){on=false}}).observe(c)})})();
 </script>
 <script data-goatcounter="https://blackelephant.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
